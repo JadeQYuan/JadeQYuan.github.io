@@ -98,6 +98,9 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: git@gitee.com:JadeQYuan/JadeQYuan.git
+  branch: pages
+- type: git
+  repo: git@github.com:JadeQYuan/JadeQYuan.github.io.git
   branch: pages
