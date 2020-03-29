@@ -103,4 +103,4 @@ deploy:
   branch: pages
 - type: git
   repo: git@github.com:JadeQYuan/JadeQYuan.github.io.git
-  branch: pages
+  branch: master
