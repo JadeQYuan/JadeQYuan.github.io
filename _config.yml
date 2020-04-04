@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: knowing
+title: JadeQYuan
 subtitle: 知其然， 知其所以然
 description: Knowing How, Knowing Why!
 keywords: knowing, blog
@@ -100,7 +100,7 @@ theme: next
 deploy:
 - type: git
   repo: git@gitee.com:JadeQYuan/JadeQYuan.git
-  branch: pages
+  branch: master
 - type: git
   repo: git@github.com:JadeQYuan/JadeQYuan.github.io.git
   branch: master
