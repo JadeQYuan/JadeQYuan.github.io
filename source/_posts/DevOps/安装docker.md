@@ -6,6 +6,7 @@ categorys:
 tags: 
   - How
   - docker
+description: CentOS8安装docker。
 ---
 
 	记录服务器安装软件过程。
@@ -106,4 +107,4 @@ docker run -u root -d -p 8080:8080 -v /var/jenkins_data:/var/jenkins_home -v /va
 PS: 每次防火墙重启时都需要重启docker服务。
 
 
-***END***
+<p style="text-align: center"><strong>END</strong></p>

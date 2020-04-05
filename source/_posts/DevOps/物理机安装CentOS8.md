@@ -6,6 +6,7 @@ categories:
 tags:
   - How
   - CentOS8
+description: CentOS8过程，磁盘分区，机器配置等。
 ---
 
 	最近centos 8发布，而且之前系统安装软件、文件路径都不太符合现在所理解的一些规范，所以准备重新安装系统。
@@ -52,4 +53,4 @@ tags:
 	使用网络版镜像安装，在设置安装源时，先联网，然后选择从网络安装，设置镜像仓库地址。
 	PS：网络版镜像应该不是官网的，而是阿里云提供的。
 
-***END***
+<p style="text-align: center"><strong>END</strong></p>

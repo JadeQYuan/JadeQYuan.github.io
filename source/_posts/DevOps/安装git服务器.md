@@ -7,6 +7,7 @@ tags:
   - How
   - git
   - CentOS8
+description: CentOS8过程，磁盘分区，机器配置等。
 ---
 
 	github国内访问有点慢，有时候提交需要等好一会儿，而且自己的那点代码，感觉放在开源网站有点low，所以决定在自己服务器安装一个git服务器，等项目做的有点水平了，在放到github上去。
@@ -64,4 +65,4 @@ tags:
 #### bare
 	裸仓库即不包含工作目录的仓库。
 
-***END***
+<p style="text-align: center"><strong>END</strong></p>
