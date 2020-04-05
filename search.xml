@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>物理机安装CentOS8</title>
+    <url>/202002/DevOps/%E7%89%A9%E7%90%86%E6%9C%BA%E5%AE%89%E8%A3%85centos8/</url>
+    <content><![CDATA[<pre><code>最近centos 8发布，而且之前系统安装软件、文件路径都不太符合现在所理解的一些规范，所以准备重新安装系统。</code></pre><h2 id="物理机配置"><a href="#物理机配置" class="headerlink" title="物理机配置"></a>物理机配置</h2><ul>
+<li>型号： HP200 Pro G1 MT（(J1800)）</li>
+<li>处理器： Intel Celeron J1800(2.41GHz/L3 1M)，双核双线程</li>
+<li>内存： 4G DDR3 1600</li>
+<li>硬盘： 500G机械硬盘<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2></li>
+</ul>
+<ol>
+<li><p>阿里云下载centos8 iso镜像，制作U盘启动。</p>
+</li>
+<li><p>开机时不插键盘，出现键盘找不到时，插入usb键盘，按esc，设置引导。</p>
+</li>
+<li><p>选择最小安装，设置磁盘分区，开启网络配置，开始安装。</p>
+<h2 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h2><table>
+<thead>
+<tr>
+<th>路径</th>
+<th>格式</th>
+<th>大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/boot</td>
+<td>-</td>
+<td>512MB</td>
+</tr>
+<tr>
+<td>/boot/efi</td>
+<td>-</td>
+<td>256MB</td>
+</tr>
+<tr>
+<td>swap</td>
+<td>-</td>
+<td>8GB</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>-</td>
+<td>150GB</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>-</td>
+<td>50GB</td>
+</tr>
+<tr>
+<td>/</td>
+<td>-</td>
+<td>260GB左右(剩余全部)</td>
+</tr>
+<tr>
+<td>## 填坑</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#### BIOS设置</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>==问题==</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p> 主板键盘为ps/2接口，只能通过ps/2接口进入BIOS设置（ps/2转usb转换头也不行）。<br>==解决==<br> 开机时不插键盘，出现键盘找不到时，插入usb键盘，按esc。</p>
+<h4 id="iso设置"><a href="#iso设置" class="headerlink" title="iso设置"></a>iso设置</h4><p>==问题==</p>
+<p> 镜像开机时选择install选项后不出现安装界面。<br>==解决==<br> 选择install选项，按e键进入编辑页面，将label设置为/dev/sdb4，按ctrl+X执行安装。<br> PS1: 可以先修改为linux dd查看设备，确定之后在修改。<br> PS2：在引导系统中，按Ctrl + Shift + Delete 组合键重启。</p>
+</li>
+</ol>
+<h4 id="镜像问题"><a href="#镜像问题" class="headerlink" title="镜像问题"></a>镜像问题</h4><p>==问题==</p>
+<pre><code>使用DVD镜像安装时，提示 Pane is DEAD，而使用虚拟机安装是没有问题的。</code></pre><p>==解决==</p>
+<pre><code>使用网络版镜像安装，在设置安装源时，先联网，然后选择从网络安装，设置镜像仓库地址。
+PS：网络版镜像应该不是官网的，而是阿里云提供的。</code></pre><p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>DevOps</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+        <tag>CentOS8</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装git服务器</title>
+    <url>/202002/uncategorized/%E5%AE%89%E8%A3%85git%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<pre><code>github国内访问有点慢，有时候提交需要等好一会儿，而且自己的那点代码，感觉放在开源网站有点low，所以决定在自己服务器安装一个git服务器，等项目做的有点水平了，在放到github上去。</code></pre><h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><ul>
+<li>操作系统<br>  CentOS 8</li>
+<li>ssh版本<br>  Protocol 2</li>
+</ul>
+<h2 id="git协议选择"><a href="#git协议选择" class="headerlink" title="git协议选择"></a>git协议选择</h2><pre><code>通过查看git官网文档，git有四种可选择的协议来传输资料，分别是local，git，ssh，http。
+其中local是本地协议，不能通过网络访问，git协议缺乏授权机制。
+http协议安装比较复杂，等后期对相关知识更加了解在做。
+暂时选择git协议，使用密钥的方式进行授权，添加访问用户时需要添加公钥到服务器。</code></pre><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><ol>
+<li>安装git软件 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure></li>
+<li>创建git用户 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adduser git (不用设置密码)</span><br></pre></td></tr></table></figure></li>
+<li>在git根目录下创建.ssh文件夹</li>
+<li>在git/.ssh目录下创建 authorized_keys 文件，用来存放用户公钥。</li>
+<li>设置git目录所属用户为git，.ssh目录权限为700，authorized_keys 文件权限为600。</li>
+<li>限制git账号使用ssh连接。<br> git-shell: 登录成功后自动退出的shell<br> 查看git-shell命令路径： where is git-shell<br> 修改/etc/passwd中 git账号登录后的shell为git-shell全路径</li>
+<li>打开RSA认证。<br> 修改配置文件/etc/ssh/sshd_config 中 设置<br> RSAAuthentication yes(centos 7.4 已弃用，忽略不设置)<br> PubkeyAuthentication yes<br> AuthorizedKeysFile .ssh/authorized_keys<h2 id="创建git仓库"><a href="#创建git仓库" class="headerlink" title="创建git仓库"></a>创建git仓库</h2> 在git目录下新建.git结尾文件夹，进入文件夹，创建一个裸仓库。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init --bare</span><br></pre></td></tr></table></figure>
+<h2 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h2><h4 id="git用户密码"><a href="#git用户密码" class="headerlink" title="git用户密码"></a>git用户密码</h4> git用户不必设置密码，没有必要。<h4 id="权限问题"><a href="#权限问题" class="headerlink" title="权限问题"></a>权限问题</h4> git用户根目录下的所有文件及目录都应该属于git用户，每次创建完git仓库时也要修改目录所属用户，否则会提示 无权限访问。<h4 id="公钥"><a href="#公钥" class="headerlink" title="公钥"></a>公钥</h4> 使用 &gt;&gt; 操作可以将公钥追加到文件里面。<br> 使用 &gt; 操作会清空文件的内容，并把新内容添加到文件里面。<h4 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h4> 在使用 TortoistGit 进行git clone 的时候，需要勾选 Load Putty Key 选项，并选择私钥。<br> 在使用 git bash clone的时候需要保证当前用户目录.ssh文件夹下面存在私钥。<h4 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h4> RSAAuthentication 是对ssh 1版本的支持，在本环境中，使用ssh 2，所以没有这个配置，忽略即可。<br> 如果自己手动加上了这个配置，在查看日志文件时会有警告。<h4 id="bare"><a href="#bare" class="headerlink" title="bare"></a>bare</h4> 裸仓库即不包含工作目录的仓库。</li>
+</ol>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <tags>
+        <tag>How</tag>
+        <tag>CentOS8</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装docker</title>
+    <url>/202002/uncategorized/%E5%AE%89%E8%A3%85docker/</url>
+    <content><![CDATA[<pre><code>记录服务器安装软件过程。</code></pre><h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><p>/usr/lcoal 安装系统软件<br>/opt 安装临时软件，存储安装包（压缩包安装方式）<br>/var 放日志文件</p>
+<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><ul>
+<li><p>查看自带的，yum search docker 发现自带的不是我们想要的。</p>
+</li>
+<li><p>下载docker-ce repo</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo -o &#x2F;etc&#x2F;yum.repos.d&#x2F;docker-ce.repo</span><br></pre></td></tr></table></figure></li>
+<li><p>安装containerd.io依赖</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;fedora&#x2F;30&#x2F;x86_64&#x2F;stable&#x2F;Packages&#x2F;containerd.io-1.2.6-3.3.fc30.x86_64.rpm</span><br></pre></td></tr></table></figure></li>
+<li><p>安装docker</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum -y install docker-ce</span><br></pre></td></tr></table></figure></li>
+<li><p>设置开机启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure>
+<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2></li>
+<li><p>安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure></li>
+<li><p>设置开机启动</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl enable nginx</span><br></pre></td></tr></table></figure></li>
+<li><p>nginx配置文件路径：/etc/nginx/nginx.conf</p>
+</li>
+<li><p>nginx日志文件路径：/var/nginx</p>
+<h2 id="开放端口及服务"><a href="#开放端口及服务" class="headerlink" title="开放端口及服务"></a>开放端口及服务</h2></li>
+<li><p>查看指定区域(public)所有开启的端口号/服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --list-ports &#x2F; --list-service</span><br></pre></td></tr></table></figure></li>
+<li><p>开放端口/服务（防火墙重启生效）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp &#x2F; --add-service&#x3D;http --permanent</span><br></pre></td></tr></table></figure></li>
+<li><p>查看所有服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">firewall-cmd --get-services</span><br></pre></td></tr></table></figure>
+
+<p>  通过docker安装mysql服务，简单，省事。<br>  但是docker容器具有临时性，而mysql的数据要持久化，所以通过docker启动MySQL，然后通过挂载卷的方式保存数据，是否是个好的选择呢？</p>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2></li>
+<li><p>拉取镜像</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull mysql:8</span><br></pre></td></tr></table></figure></li>
+<li><p>启动容器<br>  将容器设置为自动重启，这样服务器开机或docker服务重启时会自动启动容器。<br>  使用 -e 选项为mysql设置root账号密码。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD&#x3D;root --restart&#x3D;always --name mysql mysql:8</span><br></pre></td></tr></table></figure>
+<ul>
+<li>进入容器<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker exec -it mysql &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure></li>
+<li>创建数据库<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">create database database_name DEFAULT CHARSET utf8 COLLATE utf8_general_ci;</span><br></pre></td></tr></table></figure></li>
+<li>创建表</li>
+</ul>
+<pre><code>使用docker安装jenkins，方便，省事。</code></pre><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><ul>
+<li>拉取镜像<br>  使用latest版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker pull jenkinsci&#x2F;blueocean</span><br></pre></td></tr></table></figure></li>
+<li>启动容器<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docker run -u root -d -p 8080:8080 -v &#x2F;var&#x2F;jenkins_data:&#x2F;var&#x2F;jenkins_home -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock --restart&#x3D;always --name jenkins jenkinsci&#x2F;blueocean</span><br></pre></td></tr></table></figure></li>
+<li>获取admin默认密码</li>
+<li>自定义安装插件</li>
+<li>创建管理员用户密码<br>  knoiwng/…<h2 id="填坑"><a href="#填坑" class="headerlink" title="填坑"></a>填坑</h2></li>
+</ul>
+<ol>
+<li>启动jenkins容器，配置nginx代理，静态资源访问不到</li>
+<li>开启防火墙，启动jenkins容器，开放8080端口，内网访问不到</li>
+<li>在2的前提下，关闭防火墙，内网可以访问，但是jenkins提示离线</li>
+<li>开机启动docker，firewalld，然后关闭防火墙，启动容器，启动不起来，提示： docker: Error response from daemon: driver failed programming external connectivity on endpoint jenkins (0a8069842c234eaae6d36192f62b5d9503926c0167cae15711300168103c5b1e):  (iptables failed: iptables –wait -t nat -A DOCKER -p tcp -d 0/0 –dport 8080 -j DNAT –to-destination 172.17.0.2:8080 ! -i docker0: iptables: No chain/target/match by that name.</li>
+<li>最终解决办法：开机启动docker，firewallld, 然后关闭防火墙，docker服务重启，然后启动容器，ok！（问题，怎么能不关闭防火墙）<br>PS: 每次防火墙重启时都需要重启docker服务。</li>
+</ol>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <tags>
+        <tag>How</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo搭建博客</title>
+    <url>/202003/Tools/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h1><p>&emsp;&emsp;GitHub Pages 允许开发者自定义项目的首页，代替直接展示代码的方式。</p>
+<h2 id="Jekyll"><a href="#Jekyll" class="headerlink" title="Jekyll"></a>Jekyll</h2><p>&emsp;&emsp;GitHub Pages 默认的静态网站生成工具，通过项目中的相应的配置文件，可以自动打包部署。</p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>&emsp;&emsp;静态网站生成工具，可以通过配置使GitHub支持。</p>
+<h2 id="Jekyll-VS-Hexo"><a href="#Jekyll-VS-Hexo" class="headerlink" title="Jekyll VS Hexo"></a>Jekyll VS Hexo</h2><ul>
+<li>本地开发预览<br>&emsp;&emsp;Jekyll 需要搭建完整的Ruby环境。<br>&emsp;&emsp;Hexo 需要搭建NodeJS环境。</li>
+<li>迁移<br>&emsp;&emsp;GitHub Pages中对Jekyll的支持，使得我们太多去关心Jekyll的配置以及插件，这会在迁移过程中造成一定的影响。因为不知道配置是什么，及使用了哪些插件。<br>&emsp;&emsp;Hexo的配置是自定义的。  <h2 id="Gitee"><a href="#Gitee" class="headerlink" title="Gitee"></a>Gitee</h2>&emsp;&emsp;由于GitHub访问速度问题，也可使用Gitee Pages功能，其概念和GitHub概念相似。  <h3 id="GitHub-Pages-VS-Gitee-Pages"><a href="#GitHub-Pages-VS-Gitee-Pages" class="headerlink" title="GitHub Pages VS Gitee Pages"></a>GitHub Pages VS Gitee Pages</h3>&emsp;&emsp;Gitee 支持Jekyll、Hexo、Hugo，GitHub只支持Jekyll。<br>&emsp;&emsp;GitHub 支持自动打包部署，检测到代码提交时执行。Gitee个人免费版不知道自动打包部署，需要手动进行。<br>&emsp;&emsp;GitHub 支持自定义域名。Gitee个人免费版不支持。<br>&emsp;&emsp;GitHub 只支持master、gh-pages分支，当使用根路径访问时只支持master分支。Gitee支持任意分支。<h2 id="自动打包部署"><a href="#自动打包部署" class="headerlink" title="自动打包部署"></a>自动打包部署</h2>&emsp;&emsp;对于支持自动打包部署的情况，只需要提交源码到对应的分支就行，会自动打包并部署。<br>&emsp;&emsp;而不支持自动打包部署的情况，需要在本地通过命令生成部署到对应的分支。而将源码提交到另一个分支。</li>
+</ul>
+<h1 id="Hexo-搭建过程"><a href="#Hexo-搭建过程" class="headerlink" title="Hexo 搭建过程"></a>Hexo 搭建过程</h1><h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><p>&emsp;&emsp;hexo init命令需要空文件夹，git clone会生成一个不为空的文件夹，所以创建过程中需要按以下步骤进行。</p>
+<ol>
+<li>初始化hexo项目<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npx hexo init &lt;dir name&gt;</span><br></pre></td></tr></table></figure>
+PS: 如不指定目录名称，则在当前文件夹下初始化，要求该文件夹为空。</li>
+<li>初始化git仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+<li>关联远程仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h2><p>&emsp;&emsp;项目目录下的_config.yml为站点配置文件，themes/?/_config.yml为主题配置文件。将主题文件复制到source/_data/next.yml进行修改。</p>
+<ol>
+<li>网站配置<br>其中 language为主题要求的值。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&lt;title&gt;</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&lt;subtitle&gt;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&lt;description&gt;</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">&lt;keywords&gt;</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">&lt;author&gt;</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/shanghai</span></span><br></pre></td></tr></table></figure></li>
+<li>URL 配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year:month/:category/:post_title/</span></span><br></pre></td></tr></table></figure></li>
+<li>发布配置<br>可配置多个<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li>
+<li>主题配置<br>使用最新NexT主题<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></li>
+<li>CNAME配置<br>如需自定义域名，且手动打包部署，则CNAME配置应跳过渲染。相对路径为source。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">CNAME</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><ol>
+<li>菜单配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure></li>
+<li>样式配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure></li>
+<li>pjax配置<br>页面局部刷新功能<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+添加依赖<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure></li>
+<li>其他配置<br>每个配置的地方都有注释说明。</li>
+</ol>
+<ul>
+<li>图标 favicon</li>
+<li>头像 avatar</li>
+<li>代码高亮样式 highlight_theme</li>
+<li>局部页面刷新 pjax</li>
+<li>中英文之间空格 pangu</li>
+<li>阅读进度条 reading_progress</li>
+<li>github_banner</li>
+<li>书签 bookmark</li>
+<li>评论 gitalk</li>
+<li>公式 math</li>
+<li>搜索 search</li>
+<li>RSS</li>
+<li>捐赠 reward</li>
+</ul>
+<h1 id="文章与页面"><a href="#文章与页面" class="headerlink" title="文章与页面"></a>文章与页面</h1><ol>
+<li>新建文章<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+layout为scaffolds中定义的模板，默认为post</li>
+<li>新建页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page archives/categories/tags/about</span><br></pre></td></tr></table></figure>
+在各自index.md中修改其type为主题菜单配置中名称，除about外，其它都不需要编辑。</li>
+<li>搜索页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-gengerator-searchdb</span><br></pre></td></tr></table></figure>
+站点配置中新增<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">    <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+主题配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">5</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li>404页面</li>
+</ol>
+<p><strong><em>END</em></strong></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+</search>
