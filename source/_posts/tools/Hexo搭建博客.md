@@ -10,32 +10,32 @@ description: 记录使用hexo搭建博客的过程，包括对于GitHub Pages的
 ---
 
 # GitHub Pages
-&emsp;&emsp;GitHub Pages 允许开发者自定义项目的首页，代替直接展示代码的方式。
+> GitHub Pages 允许开发者自定义项目的首页，代替直接展示代码的方式。
 ## Jekyll
-&emsp;&emsp;GitHub Pages 默认的静态网站生成工具，通过项目中的相应的配置文件，可以自动打包部署。
+> GitHub Pages 默认的静态网站生成工具，通过项目中的相应的配置文件，可以自动打包部署。
 ## Hexo
-&emsp;&emsp;静态网站生成工具，可以通过配置使GitHub支持。
+> 静态网站生成工具，可以通过配置使GitHub支持。
 ## Jekyll VS Hexo
 - 本地开发预览
-&emsp;&emsp;Jekyll 需要搭建完整的Ruby环境。
-&emsp;&emsp;Hexo 需要搭建NodeJS环境。
+> Jekyll 需要搭建完整的Ruby环境。
+> Hexo 需要搭建NodeJS环境。
 - 迁移
-&emsp;&emsp;GitHub Pages中对Jekyll的支持，使得我们太多去关心Jekyll的配置以及插件，这会在迁移过程中造成一定的影响。因为不知道配置是什么，及使用了哪些插件。
-&emsp;&emsp;Hexo的配置是自定义的。  
+> GitHub Pages中对Jekyll的支持，使得我们太多去关心Jekyll的配置以及插件，这会在迁移过程中造成一定的影响。因为不知道配置是什么，及使用了哪些插件。
+> Hexo的配置是自定义的。  
 ## Gitee
-&emsp;&emsp;由于GitHub访问速度问题，也可使用Gitee Pages功能，其概念和GitHub概念相似。  
+> 由于GitHub访问速度问题，也可使用Gitee Pages功能，其概念和GitHub概念相似。  
 ### GitHub Pages VS Gitee Pages
-&emsp;&emsp;Gitee 支持Jekyll、Hexo、Hugo，GitHub只支持Jekyll。 
-&emsp;&emsp;GitHub 支持自动打包部署，检测到代码提交时执行。Gitee个人免费版不知道自动打包部署，需要手动进行。
-&emsp;&emsp;GitHub 支持自定义域名。Gitee个人免费版不支持。
-&emsp;&emsp;GitHub 只支持master、gh-pages分支，当使用根路径访问时只支持master分支。Gitee支持任意分支。
+> Gitee 支持Jekyll、Hexo、Hugo，GitHub只支持Jekyll。 
+> GitHub 支持自动打包部署，检测到代码提交时执行。Gitee个人免费版不知道自动打包部署，需要手动进行。
+> GitHub 支持自定义域名。Gitee个人免费版不支持。
+> GitHub 只支持master、gh-pages分支，当使用根路径访问时只支持master分支。Gitee支持任意分支。
 ## 自动打包部署
-&emsp;&emsp;对于支持自动打包部署的情况，只需要提交源码到对应的分支就行，会自动打包并部署。
-&emsp;&emsp;而不支持自动打包部署的情况，需要在本地通过命令生成部署到对应的分支。而将源码提交到另一个分支。
+> 对于支持自动打包部署的情况，只需要提交源码到对应的分支就行，会自动打包并部署。
+> 而不支持自动打包部署的情况，需要在本地通过命令生成部署到对应的分支。而将源码提交到另一个分支。
 
 # Hexo 搭建过程
 ## 搭建步骤
-&emsp;&emsp;hexo init命令需要空文件夹，git clone会生成一个不为空的文件夹，所以创建过程中需要按以下步骤进行。
+> hexo init命令需要空文件夹，git clone会生成一个不为空的文件夹，所以创建过程中需要按以下步骤进行。
 1. 初始化hexo项目
 ```shell
 npx hexo init <dir name>
@@ -51,7 +51,7 @@ git remote add origin <url>
 ```
 
 ## 站点配置
-&emsp;&emsp;项目目录下的_config.yml为站点配置文件，themes/?/_config.yml为主题配置文件。将主题文件复制到source/_data/next.yml进行修改。
+> 项目目录下的_config.yml为站点配置文件，themes/?/_config.yml为主题配置文件。将主题文件复制到source/_data/next.yml进行修改。
 1. 网站配置
 其中 language为主题要求的值。
 ```yaml
