@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"jadeqyuan.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="CentOS8过程，磁盘分区，机器配置等。">
+  <meta name="description" content="数据结构的定义，常见的数据结构类型。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="物理机安装CentOS8">
-<meta property="og:url" content="https://jadeqyuan.gitee.io/202002/DevOps/%E7%89%A9%E7%90%86%E6%9C%BA%E5%AE%89%E8%A3%85centos8/index.html">
+<meta property="og:title" content="数据结构">
+<meta property="og:url" content="https://jadeqyuan.gitee.io/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Knowing">
-<meta property="og:description" content="CentOS8过程，磁盘分区，机器配置等。">
+<meta property="og:description" content="数据结构的定义，常见的数据结构类型。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-05T03:04:49.000Z">
-<meta property="article:modified_time" content="2020-04-05T11:31:21.873Z">
+<meta property="article:published_time" content="2020-04-02T13:46:26.000Z">
+<meta property="article:modified_time" content="2020-04-06T09:40:08.094Z">
 <meta property="article:author" content="Jade">
-<meta property="article:tag" content="How">
-<meta property="article:tag" content="CentOS8">
+<meta property="article:tag" content="Why">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://jadeqyuan.gitee.io/202002/DevOps/%E7%89%A9%E7%90%86%E6%9C%BA%E5%AE%89%E8%A3%85centos8/">
+<link rel="canonical" href="https://jadeqyuan.gitee.io/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>物理机安装CentOS8 | Knowing</title>
+  <title>数据结构 | Knowing</title>
   
 
 
@@ -128,12 +127,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -199,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jadeqyuan.gitee.io/202002/DevOps/%E7%89%A9%E7%90%86%E6%9C%BA%E5%AE%89%E8%A3%85centos8/">
+    <link itemprop="mainEntityOfPage" href="https://jadeqyuan.gitee.io/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Jade.png">
@@ -212,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          物理机安装CentOS8
+          数据结构
         </h1>
 
         <div class="post-meta">
@@ -222,14 +221,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-02-05 11:04:49" itemprop="dateCreated datePublished" datetime="2020-02-05T11:04:49+08:00">2020-02-05</time>
+              <time title="创建时间：2020-04-02 21:46:26" itemprop="dateCreated datePublished" datetime="2020-04-02T21:46:26+08:00">2020-04-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-05 19:31:21" itemprop="dateModified" datetime="2020-04-05T19:31:21+08:00">2020-04-05</time>
+                <time title="修改时间：2020-04-06 17:40:08" itemprop="dateModified" datetime="2020-04-06T17:40:08+08:00">2020-04-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,12 +236,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DevOps/" itemprop="url" rel="index"><span itemprop="name">DevOps</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a>
                 </span>
             </span>
 
           
-            <div class="post-description">CentOS8过程，磁盘分区，机器配置等。</div>
+            <div class="post-description">数据结构的定义，常见的数据结构类型。</div>
 
         </div>
       </header>
@@ -253,81 +252,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <pre><code>最近centos 8发布，而且之前系统安装软件、文件路径都不太符合现在所理解的一些规范，所以准备重新安装系统。</code></pre><h2 id="物理机配置"><a href="#物理机配置" class="headerlink" title="物理机配置"></a>物理机配置</h2><ul>
-<li>型号： HP200 Pro G1 MT（(J1800)）</li>
-<li>处理器： Intel Celeron J1800(2.41GHz/L3 1M)，双核双线程</li>
-<li>内存： 4G DDR3 1600</li>
-<li>硬盘： 500G机械硬盘<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2></li>
-</ul>
-<ol>
-<li><p>阿里云下载centos8 iso镜像，制作U盘启动。</p>
-</li>
-<li><p>开机时不插键盘，出现键盘找不到时，插入usb键盘，按esc，设置引导。</p>
-</li>
-<li><p>选择最小安装，设置磁盘分区，开启网络配置，开始安装。</p>
-<h2 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h2><table>
-<thead>
-<tr>
-<th>路径</th>
-<th>格式</th>
-<th>大小</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>/boot</td>
-<td>-</td>
-<td>512MB</td>
-</tr>
-<tr>
-<td>/boot/efi</td>
-<td>-</td>
-<td>256MB</td>
-</tr>
-<tr>
-<td>swap</td>
-<td>-</td>
-<td>8GB</td>
-</tr>
-<tr>
-<td>/home</td>
-<td>-</td>
-<td>150GB</td>
-</tr>
-<tr>
-<td>/var</td>
-<td>-</td>
-<td>50GB</td>
-</tr>
-<tr>
-<td>/</td>
-<td>-</td>
-<td>260GB左右(剩余全部)</td>
-</tr>
-<tr>
-<td>## 填坑</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>#### BIOS设置</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>==问题==</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p> 主板键盘为ps/2接口，只能通过ps/2接口进入BIOS设置（ps/2转usb转换头也不行）。<br>==解决==<br> 开机时不插键盘，出现键盘找不到时，插入usb键盘，按esc。</p>
-<h4 id="iso设置"><a href="#iso设置" class="headerlink" title="iso设置"></a>iso设置</h4><p>==问题==</p>
-<p> 镜像开机时选择install选项后不出现安装界面。<br>==解决==<br> 选择install选项，按e键进入编辑页面，将label设置为/dev/sdb4，按ctrl+X执行安装。<br> PS1: 可以先修改为linux dd查看设备，确定之后在修改。<br> PS2：在引导系统中，按Ctrl + Shift + Delete 组合键重启。</p>
-</li>
-</ol>
-<h4 id="镜像问题"><a href="#镜像问题" class="headerlink" title="镜像问题"></a>镜像问题</h4><p>==问题==</p>
-<pre><code>使用DVD镜像安装时，提示 Pane is DEAD，而使用虚拟机安装是没有问题的。</code></pre><p>==解决==</p>
-<pre><code>使用网络版镜像安装，在设置安装源时，先联网，然后选择从网络安装，设置镜像仓库地址。
-PS：网络版镜像应该不是官网的，而是阿里云提供的。</code></pre><p style="text-align: center"><strong>END</strong></p>
+        <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><blockquote>
+<p>Why<br>&emsp;&emsp;之前对于数据结构的理解是，存储数据的方式，最近看到概念说数据结构是元素的集合，带着这个疑问，深入探索这个问题。</p>
+</blockquote>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
+<p>逻辑结构： 数据存储的方式<br>物理结构： 具有一定特性的元素的集合</p>
+</blockquote>
+<h1 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><blockquote>
+<p>固定大小的结构</p>
+</blockquote>
+<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><blockquote>
+<p>顺序结构</p>
+</blockquote>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><blockquote>
+<p>后进先去</p>
+</blockquote>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><blockquote>
+<p>先进先出</p>
+</blockquote>
+<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><blockquote>
+<p>哈希函数，存储key</p>
+</blockquote>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><blockquote>
+<p>层次结构</p>
+</blockquote>
+<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><blockquote>
+<p>有顺序的树</p>
+</blockquote>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><blockquote>
+<p>图结构</p>
+</blockquote>
+<p style="text-align: center"><strong>END</strong></p>
 
     </div>
 
@@ -337,8 +292,7 @@ PS：网络版镜像应该不是官网的，而是阿里云提供的。</code></
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/How/" rel="tag"># How</a>
-              <a href="/tags/CentOS8/" rel="tag"># CentOS8</a>
+              <a href="/tags/Why/" rel="tag"># Why</a>
           </div>
 
         
@@ -347,12 +301,12 @@ PS：网络版镜像应该不是官网的，而是阿里云提供的。</code></
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/202002/uncategorized/%E5%AE%89%E8%A3%85git%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="prev" title="安装git服务器">
-      <i class="fa fa-chevron-left"></i> 安装git服务器
+    <a href="/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="prev" title="数据类型">
+      <i class="fa fa-chevron-left"></i> 数据类型
     </a></div>
       <div class="post-nav-item">
-    <a href="/202003/Tools/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="next" title="Hexo搭建博客">
-      Hexo搭建博客 <i class="fa fa-chevron-right"></i>
+    <a href="/202004/Tools/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="next" title="git常用命令">
+      git常用命令 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -412,7 +366,7 @@ PS：网络版镜像应该不是官网的，而是阿里云提供的。</code></
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#物理机配置"><span class="nav-number">1.</span> <span class="nav-text">物理机配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装过程"><span class="nav-number">2.</span> <span class="nav-text">安装过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#磁盘分区"><span class="nav-number">3.</span> <span class="nav-text">磁盘分区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#iso设置"><span class="nav-number">3.0.1.</span> <span class="nav-text">iso设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#镜像问题"><span class="nav-number">3.0.2.</span> <span class="nav-text">镜像问题</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用数据结构"><span class="nav-number">3.</span> <span class="nav-text">常用数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">3.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表"><span class="nav-number">3.2.</span> <span class="nav-text">链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈"><span class="nav-number">3.3.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">3.4.</span> <span class="nav-text">队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希"><span class="nav-number">3.5.</span> <span class="nav-text">哈希</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树"><span class="nav-number">3.6.</span> <span class="nav-text">树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆"><span class="nav-number">3.7.</span> <span class="nav-text">堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图"><span class="nav-number">3.8.</span> <span class="nav-text">图</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -428,14 +382,14 @@ PS：网络版镜像应该不是官网的，而是阿里云提供的。</code></
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
