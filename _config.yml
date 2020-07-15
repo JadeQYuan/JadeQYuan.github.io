@@ -111,3 +111,7 @@ search:
   field: post
   format: html
   limit: 10000
+
+# 为hexo-admin添加配置，默认值会被覆盖
+metadata:
+  description: desc

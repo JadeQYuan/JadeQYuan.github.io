@@ -9,7 +9,6 @@ tags:
 description: {{ title }}
 ---
 
-# {{title}}
 > How/Why
 
 
