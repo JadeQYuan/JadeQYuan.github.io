@@ -1,15 +1,13 @@
 title: OAS
 categories:
-  - null
+  - API
 tags:
-  - How/Why
-  - null
-description: OAS
+  - How
+  - ''
+description: OpenAPI Specification
 author: Jade
-date: 2020-07-14 14:15:15
+date: 2020-07-14 14:15:00
 ---
-# OAS
-> How/Why
 
 ## OAS
 OpenAPI Specification, 开放API声明，是一个API规范，用于描述一整套API接口。

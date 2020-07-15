@@ -1,12 +1,11 @@
 title: maven
 categories:
-  - null
+  - Java
 tags:
-  - How/Why
-  - null
+  - How
 description: maven
 author: Jade
-date: 2020-07-14 14:11:42
+date: 2020-07-14 14:11:00
 ---
 # maven
 > Why

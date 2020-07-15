@@ -1,12 +1,12 @@
----
 title: BeanValidation
 categories:
   - Java
 tags:
   - How
-  - validation
+  - Validate
+  - ''
 description: BeanValidation
-date: 2020-02-05 11:04:49
+date: 2020-02-05 11:04:00
 ---
 
 ## Bean Validation

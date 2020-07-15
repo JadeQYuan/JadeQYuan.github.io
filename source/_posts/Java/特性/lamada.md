@@ -1,11 +1,11 @@
----
 title: lamada
 categories:
   - Java
-tags:
-  - How
+  - JDK8
+tags: []
 description: lamada
-date: 2020-02-05 11:04:49
+author: Jade
+date: 2020-02-05 11:04:00
 ---
 
 lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。

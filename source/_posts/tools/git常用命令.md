@@ -1,12 +1,12 @@
----
 title: git常用命令
-date: 2020-04-05 09:28:55
 categories:
-  - Tools
+  - VCS
+  - Git
 tags:
   - How
-  - null
 description: git常用命令
+author: Jade
+date: 2020-04-05 09:28:00
 ---
 
 - 添加远程仓库

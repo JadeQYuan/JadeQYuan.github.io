@@ -1,12 +1,13 @@
----
 title: CentOS8
-date: 2020-02-05 11:04:49
 categories:
-  - DevOps
+  - 运维
+  - Linux
 tags:
   - How
   - CentOS8
 description: CentOS8安装过程，分区设置，以及在其上安装软件，包括docker，nginx，mysql，jenkins，git等。
+author: Jade
+date: 2020-02-05 11:04:00
 ---
 
 > 最近centos 8发布，而且之前系统安装软件、文件路径都不太符合现在所理解的一些规范，所以准备重新安装系统。

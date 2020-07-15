@@ -1,12 +1,11 @@
----
 title: Hexo搭建博客
-date: 2020-03-28 22:22:22
 categories:
-  - Tools
+  - 元
 tags:
   - How
   - Hexo
 description: 记录使用hexo搭建博客的过程，包括对于GitHub Pages的了解，对Jekyll与Hexo的使用对比，及hexo的搭建步骤，配置内容，页面生成等。
+date: 2020-03-28 22:22:00
 ---
 
 # GitHub Pages

@@ -1,12 +1,13 @@
 title: mybatis
 categories:
-  - null
+  - Java
+  - Mybatis
 tags:
-  - How/Why
-  - null
+  - How
+  - Mybatis
 description: mybatis
 author: Jade
-date: 2020-07-14 14:12:19
+date: 2020-07-14 14:12:00
 ---
 # mybatis
 > How

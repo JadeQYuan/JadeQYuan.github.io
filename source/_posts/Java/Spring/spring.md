@@ -1,15 +1,14 @@
 title: spring
 categories:
-  - null
+  - Java
+  - Spring
 tags:
-  - How/Why
-  - null
+  - How
+  - ''
 description: spring
 author: Jade
-date: 2020-07-14 14:13:04
+date: 2020-07-14 14:13:00
 ---
-# spring
-> How
 
 - MATE-INF
 	spring.factories
