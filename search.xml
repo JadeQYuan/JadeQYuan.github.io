@@ -2,142 +2,15 @@
 <search>
   <entry>
     <title>OAS</title>
-    <url>/202007/uncategorized/oas/</url>
-    <content><![CDATA[<h1 id="OAS"><a href="#OAS" class="headerlink" title="OAS"></a>OAS</h1><blockquote>
-<p>How/Why</p>
-</blockquote>
-<h2 id="OAS-1"><a href="#OAS-1" class="headerlink" title="OAS"></a>OAS</h2><p>OpenAPI Specification, 开放API声明，是一个API规范，用于描述一整套API接口。</p>
+    <url>/202007/API/oas/</url>
+    <content><![CDATA[<h2 id="OAS"><a href="#OAS" class="headerlink" title="OAS"></a>OAS</h2><p>OpenAPI Specification, 开放API声明，是一个API规范，用于描述一整套API接口。</p>
 <h2 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h2><p>一个流行的API框架，以OAS为基础，对整个API的开发周期都提供了相应的解决方案，几乎支持所有语言。</p>
 <h2 id="springfox-swagger"><a href="#springfox-swagger" class="headerlink" title="springfox-swagger"></a>springfox-swagger</h2><p>用于将swagger集成到spring中来，前身是swagger-springmvc。生成多个json文件。</p>
 <h2 id="springfox-swagger2"><a href="#springfox-swagger2" class="headerlink" title="springfox-swagger2"></a>springfox-swagger2</h2><p>生成一个json文件。</p>
 <h2 id="springfox-swagger-ui"><a href="#springfox-swagger-ui" class="headerlink" title="springfox-swagger-ui"></a>springfox-swagger-ui</h2><p>页面</p>
 <h2 id="springdoc-openapi"><a href="#springdoc-openapi" class="headerlink" title="springdoc-openapi"></a>springdoc-openapi</h2><p style="text-align: center"><strong>END</strong></p>]]></content>
-      <tags>
-        <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>maven</title>
-    <url>/202007/uncategorized/maven/</url>
-    <content><![CDATA[<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><blockquote>
-<p>Why</p>
-</blockquote>
-<ul>
-<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <tags>
-        <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mybatis</title>
-    <url>/202007/uncategorized/mybatis/</url>
-    <content><![CDATA[<h1 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h1><blockquote>
-<p>How</p>
-</blockquote>
-<ul>
-<li>mybatis 基于注解的sql可以不用写script？<br>  script 标签中可以使用xml中的标签来实现复杂语句的查询</li>
-<li>mybatis 多个参数时使用@Param 注解指定？<br>  不使用@Param注解：<pre><code>参数为基本类型，可以有多个
-参数为javabean对象，且只能有一个，使用时直接用对象的属性（注解无法获取多个属性，只能获取嵌套属性）</code></pre>  参数为String时，必须指定@Param注解，但是当有多个参数时，可以不用注解，猜想可能是把多个参数自动封装成一个对象了</li>
-<li>mybatis 基于注解使用@ResultMap(“?”) 来使用xml中定义的reslutmap<br>  只能引用通过@Result注解定义的，并指定名称的resultmap</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <tags>
-        <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>spring</title>
-    <url>/202007/uncategorized/spring/</url>
-    <content><![CDATA[<h1 id="spring"><a href="#spring" class="headerlink" title="spring"></a>spring</h1><blockquote>
-<p>How</p>
-</blockquote>
-<ul>
-<li>MATE-INF<br>  spring.factories</li>
-<li>profile / @  spring-boot-starter-parent<br>  手动重新引入maven依赖<br>  父级pom对所有子级生效，子级覆盖父级，子级优先级更高</li>
-<li>spring-boot-devtools</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <tags>
-        <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>sql</title>
-    <url>/202007/uncategorized/sql/</url>
-    <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><blockquote>
-<p>How</p>
-</blockquote>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>混合排序<br>子查询： 将一个查询（子查询）的结果作为另一个查询（主查询）的数据来源或判断的来源。<br>相关子查询: 依赖于主查询，多数情况下是子查询的WHERE子句中引用了主查询的表。</p>
-<h2 id="外键"><a href="#外键" class="headerlink" title="外键"></a>外键</h2><p>数据库外键<br>    保证数据的一致性，完整性<br>外键功能实现方式<br>    RESTRICT       在更新和删除时进行一致性检查<br>    CASCADE        在更新和删除时级联执行</p>
-<p>在使用时不应该一刀切的决定用或者不用外键，应该根据具体的场景做决策。</p>
-<p>使用数据库外键会增加数据库压力，不适用数据库外键需由服务层来处理数据一致性。</p>
-<h2 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h2><p>LEFT JOIN  -&gt; A<br>RIGHT JOIN -&gt; B<br>INNER JOIN -&gt; A ∩ B<br>FULL JOIN -&gt; A ∪ B</p>
-<h2 id="EXIST-与-IN"><a href="#EXIST-与-IN" class="headerlink" title="EXIST 与 IN"></a>EXIST 与 IN</h2><p>后面跟的都是子查询<br>EXIST 指定一个相关子查询，检测行的存在</p>
-<h2 id="NOT-EXIST-与-NOT-IN"><a href="#NOT-EXIST-与-NOT-IN" class="headerlink" title="NOT EXIST 与 NOT IN"></a>NOT EXIST 与 NOT IN</h2><p>NOT EXIST 效率比 IN 要高</p>
-<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><p>当数据量足够大且分页当前页足够大时，查询会很慢，这时可以根据排序字段加条件，用条件来减少数据量。</p>
-<h2 id="关联更新、删除"><a href="#关联更新、删除" class="headerlink" title="关联更新、删除"></a>关联更新、删除</h2><p>UPDATE JOIN ON </p>
-<h2 id="提交缩小查询范围"><a href="#提交缩小查询范围" class="headerlink" title="提交缩小查询范围"></a>提交缩小查询范围</h2><p>主表连接副表查询，最后limit，可以先对主表做limit查询，最后在关联副表</p>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <tags>
-        <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机</title>
-    <url>/202007/uncategorized/%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
-    <content><![CDATA[<h1 id="计算机"><a href="#计算机" class="headerlink" title="计算机"></a>计算机</h1><blockquote>
-<p>How</p>
-</blockquote>
-<h2 id="冯诺依曼体系"><a href="#冯诺依曼体系" class="headerlink" title="冯诺依曼体系"></a>冯诺依曼体系</h2><p>输入设备、输出设备、计算器、存储器、控制器</p>
-<h2 id="电脑组成部分"><a href="#电脑组成部分" class="headerlink" title="电脑组成部分"></a>电脑组成部分</h2><h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>存储设备<br>优点：空间大<br>缺点：读写速度慢  </p>
-<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>临时储存区域<br>优点：读写速度大于硬盘，差不多10倍<br>缺点：空间小，断电清除  </p>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>中央处理器，运算器、控制器</p>
-<ul>
-<li>多核CPU与多个CPU<br>多核CPU成本高，但是性能好，多个CPU成本低，但性能差</li>
-</ul>
-<h3 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h3><p>显示芯片、显存、相关电路组成</p>
-<ul>
-<li>集成显卡<br>电路集成在主板上，一般与CPU共用内存</li>
-<li>独立显卡<br>单独的显卡主板、显存</li>
-<li>核芯显卡<br>CPU与GPU合二为一</li>
-</ul>
-<h3 id="其它设备"><a href="#其它设备" class="headerlink" title="其它设备"></a>其它设备</h3><p>风扇<br>电源<br>显示器<br>打印机  </p>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <tags>
-        <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>类之间关系</title>
-    <url>/202007/UML/%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/</url>
-    <content><![CDATA[<h1 id="类之间的关系"><a href="#类之间的关系" class="headerlink" title="类之间的关系"></a>类之间的关系</h1><p>面向对象 类之间的关联</p>
-<h2 id="泛化（Generalization）-is-a"><a href="#泛化（Generalization）-is-a" class="headerlink" title="泛化（Generalization） is a"></a>泛化（Generalization） is a</h2><p>表现为继承或实现关系。具体形式为类与类之间的继承管理，接口与接口之间的继承关系，类对接口的实现关系。</p>
-<ul>
-<li>继承：实线 + 三角空心箭头，从子类指向父类。</li>
-<li>实现：虚线 + 三角空心箭头，从实现类指向接口。</li>
-</ul>
-<h2 id="关联（Association）-has-a"><a href="#关联（Association）-has-a" class="headerlink" title="关联（Association） has a"></a>关联（Association） has a</h2><p>表现为全局变量。可以是单向，也可以是双向。</p>
-<ul>
-<li>实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h3 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h3><p>强的关联关联。强调一个是整体，一个是部分，但不是组成部分。</p>
-<ul>
-<li>空心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h3 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h3><p>比聚合关系强的关系。强调部分是整体的组成部分，部分和整体拥有一致的生命周期。</p>
-<ul>
-<li>实心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h2 id="依赖（Dependency）-use-a"><a href="#依赖（Dependency）-use-a" class="headerlink" title="依赖（Dependency） use a"></a>依赖（Dependency） use a</h2><p>表示一个类依赖于另一个类。具体形式为局部变量，静态方法调用，方法参数。</p>
-<ul>
-<li>虚线 + 普通箭头，从主类指向被依赖类。</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
       <categories>
-        <category>UML</category>
+        <category>API</category>
       </categories>
       <tags>
         <tag>How</tag>
@@ -238,8 +111,520 @@
       </tags>
   </entry>
   <entry>
+    <title>类之间关系</title>
+    <url>/202007/UML/%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/</url>
+    <content><![CDATA[<p>面向对象 类之间的关联</p>
+<h2 id="泛化（Generalization）-is-a"><a href="#泛化（Generalization）-is-a" class="headerlink" title="泛化（Generalization） is a"></a>泛化（Generalization） is a</h2><p>表现为继承或实现关系。具体形式为类与类之间的继承管理，接口与接口之间的继承关系，类对接口的实现关系。</p>
+<ul>
+<li>继承：实线 + 三角空心箭头，从子类指向父类。</li>
+<li>实现：虚线 + 三角空心箭头，从实现类指向接口。</li>
+</ul>
+<h2 id="关联（Association）-has-a"><a href="#关联（Association）-has-a" class="headerlink" title="关联（Association） has a"></a>关联（Association） has a</h2><p>表现为全局变量。可以是单向，也可以是双向。</p>
+<ul>
+<li>实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h3 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h3><p>强的关联关联。强调一个是整体，一个是部分，但不是组成部分。</p>
+<ul>
+<li>空心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h3 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h3><p>比聚合关系强的关系。强调部分是整体的组成部分，部分和整体拥有一致的生命周期。</p>
+<ul>
+<li>实心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h2 id="依赖（Dependency）-use-a"><a href="#依赖（Dependency）-use-a" class="headerlink" title="依赖（Dependency） use a"></a>依赖（Dependency） use a</h2><p>表示一个类依赖于另一个类。具体形式为局部变量，静态方法调用，方法参数。</p>
+<ul>
+<li>虚线 + 普通箭头，从主类指向被依赖类。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>UML</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BeanValidation</title>
+    <url>/202002/Java/beanvalidation/</url>
+    <content><![CDATA[<h2 id="Bean-Validation"><a href="#Bean-Validation" class="headerlink" title="Bean Validation"></a>Bean Validation</h2><pre><code>Bean Validation是一个运行时的数据验证框架，为JavaBean验证定义了相应的元数据模型和Api。</code></pre><table>
+<thead>
+<tr>
+<th>JSR版本</th>
+<th>Bean Validation版本</th>
+<th>发布时间</th>
+<th>hibernate实现版本</th>
+<th>apache BLal实现版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>303</td>
+<td>1.0</td>
+<td>2009年javaee 6</td>
+<td>4.3.1.Final</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>349</td>
+<td>1.1</td>
+<td>2013年javaee 7</td>
+<td>5.1.1.Final</td>
+<td>1.1.1</td>
+</tr>
+<tr>
+<td>380</td>
+<td>2.0</td>
+<td>2017年javaee 8</td>
+<td>6.0.1.Final</td>
+<td>2.0.3</td>
+</tr>
+</tbody></table>
+<h2 id="Hibernate-Validation"><a href="#Hibernate-Validation" class="headerlink" title="Hibernate Validation"></a>Hibernate Validation</h2><pre><code>hibernate validation是对这个规范的实践，他提供了相应的实现，并增加了一些其他校验注解(后期规范更新，hibernate将重复的标记了@Departure)，他们位于org.hibernate.validator.constraints包下。</code></pre><h2 id="Spring-Validataion"><a href="#Spring-Validataion" class="headerlink" title="Spring Validataion"></a>Spring Validataion</h2><pre><code>spring validation对hibernate validation进行了二次封装，在springmvc模块中添加了自动校验，并将校验信息封装进了特定的类（BindingResult）中。</code></pre><h2 id="Validated-和-Valid-的区别"><a href="#Validated-和-Valid-的区别" class="headerlink" title="@Validated 和 @Valid 的区别"></a>@Validated 和 @Valid 的区别</h2><ul>
+<li>@Validted 支持分组校验，@Valid不支持。</li>
+<li>@Valid支持嵌套验证，@Validated不支持。</li>
+<li>@Validated可以将校验结果绑定到BindingResult中，而不抛出异常。<br>  必须一个校验对象一个BindingResult，一一对应且紧随其后。</li>
+<li>在没有分组校验及嵌套校验的情况下， 效果一致。</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><pre><code>https://beanvalidation.org</code></pre><p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+        <tag>Validate</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo搭建博客</title>
+    <url>/202003/%E5%85%83/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h1><blockquote>
+<p>GitHub Pages 允许开发者自定义项目的首页，代替直接展示代码的方式。</p>
+</blockquote>
+<h2 id="Jekyll"><a href="#Jekyll" class="headerlink" title="Jekyll"></a>Jekyll</h2><blockquote>
+<p>GitHub Pages 默认的静态网站生成工具，通过项目中的相应的配置文件，可以自动打包部署。</p>
+</blockquote>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
+<p>静态网站生成工具，可以通过配置使GitHub支持。</p>
+</blockquote>
+<h2 id="Jekyll-VS-Hexo"><a href="#Jekyll-VS-Hexo" class="headerlink" title="Jekyll VS Hexo"></a>Jekyll VS Hexo</h2><ul>
+<li>本地开发预览<blockquote>
+<p>Jekyll 需要搭建完整的Ruby环境。<br>Hexo 需要搭建NodeJS环境。</p>
+</blockquote>
+</li>
+<li>迁移<blockquote>
+<p>GitHub Pages中对Jekyll的支持，使得我们太多去关心Jekyll的配置以及插件，这会在迁移过程中造成一定的影响。因为不知道配置是什么，及使用了哪些插件。<br>Hexo的配置是自定义的。  </p>
+</blockquote>
+<h2 id="Gitee"><a href="#Gitee" class="headerlink" title="Gitee"></a>Gitee</h2><blockquote>
+<p>由于GitHub访问速度问题，也可使用Gitee Pages功能，其概念和GitHub概念相似。  </p>
+</blockquote>
+<h3 id="GitHub-Pages-VS-Gitee-Pages"><a href="#GitHub-Pages-VS-Gitee-Pages" class="headerlink" title="GitHub Pages VS Gitee Pages"></a>GitHub Pages VS Gitee Pages</h3><blockquote>
+<p>Gitee 支持Jekyll、Hexo、Hugo，GitHub只支持Jekyll。<br>GitHub 支持自动打包部署，检测到代码提交时执行。Gitee个人免费版不知道自动打包部署，需要手动进行。<br>GitHub 支持自定义域名。Gitee个人免费版不支持。<br>GitHub 只支持master、gh-pages分支，当使用根路径访问时只支持master分支。Gitee支持任意分支。</p>
+</blockquote>
+<h2 id="自动打包部署"><a href="#自动打包部署" class="headerlink" title="自动打包部署"></a>自动打包部署</h2><blockquote>
+<p>对于支持自动打包部署的情况，只需要提交源码到对应的分支就行，会自动打包并部署。<br>而不支持自动打包部署的情况，需要在本地通过命令生成部署到对应的分支。而将源码提交到另一个分支。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="Hexo-搭建过程"><a href="#Hexo-搭建过程" class="headerlink" title="Hexo 搭建过程"></a>Hexo 搭建过程</h1><h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><blockquote>
+<p>hexo init命令需要空文件夹，git clone会生成一个不为空的文件夹，所以创建过程中需要按以下步骤进行。</p>
+</blockquote>
+<ol>
+<li>初始化hexo项目<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npx hexo init &lt;dir name&gt;</span><br></pre></td></tr></table></figure>
+PS: 如不指定目录名称，则在当前文件夹下初始化，要求该文件夹为空。</li>
+<li>初始化git仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+<li>关联远程仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h2><blockquote>
+<p>项目目录下的_config.yml为站点配置文件，themes/?/_config.yml为主题配置文件。将主题文件复制到source/_data/next.yml进行修改。</p>
+</blockquote>
+<ol>
+<li>网站配置<br>其中 language为主题要求的值。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&lt;title&gt;</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&lt;subtitle&gt;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&lt;description&gt;</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">&lt;keywords&gt;</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">&lt;author&gt;</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/shanghai</span></span><br></pre></td></tr></table></figure></li>
+<li>URL 配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year:month/:category/:post_title/</span></span><br></pre></td></tr></table></figure></li>
+<li>发布配置<br>可配置多个<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li>
+<li>主题配置<br>使用最新NexT主题<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></li>
+<li>CNAME配置<br>如需自定义域名，且手动打包部署，则CNAME配置应跳过渲染。相对路径为source。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">CNAME</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><ol>
+<li>菜单配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure></li>
+<li>样式配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure></li>
+<li>pjax配置<br>页面局部刷新功能<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+添加依赖<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure></li>
+<li>其他配置<br>每个配置的地方都有注释说明。</li>
+</ol>
+<ul>
+<li>图标 favicon</li>
+<li>头像 avatar</li>
+<li>代码高亮样式 highlight_theme</li>
+<li>局部页面刷新 pjax</li>
+<li>中英文之间空格 pangu</li>
+<li>阅读进度条 reading_progress</li>
+<li>github_banner</li>
+<li>书签 bookmark</li>
+<li>评论 gitalk</li>
+<li>公式 math</li>
+<li>搜索 search</li>
+<li>RSS</li>
+<li>捐赠 reward</li>
+</ul>
+<h1 id="文章与页面"><a href="#文章与页面" class="headerlink" title="文章与页面"></a>文章与页面</h1><ol>
+<li>新建文章<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+layout为scaffolds中定义的模板，默认为post</li>
+<li>新建页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page archives/categories/tags/about</span><br></pre></td></tr></table></figure>
+在各自index.md中修改其type为主题菜单配置中名称，除about外，其它都不需要编辑。</li>
+<li>搜索页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-gengerator-searchdb</span><br></pre></td></tr></table></figure>
+站点配置中新增<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">    <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+主题配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">5</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li>404页面</li>
+</ol>
+<p><strong><em>END</em></strong></p>
+]]></content>
+      <categories>
+        <category>元</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/202004/VCS/Git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<ul>
+<li><p>添加远程仓库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add &lt;远程仓库名称，一般默认为origin&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除远程仓库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote remove &lt;远程仓库名称&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新/设置远程仓库地址</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加远程仓库地址</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url --add &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置用户名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置邮箱</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局设置用户名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局设置邮箱</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init ...</span><br><span class="line">git add ...</span><br><span class="line">git commit -m "..."</span><br><span class="line">git status</span><br><span class="line">git diff 文件名</span><br><span class="line">git log </span><br><span class="line">git reset --hard HEAD^ / 版本号</span><br><span class="line">git reflog </span><br><span class="line">git checkout -- 文件名</span><br><span class="line">git checkout 分支名</span><br><span class="line">git remote add origin 远程仓库路径</span><br><span class="line">git push -u origin master</span><br><span class="line">git push origin master</span><br><span class="line">git clone</span><br><span class="line">git checkout -b 分支名 = git branch 分支名 + git checkout 分支名 （创建并切换分支）</span><br><span class="line">git merge 分支名</span><br><span class="line">git branch -d</span><br><span class="line">git merge -no-ff -m</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b 分支名 origin/分支名</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream 分支名 origin/分支名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git init &lt;repo&gt;</span><br><span class="line">git add &lt;file&gt; [ &lt;file&gt; ... ]</span><br><span class="line">git commit -m &lt;message&gt;</span><br><span class="line">git status</span><br><span class="line">git diff &lt;file&gt;</span><br><span class="line">git log [--pretty=oneline] （提交历史）</span><br><span class="line">git reset --hard HEAD^ / HEAD~&lt;num&gt; / &lt;commit id&gt;</span><br><span class="line">git reflog （命令历史）</span><br><span class="line">git diff -- HEAD &lt;file&gt;</span><br><span class="line">git checkout -- &lt;file&gt;</span><br><span class="line">git rm &lt;file&gt;</span><br><span class="line">git remote add origin &lt;URL&gt;</span><br><span class="line">git push -u orgin &lt;branch&gt;</span><br><span class="line">git clone &lt;URL&gt;</span><br><span class="line">git checkout -b &lt;branch&gt; = git branch &lt;branch&gt; + git checkout &lt;branch&gt; = git switch - c &lt;branch&gt;</span><br><span class="line">git branch</span><br><span class="line">git checkout &lt;branch&gt;</span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line">git branch -d &lt;branch&gt;</span><br><span class="line">git switch &lt;branch&gt;</span><br><span class="line">git log --graph</span><br><span class="line">git merge --no-ff [-m &lt;message&gt;] &lt;branch&gt;</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git stash apply stash@&#123;&lt;num&gt;&#125;</span><br><span class="line">git cherry-pick &lt;commit id&gt;</span><br><span class="line">git branch -D &lt;branch&gt;</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git rebase</span><br><span class="line">git tag &lt;tag&gt;</span><br><span class="line">git tag</span><br><span class="line">git tag &lt;tag&gt; &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>VCS</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Heox文章规范</title>
+    <url>/202007/%E5%85%83/heox%E6%96%87%E7%AB%A0%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<blockquote>
+<p>在此列举出一些规则，之后编写文章时都应遵循这些规则。该规则逐渐丰富。</p>
+</blockquote>
+<ul>
+<li>文章最高使用二级标题，逐级递减，不适用一级标题。</li>
+<li>文章添加分类，根据Hexo的描述，使用二级分类。</li>
+</ul>
+<p><img src="%5Cimages%5Cpasted-0.png" alt="upload successful"></p>
+<ul>
+<li>缩进，还没有找到好的缩进方式。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo admin后台管理</title>
+    <url>/202007/%E5%85%83/hexo-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>使用hexo搭建博客之后，通过在编辑器里面来记录文章总归不是一个好的方式，而hexo admin提供了后台管理的页面来通过页面管理文章。</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
+<p>安装好之后会在根目录下生成一个配置文件，该配置文件可以保存页面settings中的配置。</p>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>管理页面中deploy功能需要添加配置。</p>
+<ol>
+<li>在_config.yml 中添加amdin发布命令的脚本路径。</li>
+<li>创建脚本文件。</li>
+</ol>
+<p>PS: 该功能没有实现 </p>
+<h2 id="线上"><a href="#线上" class="headerlink" title="线上"></a>线上</h2><p>github Pages是静态网站，不支持。支持其它动态的服务器。</p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>hexo admin 可以在编辑器内复制图片，图片将保存在images文件夹下，可自定义。<br>windows复制的图片需要去掉...\。</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ol>
+<li>Posts页面没有分类，所有文章放在一起，看起来比较乱。</li>
+<li>新建文章能否按照分类按文件夹存放。</li>
+<li>添加分类和标签时只能输入，不能选择。</li>
+<li>不能编辑文章的描述，该描述影响列表页面的内容。</li>
+</ol>
+<p>PS：<br>（2）. 可以在文章编辑界面上方修改文章路径。<br>（4）. 可以在_config.yml中添加 metadata - description 支持。</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/202004/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<blockquote>
+<p>&emsp;&emsp;之前对于数据结构的理解是，存储数据的方式，最近看到概念说数据结构是元素的集合，带着这个疑问，深入探索这个问题。<br>记录每种结构的存储方式，特性及优缺点。</p>
+</blockquote>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p>逻辑结构： 数据存储的方式<br>物理结构： 具有一定特性的元素的集合</p>
+</blockquote>
+<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
+<p>固定大小的结构</p>
+</blockquote>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><blockquote>
+<p>顺序结构</p>
+</blockquote>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><blockquote>
+<p>后进先去</p>
+</blockquote>
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><blockquote>
+<p>先进先出</p>
+</blockquote>
+<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><blockquote>
+<p>哈希函数，存储key</p>
+</blockquote>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><blockquote>
+<p>层次结构</p>
+</blockquote>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><blockquote>
+<p>有顺序的树</p>
+</blockquote>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><blockquote>
+<p>图结构</p>
+</blockquote>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>Why</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据类型</title>
+    <url>/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<blockquote>
+<p>最近做小数计算，发现double比long的最大值大了好多，甚至float最大值都比long最大值大，而float是32位存储空间，long是64位存储空间，带着这个疑问，进行深入探索。<br>PS: 本文所提到的所有类型，以Java语言为准。</p>
+</blockquote>
+<h2 id="Java-数据类型"><a href="#Java-数据类型" class="headerlink" title="Java 数据类型"></a>Java 数据类型</h2><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>存储空间(bit)</th>
+<th>存储范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>1</td>
+<td>0/1</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>8</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16</td>
+<td>0~65536</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16</td>
+<td>-32768~32767</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32</td>
+<td>-2,147,483,648~2,147,483,647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64</td>
+<td>-9,223,372,036,854,775,808~9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32</td>
+<td>-3.4028235E38~3.4028235E38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64</td>
+<td>-1.7976931348623157E308~1.7976931348623157E308</td>
+</tr>
+</tbody></table>
+<h3 id="long"><a href="#long" class="headerlink" title="long"></a>long</h3><p>想要保存比long最大值还大的整数，使用BigInteger，性能会有所降低。</p>
+<h3 id="double-VS-long"><a href="#double-VS-long" class="headerlink" title="double VS long"></a>double VS long</h3><ul>
+<li>double和long都是64位，double最大值远大于long最大值<blockquote>
+<p>存储方式不一样，double中可以使用阶数存储。<br>double 64位 = 1位符号 + 11位阶码（带符号） + 52位尾数</p>
+</blockquote>
+</li>
+<li>E308，为何是308次方<blockquote>
+<p>log(2^(2^10-1)) 大于308小于309。 2^10-1: 阶码最大值，阶码首位为符号，正数从0开始。log(2^X): 计算机中2为阶底，转为以10为阶底。</p>
+</blockquote>
+</li>
+<li>double有效数字为16位，long有效数字为19<blockquote>
+<p>使用阶数存储，但是需要丢失末尾的精确度，会四舍五入。<br>2^52 = 4,503,599,627,370,496, 最大值为16位数，所以有效数字为16位。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="float-VS-int"><a href="#float-VS-int" class="headerlink" title="float VS int"></a>float VS int</h3><p>与double、long同理</p>
+<h2 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a>IEEE 754</h2><p>二进制浮点数算术标准。Java中float，double都符合该标准。</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>计算机组成原理</category>
+      </categories>
+      <tags>
+        <tag>Why</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>maven</title>
+    <url>/202007/Java/maven/</url>
+    <content><![CDATA[<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><blockquote>
+<p>Why</p>
+</blockquote>
+<ul>
+<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mybatis</title>
+    <url>/202007/Java/Mybatis/mybatis/</url>
+    <content><![CDATA[<h1 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h1><blockquote>
+<p>How</p>
+</blockquote>
+<ul>
+<li>mybatis 基于注解的sql可以不用写script？<br>  script 标签中可以使用xml中的标签来实现复杂语句的查询</li>
+<li>mybatis 多个参数时使用@Param 注解指定？<br>  不使用@Param注解：<pre><code>参数为基本类型，可以有多个
+参数为javabean对象，且只能有一个，使用时直接用对象的属性（注解无法获取多个属性，只能获取嵌套属性）</code></pre>  参数为String时，必须指定@Param注解，但是当有多个参数时，可以不用注解，猜想可能是把多个参数自动封装成一个对象了</li>
+<li>mybatis 基于注解使用@ResultMap(“?”) 来使用xml中定义的reslutmap<br>  只能引用通过@Result注解定义的，并指定名称的resultmap</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Mybatis</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+        <tag>Mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>spring</title>
+    <url>/202007/Java/Spring/spring/</url>
+    <content><![CDATA[<ul>
+<li>MATE-INF<br>  spring.factories</li>
+<li>profile / @  spring-boot-starter-parent<br>  手动重新引入maven依赖<br>  父级pom对所有子级生效，子级覆盖父级，子级优先级更高</li>
+<li>spring-boot-devtools</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Spring</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>lamada</title>
+    <url>/202002/Java/JDK8/lamada/</url>
+    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
+<p>lamada VS 匿名内部类</p>
+<ol>
+<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
+<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
+<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
+</ol>
+<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
+<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
+<li>Consumer<T> 消费型<br> void accept(T t);</li>
+<li>Supplier<T> 提供型<br> T get();</li>
+<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
+<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
+</ol>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JDK8</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CPU</title>
+    <url>/202007/%E7%94%9F%E6%B4%BB/%E7%94%B5%E8%84%91/cpu/</url>
+    <content><![CDATA[<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>CPU架构是CPU厂商给属于同一系列的CPU产品定的一个规范，是区分不同类型的CPU的重要标识。<br>主流架构有inter公司、AMD公司的×86架构，IBM公司的PowerPC架构，ARM公司的ARM架构。</p>
+<h2 id="厂商"><a href="#厂商" class="headerlink" title="厂商"></a>厂商</h2><p>Inter，AMD，IBM，高通，龙芯（国产）, VIA威盛（台湾）等。</p>
+<h2 id="品牌"><a href="#品牌" class="headerlink" title="品牌"></a>品牌</h2><h3 id="inter"><a href="#inter" class="headerlink" title="inter"></a>inter</h3><p>酷睿 core i3/i5/i7/i9<br>赛扬<br>奔腾  </p>
+<blockquote>
+<p>性能： 酷睿 &gt; 奔腾 &gt; 赛扬</p>
+</blockquote>
+<h3 id="高通"><a href="#高通" class="headerlink" title="高通"></a>高通</h3><p>骁龙</p>
+<h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>基本一年更新一次，如酷睿系列、高通骁龙系列</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>生活</category>
+        <category>电脑</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>计算机</title>
+    <url>/202007/%E7%94%9F%E6%B4%BB/%E7%94%B5%E8%84%91/%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
+    <content><![CDATA[<h2 id="冯诺依曼体系"><a href="#冯诺依曼体系" class="headerlink" title="冯诺依曼体系"></a>冯诺依曼体系</h2><p>输入设备、输出设备、计算器、存储器、控制器</p>
+<h2 id="电脑组成部分"><a href="#电脑组成部分" class="headerlink" title="电脑组成部分"></a>电脑组成部分</h2><h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>存储设备<br>优点：空间大<br>缺点：读写速度慢  </p>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>临时储存区域<br>优点：读写速度大于硬盘，差不多10倍<br>缺点：空间小，断电清除  </p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>中央处理器，运算器、控制器</p>
+<ul>
+<li>多核CPU与多个CPU<br>多核CPU成本高，但是性能好，多个CPU成本低，但性能差</li>
+</ul>
+<h3 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h3><p>显示芯片、显存、相关电路组成</p>
+<ul>
+<li>集成显卡<br>电路集成在主板上，一般与CPU共用内存</li>
+<li>独立显卡<br>单独的显卡主板、显存</li>
+<li>核芯显卡<br>CPU与GPU合二为一</li>
+</ul>
+<h3 id="其它设备"><a href="#其它设备" class="headerlink" title="其它设备"></a>其它设备</h3><p>风扇<br>电源<br>显示器<br>打印机  </p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>生活</category>
+        <category>电脑</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CentOS8</title>
-    <url>/202002/DevOps/centos8/</url>
+    <url>/202002/%E8%BF%90%E7%BB%B4/Linux/centos8/</url>
     <content><![CDATA[<blockquote>
 <p>最近centos 8发布，而且之前系统安装软件、文件路径都不太符合现在所理解的一些规范，所以准备重新安装系统。</p>
 </blockquote>
@@ -411,350 +796,12 @@
 <p style="text-align: center"><strong>END</strong></p>
 ]]></content>
       <categories>
-        <category>DevOps</category>
+        <category>运维</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>How</tag>
         <tag>CentOS8</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BeanValidation</title>
-    <url>/202002/Java/beanvalidation/</url>
-    <content><![CDATA[<h2 id="Bean-Validation"><a href="#Bean-Validation" class="headerlink" title="Bean Validation"></a>Bean Validation</h2><pre><code>Bean Validation是一个运行时的数据验证框架，为JavaBean验证定义了相应的元数据模型和Api。</code></pre><table>
-<thead>
-<tr>
-<th>JSR版本</th>
-<th>Bean Validation版本</th>
-<th>发布时间</th>
-<th>hibernate实现版本</th>
-<th>apache BLal实现版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>303</td>
-<td>1.0</td>
-<td>2009年javaee 6</td>
-<td>4.3.1.Final</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>349</td>
-<td>1.1</td>
-<td>2013年javaee 7</td>
-<td>5.1.1.Final</td>
-<td>1.1.1</td>
-</tr>
-<tr>
-<td>380</td>
-<td>2.0</td>
-<td>2017年javaee 8</td>
-<td>6.0.1.Final</td>
-<td>2.0.3</td>
-</tr>
-</tbody></table>
-<h2 id="Hibernate-Validation"><a href="#Hibernate-Validation" class="headerlink" title="Hibernate Validation"></a>Hibernate Validation</h2><pre><code>hibernate validation是对这个规范的实践，他提供了相应的实现，并增加了一些其他校验注解(后期规范更新，hibernate将重复的标记了@Departure)，他们位于org.hibernate.validator.constraints包下。</code></pre><h2 id="Spring-Validataion"><a href="#Spring-Validataion" class="headerlink" title="Spring Validataion"></a>Spring Validataion</h2><pre><code>spring validation对hibernate validation进行了二次封装，在springmvc模块中添加了自动校验，并将校验信息封装进了特定的类（BindingResult）中。</code></pre><h2 id="Validated-和-Valid-的区别"><a href="#Validated-和-Valid-的区别" class="headerlink" title="@Validated 和 @Valid 的区别"></a>@Validated 和 @Valid 的区别</h2><ul>
-<li>@Validted 支持分组校验，@Valid不支持。</li>
-<li>@Valid支持嵌套验证，@Validated不支持。</li>
-<li>@Validated可以将校验结果绑定到BindingResult中，而不抛出异常。<br>  必须一个校验对象一个BindingResult，一一对应且紧随其后。</li>
-<li>在没有分组校验及嵌套校验的情况下， 效果一致。</li>
-</ul>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><pre><code>https://beanvalidation.org</code></pre><p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-        <tag>validation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>lamada</title>
-    <url>/202002/Java/lamada/</url>
-    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
-<p>lamada VS 匿名内部类</p>
-<ol>
-<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
-<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
-<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
-</ol>
-<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
-<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
-<li>Consumer<T> 消费型<br> void accept(T t);</li>
-<li>Supplier<T> 提供型<br> T get();</li>
-<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
-<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
-</ol>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构</title>
-    <url>/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><blockquote>
-<p>Why<br>&emsp;&emsp;之前对于数据结构的理解是，存储数据的方式，最近看到概念说数据结构是元素的集合，带着这个疑问，深入探索这个问题。<br>记录每种结构的存储方式，特性及优缺点。</p>
-</blockquote>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
-<p>逻辑结构： 数据存储的方式<br>物理结构： 具有一定特性的元素的集合</p>
-</blockquote>
-<h1 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><blockquote>
-<p>固定大小的结构</p>
-</blockquote>
-<h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><blockquote>
-<p>顺序结构</p>
-</blockquote>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><blockquote>
-<p>后进先去</p>
-</blockquote>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><blockquote>
-<p>先进先出</p>
-</blockquote>
-<h2 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h2><blockquote>
-<p>哈希函数，存储key</p>
-</blockquote>
-<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><blockquote>
-<p>层次结构</p>
-</blockquote>
-<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><blockquote>
-<p>有顺序的树</p>
-</blockquote>
-<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><blockquote>
-<p>图结构</p>
-</blockquote>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>计算机基础</category>
-      </categories>
-      <tags>
-        <tag>Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据类型</title>
-    <url>/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>&emsp;&emsp;数据的类型。</p>
-<blockquote>
-<p>Why<br>最近做小数计算，发现double比long的最大值大了好多，甚至float最大值都比long最大值大，而float是32位存储空间，long是64位存储空间，带着这个疑问，进行深入探索。<br>PS: 本文所提到的所有类型，以Java语言为准。</p>
-</blockquote>
-<h1 id="Java-数据类型"><a href="#Java-数据类型" class="headerlink" title="Java 数据类型"></a>Java 数据类型</h1><table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>存储空间(bit)</th>
-<th>存储范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>boolean</td>
-<td>1</td>
-<td>0/1</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>8</td>
-<td>-128~127</td>
-</tr>
-<tr>
-<td>char</td>
-<td>16</td>
-<td>0~65536</td>
-</tr>
-<tr>
-<td>short</td>
-<td>16</td>
-<td>-32768~32767</td>
-</tr>
-<tr>
-<td>int</td>
-<td>32</td>
-<td>-2,147,483,648~2,147,483,647</td>
-</tr>
-<tr>
-<td>long</td>
-<td>64</td>
-<td>-9,223,372,036,854,775,808~9,223,372,036,854,775,807</td>
-</tr>
-<tr>
-<td>float</td>
-<td>32</td>
-<td>-3.4028235E38~3.4028235E38</td>
-</tr>
-<tr>
-<td>double</td>
-<td>64</td>
-<td>-1.7976931348623157E308~1.7976931348623157E308</td>
-</tr>
-</tbody></table>
-<h2 id="long"><a href="#long" class="headerlink" title="long"></a>long</h2><p>想要保存比long最大值还大的整数，使用BigInteger，性能会有所降低。</p>
-<h2 id="double-VS-long"><a href="#double-VS-long" class="headerlink" title="double VS long"></a>double VS long</h2><ul>
-<li>double和long都是64位，double最大值远大于long最大值<blockquote>
-<p>存储方式不一样，double中可以使用阶数存储。<br>double 64位 = 1位符号 + 11位阶码（带符号） + 52位尾数</p>
-</blockquote>
-</li>
-<li>E308，为何是308次方<blockquote>
-<p>log(2^(2^10-1)) 大于308小于309。 2^10-1: 阶码最大值，阶码首位为符号，正数从0开始。log(2^X): 计算机中2为阶底，转为以10为阶底。</p>
-</blockquote>
-</li>
-<li>double有效数字为16位，long有效数字为19<blockquote>
-<p>使用阶数存储，但是需要丢失末尾的精确度，会四舍五入。<br>2^52 = 4,503,599,627,370,496, 最大值为16位数，所以有效数字为16位。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="float-VS-int"><a href="#float-VS-int" class="headerlink" title="float VS int"></a>float VS int</h2><p>与double、long同理</p>
-<h1 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a>IEEE 754</h1><p>二进制浮点数算术标准。Java中float，double都符合该标准。</p>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>计算机基础</category>
-      </categories>
-      <tags>
-        <tag>Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo搭建博客</title>
-    <url>/202003/Tools/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h1><blockquote>
-<p>GitHub Pages 允许开发者自定义项目的首页，代替直接展示代码的方式。</p>
-</blockquote>
-<h2 id="Jekyll"><a href="#Jekyll" class="headerlink" title="Jekyll"></a>Jekyll</h2><blockquote>
-<p>GitHub Pages 默认的静态网站生成工具，通过项目中的相应的配置文件，可以自动打包部署。</p>
-</blockquote>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
-<p>静态网站生成工具，可以通过配置使GitHub支持。</p>
-</blockquote>
-<h2 id="Jekyll-VS-Hexo"><a href="#Jekyll-VS-Hexo" class="headerlink" title="Jekyll VS Hexo"></a>Jekyll VS Hexo</h2><ul>
-<li>本地开发预览<blockquote>
-<p>Jekyll 需要搭建完整的Ruby环境。<br>Hexo 需要搭建NodeJS环境。</p>
-</blockquote>
-</li>
-<li>迁移<blockquote>
-<p>GitHub Pages中对Jekyll的支持，使得我们太多去关心Jekyll的配置以及插件，这会在迁移过程中造成一定的影响。因为不知道配置是什么，及使用了哪些插件。<br>Hexo的配置是自定义的。  </p>
-</blockquote>
-<h2 id="Gitee"><a href="#Gitee" class="headerlink" title="Gitee"></a>Gitee</h2><blockquote>
-<p>由于GitHub访问速度问题，也可使用Gitee Pages功能，其概念和GitHub概念相似。  </p>
-</blockquote>
-<h3 id="GitHub-Pages-VS-Gitee-Pages"><a href="#GitHub-Pages-VS-Gitee-Pages" class="headerlink" title="GitHub Pages VS Gitee Pages"></a>GitHub Pages VS Gitee Pages</h3><blockquote>
-<p>Gitee 支持Jekyll、Hexo、Hugo，GitHub只支持Jekyll。<br>GitHub 支持自动打包部署，检测到代码提交时执行。Gitee个人免费版不知道自动打包部署，需要手动进行。<br>GitHub 支持自定义域名。Gitee个人免费版不支持。<br>GitHub 只支持master、gh-pages分支，当使用根路径访问时只支持master分支。Gitee支持任意分支。</p>
-</blockquote>
-<h2 id="自动打包部署"><a href="#自动打包部署" class="headerlink" title="自动打包部署"></a>自动打包部署</h2><blockquote>
-<p>对于支持自动打包部署的情况，只需要提交源码到对应的分支就行，会自动打包并部署。<br>而不支持自动打包部署的情况，需要在本地通过命令生成部署到对应的分支。而将源码提交到另一个分支。</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="Hexo-搭建过程"><a href="#Hexo-搭建过程" class="headerlink" title="Hexo 搭建过程"></a>Hexo 搭建过程</h1><h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><blockquote>
-<p>hexo init命令需要空文件夹，git clone会生成一个不为空的文件夹，所以创建过程中需要按以下步骤进行。</p>
-</blockquote>
-<ol>
-<li>初始化hexo项目<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npx hexo init &lt;dir name&gt;</span><br></pre></td></tr></table></figure>
-PS: 如不指定目录名称，则在当前文件夹下初始化，要求该文件夹为空。</li>
-<li>初始化git仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
-<li>关联远程仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;url&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h2><blockquote>
-<p>项目目录下的_config.yml为站点配置文件，themes/?/_config.yml为主题配置文件。将主题文件复制到source/_data/next.yml进行修改。</p>
-</blockquote>
-<ol>
-<li>网站配置<br>其中 language为主题要求的值。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&lt;title&gt;</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&lt;subtitle&gt;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&lt;description&gt;</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">&lt;keywords&gt;</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">&lt;author&gt;</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/shanghai</span></span><br></pre></td></tr></table></figure></li>
-<li>URL 配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year:month/:category/:post_title/</span></span><br></pre></td></tr></table></figure></li>
-<li>发布配置<br>可配置多个<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li>
-<li>主题配置<br>使用最新NexT主题<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></li>
-<li>CNAME配置<br>如需自定义域名，且手动打包部署，则CNAME配置应跳过渲染。相对路径为source。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">CNAME</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><ol>
-<li>菜单配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure></li>
-<li>样式配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure></li>
-<li>pjax配置<br>页面局部刷新功能<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-添加依赖<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure></li>
-<li>其他配置<br>每个配置的地方都有注释说明。</li>
-</ol>
-<ul>
-<li>图标 favicon</li>
-<li>头像 avatar</li>
-<li>代码高亮样式 highlight_theme</li>
-<li>局部页面刷新 pjax</li>
-<li>中英文之间空格 pangu</li>
-<li>阅读进度条 reading_progress</li>
-<li>github_banner</li>
-<li>书签 bookmark</li>
-<li>评论 gitalk</li>
-<li>公式 math</li>
-<li>搜索 search</li>
-<li>RSS</li>
-<li>捐赠 reward</li>
-</ul>
-<h1 id="文章与页面"><a href="#文章与页面" class="headerlink" title="文章与页面"></a>文章与页面</h1><ol>
-<li>新建文章<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-layout为scaffolds中定义的模板，默认为post</li>
-<li>新建页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page archives/categories/tags/about</span><br></pre></td></tr></table></figure>
-在各自index.md中修改其type为主题菜单配置中名称，除about外，其它都不需要编辑。</li>
-<li>搜索页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-gengerator-searchdb</span><br></pre></td></tr></table></figure>
-站点配置中新增<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">    <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-主题配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">5</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
-<li>404页面</li>
-</ol>
-<p><strong><em>END</em></strong></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git常用命令</title>
-    <url>/202004/Tools/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<ul>
-<li><p>添加远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add &lt;远程仓库名称，一般默认为origin&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote remove &lt;远程仓库名称&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新/设置远程仓库地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加远程仓库地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url --add &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置用户名</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置邮箱</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>全局设置用户名</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>全局设置邮箱</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其他命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init ...</span><br><span class="line">git add ...</span><br><span class="line">git commit -m "..."</span><br><span class="line">git status</span><br><span class="line">git diff 文件名</span><br><span class="line">git log </span><br><span class="line">git reset --hard HEAD^ / 版本号</span><br><span class="line">git reflog </span><br><span class="line">git checkout -- 文件名</span><br><span class="line">git checkout 分支名</span><br><span class="line">git remote add origin 远程仓库路径</span><br><span class="line">git push -u origin master</span><br><span class="line">git push origin master</span><br><span class="line">git clone</span><br><span class="line">git checkout -b 分支名 = git branch 分支名 + git checkout 分支名 （创建并切换分支）</span><br><span class="line">git merge 分支名</span><br><span class="line">git branch -d</span><br><span class="line">git merge -no-ff -m</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b 分支名 origin/分支名</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream 分支名 origin/分支名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git init &lt;repo&gt;</span><br><span class="line">git add &lt;file&gt; [ &lt;file&gt; ... ]</span><br><span class="line">git commit -m &lt;message&gt;</span><br><span class="line">git status</span><br><span class="line">git diff &lt;file&gt;</span><br><span class="line">git log [--pretty=oneline] （提交历史）</span><br><span class="line">git reset --hard HEAD^ / HEAD~&lt;num&gt; / &lt;commit id&gt;</span><br><span class="line">git reflog （命令历史）</span><br><span class="line">git diff -- HEAD &lt;file&gt;</span><br><span class="line">git checkout -- &lt;file&gt;</span><br><span class="line">git rm &lt;file&gt;</span><br><span class="line">git remote add origin &lt;URL&gt;</span><br><span class="line">git push -u orgin &lt;branch&gt;</span><br><span class="line">git clone &lt;URL&gt;</span><br><span class="line">git checkout -b &lt;branch&gt; = git branch &lt;branch&gt; + git checkout &lt;branch&gt; = git switch - c &lt;branch&gt;</span><br><span class="line">git branch</span><br><span class="line">git checkout &lt;branch&gt;</span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line">git branch -d &lt;branch&gt;</span><br><span class="line">git switch &lt;branch&gt;</span><br><span class="line">git log --graph</span><br><span class="line">git merge --no-ff [-m &lt;message&gt;] &lt;branch&gt;</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git stash apply stash@&#123;&lt;num&gt;&#125;</span><br><span class="line">git cherry-pick &lt;commit id&gt;</span><br><span class="line">git branch -D &lt;branch&gt;</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git rebase</span><br><span class="line">git tag &lt;tag&gt;</span><br><span class="line">git tag</span><br><span class="line">git tag &lt;tag&gt; &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
       </tags>
   </entry>
 </search>
