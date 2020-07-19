@@ -111,25 +111,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Heox文章规范</title>
-    <url>/202007/%E5%85%83/heox%E6%96%87%E7%AB%A0%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<blockquote>
-<p>在此列举出一些规则，之后编写文章时都应遵循这些规则。该规则逐渐丰富。</p>
-</blockquote>
-<ul>
-<li>文章最高使用二级标题，逐级递减，不适用一级标题。</li>
-<li>文章添加分类，根据Hexo的描述，使用二级分类。</li>
-</ul>
-<p><img src="%5Cimages%5Cpasted-0.png" alt="upload successful"></p>
-<ul>
-<li>缩进，还没有找到好的缩进方式。</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>元</category>
-      </categories>
-  </entry>
-  <entry>
     <title>BeanValidation</title>
     <url>/202002/Java/beanvalidation/</url>
     <content><![CDATA[<h2 id="Bean-Validation"><a href="#Bean-Validation" class="headerlink" title="Bean Validation"></a>Bean Validation</h2><pre><code>Bean Validation是一个运行时的数据验证框架，为JavaBean验证定义了相应的元数据模型和Api。</code></pre><table>
@@ -178,6 +159,250 @@
       <tags>
         <tag>How</tag>
         <tag>Validate</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Heox文章规范</title>
+    <url>/202007/%E5%85%83/heox%E6%96%87%E7%AB%A0%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<blockquote>
+<p>在此列举出一些规则，之后编写文章时都应遵循这些规则。该规则逐渐丰富。</p>
+</blockquote>
+<ul>
+<li>文章最高使用二级标题，逐级递减，不适用一级标题。</li>
+<li>文章添加分类，根据Hexo的描述，使用二级分类。</li>
+</ul>
+<p><img src="/images/pasted-0.png" alt="upload successful"></p>
+<ul>
+<li>缩进，还没有找到好的缩进方式。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>类之间关系</title>
+    <url>/202007/UML/%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/</url>
+    <content><![CDATA[<p>面向对象 类之间的关联</p>
+<h2 id="泛化（Generalization）-is-a"><a href="#泛化（Generalization）-is-a" class="headerlink" title="泛化（Generalization） is a"></a>泛化（Generalization） is a</h2><p>表现为继承或实现关系。具体形式为类与类之间的继承管理，接口与接口之间的继承关系，类对接口的实现关系。</p>
+<ul>
+<li>继承：实线 + 三角空心箭头，从子类指向父类。</li>
+<li>实现：虚线 + 三角空心箭头，从实现类指向接口。</li>
+</ul>
+<h2 id="关联（Association）-has-a"><a href="#关联（Association）-has-a" class="headerlink" title="关联（Association） has a"></a>关联（Association） has a</h2><p>表现为全局变量。可以是单向，也可以是双向。</p>
+<ul>
+<li>实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h3 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h3><p>强的关联关联。强调一个是整体，一个是部分，但不是组成部分。</p>
+<ul>
+<li>空心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h3 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h3><p>比聚合关系强的关系。强调部分是整体的组成部分，部分和整体拥有一致的生命周期。</p>
+<ul>
+<li>实心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h2 id="依赖（Dependency）-use-a"><a href="#依赖（Dependency）-use-a" class="headerlink" title="依赖（Dependency） use a"></a>依赖（Dependency） use a</h2><p>表示一个类依赖于另一个类。具体形式为局部变量，静态方法调用，方法参数。</p>
+<ul>
+<li>虚线 + 普通箭头，从主类指向被依赖类。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>UML</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/202004/VCS/Git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<ul>
+<li><p>添加远程仓库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add &lt;远程仓库名称，一般默认为origin&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除远程仓库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote remove &lt;远程仓库名称&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新/设置远程仓库地址</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加远程仓库地址</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url --add &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置用户名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置邮箱</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局设置用户名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局设置邮箱</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init ...</span><br><span class="line">git add ...</span><br><span class="line">git commit -m "..."</span><br><span class="line">git status</span><br><span class="line">git diff 文件名</span><br><span class="line">git log </span><br><span class="line">git reset --hard HEAD^ / 版本号</span><br><span class="line">git reflog </span><br><span class="line">git checkout -- 文件名</span><br><span class="line">git checkout 分支名</span><br><span class="line">git remote add origin 远程仓库路径</span><br><span class="line">git push -u origin master</span><br><span class="line">git push origin master</span><br><span class="line">git clone</span><br><span class="line">git checkout -b 分支名 = git branch 分支名 + git checkout 分支名 （创建并切换分支）</span><br><span class="line">git merge 分支名</span><br><span class="line">git branch -d</span><br><span class="line">git merge -no-ff -m</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b 分支名 origin/分支名</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream 分支名 origin/分支名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git init &lt;repo&gt;</span><br><span class="line">git add &lt;file&gt; [ &lt;file&gt; ... ]</span><br><span class="line">git commit -m &lt;message&gt;</span><br><span class="line">git status</span><br><span class="line">git diff &lt;file&gt;</span><br><span class="line">git log [--pretty=oneline] （提交历史）</span><br><span class="line">git reset --hard HEAD^ / HEAD~&lt;num&gt; / &lt;commit id&gt;</span><br><span class="line">git reflog （命令历史）</span><br><span class="line">git diff -- HEAD &lt;file&gt;</span><br><span class="line">git checkout -- &lt;file&gt;</span><br><span class="line">git rm &lt;file&gt;</span><br><span class="line">git remote add origin &lt;URL&gt;</span><br><span class="line">git push -u orgin &lt;branch&gt;</span><br><span class="line">git clone &lt;URL&gt;</span><br><span class="line">git checkout -b &lt;branch&gt; = git branch &lt;branch&gt; + git checkout &lt;branch&gt; = git switch - c &lt;branch&gt;</span><br><span class="line">git branch</span><br><span class="line">git checkout &lt;branch&gt;</span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line">git branch -d &lt;branch&gt;</span><br><span class="line">git switch &lt;branch&gt;</span><br><span class="line">git log --graph</span><br><span class="line">git merge --no-ff [-m &lt;message&gt;] &lt;branch&gt;</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git stash apply stash@&#123;&lt;num&gt;&#125;</span><br><span class="line">git cherry-pick &lt;commit id&gt;</span><br><span class="line">git branch -D &lt;branch&gt;</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git rebase</span><br><span class="line">git tag &lt;tag&gt;</span><br><span class="line">git tag</span><br><span class="line">git tag &lt;tag&gt; &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>VCS</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo admin后台管理</title>
+    <url>/202007/%E5%85%83/hexo-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>使用hexo搭建博客之后，通过在编辑器里面来记录文章总归不是一个好的方式，而hexo admin提供了后台管理的页面来通过页面管理文章。</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
+<p>安装好之后会在根目录下生成一个配置文件，该配置文件可以保存页面settings中的配置。</p>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>管理页面中deploy功能需要添加配置。</p>
+<ol>
+<li>在_config.yml 中添加amdin发布命令的脚本路径。</li>
+<li>创建脚本文件。</li>
+</ol>
+<p>PS: 该功能没有实现 </p>
+<h2 id="线上"><a href="#线上" class="headerlink" title="线上"></a>线上</h2><p>github Pages是静态网站，不支持。支持其它动态的服务器。</p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>hexo admin 可以在编辑器内复制图片，图片将保存在images文件夹下，可自定义。<br>windows复制的图片需要去掉...\。</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ol>
+<li>Posts页面没有分类，所有文章放在一起，看起来比较乱。</li>
+<li>新建文章能否按照分类按文件夹存放。</li>
+<li>添加分类和标签时只能输入，不能选择。</li>
+<li>不能编辑文章的描述，该描述影响列表页面的内容。</li>
+</ol>
+<p>PS：<br>（2）. 可以在文章编辑界面上方修改文章路径。<br>（4）. 可以在_config.yml中添加 metadata - description 支持。</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/202004/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<blockquote>
+<p>&emsp;&emsp;之前对于数据结构的理解是，存储数据的方式，最近看到概念说数据结构是元素的集合，带着这个疑问，深入探索这个问题。<br>记录每种结构的存储方式，特性及优缺点。</p>
+</blockquote>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p>逻辑结构： 数据存储的方式<br>物理结构： 具有一定特性的元素的集合</p>
+</blockquote>
+<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
+<p>固定大小的结构</p>
+</blockquote>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><blockquote>
+<p>顺序结构</p>
+</blockquote>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><blockquote>
+<p>后进先去</p>
+</blockquote>
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><blockquote>
+<p>先进先出</p>
+</blockquote>
+<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><blockquote>
+<p>哈希函数，存储key</p>
+</blockquote>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><blockquote>
+<p>层次结构</p>
+</blockquote>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><blockquote>
+<p>有顺序的树</p>
+</blockquote>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><blockquote>
+<p>图结构</p>
+</blockquote>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>Why</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据类型</title>
+    <url>/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<blockquote>
+<p>最近做小数计算，发现double比long的最大值大了好多，甚至float最大值都比long最大值大，而float是32位存储空间，long是64位存储空间，带着这个疑问，进行深入探索。<br>PS: 本文所提到的所有类型，以Java语言为准。</p>
+</blockquote>
+<h2 id="Java-数据类型"><a href="#Java-数据类型" class="headerlink" title="Java 数据类型"></a>Java 数据类型</h2><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>存储空间(bit)</th>
+<th>存储范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>1</td>
+<td>0/1</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>8</td>
+<td>-128~127</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16</td>
+<td>0~65536</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16</td>
+<td>-32768~32767</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32</td>
+<td>-2,147,483,648~2,147,483,647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64</td>
+<td>-9,223,372,036,854,775,808~9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32</td>
+<td>-3.4028235E38~3.4028235E38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64</td>
+<td>-1.7976931348623157E308~1.7976931348623157E308</td>
+</tr>
+</tbody></table>
+<h3 id="long"><a href="#long" class="headerlink" title="long"></a>long</h3><p>想要保存比long最大值还大的整数，使用BigInteger，性能会有所降低。</p>
+<h3 id="double-VS-long"><a href="#double-VS-long" class="headerlink" title="double VS long"></a>double VS long</h3><ul>
+<li>double和long都是64位，double最大值远大于long最大值<blockquote>
+<p>存储方式不一样，double中可以使用阶数存储。<br>double 64位 = 1位符号 + 11位阶码（带符号） + 52位尾数</p>
+</blockquote>
+</li>
+<li>E308，为何是308次方<blockquote>
+<p>log(2^(2^10-1)) 大于308小于309。 2^10-1: 阶码最大值，阶码首位为符号，正数从0开始。log(2^X): 计算机中2为阶底，转为以10为阶底。</p>
+</blockquote>
+</li>
+<li>double有效数字为16位，long有效数字为19<blockquote>
+<p>使用阶数存储，但是需要丢失末尾的精确度，会四舍五入。<br>2^52 = 4,503,599,627,370,496, 最大值为16位数，所以有效数字为16位。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="float-VS-int"><a href="#float-VS-int" class="headerlink" title="float VS int"></a>float VS int</h3><p>与double、long同理</p>
+<h2 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a>IEEE 754</h2><p>二进制浮点数算术标准。Java中float，double都符合该标准。</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>计算机组成原理</category>
+      </categories>
+      <tags>
+        <tag>Why</tag>
       </tags>
   </entry>
   <entry>
@@ -278,228 +503,20 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>类之间关系</title>
-    <url>/202007/UML/%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/</url>
-    <content><![CDATA[<p>面向对象 类之间的关联</p>
-<h2 id="泛化（Generalization）-is-a"><a href="#泛化（Generalization）-is-a" class="headerlink" title="泛化（Generalization） is a"></a>泛化（Generalization） is a</h2><p>表现为继承或实现关系。具体形式为类与类之间的继承管理，接口与接口之间的继承关系，类对接口的实现关系。</p>
+    <title>maven</title>
+    <url>/202007/Java/maven/</url>
+    <content><![CDATA[<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><blockquote>
+<p>Why</p>
+</blockquote>
 <ul>
-<li>继承：实线 + 三角空心箭头，从子类指向父类。</li>
-<li>实现：虚线 + 三角空心箭头，从实现类指向接口。</li>
-</ul>
-<h2 id="关联（Association）-has-a"><a href="#关联（Association）-has-a" class="headerlink" title="关联（Association） has a"></a>关联（Association） has a</h2><p>表现为全局变量。可以是单向，也可以是双向。</p>
-<ul>
-<li>实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h3 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h3><p>强的关联关联。强调一个是整体，一个是部分，但不是组成部分。</p>
-<ul>
-<li>空心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h3 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h3><p>比聚合关系强的关系。强调部分是整体的组成部分，部分和整体拥有一致的生命周期。</p>
-<ul>
-<li>实心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h2 id="依赖（Dependency）-use-a"><a href="#依赖（Dependency）-use-a" class="headerlink" title="依赖（Dependency） use a"></a>依赖（Dependency） use a</h2><p>表示一个类依赖于另一个类。具体形式为局部变量，静态方法调用，方法参数。</p>
-<ul>
-<li>虚线 + 普通箭头，从主类指向被依赖类。</li>
+<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
 </ul>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
-        <category>UML</category>
+        <category>Java</category>
       </categories>
       <tags>
         <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo admin后台管理</title>
-    <url>/202007/%E5%85%83/hexo-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>使用hexo搭建博客之后，通过在编辑器里面来记录文章总归不是一个好的方式，而hexo admin提供了后台管理的页面来通过页面管理文章。</p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
-<p>安装好之后会在根目录下生成一个配置文件，该配置文件可以保存页面settings中的配置。</p>
-<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>管理页面中deploy功能需要添加配置。</p>
-<ol>
-<li>在_config.yml 中添加amdin发布命令的脚本路径。</li>
-<li>创建脚本文件。</li>
-</ol>
-<p>PS: 该功能没有实现 </p>
-<h2 id="线上"><a href="#线上" class="headerlink" title="线上"></a>线上</h2><p>github Pages是静态网站，不支持。支持其它动态的服务器。</p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>hexo admin 可以在编辑器内复制图片，图片将保存在images文件夹下，可自定义。<br>windows复制的图片需要去掉...\。</p>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ol>
-<li>Posts页面没有分类，所有文章放在一起，看起来比较乱。</li>
-<li>新建文章能否按照分类按文件夹存放。</li>
-<li>添加分类和标签时只能输入，不能选择。</li>
-<li>不能编辑文章的描述，该描述影响列表页面的内容。</li>
-</ol>
-<p>PS：<br>（2）. 可以在文章编辑界面上方修改文章路径。<br>（4）. 可以在_config.yml中添加 metadata - description 支持。</p>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>元</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数据类型</title>
-    <url>/202004/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<blockquote>
-<p>最近做小数计算，发现double比long的最大值大了好多，甚至float最大值都比long最大值大，而float是32位存储空间，long是64位存储空间，带着这个疑问，进行深入探索。<br>PS: 本文所提到的所有类型，以Java语言为准。</p>
-</blockquote>
-<h2 id="Java-数据类型"><a href="#Java-数据类型" class="headerlink" title="Java 数据类型"></a>Java 数据类型</h2><table>
-<thead>
-<tr>
-<th>数据类型</th>
-<th>存储空间(bit)</th>
-<th>存储范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>boolean</td>
-<td>1</td>
-<td>0/1</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>8</td>
-<td>-128~127</td>
-</tr>
-<tr>
-<td>char</td>
-<td>16</td>
-<td>0~65536</td>
-</tr>
-<tr>
-<td>short</td>
-<td>16</td>
-<td>-32768~32767</td>
-</tr>
-<tr>
-<td>int</td>
-<td>32</td>
-<td>-2,147,483,648~2,147,483,647</td>
-</tr>
-<tr>
-<td>long</td>
-<td>64</td>
-<td>-9,223,372,036,854,775,808~9,223,372,036,854,775,807</td>
-</tr>
-<tr>
-<td>float</td>
-<td>32</td>
-<td>-3.4028235E38~3.4028235E38</td>
-</tr>
-<tr>
-<td>double</td>
-<td>64</td>
-<td>-1.7976931348623157E308~1.7976931348623157E308</td>
-</tr>
-</tbody></table>
-<h3 id="long"><a href="#long" class="headerlink" title="long"></a>long</h3><p>想要保存比long最大值还大的整数，使用BigInteger，性能会有所降低。</p>
-<h3 id="double-VS-long"><a href="#double-VS-long" class="headerlink" title="double VS long"></a>double VS long</h3><ul>
-<li>double和long都是64位，double最大值远大于long最大值<blockquote>
-<p>存储方式不一样，double中可以使用阶数存储。<br>double 64位 = 1位符号 + 11位阶码（带符号） + 52位尾数</p>
-</blockquote>
-</li>
-<li>E308，为何是308次方<blockquote>
-<p>log(2^(2^10-1)) 大于308小于309。 2^10-1: 阶码最大值，阶码首位为符号，正数从0开始。log(2^X): 计算机中2为阶底，转为以10为阶底。</p>
-</blockquote>
-</li>
-<li>double有效数字为16位，long有效数字为19<blockquote>
-<p>使用阶数存储，但是需要丢失末尾的精确度，会四舍五入。<br>2^52 = 4,503,599,627,370,496, 最大值为16位数，所以有效数字为16位。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="float-VS-int"><a href="#float-VS-int" class="headerlink" title="float VS int"></a>float VS int</h3><p>与double、long同理</p>
-<h2 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a>IEEE 754</h2><p>二进制浮点数算术标准。Java中float，double都符合该标准。</p>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>计算机组成原理</category>
-      </categories>
-      <tags>
-        <tag>Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git常用命令</title>
-    <url>/202004/VCS/Git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<ul>
-<li><p>添加远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add &lt;远程仓库名称，一般默认为origin&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote remove &lt;远程仓库名称&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新/设置远程仓库地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加远程仓库地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url --add &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置用户名</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置邮箱</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>全局设置用户名</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>全局设置邮箱</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其他命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init ...</span><br><span class="line">git add ...</span><br><span class="line">git commit -m "..."</span><br><span class="line">git status</span><br><span class="line">git diff 文件名</span><br><span class="line">git log </span><br><span class="line">git reset --hard HEAD^ / 版本号</span><br><span class="line">git reflog </span><br><span class="line">git checkout -- 文件名</span><br><span class="line">git checkout 分支名</span><br><span class="line">git remote add origin 远程仓库路径</span><br><span class="line">git push -u origin master</span><br><span class="line">git push origin master</span><br><span class="line">git clone</span><br><span class="line">git checkout -b 分支名 = git branch 分支名 + git checkout 分支名 （创建并切换分支）</span><br><span class="line">git merge 分支名</span><br><span class="line">git branch -d</span><br><span class="line">git merge -no-ff -m</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b 分支名 origin/分支名</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream 分支名 origin/分支名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git init &lt;repo&gt;</span><br><span class="line">git add &lt;file&gt; [ &lt;file&gt; ... ]</span><br><span class="line">git commit -m &lt;message&gt;</span><br><span class="line">git status</span><br><span class="line">git diff &lt;file&gt;</span><br><span class="line">git log [--pretty=oneline] （提交历史）</span><br><span class="line">git reset --hard HEAD^ / HEAD~&lt;num&gt; / &lt;commit id&gt;</span><br><span class="line">git reflog （命令历史）</span><br><span class="line">git diff -- HEAD &lt;file&gt;</span><br><span class="line">git checkout -- &lt;file&gt;</span><br><span class="line">git rm &lt;file&gt;</span><br><span class="line">git remote add origin &lt;URL&gt;</span><br><span class="line">git push -u orgin &lt;branch&gt;</span><br><span class="line">git clone &lt;URL&gt;</span><br><span class="line">git checkout -b &lt;branch&gt; = git branch &lt;branch&gt; + git checkout &lt;branch&gt; = git switch - c &lt;branch&gt;</span><br><span class="line">git branch</span><br><span class="line">git checkout &lt;branch&gt;</span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line">git branch -d &lt;branch&gt;</span><br><span class="line">git switch &lt;branch&gt;</span><br><span class="line">git log --graph</span><br><span class="line">git merge --no-ff [-m &lt;message&gt;] &lt;branch&gt;</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git stash apply stash@&#123;&lt;num&gt;&#125;</span><br><span class="line">git cherry-pick &lt;commit id&gt;</span><br><span class="line">git branch -D &lt;branch&gt;</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git rebase</span><br><span class="line">git tag &lt;tag&gt;</span><br><span class="line">git tag</span><br><span class="line">git tag &lt;tag&gt; &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>VCS</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构</title>
-    <url>/202004/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<blockquote>
-<p>&emsp;&emsp;之前对于数据结构的理解是，存储数据的方式，最近看到概念说数据结构是元素的集合，带着这个疑问，深入探索这个问题。<br>记录每种结构的存储方式，特性及优缺点。</p>
-</blockquote>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>逻辑结构： 数据存储的方式<br>物理结构： 具有一定特性的元素的集合</p>
-</blockquote>
-<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
-<p>固定大小的结构</p>
-</blockquote>
-<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><blockquote>
-<p>顺序结构</p>
-</blockquote>
-<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><blockquote>
-<p>后进先去</p>
-</blockquote>
-<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><blockquote>
-<p>先进先出</p>
-</blockquote>
-<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><blockquote>
-<p>哈希函数，存储key</p>
-</blockquote>
-<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><blockquote>
-<p>层次结构</p>
-</blockquote>
-<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><blockquote>
-<p>有顺序的树</p>
-</blockquote>
-<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><blockquote>
-<p>图结构</p>
-</blockquote>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>Why</tag>
       </tags>
   </entry>
   <entry>
@@ -523,23 +540,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>maven</title>
-    <url>/202007/Java/maven/</url>
-    <content><![CDATA[<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><blockquote>
-<p>Why</p>
-</blockquote>
-<ul>
-<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>spring</title>
     <url>/202007/Java/Spring/spring/</url>
     <content><![CDATA[<ul>
@@ -555,6 +555,30 @@ layout为scaffolds中定义的模板，默认为post</li>
       <tags>
         <tag>How</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>lamada</title>
+    <url>/202002/Java/JDK8/lamada/</url>
+    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
+<p>lamada VS 匿名内部类</p>
+<ol>
+<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
+<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
+<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
+</ol>
+<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
+<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
+<li>Consumer<T> 消费型<br> void accept(T t);</li>
+<li>Supplier<T> 提供型<br> T get();</li>
+<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
+<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
+</ol>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JDK8</category>
+      </categories>
   </entry>
   <entry>
     <title>CPU</title>
@@ -583,6 +607,29 @@ layout为scaffolds中定义的模板，默认为post</li>
 </li>
 </ul>
 <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>基本一年更新一次，如酷睿系列、高通骁龙系列</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>生活</category>
+        <category>电脑</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>计算机</title>
+    <url>/202007/%E7%94%9F%E6%B4%BB/%E7%94%B5%E8%84%91/%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
+    <content><![CDATA[<h2 id="冯诺依曼体系"><a href="#冯诺依曼体系" class="headerlink" title="冯诺依曼体系"></a>冯诺依曼体系</h2><p>输入设备、输出设备、计算器、存储器、控制器</p>
+<h2 id="电脑组成部分"><a href="#电脑组成部分" class="headerlink" title="电脑组成部分"></a>电脑组成部分</h2><h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>存储设备<br>优点：空间大<br>缺点：读写速度慢  </p>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>临时储存区域<br>优点：读写速度大于硬盘，差不多10倍<br>缺点：空间小，断电清除  </p>
+<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>中央处理器，运算器、控制器</p>
+<ul>
+<li>多核CPU与多个CPU<br>多核CPU成本高，但是性能好，多个CPU成本低，但性能差</li>
+</ul>
+<h3 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h3><p>显示芯片、显存、相关电路组成</p>
+<ul>
+<li>集成显卡<br>电路集成在主板上，一般与CPU共用内存</li>
+<li>独立显卡<br>单独的显卡主板、显存</li>
+<li>核芯显卡<br>CPU与GPU合二为一</li>
+</ul>
+<h3 id="其它设备"><a href="#其它设备" class="headerlink" title="其它设备"></a>其它设备</h3><p>风扇<br>电源<br>显示器<br>打印机  </p>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
         <category>生活</category>
@@ -770,52 +817,5 @@ layout为scaffolds中定义的模板，默认为post</li>
         <tag>How</tag>
         <tag>CentOS8</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>lamada</title>
-    <url>/202002/Java/JDK8/lamada/</url>
-    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
-<p>lamada VS 匿名内部类</p>
-<ol>
-<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
-<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
-<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
-</ol>
-<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
-<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
-<li>Consumer<T> 消费型<br> void accept(T t);</li>
-<li>Supplier<T> 提供型<br> T get();</li>
-<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
-<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
-</ol>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JDK8</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>计算机</title>
-    <url>/202007/%E7%94%9F%E6%B4%BB/%E7%94%B5%E8%84%91/%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
-    <content><![CDATA[<h2 id="冯诺依曼体系"><a href="#冯诺依曼体系" class="headerlink" title="冯诺依曼体系"></a>冯诺依曼体系</h2><p>输入设备、输出设备、计算器、存储器、控制器</p>
-<h2 id="电脑组成部分"><a href="#电脑组成部分" class="headerlink" title="电脑组成部分"></a>电脑组成部分</h2><h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>存储设备<br>优点：空间大<br>缺点：读写速度慢  </p>
-<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>临时储存区域<br>优点：读写速度大于硬盘，差不多10倍<br>缺点：空间小，断电清除  </p>
-<h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>中央处理器，运算器、控制器</p>
-<ul>
-<li>多核CPU与多个CPU<br>多核CPU成本高，但是性能好，多个CPU成本低，但性能差</li>
-</ul>
-<h3 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h3><p>显示芯片、显存、相关电路组成</p>
-<ul>
-<li>集成显卡<br>电路集成在主板上，一般与CPU共用内存</li>
-<li>独立显卡<br>单独的显卡主板、显存</li>
-<li>核芯显卡<br>CPU与GPU合二为一</li>
-</ul>
-<h3 id="其它设备"><a href="#其它设备" class="headerlink" title="其它设备"></a>其它设备</h3><p>风扇<br>电源<br>显示器<br>打印机  </p>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>生活</category>
-        <category>电脑</category>
-      </categories>
   </entry>
 </search>
