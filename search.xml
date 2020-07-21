@@ -1,6 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java中的版本</title>
+    <url>/202007/Java/java%E4%B8%AD%E7%9A%84%E7%89%88%E6%9C%AC/</url>
+    <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>Java 语言</li>
+<li>JDK Java Development Kit</li>
+</ul>
+<h2 id="Java与JDK版本"><a href="#Java与JDK版本" class="headerlink" title="Java与JDK版本"></a>Java与JDK版本</h2><table>
+<thead>
+<tr>
+<th>Java版本</th>
+<th>JDK版本</th>
+<th>发布时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Oak</td>
+<td>-</td>
+<td>1995-05-23</td>
+</tr>
+<tr>
+<td>Java 1.0</td>
+<td>JDK 1.0</td>
+<td>1996-01-23</td>
+</tr>
+<tr>
+<td>Java 1.1</td>
+<td>JDK 1.1</td>
+<td>1997-02-18</td>
+</tr>
+<tr>
+<td>Java 1.2</td>
+<td>JDK 1.2</td>
+<td>1998-12-04</td>
+</tr>
+<tr>
+<td>Java 1.3</td>
+<td>JDK 1.3</td>
+<td>2000-05-08</td>
+</tr>
+<tr>
+<td>Java 1.4</td>
+<td>JDK 1.4</td>
+<td>2002-02-13</td>
+</tr>
+<tr>
+<td>Java SE 5.0</td>
+<td>JDK 1.5</td>
+<td>2004-09-29</td>
+</tr>
+<tr>
+<td>Java SE 6</td>
+<td>JDK 1.6</td>
+<td>2006-12-11</td>
+</tr>
+<tr>
+<td>Java SE 7</td>
+<td>JDK 1.7</td>
+<td>2011-07-28</td>
+</tr>
+<tr>
+<td>Java SE 8</td>
+<td>JDK 1.8</td>
+<td>2014-03-18</td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td>JDK 1.9</td>
+<td>2017-09-21</td>
+</tr>
+<tr>
+<td>Java SE 10</td>
+<td>JDK 10</td>
+<td>2018-03-21</td>
+</tr>
+<tr>
+<td>Java SE 11</td>
+<td>JDK 11</td>
+<td>2018-09-25</td>
+</tr>
+<tr>
+<td>Java SE 12</td>
+<td>JDK 12</td>
+<td>2019-03-20</td>
+</tr>
+<tr>
+<td>Java SE 13</td>
+<td>JDK 13</td>
+<td>2019-09-23</td>
+</tr>
+<tr>
+<td>Java SE 14</td>
+<td>JDK 14</td>
+<td>2019-03-17</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id="Java-EE"><a href="#Java-EE" class="headerlink" title="Java EE"></a>Java EE</h2><p>Sun公司为企业级应用推出的标准平台，用来开发B/S架构软件。</p>
+<table>
+<thead>
+<tr>
+<th>Servlet/JSP版本</th>
+<th>Tomcat版本</th>
+<th>Java版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.0/2.2</td>
+<td>7.0.x</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>2.5/2.1</td>
+<td>6.0.x</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>2.4/2.0</td>
+<td>5.5.x</td>
+<td>1.4</td>
+</tr>
+<tr>
+<td>2.3/1.2</td>
+<td>4.1.x</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>2.2/1.1</td>
+<td>3.3.x</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OAS</title>
     <url>/202007/API/oas/</url>
     <content><![CDATA[<h2 id="OAS"><a href="#OAS" class="headerlink" title="OAS"></a>OAS</h2><p>OpenAPI Specification, 开放API声明，是一个API规范，用于描述一整套API接口。</p>
@@ -181,32 +330,37 @@
       </categories>
   </entry>
   <entry>
-    <title>Hexo admin后台管理</title>
-    <url>/202007/%E5%85%83/hexo-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>使用hexo搭建博客之后，通过在编辑器里面来记录文章总归不是一个好的方式，而hexo admin提供了后台管理的页面来通过页面管理文章。</p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
-<p>安装好之后会在根目录下生成一个配置文件，该配置文件可以保存页面settings中的配置。</p>
-<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>管理页面中deploy功能需要添加配置。</p>
-<ol>
-<li>在_config.yml 中添加amdin发布命令的脚本路径。</li>
-<li>创建脚本文件。</li>
-</ol>
-<p>PS: 该功能没有实现 </p>
-<h2 id="线上"><a href="#线上" class="headerlink" title="线上"></a>线上</h2><p>github Pages是静态网站，不支持。支持其它动态的服务器。</p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>hexo admin 可以在编辑器内复制图片，图片将保存在images文件夹下，可自定义。<br>windows复制的图片需要去掉...\。</p>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ol>
-<li>Posts页面没有分类，所有文章放在一起，看起来比较乱。</li>
-<li>新建文章能否按照分类按文件夹存放。</li>
-<li>添加分类和标签时只能输入，不能选择。</li>
-<li>不能编辑文章的描述，该描述影响列表页面的内容。</li>
-</ol>
-<p>PS：<br>（2）. 可以在文章编辑界面上方修改文章路径。<br>（4）. 可以在_config.yml中添加 metadata - description 支持。</p>
+    <title>类之间关系</title>
+    <url>/202007/UML/%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/</url>
+    <content><![CDATA[<p>面向对象 类之间的关联</p>
+<h2 id="泛化（Generalization）-is-a"><a href="#泛化（Generalization）-is-a" class="headerlink" title="泛化（Generalization） is a"></a>泛化（Generalization） is a</h2><p>表现为继承或实现关系。具体形式为类与类之间的继承管理，接口与接口之间的继承关系，类对接口的实现关系。</p>
+<ul>
+<li>继承：实线 + 三角空心箭头，从子类指向父类。</li>
+<li>实现：虚线 + 三角空心箭头，从实现类指向接口。</li>
+</ul>
+<h2 id="关联（Association）-has-a"><a href="#关联（Association）-has-a" class="headerlink" title="关联（Association） has a"></a>关联（Association） has a</h2><p>表现为全局变量。可以是单向，也可以是双向。</p>
+<ul>
+<li>实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h3 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h3><p>强的关联关联。强调一个是整体，一个是部分，但不是组成部分。</p>
+<ul>
+<li>空心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h3 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h3><p>比聚合关系强的关系。强调部分是整体的组成部分，部分和整体拥有一致的生命周期。</p>
+<ul>
+<li>实心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h2 id="依赖（Dependency）-use-a"><a href="#依赖（Dependency）-use-a" class="headerlink" title="依赖（Dependency） use a"></a>依赖（Dependency） use a</h2><p>表示一个类依赖于另一个类。具体形式为局部变量，静态方法调用，方法参数。</p>
+<ul>
+<li>虚线 + 普通箭头，从主类指向被依赖类。</li>
+</ul>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
-        <category>元</category>
+        <category>UML</category>
       </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
   </entry>
   <entry>
     <title>git常用命令</title>
@@ -252,36 +406,128 @@
       </tags>
   </entry>
   <entry>
-    <title>类之间关系</title>
-    <url>/202007/UML/%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/</url>
-    <content><![CDATA[<p>面向对象 类之间的关联</p>
-<h2 id="泛化（Generalization）-is-a"><a href="#泛化（Generalization）-is-a" class="headerlink" title="泛化（Generalization） is a"></a>泛化（Generalization） is a</h2><p>表现为继承或实现关系。具体形式为类与类之间的继承管理，接口与接口之间的继承关系，类对接口的实现关系。</p>
-<ul>
-<li>继承：实线 + 三角空心箭头，从子类指向父类。</li>
-<li>实现：虚线 + 三角空心箭头，从实现类指向接口。</li>
-</ul>
-<h2 id="关联（Association）-has-a"><a href="#关联（Association）-has-a" class="headerlink" title="关联（Association） has a"></a>关联（Association） has a</h2><p>表现为全局变量。可以是单向，也可以是双向。</p>
-<ul>
-<li>实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h3 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h3><p>强的关联关联。强调一个是整体，一个是部分，但不是组成部分。</p>
-<ul>
-<li>空心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h3 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h3><p>比聚合关系强的关系。强调部分是整体的组成部分，部分和整体拥有一致的生命周期。</p>
-<ul>
-<li>实心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h2 id="依赖（Dependency）-use-a"><a href="#依赖（Dependency）-use-a" class="headerlink" title="依赖（Dependency） use a"></a>依赖（Dependency） use a</h2><p>表示一个类依赖于另一个类。具体形式为局部变量，静态方法调用，方法参数。</p>
-<ul>
-<li>虚线 + 普通箭头，从主类指向被依赖类。</li>
-</ul>
+    <title>Hexo admin后台管理</title>
+    <url>/202007/%E5%85%83/hexo-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<blockquote>
+<p>使用hexo搭建博客之后，通过在编辑器里面来记录文章总归不是一个好的方式，而hexo admin提供了后台管理的页面来通过页面管理文章。</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
+<p>安装好之后会在根目录下生成一个配置文件，该配置文件可以保存页面settings中的配置。</p>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>管理页面中deploy功能需要添加配置。</p>
+<ol>
+<li>在_config.yml 中添加amdin发布命令的脚本路径。</li>
+<li>创建脚本文件。</li>
+</ol>
+<p>PS: 该功能没有实现 </p>
+<h2 id="线上"><a href="#线上" class="headerlink" title="线上"></a>线上</h2><p>github Pages是静态网站，不支持。支持其它动态的服务器。</p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>hexo admin 可以在编辑器内复制图片，图片将保存在images文件夹下，可自定义。<br>windows复制的图片需要去掉...\。</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ol>
+<li>Posts页面没有分类，所有文章放在一起，看起来比较乱。</li>
+<li>新建文章能否按照分类按文件夹存放。</li>
+<li>添加分类和标签时只能输入，不能选择。</li>
+<li>不能编辑文章的描述，该描述影响列表页面的内容。</li>
+</ol>
+<p>PS：<br>（2）. 可以在文章编辑界面上方修改文章路径。<br>（4）. 可以在_config.yml中添加 metadata - description 支持。</p>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
-        <category>UML</category>
+        <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo搭建博客</title>
+    <url>/202003/%E5%85%83/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h1><blockquote>
+<p>GitHub Pages 允许开发者自定义项目的首页，代替直接展示代码的方式。</p>
+</blockquote>
+<h2 id="Jekyll"><a href="#Jekyll" class="headerlink" title="Jekyll"></a>Jekyll</h2><blockquote>
+<p>GitHub Pages 默认的静态网站生成工具，通过项目中的相应的配置文件，可以自动打包部署。</p>
+</blockquote>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
+<p>静态网站生成工具，可以通过配置使GitHub支持。</p>
+</blockquote>
+<h2 id="Jekyll-VS-Hexo"><a href="#Jekyll-VS-Hexo" class="headerlink" title="Jekyll VS Hexo"></a>Jekyll VS Hexo</h2><ul>
+<li>本地开发预览<blockquote>
+<p>Jekyll 需要搭建完整的Ruby环境。<br>Hexo 需要搭建NodeJS环境。</p>
+</blockquote>
+</li>
+<li>迁移<blockquote>
+<p>GitHub Pages中对Jekyll的支持，使得我们太多去关心Jekyll的配置以及插件，这会在迁移过程中造成一定的影响。因为不知道配置是什么，及使用了哪些插件。<br>Hexo的配置是自定义的。  </p>
+</blockquote>
+<h2 id="Gitee"><a href="#Gitee" class="headerlink" title="Gitee"></a>Gitee</h2><blockquote>
+<p>由于GitHub访问速度问题，也可使用Gitee Pages功能，其概念和GitHub概念相似。  </p>
+</blockquote>
+<h3 id="GitHub-Pages-VS-Gitee-Pages"><a href="#GitHub-Pages-VS-Gitee-Pages" class="headerlink" title="GitHub Pages VS Gitee Pages"></a>GitHub Pages VS Gitee Pages</h3><blockquote>
+<p>Gitee 支持Jekyll、Hexo、Hugo，GitHub只支持Jekyll。<br>GitHub 支持自动打包部署，检测到代码提交时执行。Gitee个人免费版不知道自动打包部署，需要手动进行。<br>GitHub 支持自定义域名。Gitee个人免费版不支持。<br>GitHub 只支持master、gh-pages分支，当使用根路径访问时只支持master分支。Gitee支持任意分支。</p>
+</blockquote>
+<h2 id="自动打包部署"><a href="#自动打包部署" class="headerlink" title="自动打包部署"></a>自动打包部署</h2><blockquote>
+<p>对于支持自动打包部署的情况，只需要提交源码到对应的分支就行，会自动打包并部署。<br>而不支持自动打包部署的情况，需要在本地通过命令生成部署到对应的分支。而将源码提交到另一个分支。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="Hexo-搭建过程"><a href="#Hexo-搭建过程" class="headerlink" title="Hexo 搭建过程"></a>Hexo 搭建过程</h1><h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><blockquote>
+<p>hexo init命令需要空文件夹，git clone会生成一个不为空的文件夹，所以创建过程中需要按以下步骤进行。</p>
+</blockquote>
+<ol>
+<li>初始化hexo项目<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npx hexo init &lt;dir name&gt;</span><br></pre></td></tr></table></figure>
+PS: 如不指定目录名称，则在当前文件夹下初始化，要求该文件夹为空。</li>
+<li>初始化git仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+<li>关联远程仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h2><blockquote>
+<p>项目目录下的_config.yml为站点配置文件，themes/?/_config.yml为主题配置文件。将主题文件复制到source/_data/next.yml进行修改。</p>
+</blockquote>
+<ol>
+<li>网站配置<br>其中 language为主题要求的值。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&lt;title&gt;</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&lt;subtitle&gt;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&lt;description&gt;</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">&lt;keywords&gt;</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">&lt;author&gt;</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/shanghai</span></span><br></pre></td></tr></table></figure></li>
+<li>URL 配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year:month/:category/:post_title/</span></span><br></pre></td></tr></table></figure></li>
+<li>发布配置<br>可配置多个<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li>
+<li>主题配置<br>使用最新NexT主题<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></li>
+<li>CNAME配置<br>如需自定义域名，且手动打包部署，则CNAME配置应跳过渲染。相对路径为source。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">CNAME</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><ol>
+<li>菜单配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure></li>
+<li>样式配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure></li>
+<li>pjax配置<br>页面局部刷新功能<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+添加依赖<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure></li>
+<li>其他配置<br>每个配置的地方都有注释说明。</li>
+</ol>
+<ul>
+<li>图标 favicon</li>
+<li>头像 avatar</li>
+<li>代码高亮样式 highlight_theme</li>
+<li>局部页面刷新 pjax</li>
+<li>中英文之间空格 pangu</li>
+<li>阅读进度条 reading_progress</li>
+<li>github_banner</li>
+<li>书签 bookmark</li>
+<li>评论 gitalk</li>
+<li>公式 math</li>
+<li>搜索 search</li>
+<li>RSS</li>
+<li>捐赠 reward</li>
+</ul>
+<h1 id="文章与页面"><a href="#文章与页面" class="headerlink" title="文章与页面"></a>文章与页面</h1><ol>
+<li>新建文章<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+layout为scaffolds中定义的模板，默认为post</li>
+<li>新建页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page archives/categories/tags/about</span><br></pre></td></tr></table></figure>
+在各自index.md中修改其type为主题菜单配置中名称，除about外，其它都不需要编辑。</li>
+<li>搜索页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-gengerator-searchdb</span><br></pre></td></tr></table></figure>
+站点配置中新增<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">    <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+主题配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">5</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
+<li>404页面</li>
+</ol>
+<p><strong><em>END</em></strong></p>
+]]></content>
+      <categories>
+        <category>元</category>
       </categories>
       <tags>
         <tag>How</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -406,100 +652,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo搭建博客</title>
-    <url>/202003/%E5%85%83/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h1><blockquote>
-<p>GitHub Pages 允许开发者自定义项目的首页，代替直接展示代码的方式。</p>
-</blockquote>
-<h2 id="Jekyll"><a href="#Jekyll" class="headerlink" title="Jekyll"></a>Jekyll</h2><blockquote>
-<p>GitHub Pages 默认的静态网站生成工具，通过项目中的相应的配置文件，可以自动打包部署。</p>
-</blockquote>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><blockquote>
-<p>静态网站生成工具，可以通过配置使GitHub支持。</p>
-</blockquote>
-<h2 id="Jekyll-VS-Hexo"><a href="#Jekyll-VS-Hexo" class="headerlink" title="Jekyll VS Hexo"></a>Jekyll VS Hexo</h2><ul>
-<li>本地开发预览<blockquote>
-<p>Jekyll 需要搭建完整的Ruby环境。<br>Hexo 需要搭建NodeJS环境。</p>
-</blockquote>
-</li>
-<li>迁移<blockquote>
-<p>GitHub Pages中对Jekyll的支持，使得我们太多去关心Jekyll的配置以及插件，这会在迁移过程中造成一定的影响。因为不知道配置是什么，及使用了哪些插件。<br>Hexo的配置是自定义的。  </p>
-</blockquote>
-<h2 id="Gitee"><a href="#Gitee" class="headerlink" title="Gitee"></a>Gitee</h2><blockquote>
-<p>由于GitHub访问速度问题，也可使用Gitee Pages功能，其概念和GitHub概念相似。  </p>
-</blockquote>
-<h3 id="GitHub-Pages-VS-Gitee-Pages"><a href="#GitHub-Pages-VS-Gitee-Pages" class="headerlink" title="GitHub Pages VS Gitee Pages"></a>GitHub Pages VS Gitee Pages</h3><blockquote>
-<p>Gitee 支持Jekyll、Hexo、Hugo，GitHub只支持Jekyll。<br>GitHub 支持自动打包部署，检测到代码提交时执行。Gitee个人免费版不知道自动打包部署，需要手动进行。<br>GitHub 支持自定义域名。Gitee个人免费版不支持。<br>GitHub 只支持master、gh-pages分支，当使用根路径访问时只支持master分支。Gitee支持任意分支。</p>
-</blockquote>
-<h2 id="自动打包部署"><a href="#自动打包部署" class="headerlink" title="自动打包部署"></a>自动打包部署</h2><blockquote>
-<p>对于支持自动打包部署的情况，只需要提交源码到对应的分支就行，会自动打包并部署。<br>而不支持自动打包部署的情况，需要在本地通过命令生成部署到对应的分支。而将源码提交到另一个分支。</p>
-</blockquote>
-</li>
+    <title>spring</title>
+    <url>/202007/Java/Spring/spring/</url>
+    <content><![CDATA[<ul>
+<li>MATE-INF<br>  spring.factories</li>
+<li>profile / @  spring-boot-starter-parent<br>  手动重新引入maven依赖<br>  父级pom对所有子级生效，子级覆盖父级，子级优先级更高</li>
+<li>spring-boot-devtools</li>
 </ul>
-<h1 id="Hexo-搭建过程"><a href="#Hexo-搭建过程" class="headerlink" title="Hexo 搭建过程"></a>Hexo 搭建过程</h1><h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><blockquote>
-<p>hexo init命令需要空文件夹，git clone会生成一个不为空的文件夹，所以创建过程中需要按以下步骤进行。</p>
-</blockquote>
-<ol>
-<li>初始化hexo项目<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npx hexo init &lt;dir name&gt;</span><br></pre></td></tr></table></figure>
-PS: 如不指定目录名称，则在当前文件夹下初始化，要求该文件夹为空。</li>
-<li>初始化git仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
-<li>关联远程仓库<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;url&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h2><blockquote>
-<p>项目目录下的_config.yml为站点配置文件，themes/?/_config.yml为主题配置文件。将主题文件复制到source/_data/next.yml进行修改。</p>
-</blockquote>
-<ol>
-<li>网站配置<br>其中 language为主题要求的值。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&lt;title&gt;</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&lt;subtitle&gt;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&lt;description&gt;</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">&lt;keywords&gt;</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">&lt;author&gt;</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/shanghai</span></span><br></pre></td></tr></table></figure></li>
-<li>URL 配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year:month/:category/:post_title/</span></span><br></pre></td></tr></table></figure></li>
-<li>发布配置<br>可配置多个<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;url&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></li>
-<li>主题配置<br>使用最新NexT主题<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></li>
-<li>CNAME配置<br>如需自定义域名，且手动打包部署，则CNAME配置应跳过渲染。相对路径为source。<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">CNAME</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><ol>
-<li>菜单配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br></pre></td></tr></table></figure></li>
-<li>样式配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br></pre></td></tr></table></figure></li>
-<li>pjax配置<br>页面局部刷新功能<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-添加依赖<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pjax themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure></li>
-<li>其他配置<br>每个配置的地方都有注释说明。</li>
-</ol>
-<ul>
-<li>图标 favicon</li>
-<li>头像 avatar</li>
-<li>代码高亮样式 highlight_theme</li>
-<li>局部页面刷新 pjax</li>
-<li>中英文之间空格 pangu</li>
-<li>阅读进度条 reading_progress</li>
-<li>github_banner</li>
-<li>书签 bookmark</li>
-<li>评论 gitalk</li>
-<li>公式 math</li>
-<li>搜索 search</li>
-<li>RSS</li>
-<li>捐赠 reward</li>
-</ul>
-<h1 id="文章与页面"><a href="#文章与页面" class="headerlink" title="文章与页面"></a>文章与页面</h1><ol>
-<li>新建文章<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-layout为scaffolds中定义的模板，默认为post</li>
-<li>新建页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page archives/categories/tags/about</span><br></pre></td></tr></table></figure>
-在各自index.md中修改其type为主题菜单配置中名称，除about外，其它都不需要编辑。</li>
-<li>搜索页面<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-gengerator-searchdb</span><br></pre></td></tr></table></figure>
-站点配置中新增<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">    <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">    <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-主题配置<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">5</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li>
-<li>404页面</li>
-</ol>
-<p><strong><em>END</em></strong></p>
-]]></content>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
-        <category>元</category>
+        <category>Java</category>
+        <category>Spring</category>
       </categories>
       <tags>
         <tag>How</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -518,6 +684,112 @@ layout为scaffolds中定义的模板，默认为post</li>
       <tags>
         <tag>How</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>并发编程</title>
+    <url>/202007/Java/%E5%B9%B6%E5%8F%91/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<blockquote>
+<p>操作系统通过时间片算法来并行执行各个程序。<br>并发编程是指在同一台处理器上，并发处理多个任务。</p>
+</blockquote>
+<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>操作系统进行资源分配的最小单位。</p>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>操作系统能够进行运算调度的最小单位。</p>
+<h3 id="临界区"><a href="#临界区" class="headerlink" title="临界区"></a>临界区</h3><p>表示一种公共资源或共享数据，同一时间，只允许一个线程访问。</p>
+<h3 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h3><p>内存的一部分，用来缓冲输入或输出的数据。</p>
+<h2 id="并发编程解决的问题"><a href="#并发编程解决的问题" class="headerlink" title="并发编程解决的问题"></a>并发编程解决的问题</h2><ul>
+<li>线程间的通信问题<blockquote>
+<p>通信方式</p>
+</blockquote>
+<ul>
+<li>数据共享 通过读写公共内存中的公共状态来隐式进行通信。</li>
+<li>消息传递 通过明确的发送消息来显式进行通信（Java中典型的消息传递方式是wait()和notify()）。</li>
+</ul>
+</li>
+<li>线程间的同步问题<blockquote>
+<p>同步 指程序用于控制不同线程之间操作发生相对顺序的机制。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="计算机内存模型"><a href="#计算机内存模型" class="headerlink" title="计算机内存模型"></a>计算机内存模型</h2><h3 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h3><p>随着CPU技术的发展，CPU的执行速度越来越快，而内存的速度没有多大变化，于是，为了提高CPU利用率，在CPU和内存之间增加高速缓存。<br>按照数据读取顺序和与CPU结合的紧密程度，CPU缓存可分为一级缓存（L1），二级缓存（L2），部分高端CPU还具有三级缓存（L3）。<br>多CPU/多核CPU每个核心都含有一套L1（L1、L2）缓存，而共享L2（L3）缓存。<br>基于高速缓存的存储交互很好地解决了处理器与内存的速度矛盾，但是也为操作系统引入了一个新的问题—缓存一致性，从而带来更高的复杂度。</p>
+<h3 id="缓存一致性协议"><a href="#缓存一致性协议" class="headerlink" title="缓存一致性协议"></a>缓存一致性协议</h3><p>MSI、MESI、MOSI、Synapse、Firefly、Dragon Protocol</p>
+<h4 id="MESI"><a href="#MESI" class="headerlink" title="MESI"></a>MESI</h4><h5 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h5><ul>
+<li>M Modified 修改</li>
+<li>E Exclusive 独享</li>
+<li>S Shared 共享</li>
+<li>I Invalid 无效<h5 id="状态转换图"><a href="#状态转换图" class="headerlink" title="状态转换图"></a>状态转换图</h5>高速缓存行数据状态有四种，引起数据状态转换的操作也有四种，所以共有16中状态转换的情况。<br><img src="/images/pasted-1.png" alt="upload successful"><blockquote>
+<p>CPU高速缓存通过总线连接，总线还连接了主存。<br>对于Local Read 和 Local Write 操作，不经过总线，不会被其它CPU控制器监听到。<br>对于Remote Read 和 Remote Write 操作，需要其它CPU共同参与，所以这两个操作所有CPU控制器都能监听到，并能知道是不是自己发出的。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="允许状态图"><a href="#允许状态图" class="headerlink" title="允许状态图"></a>允许状态图</h5><p>对于任意给定的高速缓存对，给定高速缓存行的允许状态如图。<br><img src="/images/pasted-2.png" alt="upload successful"></p>
+<h2 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>根据JVM规范，JVM内存共分为虚拟机栈，堆，方法区，程序计数器，本地方法栈五个部分。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>不可见<blockquote>
+<p>多个线程从主存中读取数据，其中一个线程的修改对其它线程不可见。</p>
+</blockquote>
+</li>
+</ul>
+<p>使用volatile关键字，表示只能从主存中读取，修改后写回主存。</p>
+<ul>
+<li>竞争<blockquote>
+<p>多个线程同时修改同一份数据。</p>
+</blockquote>
+</li>
+</ul>
+<p>使用synchronized关键字，对数据加锁，释放锁之前其它线程不能访问。</p>
+<h2 id="JMM"><a href="#JMM" class="headerlink" title="JMM"></a>JMM</h2><p>Java Memory Model，Java内存模型,定义了JVM在计算机内存中的工作方式。JVM是整个计算机虚拟模型，所以JMM属于JVM。<br>在不同的硬件生产商和不同的操作系统下，内存的访问逻辑有一定的差异，JMM就是为了屏蔽系统和硬件的差异。  </p>
+<h3 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h3><p>JMM用来描述JVM是如何和计算机内存交互的。而JVM是计算机的一个模型，自然包含内存结构。</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>并发</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mybatis</title>
+    <url>/202007/Java/Mybatis/mybatis/</url>
+    <content><![CDATA[<ul>
+<li>mybatis 基于注解的sql可以不用写script？<br>  script 标签中可以使用xml中的标签来实现复杂语句的查询</li>
+<li>mybatis 多个参数时使用@Param 注解指定？<br>  不使用@Param注解：<pre><code>参数为基本类型，可以有多个
+参数为javabean对象，且只能有一个，使用时直接用对象的属性（注解无法获取多个属性，只能获取嵌套属性）</code></pre>  参数为String时，必须指定@Param注解，但是当有多个参数时，可以不用注解，猜想可能是把多个参数自动封装成一个对象了</li>
+<li>mybatis 基于注解使用@ResultMap(“?”) 来使用xml中定义的reslutmap<br>  只能引用通过@Result注解定义的，并指定名称的resultmap</li>
+<li>当方法传入多个参数且包含复杂对象时，使用 对象.属性 来引用，可以使用@Param起别名。如果其中有基本参数类型，直接引用即可。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Mybatis</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+        <tag>Mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>lamada</title>
+    <url>/202002/Java/JDK8/lamada/</url>
+    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
+<p>lamada VS 匿名内部类</p>
+<ol>
+<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
+<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
+<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
+</ol>
+<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
+<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
+<li>Consumer<T> 消费型<br> void accept(T t);</li>
+<li>Supplier<T> 提供型<br> T get();</li>
+<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
+<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
+</ol>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JDK8</category>
+      </categories>
   </entry>
   <entry>
     <title>电磁波</title>
@@ -558,23 +830,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
   </entry>
   <entry>
-    <title>spring</title>
-    <url>/202007/Java/Spring/spring/</url>
-    <content><![CDATA[<ul>
-<li>MATE-INF<br>  spring.factories</li>
-<li>profile / @  spring-boot-starter-parent<br>  手动重新引入maven依赖<br>  父级pom对所有子级生效，子级覆盖父级，子级优先级更高</li>
-<li>spring-boot-devtools</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>显卡</title>
     <url>/202007/%E7%94%9F%E6%B4%BB/%E7%94%B5%E8%84%91/%E6%98%BE%E5%8D%A1/</url>
     <content><![CDATA[<h2 id="厂商"><a href="#厂商" class="headerlink" title="厂商"></a>厂商</h2><ul>
@@ -602,30 +857,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
   </entry>
   <entry>
-    <title>lamada</title>
-    <url>/202002/Java/JDK8/lamada/</url>
-    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
-<p>lamada VS 匿名内部类</p>
-<ol>
-<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
-<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
-<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
-</ol>
-<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
-<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
-<li>Consumer<T> 消费型<br> void accept(T t);</li>
-<li>Supplier<T> 提供型<br> T get();</li>
-<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
-<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
-</ol>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JDK8</category>
-      </categories>
-  </entry>
-  <entry>
     <title>计算机</title>
     <url>/202007/%E7%94%9F%E6%B4%BB/%E7%94%B5%E8%84%91/%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
     <content><![CDATA[<h2 id="冯诺依曼体系"><a href="#冯诺依曼体系" class="headerlink" title="冯诺依曼体系"></a>冯诺依曼体系</h2><p>输入设备、输出设备、计算器、存储器、控制器</p>
@@ -647,26 +878,6 @@ layout为scaffolds中定义的模板，默认为post</li>
         <category>生活</category>
         <category>电脑</category>
       </categories>
-  </entry>
-  <entry>
-    <title>mybatis</title>
-    <url>/202007/Java/Mybatis/mybatis/</url>
-    <content><![CDATA[<ul>
-<li>mybatis 基于注解的sql可以不用写script？<br>  script 标签中可以使用xml中的标签来实现复杂语句的查询</li>
-<li>mybatis 多个参数时使用@Param 注解指定？<br>  不使用@Param注解：<pre><code>参数为基本类型，可以有多个
-参数为javabean对象，且只能有一个，使用时直接用对象的属性（注解无法获取多个属性，只能获取嵌套属性）</code></pre>  参数为String时，必须指定@Param注解，但是当有多个参数时，可以不用注解，猜想可能是把多个参数自动封装成一个对象了</li>
-<li>mybatis 基于注解使用@ResultMap(“?”) 来使用xml中定义的reslutmap<br>  只能引用通过@Result注解定义的，并指定名称的resultmap</li>
-<li>当方法传入多个参数且包含复杂对象时，使用 对象.属性 来引用，可以使用@Param起别名。如果其中有基本参数类型，直接引用即可。</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Mybatis</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-        <tag>Mybatis</tag>
-      </tags>
   </entry>
   <entry>
     <title>CPU</title>
