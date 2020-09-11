@@ -27,4 +27,20 @@ date: 2020-09-10 14:23:00
 ### CompletableFuture
 可以被显式完成。  
 
+## FutureTask
+### 状态
+- NEW
+- COMPLETING
+- NORMAL
+- EXCEPTIONAL
+- CANCELLED
+- INTERRUPTING
+- INTERRUPTED
+
+### 状态转换
+NEW -> COMPLETING -> NORMAL
+NEW -> COMPLETING -> EXCEPTIONAL
+NEW -> CANCELLED
+NEW -> INTERRUPTING -> INTERRUPTED
+
 <p style="text-align: center"><strong>END</strong></p>
