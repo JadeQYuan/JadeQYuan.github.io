@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>OAS</title>
+    <url>/202007/API/oas/</url>
+    <content><![CDATA[<h2 id="OAS"><a href="#OAS" class="headerlink" title="OAS"></a>OAS</h2><p>OpenAPI Specification, 开放API声明，是一个API规范，用于描述一整套API接口。</p>
+<h2 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h2><p>一个流行的API框架，以OAS为基础，对整个API的开发周期都提供了相应的解决方案，几乎支持所有语言。</p>
+<h2 id="springfox-swagger"><a href="#springfox-swagger" class="headerlink" title="springfox-swagger"></a>springfox-swagger</h2><p>用于将swagger集成到spring中来，前身是swagger-springmvc。生成多个json文件。</p>
+<h2 id="springfox-swagger2"><a href="#springfox-swagger2" class="headerlink" title="springfox-swagger2"></a>springfox-swagger2</h2><p>生成一个json文件。</p>
+<h2 id="springfox-swagger-ui"><a href="#springfox-swagger-ui" class="headerlink" title="springfox-swagger-ui"></a>springfox-swagger-ui</h2><p>页面</p>
+<h2 id="springdoc-openapi"><a href="#springdoc-openapi" class="headerlink" title="springdoc-openapi"></a>springdoc-openapi</h2><p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>API</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AOP</title>
     <url>/202002/Java/aop/</url>
     <content><![CDATA[<h2 id="一-什么是AOP"><a href="#一-什么是AOP" class="headerlink" title="一. 什么是AOP"></a>一. 什么是AOP</h2><pre><code>AOP（Aspect Oriented Programing），面向切面编程，是对OOP的补充，通过预编译方式或运行期动态代理实现程序功能的统一维护的一种技术。</code></pre><h2 id="二-意图"><a href="#二-意图" class="headerlink" title="二. 意图"></a>二. 意图</h2><pre><code>将与业务无关的代码，如日志记录，性能监控，事务处理等从业务逻辑代码中划分出来，将它们独立到非业务逻辑方法中，使得与业务方法解耦，并且在改变相关逻辑的时候不影响业务逻辑的代码。</code></pre><h2 id="三-AOP-概念"><a href="#三-AOP-概念" class="headerlink" title="三. AOP 概念"></a>三. AOP 概念</h2><h4 id="切面-Aspect"><a href="#切面-Aspect" class="headerlink" title="切面 Aspect"></a>切面 Aspect</h4><pre><code>切面是一个横切关注点。</code></pre><h4 id="连接点-JointPoint"><a href="#连接点-JointPoint" class="headerlink" title="连接点 JointPoint"></a>连接点 JointPoint</h4><pre><code>连接点是具体执行增强的点，比如方法执行，构造器调用，成员赋值。</code></pre><h4 id="切点-PointCut"><a href="#切点-PointCut" class="headerlink" title="切点 PointCut"></a>切点 PointCut</h4><pre><code>匹配连接点的正则表达式，是连接点的集合。</code></pre><h4 id="通知-Advice"><a href="#通知-Advice" class="headerlink" title="通知 Advice"></a>通知 Advice</h4><pre><code>对连接点的进行的操作。</code></pre><h4 id="织入-Weaving"><a href="#织入-Weaving" class="headerlink" title="织入 Weaving"></a>织入 Weaving</h4><pre><code>把切面应用到目标对象，并创建代理对象的过程。切面在指定的连接点被织入到目标对象。</code></pre><h2 id="四-AOP流行框架比较"><a href="#四-AOP流行框架比较" class="headerlink" title="四. AOP流行框架比较"></a>四. AOP流行框架比较</h2><pre><code>当下最流行的AOP框架为Spring AOP 及 AspectJ。</code></pre><ol>
@@ -92,73 +108,6 @@
       </categories>
       <tags>
         <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OAS</title>
-    <url>/202007/API/oas/</url>
-    <content><![CDATA[<h2 id="OAS"><a href="#OAS" class="headerlink" title="OAS"></a>OAS</h2><p>OpenAPI Specification, 开放API声明，是一个API规范，用于描述一整套API接口。</p>
-<h2 id="swagger"><a href="#swagger" class="headerlink" title="swagger"></a>swagger</h2><p>一个流行的API框架，以OAS为基础，对整个API的开发周期都提供了相应的解决方案，几乎支持所有语言。</p>
-<h2 id="springfox-swagger"><a href="#springfox-swagger" class="headerlink" title="springfox-swagger"></a>springfox-swagger</h2><p>用于将swagger集成到spring中来，前身是swagger-springmvc。生成多个json文件。</p>
-<h2 id="springfox-swagger2"><a href="#springfox-swagger2" class="headerlink" title="springfox-swagger2"></a>springfox-swagger2</h2><p>生成一个json文件。</p>
-<h2 id="springfox-swagger-ui"><a href="#springfox-swagger-ui" class="headerlink" title="springfox-swagger-ui"></a>springfox-swagger-ui</h2><p>页面</p>
-<h2 id="springdoc-openapi"><a href="#springdoc-openapi" class="headerlink" title="springdoc-openapi"></a>springdoc-openapi</h2><p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>API</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BeanValidation</title>
-    <url>/202002/Java/beanvalidation/</url>
-    <content><![CDATA[<h2 id="Bean-Validation"><a href="#Bean-Validation" class="headerlink" title="Bean Validation"></a>Bean Validation</h2><pre><code>Bean Validation是一个运行时的数据验证框架，为JavaBean验证定义了相应的元数据模型和Api。</code></pre><table>
-<thead>
-<tr>
-<th>JSR版本</th>
-<th>Bean Validation版本</th>
-<th>发布时间</th>
-<th>hibernate实现版本</th>
-<th>apache BLal实现版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>303</td>
-<td>1.0</td>
-<td>2009年javaee 6</td>
-<td>4.3.1.Final</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>349</td>
-<td>1.1</td>
-<td>2013年javaee 7</td>
-<td>5.1.1.Final</td>
-<td>1.1.1</td>
-</tr>
-<tr>
-<td>380</td>
-<td>2.0</td>
-<td>2017年javaee 8</td>
-<td>6.0.1.Final</td>
-<td>2.0.3</td>
-</tr>
-</tbody></table>
-<h2 id="Hibernate-Validation"><a href="#Hibernate-Validation" class="headerlink" title="Hibernate Validation"></a>Hibernate Validation</h2><pre><code>hibernate validation是对这个规范的实践，他提供了相应的实现，并增加了一些其他校验注解(后期规范更新，hibernate将重复的标记了@Departure)，他们位于org.hibernate.validator.constraints包下。</code></pre><h2 id="Spring-Validataion"><a href="#Spring-Validataion" class="headerlink" title="Spring Validataion"></a>Spring Validataion</h2><pre><code>spring validation对hibernate validation进行了二次封装，在springmvc模块中添加了自动校验，并将校验信息封装进了特定的类（BindingResult）中。</code></pre><h2 id="Validated-和-Valid-的区别"><a href="#Validated-和-Valid-的区别" class="headerlink" title="@Validated 和 @Valid 的区别"></a>@Validated 和 @Valid 的区别</h2><ul>
-<li>@Validted 支持分组校验，@Valid不支持。</li>
-<li>@Valid支持嵌套验证，@Validated不支持。</li>
-<li>@Validated可以将校验结果绑定到BindingResult中，而不抛出异常。<br>  必须一个校验对象一个BindingResult，一一对应且紧随其后。</li>
-<li>在没有分组校验及嵌套校验的情况下， 效果一致。</li>
-</ul>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><pre><code>https://beanvalidation.org</code></pre><p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-        <tag>Validate</tag>
       </tags>
   </entry>
   <entry>
@@ -311,79 +260,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Heox文章规范</title>
-    <url>/202007/%E5%85%83/heox%E6%96%87%E7%AB%A0%E8%A7%84%E8%8C%83/</url>
+    <title>Hexo admin后台管理</title>
+    <url>/202007/%E5%85%83/hexo-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<blockquote>
-<p>在此列举出一些规则，之后编写文章时都应遵循这些规则。该规则逐渐丰富。</p>
+<p>使用hexo搭建博客之后，通过在编辑器里面来记录文章总归不是一个好的方式，而hexo admin提供了后台管理的页面来通过页面管理文章。</p>
 </blockquote>
-<ul>
-<li>文章最高使用二级标题，逐级递减，不适用一级标题。</li>
-<li>文章添加分类，根据Hexo的描述，使用二级分类。</li>
-</ul>
-<p><img src="/images/pasted-0.png" alt="upload successful"></p>
-<ul>
-<li>缩进，还没有找到好的缩进方式。</li>
-</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
+<p>安装好之后会在根目录下生成一个配置文件，该配置文件可以保存页面settings中的配置。</p>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>管理页面中deploy功能需要添加配置。</p>
+<ol>
+<li>在_config.yml 中添加amdin发布命令的脚本路径。</li>
+<li>创建脚本文件。</li>
+</ol>
+<p>PS: 该功能没有实现 </p>
+<h2 id="线上"><a href="#线上" class="headerlink" title="线上"></a>线上</h2><p>github Pages是静态网站，不支持。支持其它动态的服务器。</p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>hexo admin 可以在编辑器内复制图片，图片将保存在images文件夹下，可自定义。<br>windows复制的图片需要去掉...\。</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ol>
+<li>Posts页面没有分类，所有文章放在一起，看起来比较乱。</li>
+<li>新建文章能否按照分类按文件夹存放。</li>
+<li>添加分类和标签时只能输入，不能选择。</li>
+<li>不能编辑文章的描述，该描述影响列表页面的内容。</li>
+</ol>
+<p>PS：<br>（2）. 可以在文章编辑界面上方修改文章路径。<br>（4）. 可以在_config.yml中添加 metadata - description 支持。</p>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
         <category>元</category>
       </categories>
-  </entry>
-  <entry>
-    <title>类之间关系</title>
-    <url>/202007/UML/%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/</url>
-    <content><![CDATA[<p>面向对象 类之间的关联</p>
-<h2 id="泛化（Generalization）-is-a"><a href="#泛化（Generalization）-is-a" class="headerlink" title="泛化（Generalization） is a"></a>泛化（Generalization） is a</h2><p>表现为继承或实现关系。具体形式为类与类之间的继承管理，接口与接口之间的继承关系，类对接口的实现关系。</p>
-<ul>
-<li>继承：实线 + 三角空心箭头，从子类指向父类。</li>
-<li>实现：虚线 + 三角空心箭头，从实现类指向接口。</li>
-</ul>
-<h2 id="关联（Association）-has-a"><a href="#关联（Association）-has-a" class="headerlink" title="关联（Association） has a"></a>关联（Association） has a</h2><p>表现为全局变量。可以是单向，也可以是双向。</p>
-<ul>
-<li>实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h3 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h3><p>强的关联关联。强调一个是整体，一个是部分，但不是组成部分。</p>
-<ul>
-<li>空心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h3 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h3><p>比聚合关系强的关系。强调部分是整体的组成部分，部分和整体拥有一致的生命周期。</p>
-<ul>
-<li>实心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
-</ul>
-<h2 id="依赖（Dependency）-use-a"><a href="#依赖（Dependency）-use-a" class="headerlink" title="依赖（Dependency） use a"></a>依赖（Dependency） use a</h2><p>表示一个类依赖于另一个类。具体形式为局部变量，静态方法调用，方法参数。</p>
-<ul>
-<li>虚线 + 普通箭头，从主类指向被依赖类。</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>UML</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>项目分层</title>
-    <url>/202009/%E6%9E%B6%E6%9E%84/%E9%A1%B9%E7%9B%AE%E5%88%86%E5%B1%82/</url>
-    <content><![CDATA[<h2 id="项目分层"><a href="#项目分层" class="headerlink" title="项目分层"></a>项目分层</h2><ul>
-<li>阿里规约</li>
-</ul>
-<p><img src="/images/pasted-5.png" alt="upload successful"></p>
-<ul>
-<li>终端显示层<br>前端、JSP</li>
-<li>开放接口<br>RPC接口、http接口</li>
-<li>web层<br>负责请求转发、基本参数校验</li>
-<li>service层<br>负责具体的业务逻辑处理、复用性低</li>
-<li>manager层<br>通用业务处理。可以是 1.第三方接口的封装。2.service层的通用业务。3.dao层的组合服用。</li>
-<li>dao层<br>数据访问</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>架构</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
   </entry>
   <entry>
     <title>Hexo搭建博客</title>
@@ -483,6 +385,123 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
+    <title>BeanValidation</title>
+    <url>/202002/Java/beanvalidation/</url>
+    <content><![CDATA[<h2 id="Bean-Validation"><a href="#Bean-Validation" class="headerlink" title="Bean Validation"></a>Bean Validation</h2><pre><code>Bean Validation是一个运行时的数据验证框架，为JavaBean验证定义了相应的元数据模型和Api。</code></pre><table>
+<thead>
+<tr>
+<th>JSR版本</th>
+<th>Bean Validation版本</th>
+<th>发布时间</th>
+<th>hibernate实现版本</th>
+<th>apache BLal实现版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>303</td>
+<td>1.0</td>
+<td>2009年javaee 6</td>
+<td>4.3.1.Final</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>349</td>
+<td>1.1</td>
+<td>2013年javaee 7</td>
+<td>5.1.1.Final</td>
+<td>1.1.1</td>
+</tr>
+<tr>
+<td>380</td>
+<td>2.0</td>
+<td>2017年javaee 8</td>
+<td>6.0.1.Final</td>
+<td>2.0.3</td>
+</tr>
+</tbody></table>
+<h2 id="Hibernate-Validation"><a href="#Hibernate-Validation" class="headerlink" title="Hibernate Validation"></a>Hibernate Validation</h2><pre><code>hibernate validation是对这个规范的实践，他提供了相应的实现，并增加了一些其他校验注解(后期规范更新，hibernate将重复的标记了@Departure)，他们位于org.hibernate.validator.constraints包下。</code></pre><h2 id="Spring-Validataion"><a href="#Spring-Validataion" class="headerlink" title="Spring Validataion"></a>Spring Validataion</h2><pre><code>spring validation对hibernate validation进行了二次封装，在springmvc模块中添加了自动校验，并将校验信息封装进了特定的类（BindingResult）中。</code></pre><h2 id="Validated-和-Valid-的区别"><a href="#Validated-和-Valid-的区别" class="headerlink" title="@Validated 和 @Valid 的区别"></a>@Validated 和 @Valid 的区别</h2><ul>
+<li>@Validted 支持分组校验，@Valid不支持。</li>
+<li>@Valid支持嵌套验证，@Validated不支持。</li>
+<li>@Validated可以将校验结果绑定到BindingResult中，而不抛出异常。<br>  必须一个校验对象一个BindingResult，一一对应且紧随其后。</li>
+<li>在没有分组校验及嵌套校验的情况下， 效果一致。</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><pre><code>https://beanvalidation.org</code></pre><p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+        <tag>Validate</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Heox文章规范</title>
+    <url>/202007/%E5%85%83/heox%E6%96%87%E7%AB%A0%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<blockquote>
+<p>在此列举出一些规则，之后编写文章时都应遵循这些规则。该规则逐渐丰富。</p>
+</blockquote>
+<ul>
+<li>文章最高使用二级标题，逐级递减，不适用一级标题。</li>
+<li>文章添加分类，根据Hexo的描述，使用二级分类。</li>
+</ul>
+<p><img src="/images/pasted-0.png" alt="upload successful"></p>
+<ul>
+<li>缩进，还没有找到好的缩进方式。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/202004/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>同一逻辑结构可以对应不同的存储结构。算法的设计取决于数的逻辑结构，而算法的实现依赖于指定的存储结构。</p>
+<h3 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h3><p>指反映数据元素之间的逻辑关系的数据结构。</p>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ul>
+<li>集合 同属一个集合</li>
+<li>线程结构 一对一</li>
+<li>树形 一对多</li>
+<li>图形 多对对<h3 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h3>指数据的逻辑结构在计算机存储空间的存放形式。一种数据结构可表示成一种或多种存储结构。<h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h4></li>
+<li>顺序存储结构</li>
+<li>链式存储结构</li>
+<li>索引存储结构</li>
+<li>散列存储结构</li>
+</ul>
+<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
+<p>固定大小的结构</p>
+</blockquote>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><blockquote>
+<p>顺序结构</p>
+</blockquote>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><blockquote>
+<p>后进先去</p>
+</blockquote>
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><blockquote>
+<p>先进先出</p>
+</blockquote>
+<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><blockquote>
+<p>哈希函数，存储key</p>
+</blockquote>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><blockquote>
+<p>层次结构</p>
+</blockquote>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><blockquote>
+<p>有顺序的树</p>
+</blockquote>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><blockquote>
+<p>图结构</p>
+</blockquote>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>Why</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git常用命令</title>
     <url>/202004/VCS/Git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<ul>
@@ -526,72 +545,59 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>Hexo admin后台管理</title>
-    <url>/202007/%E5%85%83/hexo-admin%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<blockquote>
-<p>使用hexo搭建博客之后，通过在编辑器里面来记录文章总归不是一个好的方式，而hexo admin提供了后台管理的页面来通过页面管理文章。</p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-admin</span><br></pre></td></tr></table></figure>
-<p>安装好之后会在根目录下生成一个配置文件，该配置文件可以保存页面settings中的配置。</p>
-<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>管理页面中deploy功能需要添加配置。</p>
-<ol>
-<li>在_config.yml 中添加amdin发布命令的脚本路径。</li>
-<li>创建脚本文件。</li>
-</ol>
-<p>PS: 该功能没有实现 </p>
-<h2 id="线上"><a href="#线上" class="headerlink" title="线上"></a>线上</h2><p>github Pages是静态网站，不支持。支持其它动态的服务器。</p>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>hexo admin 可以在编辑器内复制图片，图片将保存在images文件夹下，可自定义。<br>windows复制的图片需要去掉...\。</p>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ol>
-<li>Posts页面没有分类，所有文章放在一起，看起来比较乱。</li>
-<li>新建文章能否按照分类按文件夹存放。</li>
-<li>添加分类和标签时只能输入，不能选择。</li>
-<li>不能编辑文章的描述，该描述影响列表页面的内容。</li>
-</ol>
-<p>PS：<br>（2）. 可以在文章编辑界面上方修改文章路径。<br>（4）. 可以在_config.yml中添加 metadata - description 支持。</p>
+    <title>项目分层</title>
+    <url>/202009/%E6%9E%B6%E6%9E%84/%E9%A1%B9%E7%9B%AE%E5%88%86%E5%B1%82/</url>
+    <content><![CDATA[<h2 id="项目分层"><a href="#项目分层" class="headerlink" title="项目分层"></a>项目分层</h2><ul>
+<li>阿里规约</li>
+</ul>
+<p><img src="/images/pasted-5.png" alt="upload successful"></p>
+<ul>
+<li>终端显示层<br>前端、JSP</li>
+<li>开放接口<br>RPC接口、http接口</li>
+<li>web层<br>负责请求转发、基本参数校验</li>
+<li>service层<br>负责具体的业务逻辑处理、复用性低</li>
+<li>manager层<br>通用业务处理。可以是 1.第三方接口的封装。2.service层的通用业务。3.dao层的组合服用。</li>
+<li>dao层<br>数据访问</li>
+</ul>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
-        <category>元</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数据结构</title>
-    <url>/202004/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<blockquote>
-<p>&emsp;&emsp;之前对于数据结构的理解是，存储数据的方式，最近看到概念说数据结构是元素的集合，带着这个疑问，深入探索这个问题。<br>记录每种结构的存储方式，特性及优缺点。</p>
-</blockquote>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>逻辑结构： 数据存储的方式<br>物理结构： 具有一定特性的元素的集合</p>
-</blockquote>
-<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
-<p>固定大小的结构</p>
-</blockquote>
-<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><blockquote>
-<p>顺序结构</p>
-</blockquote>
-<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><blockquote>
-<p>后进先去</p>
-</blockquote>
-<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><blockquote>
-<p>先进先出</p>
-</blockquote>
-<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><blockquote>
-<p>哈希函数，存储key</p>
-</blockquote>
-<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><blockquote>
-<p>层次结构</p>
-</blockquote>
-<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><blockquote>
-<p>有顺序的树</p>
-</blockquote>
-<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><blockquote>
-<p>图结构</p>
-</blockquote>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>数据结构</category>
+        <category>架构</category>
       </categories>
       <tags>
-        <tag>Why</tag>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>类之间关系</title>
+    <url>/202007/UML/%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/</url>
+    <content><![CDATA[<p>面向对象 类之间的关联</p>
+<h2 id="泛化（Generalization）-is-a"><a href="#泛化（Generalization）-is-a" class="headerlink" title="泛化（Generalization） is a"></a>泛化（Generalization） is a</h2><p>表现为继承或实现关系。具体形式为类与类之间的继承管理，接口与接口之间的继承关系，类对接口的实现关系。</p>
+<ul>
+<li>继承：实线 + 三角空心箭头，从子类指向父类。</li>
+<li>实现：虚线 + 三角空心箭头，从实现类指向接口。</li>
+</ul>
+<h2 id="关联（Association）-has-a"><a href="#关联（Association）-has-a" class="headerlink" title="关联（Association） has a"></a>关联（Association） has a</h2><p>表现为全局变量。可以是单向，也可以是双向。</p>
+<ul>
+<li>实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h3 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h3><p>强的关联关联。强调一个是整体，一个是部分，但不是组成部分。</p>
+<ul>
+<li>空心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h3 id="组合（Composition）"><a href="#组合（Composition）" class="headerlink" title="组合（Composition）"></a>组合（Composition）</h3><p>比聚合关系强的关系。强调部分是整体的组成部分，部分和整体拥有一致的生命周期。</p>
+<ul>
+<li>实心菱形 + 实线 + 普通箭头，从主类指向被关联类。</li>
+</ul>
+<h2 id="依赖（Dependency）-use-a"><a href="#依赖（Dependency）-use-a" class="headerlink" title="依赖（Dependency） use a"></a>依赖（Dependency） use a</h2><p>表示一个类依赖于另一个类。具体形式为局部变量，静态方法调用，方法参数。</p>
+<ul>
+<li>虚线 + 普通箭头，从主类指向被依赖类。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>UML</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
       </tags>
   </entry>
   <entry>
@@ -630,6 +636,22 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
       <tags>
         <tag>How/Why</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>进制转换</title>
+    <url>/202009/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h2 id="十进制-gt-二进制"><a href="#十进制-gt-二进制" class="headerlink" title="十进制 -&gt; 二进制"></a>十进制 -&gt; 二进制</h2><p>除二取余，余数倒序。</p>
+<h2 id="二进制-gt-十进制"><a href="#二进制-gt-十进制" class="headerlink" title="二进制 -&gt; 十进制"></a>二进制 -&gt; 十进制</h2><p>按权展开相加。</p>
+<h2 id="二进制-gt-八进制"><a href="#二进制-gt-八进制" class="headerlink" title="二进制 -&gt; 八进制"></a>二进制 -&gt; 八进制</h2><p>3位二进制数按权展开相加得到一位八进制数。</p>
+<h2 id="八进制-gt-二进制"><a href="#八进制-gt-二进制" class="headerlink" title="八进制 -&gt; 二进制"></a>八进制 -&gt; 二进制</h2><p>八进制数同故宫除2取余法，得到二进制数，每个八进制为三个二进制，不足时在最左边补零。</p>
+<h2 id="二进制-gt-十六进制"><a href="#二进制-gt-十六进制" class="headerlink" title="二进制 -&gt; 十六进制"></a>二进制 -&gt; 十六进制</h2><p>4位二进制数按权展开相加得到一位十六进制数。</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>计算机原理</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
       </tags>
   </entry>
   <entry>
@@ -713,22 +735,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>进制转换</title>
-    <url>/202009/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<h2 id="十进制-gt-二进制"><a href="#十进制-gt-二进制" class="headerlink" title="十进制 -&gt; 二进制"></a>十进制 -&gt; 二进制</h2><p>除二取余，余数倒序。</p>
-<h2 id="二进制-gt-十进制"><a href="#二进制-gt-十进制" class="headerlink" title="二进制 -&gt; 十进制"></a>二进制 -&gt; 十进制</h2><p>按权展开相加。</p>
-<h2 id="二进制-gt-八进制"><a href="#二进制-gt-八进制" class="headerlink" title="二进制 -&gt; 八进制"></a>二进制 -&gt; 八进制</h2><p>3位二进制数按权展开相加得到一位八进制数。</p>
-<h2 id="八进制-gt-二进制"><a href="#八进制-gt-二进制" class="headerlink" title="八进制 -&gt; 二进制"></a>八进制 -&gt; 二进制</h2><p>八进制数同故宫除2取余法，得到二进制数，每个八进制为三个二进制，不足时在最左边补零。</p>
-<h2 id="二进制-gt-十六进制"><a href="#二进制-gt-十六进制" class="headerlink" title="二进制 -&gt; 十六进制"></a>二进制 -&gt; 十六进制</h2><p>4位二进制数按权展开相加得到一位十六进制数。</p>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>计算机原理</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>项目经验</title>
     <url>/202009/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C/</url>
     <content><![CDATA[<h2 id="项目经验"><a href="#项目经验" class="headerlink" title="项目经验"></a>项目经验</h2><ul>
@@ -778,74 +784,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
       <tags>
         <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Stream原理</title>
-    <url>/202009/Java/JDK8/stream%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h2 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h2><p>Java 8 中定义了四种流，分别是Stream、IntStream、LongStream、DoubleStream。每种流的操作、参数等都有区别。</p>
-<h3 id="BaseStream"><a href="#BaseStream" class="headerlink" title="BaseStream"></a>BaseStream</h3><p>所有流接口的父级接口。</p>
-<h3 id="Streams"><a href="#Streams" class="headerlink" title="Streams"></a>Streams</h3><p>工具类。</p>
-<h3 id="StreamSupport"><a href="#StreamSupport" class="headerlink" title="StreamSupport"></a>StreamSupport</h3><p>创建流的工具，多用于类库</p>
-<h2 id="PipelineHelper"><a href="#PipelineHelper" class="headerlink" title="PipelineHelper"></a>PipelineHelper</h2><p>流水线，通过其将流串起来。</p>
-<h3 id="AbastractPipeline"><a href="#AbastractPipeline" class="headerlink" title="AbastractPipeline"></a>AbastractPipeline</h3><p>抽象类，定义了流水线串联起来的属性，及一些方法。</p>
-<h3 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline"></a>Pipeline</h3><p>与流类型，也分为四类。ReferencePipeline、IntPipeline、LongPipeline、DoublePipeline。</p>
-<h4 id="ReferencePipeline"><a href="#ReferencePipeline" class="headerlink" title="ReferencePipeline"></a>ReferencePipeline</h4><p>引用类型的流水线，抽象类，其实现类主要有，Head、StatelessOp、StatefulOp，分别表示第一个、无状态的和有状态。</p>
-<h2 id="OP"><a href="#OP" class="headerlink" title="OP"></a>OP</h2><p>操作</p>
-<h3 id="中间操作"><a href="#中间操作" class="headerlink" title="中间操作"></a>中间操作</h3><h4 id="有状态的操作"><a href="#有状态的操作" class="headerlink" title="有状态的操作"></a>有状态的操作</h4><ul>
-<li>distinct</li>
-<li>sorted</li>
-<li>limit</li>
-<li>skip<h4 id="无状态的操作"><a href="#无状态的操作" class="headerlink" title="无状态的操作"></a>无状态的操作</h4></li>
-<li>map</li>
-<li>filter</li>
-<li>peek<h3 id="结束操作"><a href="#结束操作" class="headerlink" title="结束操作"></a>结束操作</h3>TerminalOP。<h4 id="短路操作"><a href="#短路操作" class="headerlink" title="短路操作"></a>短路操作</h4></li>
-<li>match</li>
-<li>find<h4 id="非短路操作"><a href="#非短路操作" class="headerlink" title="非短路操作"></a>非短路操作</h4></li>
-<li>foreach</li>
-<li>reduce</li>
-</ul>
-<h2 id="Sink"><a href="#Sink" class="headerlink" title="Sink"></a>Sink</h2><p>真正的执行者。</p>
-<h3 id="TerminalSink"><a href="#TerminalSink" class="headerlink" title="TerminalSink"></a>TerminalSink</h3><p>标识是结束操作。</p>
-<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>返回值。</p>
-<h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><p>通过ForkJoinTask来实现并行流的处理。</p>
-<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><h3 id="编码流程"><a href="#编码流程" class="headerlink" title="编码流程"></a>编码流程</h3><ol>
-<li>创建一个stream</li>
-<li>添加中间操作，包括有状态、无状态操作</li>
-<li>添加结束操作</li>
-<li>如果有返回值，接收返回值</li>
-</ol>
-<h3 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h3><ol>
-<li>创建steam，其类型为Head</li>
-<li>每一步中间操作，创建一个新的stream，其类型为StatelessOp或StatefulOp，并在新的steam中保存上一个stream的引用</li>
-<li>对于结束操作，创建一个新的TerminalSink</li>
-<li>通过stream中的引用，逆序对每一个中间操作创建一个Sink，因为Sink继承自Consumer，在accpet中调用下流sink</li>
-<li>接收返回值</li>
-</ol>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JDK8</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>maven</title>
-    <url>/202007/Java/maven/</url>
-    <content><![CDATA[<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><blockquote>
-<p>Why</p>
-</blockquote>
-<ul>
-<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
       </tags>
   </entry>
   <entry>
@@ -948,6 +886,74 @@ layout为scaffolds中定义的模板，默认为post</li>
       <categories>
         <category>Java</category>
         <category>web</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>maven</title>
+    <url>/202007/Java/maven/</url>
+    <content><![CDATA[<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><blockquote>
+<p>Why</p>
+</blockquote>
+<ul>
+<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Stream原理</title>
+    <url>/202009/Java/JDK8/stream%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h2 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h2><p>Java 8 中定义了四种流，分别是Stream、IntStream、LongStream、DoubleStream。每种流的操作、参数等都有区别。</p>
+<h3 id="BaseStream"><a href="#BaseStream" class="headerlink" title="BaseStream"></a>BaseStream</h3><p>所有流接口的父级接口。</p>
+<h3 id="Streams"><a href="#Streams" class="headerlink" title="Streams"></a>Streams</h3><p>工具类。</p>
+<h3 id="StreamSupport"><a href="#StreamSupport" class="headerlink" title="StreamSupport"></a>StreamSupport</h3><p>创建流的工具，多用于类库</p>
+<h2 id="PipelineHelper"><a href="#PipelineHelper" class="headerlink" title="PipelineHelper"></a>PipelineHelper</h2><p>流水线，通过其将流串起来。</p>
+<h3 id="AbastractPipeline"><a href="#AbastractPipeline" class="headerlink" title="AbastractPipeline"></a>AbastractPipeline</h3><p>抽象类，定义了流水线串联起来的属性，及一些方法。</p>
+<h3 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline"></a>Pipeline</h3><p>与流类型，也分为四类。ReferencePipeline、IntPipeline、LongPipeline、DoublePipeline。</p>
+<h4 id="ReferencePipeline"><a href="#ReferencePipeline" class="headerlink" title="ReferencePipeline"></a>ReferencePipeline</h4><p>引用类型的流水线，抽象类，其实现类主要有，Head、StatelessOp、StatefulOp，分别表示第一个、无状态的和有状态。</p>
+<h2 id="OP"><a href="#OP" class="headerlink" title="OP"></a>OP</h2><p>操作</p>
+<h3 id="中间操作"><a href="#中间操作" class="headerlink" title="中间操作"></a>中间操作</h3><h4 id="有状态的操作"><a href="#有状态的操作" class="headerlink" title="有状态的操作"></a>有状态的操作</h4><ul>
+<li>distinct</li>
+<li>sorted</li>
+<li>limit</li>
+<li>skip<h4 id="无状态的操作"><a href="#无状态的操作" class="headerlink" title="无状态的操作"></a>无状态的操作</h4></li>
+<li>map</li>
+<li>filter</li>
+<li>peek<h3 id="结束操作"><a href="#结束操作" class="headerlink" title="结束操作"></a>结束操作</h3>TerminalOP。<h4 id="短路操作"><a href="#短路操作" class="headerlink" title="短路操作"></a>短路操作</h4></li>
+<li>match</li>
+<li>find<h4 id="非短路操作"><a href="#非短路操作" class="headerlink" title="非短路操作"></a>非短路操作</h4></li>
+<li>foreach</li>
+<li>reduce</li>
+</ul>
+<h2 id="Sink"><a href="#Sink" class="headerlink" title="Sink"></a>Sink</h2><p>真正的执行者。</p>
+<h3 id="TerminalSink"><a href="#TerminalSink" class="headerlink" title="TerminalSink"></a>TerminalSink</h3><p>标识是结束操作。</p>
+<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>返回值。</p>
+<h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><p>通过ForkJoinTask来实现并行流的处理。</p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><h3 id="编码流程"><a href="#编码流程" class="headerlink" title="编码流程"></a>编码流程</h3><ol>
+<li>创建一个stream</li>
+<li>添加中间操作，包括有状态、无状态操作</li>
+<li>添加结束操作</li>
+<li>如果有返回值，接收返回值</li>
+</ol>
+<h3 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h3><ol>
+<li>创建steam，其类型为Head</li>
+<li>每一步中间操作，创建一个新的stream，其类型为StatelessOp或StatefulOp，并在新的steam中保存上一个stream的引用</li>
+<li>对于结束操作，创建一个新的TerminalSink</li>
+<li>通过stream中的引用，逆序对每一个中间操作创建一个Sink，因为Sink继承自Consumer，在accpet中调用下流sink</li>
+<li>接收返回值</li>
+</ol>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JDK8</category>
       </categories>
       <tags>
         <tag>How</tag>
@@ -1180,6 +1186,25 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
+    <title>CAS</title>
+    <url>/202007/Java/%E5%B9%B6%E5%8F%91/cas/</url>
+    <content><![CDATA[<h2 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h2><p>Compare And Swap。</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>CAS是一种无锁算法，CAS有3个操作数，主内存值V，工作内存值A，要修改的新值B。当且仅当A和V相同时，将主内存值V改为B，否则什么都不做。<br>valueOffset: 主内存地址的偏移量。<br>value：使用volatile关键字保证可见性。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li>ABA问题。JDK1.5提供了AtomicStampedReference类来解决，纪录值的版本。</li>
+<li>循环时间长开销大。长时间不成功会一直自旋。</li>
+<li>只能保证一个共享变量的原子操作。JDK1.5提供了AtomicReference类来保证引用对象之间的原子性，可以把多个变量放在一个对象里进行CAS操作。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>并发</category>
+      </categories>
+      <tags>
+        <tag>How/Why</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Future</title>
     <url>/202009/Java/%E5%B9%B6%E5%8F%91/future/</url>
     <content><![CDATA[<h2 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h2><p>非阻塞模型。</p>
@@ -1244,25 +1269,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>CAS</title>
-    <url>/202007/Java/%E5%B9%B6%E5%8F%91/cas/</url>
-    <content><![CDATA[<h2 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h2><p>Compare And Swap。</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>CAS是一种无锁算法，CAS有3个操作数，主内存值V，工作内存值A，要修改的新值B。当且仅当A和V相同时，将主内存值V改为B，否则什么都不做。<br>valueOffset: 主内存地址的偏移量。<br>value：使用volatile关键字保证可见性。</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
-<li>ABA问题。JDK1.5提供了AtomicStampedReference类来解决，纪录值的版本。</li>
-<li>循环时间长开销大。长时间不成功会一直自旋。</li>
-<li>只能保证一个共享变量的原子操作。JDK1.5提供了AtomicReference类来保证引用对象之间的原子性，可以把多个变量放在一个对象里进行CAS操作。</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>并发</category>
-      </categories>
-      <tags>
-        <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>volatile</title>
     <url>/202007/Java/%E5%B9%B6%E5%8F%91/volatile/</url>
     <content><![CDATA[<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
@@ -1278,6 +1284,46 @@ layout为scaffolds中定义的模板，默认为post</li>
       <categories>
         <category>Java</category>
         <category>并发</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 8</title>
+    <url>/202009/Java/%E6%96%B0%E7%89%B9%E6%80%A7/java-8/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Oracle公司于2014年3月18日发布Java 8。它支持函数式编程，新的JavaScript引擎，新的如期API，新的Stream API等。</p>
+<h2 id="新特性"><a href="#新特性" class="headerlink" title="新特性"></a>新特性</h2><h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><ul>
+<li>lambda 表达式和函数式接口</li>
+<li>接口的默认方法和静态方法</li>
+<li>方法引用</li>
+<li>重复注释</li>
+<li>更好的类型推断</li>
+<li>注解的扩展 （扩展了注解可以使用的范围，包括：局部变量，泛型，超类，接口实现，方法的exception声明等）</li>
+</ul>
+<h3 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h3><ul>
+<li>参数名字</li>
+</ul>
+<h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><ul>
+<li>Optional</li>
+<li>Stream</li>
+<li>时间日期API</li>
+<li>Nashorn javascript引擎</li>
+<li>Base64</li>
+<li>并行数组 （增加了支持并行的数组处理）</li>
+<li>并发 （新增StampedLock、DoubleAccumulator、DoubleAdder、LongAccumulator、LongAdder等）</li>
+</ul>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ul>
+<li>Nashorn引擎 jjs</li>
+<li>类依赖分析工具 jdeps</li>
+</ul>
+<h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><ul>
+<li>JVM内存永久区被metaspace替换，JVM参数 -XX:PermSize 和 -XX:MaxPermSize 被 -XX:MetaSpaceSize 和 -XX:MaxMetaSpaceSize 代替。</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>新特性</category>
       </categories>
       <tags>
         <tag>How</tag>
@@ -1444,30 +1490,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>lamada</title>
-    <url>/202002/Java/JDK8/lamada/</url>
-    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
-<p>lamada VS 匿名内部类</p>
-<ol>
-<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
-<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
-<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
-</ol>
-<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
-<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
-<li>Consumer<T> 消费型<br> void accept(T t);</li>
-<li>Supplier<T> 提供型<br> T get();</li>
-<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
-<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
-</ol>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JDK8</category>
-      </categories>
-  </entry>
-  <entry>
     <title>锁</title>
     <url>/202007/Java/%E5%B9%B6%E5%8F%91/%E9%94%81/</url>
     <content><![CDATA[<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>在计算机科学中，锁于互斥时一种同步机制，用于在有许多执行线程的环境中强制对资源的访问限制。</p>
@@ -1499,6 +1521,30 @@ layout为scaffolds中定义的模板，默认为post</li>
       <tags>
         <tag>How</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>lamada</title>
+    <url>/202002/Java/JDK8/lamada/</url>
+    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
+<p>lamada VS 匿名内部类</p>
+<ol>
+<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
+<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
+<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
+</ol>
+<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
+<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
+<li>Consumer<T> 消费型<br> void accept(T t);</li>
+<li>Supplier<T> 提供型<br> T get();</li>
+<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
+<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
+</ol>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JDK8</category>
+      </categories>
   </entry>
   <entry>
     <title>摄像头</title>
@@ -1536,6 +1582,39 @@ layout为scaffolds中定义的模板，默认为post</li>
 <li><del>X  加强版</del><h4 id="顶级版-1"><a href="#顶级版-1" class="headerlink" title="顶级版"></a>顶级版</h4></li>
 <li>RX Vega **</li>
 </ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>生活</category>
+        <category>电脑</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CPU</title>
+    <url>/202007/%E7%94%9F%E6%B4%BB/%E7%94%B5%E8%84%91/cpu/</url>
+    <content><![CDATA[<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>CPU架构是CPU厂商给属于同一系列的CPU产品定的一个规范，是区分不同类型的CPU的重要标识。<br>主流架构有inter公司、AMD公司的×86架构，IBM公司的PowerPC架构，ARM公司的ARM架构。</p>
+<h2 id="厂商"><a href="#厂商" class="headerlink" title="厂商"></a>厂商</h2><h3 id="桌面"><a href="#桌面" class="headerlink" title="桌面"></a>桌面</h3><p>Inter，AMD，IBM，龙芯（国产）, VIA威盛（台湾）等。</p>
+<h3 id="笔记本"><a href="#笔记本" class="headerlink" title="笔记本"></a>笔记本</h3><p>Inter，AMD，IBM，龙芯（国产）, VIA威盛（台湾）等。</p>
+<h3 id="手机"><a href="#手机" class="headerlink" title="手机"></a>手机</h3><p>高通，联发科，华为，三星等。</p>
+<h2 id="品牌"><a href="#品牌" class="headerlink" title="品牌"></a>品牌</h2><ul>
+<li><p>inter<br>酷睿 core i3/i5/i7/i9<br>赛扬 Celeron<br>奔腾 Pentium<br>至强 Xeon 服务器<br>安腾 Itanium 服务器 </p>
+<blockquote>
+<p>性能： 酷睿 &gt; 奔腾 &gt; 赛扬</p>
+</blockquote>
+</li>
+<li><p>AMD<br>闪龙 Sempron 新一代低端<br>速龙 Athlon 低端<br>炫龙 Turion 笔记本<br>羿龙 Phenom 中高端<br>皓龙 Opteron 高端<br>锐龙 Ryzen 3/5/7/9 可以与inter core系列抗衡  </p>
+</li>
+<li><p>高通<br>骁龙</p>
+</li>
+<li><p>联发科<br>天玑<br>helio</p>
+</li>
+<li><p>三星<br>Exynos</p>
+</li>
+<li><p>华为<br>麒麟</p>
+</li>
+<li><p>苹果<br>A</p>
+</li>
+</ul>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>基本一年更新一次，如酷睿系列、高通骁龙系列</p>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
         <category>生活</category>
@@ -1597,39 +1676,6 @@ layout为scaffolds中定义的模板，默认为post</li>
 <li>核芯显卡<br>CPU与GPU合二为一</li>
 </ul>
 <h3 id="其它设备"><a href="#其它设备" class="headerlink" title="其它设备"></a>其它设备</h3><p>风扇<br>电源<br>显示器<br>打印机  </p>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>生活</category>
-        <category>电脑</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CPU</title>
-    <url>/202007/%E7%94%9F%E6%B4%BB/%E7%94%B5%E8%84%91/cpu/</url>
-    <content><![CDATA[<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>CPU架构是CPU厂商给属于同一系列的CPU产品定的一个规范，是区分不同类型的CPU的重要标识。<br>主流架构有inter公司、AMD公司的×86架构，IBM公司的PowerPC架构，ARM公司的ARM架构。</p>
-<h2 id="厂商"><a href="#厂商" class="headerlink" title="厂商"></a>厂商</h2><h3 id="桌面"><a href="#桌面" class="headerlink" title="桌面"></a>桌面</h3><p>Inter，AMD，IBM，龙芯（国产）, VIA威盛（台湾）等。</p>
-<h3 id="笔记本"><a href="#笔记本" class="headerlink" title="笔记本"></a>笔记本</h3><p>Inter，AMD，IBM，龙芯（国产）, VIA威盛（台湾）等。</p>
-<h3 id="手机"><a href="#手机" class="headerlink" title="手机"></a>手机</h3><p>高通，联发科，华为，三星等。</p>
-<h2 id="品牌"><a href="#品牌" class="headerlink" title="品牌"></a>品牌</h2><ul>
-<li><p>inter<br>酷睿 core i3/i5/i7/i9<br>赛扬 Celeron<br>奔腾 Pentium<br>至强 Xeon 服务器<br>安腾 Itanium 服务器 </p>
-<blockquote>
-<p>性能： 酷睿 &gt; 奔腾 &gt; 赛扬</p>
-</blockquote>
-</li>
-<li><p>AMD<br>闪龙 Sempron 新一代低端<br>速龙 Athlon 低端<br>炫龙 Turion 笔记本<br>羿龙 Phenom 中高端<br>皓龙 Opteron 高端<br>锐龙 Ryzen 3/5/7/9 可以与inter core系列抗衡  </p>
-</li>
-<li><p>高通<br>骁龙</p>
-</li>
-<li><p>联发科<br>天玑<br>helio</p>
-</li>
-<li><p>三星<br>Exynos</p>
-</li>
-<li><p>华为<br>麒麟</p>
-</li>
-<li><p>苹果<br>A</p>
-</li>
-</ul>
-<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>基本一年更新一次，如酷睿系列、高通骁龙系列</p>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
         <category>生活</category>
