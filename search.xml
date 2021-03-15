@@ -33,57 +33,6 @@
       </tags>
   </entry>
   <entry>
-    <title>BeanValidation</title>
-    <url>/202002/Java/beanvalidation/</url>
-    <content><![CDATA[<h2 id="Bean-Validation"><a href="#Bean-Validation" class="headerlink" title="Bean Validation"></a>Bean Validation</h2><pre><code>Bean Validation是一个运行时的数据验证框架，为JavaBean验证定义了相应的元数据模型和Api。</code></pre><table>
-<thead>
-<tr>
-<th>JSR版本</th>
-<th>Bean Validation版本</th>
-<th>发布时间</th>
-<th>hibernate实现版本</th>
-<th>apache BLal实现版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>303</td>
-<td>1.0</td>
-<td>2009年javaee 6</td>
-<td>4.3.1.Final</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>349</td>
-<td>1.1</td>
-<td>2013年javaee 7</td>
-<td>5.1.1.Final</td>
-<td>1.1.1</td>
-</tr>
-<tr>
-<td>380</td>
-<td>2.0</td>
-<td>2017年javaee 8</td>
-<td>6.0.1.Final</td>
-<td>2.0.3</td>
-</tr>
-</tbody></table>
-<h2 id="Hibernate-Validation"><a href="#Hibernate-Validation" class="headerlink" title="Hibernate Validation"></a>Hibernate Validation</h2><pre><code>hibernate validation是对这个规范的实践，他提供了相应的实现，并增加了一些其他校验注解(后期规范更新，hibernate将重复的标记了@Departure)，他们位于org.hibernate.validator.constraints包下。</code></pre><h2 id="Spring-Validataion"><a href="#Spring-Validataion" class="headerlink" title="Spring Validataion"></a>Spring Validataion</h2><pre><code>spring validation对hibernate validation进行了二次封装，在springmvc模块中添加了自动校验，并将校验信息封装进了特定的类（BindingResult）中。</code></pre><h2 id="Validated-和-Valid-的区别"><a href="#Validated-和-Valid-的区别" class="headerlink" title="@Validated 和 @Valid 的区别"></a>@Validated 和 @Valid 的区别</h2><ul>
-<li>@Validted 支持分组校验，@Valid不支持。</li>
-<li>@Valid支持嵌套验证，@Validated不支持。</li>
-<li>@Validated可以将校验结果绑定到BindingResult中，而不抛出异常。<br>  必须一个校验对象一个BindingResult，一一对应且紧随其后。</li>
-<li>在没有分组校验及嵌套校验的情况下， 效果一致。</li>
-</ul>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><pre><code>https://beanvalidation.org</code></pre><p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-        <tag>Validate</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AOP</title>
     <url>/202002/Java/aop/</url>
     <content><![CDATA[<h2 id="一-什么是AOP"><a href="#一-什么是AOP" class="headerlink" title="一. 什么是AOP"></a>一. 什么是AOP</h2><pre><code>AOP（Aspect Oriented Programing），面向切面编程，是对OOP的补充，通过预编译方式或运行期动态代理实现程序功能的统一维护的一种技术。</code></pre><h2 id="二-意图"><a href="#二-意图" class="headerlink" title="二. 意图"></a>二. 意图</h2><pre><code>将与业务无关的代码，如日志记录，性能监控，事务处理等从业务逻辑代码中划分出来，将它们独立到非业务逻辑方法中，使得与业务方法解耦，并且在改变相关逻辑的时候不影响业务逻辑的代码。</code></pre><h2 id="三-AOP-概念"><a href="#三-AOP-概念" class="headerlink" title="三. AOP 概念"></a>三. AOP 概念</h2><h4 id="切面-Aspect"><a href="#切面-Aspect" class="headerlink" title="切面 Aspect"></a>切面 Aspect</h4><pre><code>切面是一个横切关注点。</code></pre><h4 id="连接点-JointPoint"><a href="#连接点-JointPoint" class="headerlink" title="连接点 JointPoint"></a>连接点 JointPoint</h4><pre><code>连接点是具体执行增强的点，比如方法执行，构造器调用，成员赋值。</code></pre><h4 id="切点-PointCut"><a href="#切点-PointCut" class="headerlink" title="切点 PointCut"></a>切点 PointCut</h4><pre><code>匹配连接点的正则表达式，是连接点的集合。</code></pre><h4 id="通知-Advice"><a href="#通知-Advice" class="headerlink" title="通知 Advice"></a>通知 Advice</h4><pre><code>对连接点的进行的操作。</code></pre><h4 id="织入-Weaving"><a href="#织入-Weaving" class="headerlink" title="织入 Weaving"></a>织入 Weaving</h4><pre><code>把切面应用到目标对象，并创建代理对象的过程。切面在指定的连接点被织入到目标对象。</code></pre><h2 id="四-AOP流行框架比较"><a href="#四-AOP流行框架比较" class="headerlink" title="四. AOP流行框架比较"></a>四. AOP流行框架比较</h2><pre><code>当下最流行的AOP框架为Spring AOP 及 AspectJ。</code></pre><ol>
@@ -175,6 +124,57 @@
       </categories>
       <tags>
         <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BeanValidation</title>
+    <url>/202002/Java/beanvalidation/</url>
+    <content><![CDATA[<h2 id="Bean-Validation"><a href="#Bean-Validation" class="headerlink" title="Bean Validation"></a>Bean Validation</h2><pre><code>Bean Validation是一个运行时的数据验证框架，为JavaBean验证定义了相应的元数据模型和Api。</code></pre><table>
+<thead>
+<tr>
+<th>JSR版本</th>
+<th>Bean Validation版本</th>
+<th>发布时间</th>
+<th>hibernate实现版本</th>
+<th>apache BLal实现版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>303</td>
+<td>1.0</td>
+<td>2009年javaee 6</td>
+<td>4.3.1.Final</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>349</td>
+<td>1.1</td>
+<td>2013年javaee 7</td>
+<td>5.1.1.Final</td>
+<td>1.1.1</td>
+</tr>
+<tr>
+<td>380</td>
+<td>2.0</td>
+<td>2017年javaee 8</td>
+<td>6.0.1.Final</td>
+<td>2.0.3</td>
+</tr>
+</tbody></table>
+<h2 id="Hibernate-Validation"><a href="#Hibernate-Validation" class="headerlink" title="Hibernate Validation"></a>Hibernate Validation</h2><pre><code>hibernate validation是对这个规范的实践，他提供了相应的实现，并增加了一些其他校验注解(后期规范更新，hibernate将重复的标记了@Departure)，他们位于org.hibernate.validator.constraints包下。</code></pre><h2 id="Spring-Validataion"><a href="#Spring-Validataion" class="headerlink" title="Spring Validataion"></a>Spring Validataion</h2><pre><code>spring validation对hibernate validation进行了二次封装，在springmvc模块中添加了自动校验，并将校验信息封装进了特定的类（BindingResult）中。</code></pre><h2 id="Validated-和-Valid-的区别"><a href="#Validated-和-Valid-的区别" class="headerlink" title="@Validated 和 @Valid 的区别"></a>@Validated 和 @Valid 的区别</h2><ul>
+<li>@Validted 支持分组校验，@Valid不支持。</li>
+<li>@Valid支持嵌套验证，@Validated不支持。</li>
+<li>@Validated可以将校验结果绑定到BindingResult中，而不抛出异常。<br>  必须一个校验对象一个BindingResult，一一对应且紧随其后。</li>
+<li>在没有分组校验及嵌套校验的情况下， 效果一致。</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><pre><code>https://beanvalidation.org</code></pre><p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+        <tag>Validate</tag>
       </tags>
   </entry>
   <entry>
@@ -360,68 +360,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git常用命令</title>
-    <url>/202004/VCS/Git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<ul>
-<li><p>添加远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add &lt;远程仓库名称，一般默认为origin&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除远程仓库</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote remove &lt;远程仓库名称&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新/设置远程仓库地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加远程仓库地址</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url --add &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置用户名</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置邮箱</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>全局设置用户名</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>全局设置邮箱</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其他命令</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init ...</span><br><span class="line">git add ...</span><br><span class="line">git commit -m "..."</span><br><span class="line">git status</span><br><span class="line">git diff 文件名</span><br><span class="line">git log </span><br><span class="line">git reset --hard HEAD^ / 版本号</span><br><span class="line">git reflog </span><br><span class="line">git checkout -- 文件名</span><br><span class="line">git checkout 分支名</span><br><span class="line">git remote add origin 远程仓库路径</span><br><span class="line">git push -u origin master</span><br><span class="line">git push origin master</span><br><span class="line">git clone</span><br><span class="line">git checkout -b 分支名 = git branch 分支名 + git checkout 分支名 （创建并切换分支）</span><br><span class="line">git merge 分支名</span><br><span class="line">git branch -d</span><br><span class="line">git merge -no-ff -m</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b 分支名 origin/分支名</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream 分支名 origin/分支名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git init &lt;repo&gt;</span><br><span class="line">git add &lt;file&gt; [ &lt;file&gt; ... ]</span><br><span class="line">git commit -m &lt;message&gt;</span><br><span class="line">git status</span><br><span class="line">git diff &lt;file&gt;</span><br><span class="line">git log [--pretty=oneline] （提交历史）</span><br><span class="line">git reset --hard HEAD^ / HEAD~&lt;num&gt; / &lt;commit id&gt;</span><br><span class="line">git reflog （命令历史）</span><br><span class="line">git diff -- HEAD &lt;file&gt;</span><br><span class="line">git checkout -- &lt;file&gt;</span><br><span class="line">git rm &lt;file&gt;</span><br><span class="line">git remote add origin &lt;URL&gt;</span><br><span class="line">git push -u orgin &lt;branch&gt;</span><br><span class="line">git clone &lt;URL&gt;</span><br><span class="line">git checkout -b &lt;branch&gt; = git branch &lt;branch&gt; + git checkout &lt;branch&gt; = git switch - c &lt;branch&gt;</span><br><span class="line">git branch</span><br><span class="line">git checkout &lt;branch&gt;</span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line">git branch -d &lt;branch&gt;</span><br><span class="line">git switch &lt;branch&gt;</span><br><span class="line">git log --graph</span><br><span class="line">git merge --no-ff [-m &lt;message&gt;] &lt;branch&gt;</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git stash apply stash@&#123;&lt;num&gt;&#125;</span><br><span class="line">git cherry-pick &lt;commit id&gt;</span><br><span class="line">git branch -D &lt;branch&gt;</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git rebase</span><br><span class="line">git tag &lt;tag&gt;</span><br><span class="line">git tag</span><br><span class="line">git tag &lt;tag&gt; &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>VCS</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Heox文章规范</title>
-    <url>/202007/%E5%85%83/heox%E6%96%87%E7%AB%A0%E8%A7%84%E8%8C%83/</url>
-    <content><![CDATA[<blockquote>
-<p>在此列举出一些规则，之后编写文章时都应遵循这些规则。该规则逐渐丰富。</p>
-</blockquote>
-<ul>
-<li>文章最高使用二级标题，逐级递减，不适用一级标题。</li>
-<li>文章添加分类，根据Hexo的描述，使用二级分类。</li>
-</ul>
-<p><img src="/images/pasted-0.png" alt="upload successful"></p>
-<ul>
-<li>缩进，还没有找到好的缩进方式。</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>元</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hexo搭建博客</title>
     <url>/202003/%E5%85%83/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h1><blockquote>
@@ -519,23 +457,62 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>项目分层</title>
-    <url>/202009/%E6%9E%B6%E6%9E%84/%E9%A1%B9%E7%9B%AE%E5%88%86%E5%B1%82/</url>
-    <content><![CDATA[<h2 id="项目分层"><a href="#项目分层" class="headerlink" title="项目分层"></a>项目分层</h2><ul>
-<li>阿里规约</li>
-</ul>
-<p><img src="/images/pasted-5.png" alt="upload successful"></p>
+    <title>Heox文章规范</title>
+    <url>/202007/%E5%85%83/heox%E6%96%87%E7%AB%A0%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<blockquote>
+<p>在此列举出一些规则，之后编写文章时都应遵循这些规则。该规则逐渐丰富。</p>
+</blockquote>
 <ul>
-<li>终端显示层<br>前端、JSP</li>
-<li>开放接口<br>RPC接口、http接口</li>
-<li>web层<br>负责请求转发、基本参数校验</li>
-<li>service层<br>负责具体的业务逻辑处理、复用性低</li>
-<li>manager层<br>通用业务处理。可以是 1.第三方接口的封装。2.service层的通用业务。3.dao层的组合服用。</li>
-<li>dao层<br>数据访问</li>
+<li>文章最高使用二级标题，逐级递减，不适用一级标题。</li>
+<li>文章添加分类，根据Hexo的描述，使用二级分类。</li>
+</ul>
+<p><img src="/images/pasted-0.png" alt="upload successful"></p>
+<ul>
+<li>缩进，还没有找到好的缩进方式。</li>
 </ul>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
-        <category>架构</category>
+        <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/202004/VCS/Git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<ul>
+<li><p>添加远程仓库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add &lt;远程仓库名称，一般默认为origin&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除远程仓库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote remove &lt;远程仓库名称&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新/设置远程仓库地址</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加远程仓库地址</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote set-url --add &lt;远程仓库名称&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置用户名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置邮箱</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局设置用户名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局设置邮箱</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email "you@example.com"</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其他命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init ...</span><br><span class="line">git add ...</span><br><span class="line">git commit -m "..."</span><br><span class="line">git status</span><br><span class="line">git diff 文件名</span><br><span class="line">git log </span><br><span class="line">git reset --hard HEAD^ / 版本号</span><br><span class="line">git reflog </span><br><span class="line">git checkout -- 文件名</span><br><span class="line">git checkout 分支名</span><br><span class="line">git remote add origin 远程仓库路径</span><br><span class="line">git push -u origin master</span><br><span class="line">git push origin master</span><br><span class="line">git clone</span><br><span class="line">git checkout -b 分支名 = git branch 分支名 + git checkout 分支名 （创建并切换分支）</span><br><span class="line">git merge 分支名</span><br><span class="line">git branch -d</span><br><span class="line">git merge -no-ff -m</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b 分支名 origin/分支名</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream 分支名 origin/分支名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git init &lt;repo&gt;</span><br><span class="line">git add &lt;file&gt; [ &lt;file&gt; ... ]</span><br><span class="line">git commit -m &lt;message&gt;</span><br><span class="line">git status</span><br><span class="line">git diff &lt;file&gt;</span><br><span class="line">git log [--pretty=oneline] （提交历史）</span><br><span class="line">git reset --hard HEAD^ / HEAD~&lt;num&gt; / &lt;commit id&gt;</span><br><span class="line">git reflog （命令历史）</span><br><span class="line">git diff -- HEAD &lt;file&gt;</span><br><span class="line">git checkout -- &lt;file&gt;</span><br><span class="line">git rm &lt;file&gt;</span><br><span class="line">git remote add origin &lt;URL&gt;</span><br><span class="line">git push -u orgin &lt;branch&gt;</span><br><span class="line">git clone &lt;URL&gt;</span><br><span class="line">git checkout -b &lt;branch&gt; = git branch &lt;branch&gt; + git checkout &lt;branch&gt; = git switch - c &lt;branch&gt;</span><br><span class="line">git branch</span><br><span class="line">git checkout &lt;branch&gt;</span><br><span class="line">git merge &lt;branch&gt;</span><br><span class="line">git branch -d &lt;branch&gt;</span><br><span class="line">git switch &lt;branch&gt;</span><br><span class="line">git log --graph</span><br><span class="line">git merge --no-ff [-m &lt;message&gt;] &lt;branch&gt;</span><br><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop</span><br><span class="line">git stash apply stash@&#123;&lt;num&gt;&#125;</span><br><span class="line">git cherry-pick &lt;commit id&gt;</span><br><span class="line">git branch -D &lt;branch&gt;</span><br><span class="line">git remote</span><br><span class="line">git remote -v</span><br><span class="line">git checkout -b &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git pull</span><br><span class="line">git branch --set-upstream &lt;branch&gt; origin/&lt;branch&gt;</span><br><span class="line">git rebase</span><br><span class="line">git tag &lt;tag&gt;</span><br><span class="line">git tag</span><br><span class="line">git tag &lt;tag&gt; &lt;commit id&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>VCS</category>
+        <category>Git</category>
       </categories>
       <tags>
         <tag>How</tag>
@@ -614,6 +591,29 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
       <tags>
         <tag>Why</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>项目分层</title>
+    <url>/202009/%E6%9E%B6%E6%9E%84/%E9%A1%B9%E7%9B%AE%E5%88%86%E5%B1%82/</url>
+    <content><![CDATA[<h2 id="项目分层"><a href="#项目分层" class="headerlink" title="项目分层"></a>项目分层</h2><ul>
+<li>阿里规约</li>
+</ul>
+<p><img src="/images/pasted-5.png" alt="upload successful"></p>
+<ul>
+<li>终端显示层<br>前端、JSP</li>
+<li>开放接口<br>RPC接口、http接口</li>
+<li>web层<br>负责请求转发、基本参数校验</li>
+<li>service层<br>负责具体的业务逻辑处理、复用性低</li>
+<li>manager层<br>通用业务处理。可以是 1.第三方接口的封装。2.service层的通用业务。3.dao层的组合服用。</li>
+<li>dao层<br>数据访问</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>架构</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
       </tags>
   </entry>
   <entry>
@@ -803,22 +803,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>jvm</title>
-    <url>/202009/Java/JVM/jvm/</url>
-    <content><![CDATA[<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>Java 虚拟机。</p>
-<h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>加载、验证、准备、解析、初始化、使用、卸载</p>
-<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>BootStrap ClassLoader、Extension ClassLoader、Application ClassLoader、User ClassLoader</p>
-<h2 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h2><p>方法区、堆、栈、程序计数器、本地方法栈</p>
-<h2 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h2><p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JVM</category>
-      </categories>
-      <tags>
-        <tag>How/Why</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>io</title>
     <url>/202009/Java/IO/io/</url>
     <content><![CDATA[<h2 id="按流向"><a href="#按流向" class="headerlink" title="按流向"></a>按流向</h2><h4 id="输入流"><a href="#输入流" class="headerlink" title="输入流"></a>输入流</h4><p>以自己为参照，从外面读取为输入。</p>
@@ -842,6 +826,22 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
       <tags>
         <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jvm</title>
+    <url>/202009/Java/JVM/jvm/</url>
+    <content><![CDATA[<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>Java 虚拟机。</p>
+<h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>加载、验证、准备、解析、初始化、使用、卸载</p>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>BootStrap ClassLoader、Extension ClassLoader、Application ClassLoader、User ClassLoader</p>
+<h2 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h2><p>方法区、堆、栈、程序计数器、本地方法栈</p>
+<h2 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h2><p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JVM</category>
+      </categories>
+      <tags>
+        <tag>How/Why</tag>
       </tags>
   </entry>
   <entry>
@@ -896,40 +896,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>maven</title>
-    <url>/202007/Java/maven/</url>
-    <content><![CDATA[<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><blockquote>
-<p>Why</p>
-</blockquote>
-<ul>
-<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>spring</title>
-    <url>/202007/Java/Spring/spring/</url>
-    <content><![CDATA[<ul>
-<li>MATE-INF<br>  spring.factories</li>
-<li>profile / @  spring-boot-starter-parent<br>  手动重新引入maven依赖<br>  父级pom对所有子级生效，子级覆盖父级，子级优先级更高</li>
-<li>spring-boot-devtools</li>
-</ul>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mybatis</title>
     <url>/202007/Java/Mybatis/mybatis/</url>
     <content><![CDATA[<ul>
@@ -950,21 +916,17 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>AQS</title>
-    <url>/202007/Java/%E5%B9%B6%E5%8F%91/aqs/</url>
-    <content><![CDATA[<h2 id="AQS"><a href="#AQS" class="headerlink" title="AQS"></a>AQS</h2><p>AbstractQueuedSyncrinizer<br>通过双向链表方式实现。</p>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
-<li>CountDownLatch</li>
-<li>Semaphore</li>
-<li>CyclicBarrier</li>
-<li>ReentrantLock</li>
-<li>Condition</li>
-<li>FutureTask</li>
+    <title>maven</title>
+    <url>/202007/Java/maven/</url>
+    <content><![CDATA[<h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><blockquote>
+<p>Why</p>
+</blockquote>
+<ul>
+<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
 </ul>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
         <category>Java</category>
-        <category>并发</category>
       </categories>
       <tags>
         <tag>How</tag>
@@ -1070,6 +1032,27 @@ layout为scaffolds中定义的模板，默认为post</li>
       <categories>
         <category>Java</category>
         <category>web</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AQS</title>
+    <url>/202007/Java/%E5%B9%B6%E5%8F%91/aqs/</url>
+    <content><![CDATA[<h2 id="AQS"><a href="#AQS" class="headerlink" title="AQS"></a>AQS</h2><p>AbstractQueuedSyncrinizer<br>通过双向链表方式实现。</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ul>
+<li>CountDownLatch</li>
+<li>Semaphore</li>
+<li>CyclicBarrier</li>
+<li>ReentrantLock</li>
+<li>Condition</li>
+<li>FutureTask</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>并发</category>
       </categories>
       <tags>
         <tag>How</tag>
@@ -1299,24 +1282,17 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>Future</title>
-    <url>/202009/Java/%E5%B9%B6%E5%8F%91/future/</url>
-    <content><![CDATA[<h2 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h2><p>非阻塞模型。</p>
-<h3 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h3><p><img src="/images/pasted-6.png" alt="upload successful"></p>
-<h3 id="RunnableFuture"><a href="#RunnableFuture" class="headerlink" title="RunnableFuture"></a>RunnableFuture</h3><p>同时继承接口Runnable和Future。</p>
-<h3 id="SchedualedFuture"><a href="#SchedualedFuture" class="headerlink" title="SchedualedFuture"></a>SchedualedFuture</h3><p>延时、定时执行。</p>
-<h3 id="ForkJoinFuture"><a href="#ForkJoinFuture" class="headerlink" title="ForkJoinFuture"></a>ForkJoinFuture</h3><p>可被拆分、合并。</p>
-<h3 id="CompletableFuture"><a href="#CompletableFuture" class="headerlink" title="CompletableFuture"></a>CompletableFuture</h3><p>可以被显式完成。  </p>
-<h2 id="FutureTask"><a href="#FutureTask" class="headerlink" title="FutureTask"></a>FutureTask</h2><h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><ul>
-<li>NEW</li>
-<li>COMPLETING</li>
-<li>NORMAL</li>
-<li>EXCEPTIONAL</li>
-<li>CANCELLED</li>
-<li>INTERRUPTING</li>
-<li>INTERRUPTED</li>
-</ul>
-<h3 id="状态转换"><a href="#状态转换" class="headerlink" title="状态转换"></a>状态转换</h3><p>NEW -&gt; COMPLETING -&gt; NORMAL<br>NEW -&gt; COMPLETING -&gt; EXCEPTIONAL<br>NEW -&gt; CANCELLED<br>NEW -&gt; INTERRUPTING -&gt; INTERRUPTED</p>
+    <title>netty</title>
+    <url>/202009/Java/%E5%B9%B6%E5%8F%91/netty/</url>
+    <content><![CDATA[<h2 id="netty"><a href="#netty" class="headerlink" title="netty"></a>netty</h2><h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><h3 id="EventLoopGroup"><a href="#EventLoopGroup" class="headerlink" title="EventLoopGroup"></a>EventLoopGroup</h3><p>线程池，继承自 ScheduledExecutorService。<br>用做服务器时有两个线程池，分别为接收连接线程池与工作线程池。用作客户端时有一个线程池。<br>具体实现类有NioEventLoop、DefaultEventLoop、EpollEventloop。</p>
+<h3 id="AbstractBootstrap"><a href="#AbstractBootstrap" class="headerlink" title="AbstractBootstrap"></a>AbstractBootstrap</h3><p>启动类。服务器启动类为ServerBootstrap，客户端启动类为Bootstrap。</p>
+<h4 id="group"><a href="#group" class="headerlink" title="group"></a>group</h4><p>指定线程池。</p>
+<h4 id="channel"><a href="#channel" class="headerlink" title="channel"></a>channel</h4><p>指定通道，根据通道可以判断是服务器/客户端、TCP/UDP。</p>
+<h4 id="childHandle"><a href="#childHandle" class="headerlink" title="childHandle"></a>childHandle</h4><p>指定消息的处理器。</p>
+<h4 id="option、childOption"><a href="#option、childOption" class="headerlink" title="option、childOption"></a>option、childOption</h4><p>通过常量指定TCP/UDP协议的相关配置。如backlog、keepalive等。</p>
+<h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><p>绑定端口。</p>
+<h3 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h3><p>netty的通道。</p>
+<h3 id="ChannelFuture"><a href="#ChannelFuture" class="headerlink" title="ChannelFuture"></a>ChannelFuture</h3><p>继承自Future。</p>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
         <category>Java</category>
@@ -1333,27 +1309,6 @@ layout为scaffolds中定义的模板，默认为post</li>
 <h2 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h2><p>通道。Stream是单向的，而channel是双向的。</p>
 <h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2><p>缓冲区。</p>
 <h2 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a>Selector</h2><p>管理channel。</p>
-<p style="text-align: center"><strong>END</strong></p>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>并发</category>
-      </categories>
-      <tags>
-        <tag>How</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>netty</title>
-    <url>/202009/Java/%E5%B9%B6%E5%8F%91/netty/</url>
-    <content><![CDATA[<h2 id="netty"><a href="#netty" class="headerlink" title="netty"></a>netty</h2><h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><h3 id="EventLoopGroup"><a href="#EventLoopGroup" class="headerlink" title="EventLoopGroup"></a>EventLoopGroup</h3><p>线程池，继承自 ScheduledExecutorService。<br>用做服务器时有两个线程池，分别为接收连接线程池与工作线程池。用作客户端时有一个线程池。<br>具体实现类有NioEventLoop、DefaultEventLoop、EpollEventloop。</p>
-<h3 id="AbstractBootstrap"><a href="#AbstractBootstrap" class="headerlink" title="AbstractBootstrap"></a>AbstractBootstrap</h3><p>启动类。服务器启动类为ServerBootstrap，客户端启动类为Bootstrap。</p>
-<h4 id="group"><a href="#group" class="headerlink" title="group"></a>group</h4><p>指定线程池。</p>
-<h4 id="channel"><a href="#channel" class="headerlink" title="channel"></a>channel</h4><p>指定通道，根据通道可以判断是服务器/客户端、TCP/UDP。</p>
-<h4 id="childHandle"><a href="#childHandle" class="headerlink" title="childHandle"></a>childHandle</h4><p>指定消息的处理器。</p>
-<h4 id="option、childOption"><a href="#option、childOption" class="headerlink" title="option、childOption"></a>option、childOption</h4><p>通过常量指定TCP/UDP协议的相关配置。如backlog、keepalive等。</p>
-<h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><p>绑定端口。</p>
-<h3 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h3><p>netty的通道。</p>
-<h3 id="ChannelFuture"><a href="#ChannelFuture" class="headerlink" title="ChannelFuture"></a>ChannelFuture</h3><p>继承自Future。</p>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
         <category>Java</category>
@@ -1385,6 +1340,26 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
+    <title>synchronized</title>
+    <url>/202009/Java/%E5%B9%B6%E5%8F%91/synchronized/</url>
+    <content><![CDATA[<h2 id="synchronized使用及编译"><a href="#synchronized使用及编译" class="headerlink" title="synchronized使用及编译"></a>synchronized使用及编译</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>编译时添加ACC_SYNCHRONIZED标记。</p>
+<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>默认添加try-finally，编译生成一条monitorenter指令和两条monitorexit指令。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>如果synchronized作用的对象是非静态方法或者对象，则它取得锁是对象锁；如果synchronized作用的对象是静态方法或者类，则它取得的锁是类锁。类锁与对象锁是两把不同的锁。</p>
+<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>重量级锁依赖于系统的同步函数，在linux上使用mutex互斥锁，最底层实现依赖于futex。这些同步函数都涉及到用户态和内核态的切换，进程的上下文切换，成本较高。</p>
+<h3 id="对象头"><a href="#对象头" class="headerlink" title="对象头"></a>对象头</h3><p>在JVM中，对象在内存中除了本身的数据外还会有对象头，对于普通对象而言，其对象头有两类信息：mark word和类型指针，对于数据而言含会有一份记录数据长度的数据。<br>类型指针是指向该对象所属类对象的指针。mark word用于存储对象的HashCode、GC分代年龄、锁状态等信息，在32位系统中位32字节，64位系统中为64字节。<br>Java中任意对象都可以用作锁，锁信息可以存在对象头中。<br>mark word中存储数据根据锁类型改变，当对象为无状态锁时，存储hashCode，当对象为偏向锁时，存储线程id，当对象为轻量级锁时，存储线程栈中Lock Record的指针，当对象为重量级锁时，存储堆中的monitor对象的指针。</p>
+<h3 id="重量级锁"><a href="#重量级锁" class="headerlink" title="重量级锁"></a>重量级锁</h3><p>传统意义上的锁，利用操作系统底层的同步机制实现Java中的线程同步。</p>
+<h3 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h3><p>在运行时，同步块中的代码不存在竞争，不同的线程交替执行同步块中的代码。</p>
+<h3 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h3><p>在运行时，只有一个线程会调用相关同步方法。</p>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>并发</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>并发模拟</title>
     <url>/202007/Java/%E5%B9%B6%E5%8F%91/%E5%B9%B6%E5%8F%91%E6%A8%A1%E6%8B%9F/</url>
     <content><![CDATA[<ul>
@@ -1403,20 +1378,45 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
-    <title>synchronized</title>
-    <url>/202009/Java/%E5%B9%B6%E5%8F%91/synchronized/</url>
-    <content><![CDATA[<h2 id="synchronized使用及编译"><a href="#synchronized使用及编译" class="headerlink" title="synchronized使用及编译"></a>synchronized使用及编译</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>编译时添加ACC_SYNCHRONIZED标记。</p>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>默认添加try-finally，编译生成一条monitorenter指令和两条monitorexit指令。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>如果synchronized作用的对象是非静态方法或者对象，则它取得锁是对象锁；如果synchronized作用的对象是静态方法或者类，则它取得的锁是类锁。类锁与对象锁是两把不同的锁。</p>
-<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>重量级锁依赖于系统的同步函数，在linux上使用mutex互斥锁，最底层实现依赖于futex。这些同步函数都涉及到用户态和内核态的切换，进程的上下文切换，成本较高。</p>
-<h3 id="对象头"><a href="#对象头" class="headerlink" title="对象头"></a>对象头</h3><p>在JVM中，对象在内存中除了本身的数据外还会有对象头，对于普通对象而言，其对象头有两类信息：mark word和类型指针，对于数据而言含会有一份记录数据长度的数据。<br>类型指针是指向该对象所属类对象的指针。mark word用于存储对象的HashCode、GC分代年龄、锁状态等信息，在32位系统中位32字节，64位系统中为64字节。<br>Java中任意对象都可以用作锁，锁信息可以存在对象头中。<br>mark word中存储数据根据锁类型改变，当对象为无状态锁时，存储hashCode，当对象为偏向锁时，存储线程id，当对象为轻量级锁时，存储线程栈中Lock Record的指针，当对象为重量级锁时，存储堆中的monitor对象的指针。</p>
-<h3 id="重量级锁"><a href="#重量级锁" class="headerlink" title="重量级锁"></a>重量级锁</h3><p>传统意义上的锁，利用操作系统底层的同步机制实现Java中的线程同步。</p>
-<h3 id="轻量级锁"><a href="#轻量级锁" class="headerlink" title="轻量级锁"></a>轻量级锁</h3><p>在运行时，同步块中的代码不存在竞争，不同的线程交替执行同步块中的代码。</p>
-<h3 id="偏向锁"><a href="#偏向锁" class="headerlink" title="偏向锁"></a>偏向锁</h3><p>在运行时，只有一个线程会调用相关同步方法。</p>
+    <title>Future</title>
+    <url>/202009/Java/%E5%B9%B6%E5%8F%91/future/</url>
+    <content><![CDATA[<h2 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h2><p>非阻塞模型。</p>
+<h3 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h3><p><img src="/images/pasted-6.png" alt="upload successful"></p>
+<h3 id="RunnableFuture"><a href="#RunnableFuture" class="headerlink" title="RunnableFuture"></a>RunnableFuture</h3><p>同时继承接口Runnable和Future。</p>
+<h3 id="SchedualedFuture"><a href="#SchedualedFuture" class="headerlink" title="SchedualedFuture"></a>SchedualedFuture</h3><p>延时、定时执行。</p>
+<h3 id="ForkJoinFuture"><a href="#ForkJoinFuture" class="headerlink" title="ForkJoinFuture"></a>ForkJoinFuture</h3><p>可被拆分、合并。</p>
+<h3 id="CompletableFuture"><a href="#CompletableFuture" class="headerlink" title="CompletableFuture"></a>CompletableFuture</h3><p>可以被显式完成。  </p>
+<h2 id="FutureTask"><a href="#FutureTask" class="headerlink" title="FutureTask"></a>FutureTask</h2><h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><ul>
+<li>NEW</li>
+<li>COMPLETING</li>
+<li>NORMAL</li>
+<li>EXCEPTIONAL</li>
+<li>CANCELLED</li>
+<li>INTERRUPTING</li>
+<li>INTERRUPTED</li>
+</ul>
+<h3 id="状态转换"><a href="#状态转换" class="headerlink" title="状态转换"></a>状态转换</h3><p>NEW -&gt; COMPLETING -&gt; NORMAL<br>NEW -&gt; COMPLETING -&gt; EXCEPTIONAL<br>NEW -&gt; CANCELLED<br>NEW -&gt; INTERRUPTING -&gt; INTERRUPTED</p>
 <p style="text-align: center"><strong>END</strong></p>]]></content>
       <categories>
         <category>Java</category>
         <category>并发</category>
+      </categories>
+      <tags>
+        <tag>How</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>spring</title>
+    <url>/202007/Java/Spring/spring/</url>
+    <content><![CDATA[<ul>
+<li>MATE-INF<br>  spring.factories</li>
+<li>profile / @  spring-boot-starter-parent<br>  手动重新引入maven依赖<br>  父级pom对所有子级生效，子级覆盖父级，子级优先级更高</li>
+<li>spring-boot-devtools</li>
+</ul>
+<p style="text-align: center"><strong>END</strong></p>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Spring</category>
       </categories>
       <tags>
         <tag>How</tag>
@@ -1598,6 +1598,30 @@ layout为scaffolds中定义的模板，默认为post</li>
       </tags>
   </entry>
   <entry>
+    <title>lamada</title>
+    <url>/202002/Java/JDK8/lamada/</url>
+    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
+<p>lamada VS 匿名内部类</p>
+<ol>
+<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
+<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
+<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
+</ol>
+<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
+<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
+<li>Consumer<T> 消费型<br> void accept(T t);</li>
+<li>Supplier<T> 提供型<br> T get();</li>
+<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
+<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
+</ol>
+<p style="text-align: center"><strong>END</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>JDK8</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java 8</title>
     <url>/202009/Java/%E6%96%B0%E7%89%B9%E6%80%A7/java-8/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Oracle公司于2014年3月18日发布Java 8。它支持函数式编程，新的JavaScript引擎，新的如期API，新的Stream API等。</p>
@@ -1636,30 +1660,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       <tags>
         <tag>How</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>lamada</title>
-    <url>/202002/Java/JDK8/lamada/</url>
-    <content><![CDATA[<p>lamada 本质上可以理解为匿名内部类，在编译时传入的是实现了方法接口的匿名内部类。</p>
-<p>lamada VS 匿名内部类</p>
-<ol>
-<li>匿名内部类编译后会出现 类名$1.class 的字节码，lamada没有。</li>
-<li>通过反编译（javap），lamada在类中创建了一个 lamada$所在方法名$1 的static方法。</li>
-<li>匿名内部类通过构造函数传入了一个原类的final实例。</li>
-</ol>
-<p>==？？？lamada是怎么访问方法局部变量的？？？==</p>
-<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h4 id="java8-内置核心函数式接口"><a href="#java8-内置核心函数式接口" class="headerlink" title="java8 内置核心函数式接口"></a>java8 内置核心函数式接口</h4><ol>
-<li>Consumer<T> 消费型<br> void accept(T t);</li>
-<li>Supplier<T> 提供型<br> T get();</li>
-<li>Function&lt;T, R&gt; 函数型<br> R apply(T t);</li>
-<li>Predicate<T> 断定型<br> boolean test(T t);<h4 id="java8-其它函数式接口"><a href="#java8-其它函数式接口" class="headerlink" title="java8 其它函数式接口"></a>java8 其它函数式接口</h4></li>
-</ol>
-<p style="text-align: center"><strong>END</strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>JDK8</category>
-      </categories>
   </entry>
   <entry>
     <title>摄像头</title>
