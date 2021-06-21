@@ -11,6 +11,8 @@ author: Jade
 language: zh-CN
 timezone: Asia/shanghai
 
+skip_render: README.md
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
