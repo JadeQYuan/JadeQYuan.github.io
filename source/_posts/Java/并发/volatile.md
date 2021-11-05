@@ -2,8 +2,6 @@ title: volatile
 categories:
   - Java
   - 并发
-tags:
-  - How
 description: volatile 关键字
 author: Jade
 date: 2020-07-23 14:55:00
@@ -21,5 +19,3 @@ PS: volatile只能保证对单次读/写的原子性，像i++属于复杂指令�
 ## 实现原理
 指令屏障。
 
-
-<p style="text-align: center"><strong>END</strong></p>

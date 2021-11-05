@@ -2,9 +2,6 @@ title: netty
 categories:
   - Java
   - 并发
-tags:
-  - How
-  - ''
 description: netty
 author: Jade
 date: 2020-09-18 16:25:00
@@ -36,4 +33,3 @@ netty的通道。
 ### ChannelFuture
 继承自Future。
 
-<p style="text-align: center"><strong>END</strong></p>

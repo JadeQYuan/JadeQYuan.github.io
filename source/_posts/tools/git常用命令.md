@@ -1,9 +1,6 @@
 title: git常用命令
 categories:
-  - VCS
-  - Git
-tags:
-  - How
+  - tools
 description: git常用命令
 author: Jade
 date: 2020-04-05 09:28:00
@@ -11,7 +8,7 @@ date: 2020-04-05 09:28:00
 
 - 添加远程仓库
 ```shell
-git remote add <远程仓库名称，一般默认为origin> <url>
+git remote add <远程仓库名称 一般默认为origin> <url>
 ```
 
 - 删除远程仓库
@@ -122,5 +119,3 @@ git tag <tag>
 git tag
 git tag <tag> <commit id>
 ```
-
-<p style="text-align: center"><strong>END</strong></p>

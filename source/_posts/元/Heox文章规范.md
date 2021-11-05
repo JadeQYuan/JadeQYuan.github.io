@@ -1,7 +1,6 @@
 title: Heox文章规范
 categories:
   - 元
-tags: []
 description: heox文章规范
 author: Jade
 date: 2020-07-15 15:25:00
@@ -15,4 +14,3 @@ date: 2020-07-15 15:25:00
 - 缩进，还没有找到好的缩进方式。
 
 
-<p style="text-align: center"><strong>END</strong></p>

@@ -1,9 +1,6 @@
 title: OAS
 categories:
   - API
-tags:
-  - How
-  - ''
 description: OpenAPI Specification
 author: Jade
 date: 2020-07-14 14:15:00
@@ -26,5 +23,3 @@ OpenAPI Specification, 开放API声明，是一个API规范，用于描述一整
 
 ## springdoc-openapi
 
-
-<p style="text-align: center"><strong>END</strong></p>

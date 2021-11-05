@@ -2,8 +2,6 @@ title: Executor
 categories:
   - Java
   - 并发
-tags:
-  - How
 description: Executor
 author: Jade
 date: 2020-09-10 13:16:00
@@ -94,4 +92,3 @@ RUNNING -> STOP -> TIDYING -> TERMINATED
 |DiscardPolicy|丢弃|
 |DiscardOldestPolicy|丢弃队列头部任务|
 
-<p style="text-align: center"><strong>END</strong></p>

@@ -2,8 +2,6 @@ title: synchronized
 categories:
   - Java
   - 并发
-tags:
-  - How
 description: synchronized
 author: Jade
 date: 2020-09-17 17:09:00
@@ -33,5 +31,3 @@ mark word中存储数据根据锁类型改变，当对象为无状态锁时，�
 在运行时，只有一个线程会调用相关同步方法。
 
 
-
-<p style="text-align: center"><strong>END</strong></p>

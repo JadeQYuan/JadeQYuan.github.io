@@ -1,7 +1,6 @@
 title: Hexo admin后台管理
 categories:
   - 元
-tags: []
 description: 添加hexo-admin作为hexo的管理页面。
 author: Jade
 date: 2020-07-15 14:48:00
@@ -37,7 +36,6 @@ windows复制的图片需要去掉\...\。
 4. 不能编辑文章的描述，该描述影响列表页面的内容。
 
 PS：  
-（2）. 可以在文章编辑界面上方修改文章路径。  
-（4）. 可以在_config.yml中添加 metadata - description 支持。
+（1）. 可以在文章编辑界面上方修改文章路径。  
+（2）. 可以在_config.yml中添加 metadata - description 支持。
 
-<p style="text-align: center"><strong>END</strong></p>

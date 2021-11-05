@@ -1,10 +1,6 @@
 title: BeanValidation
 categories:
   - Java
-tags:
-  - How
-  - Validate
-  - ''
 description: BeanValidation
 date: 2020-02-05 11:04:00
 ---
@@ -31,4 +27,3 @@ date: 2020-02-05 11:04:00
 #### 参考
 	https://beanvalidation.org
 
-<p style="text-align: center"><strong>END</strong></p>

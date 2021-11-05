@@ -2,9 +2,6 @@ title: Future
 categories:
   - Java
   - 并发
-tags:
-  - How
-  - ''
 description: Future
 author: Jade
 date: 2020-09-10 14:23:00
@@ -43,4 +40,3 @@ NEW -> COMPLETING -> EXCEPTIONAL
 NEW -> CANCELLED
 NEW -> INTERRUPTING -> INTERRUPTED
 
-<p style="text-align: center"><strong>END</strong></p>

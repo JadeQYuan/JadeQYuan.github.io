@@ -1,8 +1,6 @@
 title: Java中的版本
 categories:
   - Java
-tags:
-  - How
 description: Java中的版本
 author: Jade
 date: 2020-07-21 16:39:00
@@ -45,5 +43,3 @@ Sun公司为企业级应用推出的标准平台，用来开发B/S架构软件�
 |2.2/1.1|3.3.x|1.1|
 |-|-|-|
 
-
-<p style="text-align: center"><strong>END</strong></p>

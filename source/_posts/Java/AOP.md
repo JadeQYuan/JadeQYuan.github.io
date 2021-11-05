@@ -1,8 +1,6 @@
 title: AOP
 categories:
   - Java
-tags:
-  - How
 description: AOP
 author: Jade
 date: 2020-02-05 11:04:00
@@ -71,4 +69,3 @@ date: 2020-02-05 11:04:00
 ### 参考
 	https://www.baeldung.com/spring-aop-vs-aspectj
 
-<p style="text-align: center"><strong>END</strong></p>

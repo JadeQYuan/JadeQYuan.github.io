@@ -2,8 +2,6 @@ title: JUC
 categories:
   - Java
   - 并发
-tags:
-  - How
 description: JUC
 author: Jade
 date: 2020-07-27 22:48:00
@@ -39,4 +37,3 @@ java.utils.concurrent
 
 ## executor
 
-<p style="text-align: center"><strong>END</strong></p>
