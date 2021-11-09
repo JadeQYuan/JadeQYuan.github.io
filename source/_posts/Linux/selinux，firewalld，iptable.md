@@ -1,3 +1,11 @@
+title: selinux，firewalld，iptable
+categories:
+  - Linux
+description: selinux，firewalld，iptable
+author: Jade
+date: 2020-02-05 11:04:00
+---
+
 selinux  ( /etc/selinux/config)
 	安全增强型 Linux（Security-Enhanced Linux）简称 SELinux，它是一个 Linux 内核模块，也是 Linux 的一个安全子系统。
 	SELinux 主要由美国国家安全局开发。2.6 及以上版本的 Linux 内核都已经集成了 SELinux 模块。

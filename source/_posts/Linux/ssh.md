@@ -1,3 +1,12 @@
+title: ssh
+categories:
+  - Linux
+description: ssh
+author: Jade
+date: 2020-02-05 11:04:00
+---
+
+
 SSH （ Secure Shell ），建立在应用层基础上的安全协议
 
 SCP（Secure Copy）、SFTP（SSH File Transfer Protocol）是基于ssh的协议，使用了ssh的加密功能

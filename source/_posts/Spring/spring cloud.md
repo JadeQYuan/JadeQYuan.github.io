@@ -1,3 +1,11 @@
+title: spring cloud
+categories:
+  - Spring
+description: spring cloud
+author: Jade
+date: 2020-07-14 14:13:00
+---
+
 1. eureka server
 依赖
 	spring-cloud-starter-eureka-server

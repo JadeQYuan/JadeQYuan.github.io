@@ -1,6 +1,6 @@
 title: OAS
 categories:
-  - API
+  - default
 description: OpenAPI Specification
 author: Jade
 date: 2020-07-14 14:15:00

@@ -1,3 +1,11 @@
+title: validate
+categories:
+  - Java
+description: validate
+author: Jade
+date: 2020-07-14 14:15:00
+---
+
 ## JSR303, JSR-349
 JSR303是一项标准,JSR-349是其的升级版本，添加了一些新特性，他们规定一些校验规范即校验注解，如@Null，@NotNull，@Pattern，他们位于javax.validation.constraints包下，只提供规范不提供实现。
 

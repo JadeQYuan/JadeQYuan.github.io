@@ -1,3 +1,11 @@
+title: apache common
+categories:
+  - default
+description: apache common
+author: Jade
+date: 2020-04-05 09:28:00
+---
+
 一、Commons BeanUtils 
 说明：针对Bean的一个工具集。由于Bean往往是有一堆get和set组成，所以BeanUtils也是在此基础上进行一些包装。 
 

@@ -1,4 +1,12 @@
-xml
+title: xml
+categories:
+  - default 
+description: xml
+author: Jade
+date: 2020-07-14 14:15:00
+---
+
+## xml
 	xmlns:
 		定义标签，定义默认命名空间。
 		命名空间可防止在任何元素的开始标签上。
@@ -10,11 +18,11 @@ xml
 		指定xsd文件的位置。
 		形式为“key value”，中间用空格分开，key为命名空间的值，value为xsd文件的位置。
 	
-DTD
+## DTD
 	document type definition
 	验证xml文件的规范性。
 	可内部定义，也可外部引入，也可内外结合。外部引入分为私有（SYSTEM）和公共（PUBLIC）。
 	
-XSD
+## XSD
 	xml schema definition
 	基于XML的DTD代替者。
