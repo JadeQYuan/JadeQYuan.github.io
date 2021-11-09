@@ -69,3 +69,6 @@ date: 2020-02-05 11:04:00
 ### 参考
 	https://www.baeldung.com/spring-aop-vs-aspectj
 
+织入是把切面应用到目标对象并创建新的代理对象的过程。切面在指定的连接点被织入到目标对象。
+
+织入时期：编译器（aspectj），装载器（cglib），运行期

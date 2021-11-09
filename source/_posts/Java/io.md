@@ -31,3 +31,12 @@ Java中的字符是Unicode编码，一个字符占用两个字节。
 - 转换流： 字节转字符，流中数据上全是字节。
 - 数据流
 
+
+- getResourceAsStream
+    1. Class.getResourceAsStream(String)
+        - 相对路径：当前类路径下
+        - 绝对路径：classpath路径下
+    2. Class.getClassLoader.getResourceAsStream(String)
+       相对路径，不能是绝对路径
+    3. ServletContext.getResourceAsStream(String)
+       resource目录下，相对/绝对都一样

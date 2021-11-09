@@ -91,6 +91,19 @@ systemctl enable nginx
 - nginx配置文件路径：/etc/nginx/nginx.conf
 - nginx日志文件路径：/var/nginx
 
+
+  ngigx路径/结尾
+- 在某些情况下，Nginx内部重定向规则会被启动，例如，当 URL 指向一个目录并且在最后没有包含“/”时，Nginx 内部会自动的做一个 301 重定向
+- location
+    - 以/结尾：url与location路径完全匹配
+    - 不以/结尾：模糊匹配，以location路径开头。
+- proxy_pass
+    - 以/结尾：访问服务proxy + (uri - location)路径
+    - ip/域名结尾：访问服务proxy + url路径
+    - 其它：访问服务proxy + (uri - location)路径 (字符串拼接，没有/)
+- root
+    - 一致
+
 ### mysql
 > 通过docker安装mysql服务，简单，省事。
 > 但是docker容器具有临时性，而mysql的数据要持久化，所以通过docker启动MySQL，然后通过挂载卷的方式保存数据，是否是个好的选择呢？

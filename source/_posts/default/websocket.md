@@ -6,6 +6,12 @@ author: Jade
 date: 2020-04-05 09:28:00
 ---
 
+- socket 与 websocket
+  socket 网络层的抽象接口，用来实现计算机之间的通信。不同的操作系统做了不同的实现。
+  java中的socket与serverSocket应该是对操作系统的实现做了封装。
+  WebSocket是应用层协议，基于http，全双工通信模式，用来实现浏览器和服务器的长连接。
+
+
 背景
 	后端： spring boot + websocket
 	前端： vue + websocket + stomp
