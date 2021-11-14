@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="AOP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AOP">
+<meta property="og:url" content="http://example.com/2020/02/05/Java/AOP/index.html">
+<meta property="og:site_name" content="Knowing">
+<meta property="og:description" content="AOP">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-05T03:04:00.000Z">
+<meta property="article:modified_time" content="2021-11-11T12:29:15.663Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="knowing, blog">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/02/05/Java/AOP/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>AOP | Knowing</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Knowing</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Knowing Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">74</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/02/05/Java/AOP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="Knowing How, Knowing Why!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Knowing">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AOP
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-05 11:04:00" itemprop="dateCreated datePublished" datetime="2020-02-05T11:04:00+08:00">2020-02-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-11 20:29:15" itemprop="dateModified" datetime="2021-11-11T20:29:15+08:00">2021-11-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">AOP</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="一-什么是AOP"><a href="#一-什么是AOP" class="headerlink" title="一. 什么是AOP"></a>一. 什么是AOP</h2><pre><code>AOP（Aspect Oriented Programing），面向切面编程，是对OOP的补充，通过预编译方式或运行期动态代理实现程序功能的统一维护的一种技术。
+</code></pre>
+<h2 id="二-意图"><a href="#二-意图" class="headerlink" title="二. 意图"></a>二. 意图</h2><pre><code>将与业务无关的代码，如日志记录，性能监控，事务处理等从业务逻辑代码中划分出来，将它们独立到非业务逻辑方法中，使得与业务方法解耦，并且在改变相关逻辑的时候不影响业务逻辑的代码。
+</code></pre>
+<h2 id="三-AOP-概念"><a href="#三-AOP-概念" class="headerlink" title="三. AOP 概念"></a>三. AOP 概念</h2><h4 id="切面-Aspect"><a href="#切面-Aspect" class="headerlink" title="切面 Aspect"></a>切面 Aspect</h4><pre><code>切面是一个横切关注点。
+</code></pre>
+<h4 id="连接点-JointPoint"><a href="#连接点-JointPoint" class="headerlink" title="连接点 JointPoint"></a>连接点 JointPoint</h4><pre><code>连接点是具体执行增强的点，比如方法执行，构造器调用，成员赋值。
+</code></pre>
+<h4 id="切点-PointCut"><a href="#切点-PointCut" class="headerlink" title="切点 PointCut"></a>切点 PointCut</h4><pre><code>匹配连接点的正则表达式，是连接点的集合。
+</code></pre>
+<h4 id="通知-Advice"><a href="#通知-Advice" class="headerlink" title="通知 Advice"></a>通知 Advice</h4><pre><code>对连接点的进行的操作。
+</code></pre>
+<h4 id="织入-Weaving"><a href="#织入-Weaving" class="headerlink" title="织入 Weaving"></a>织入 Weaving</h4><pre><code>把切面应用到目标对象，并创建代理对象的过程。切面在指定的连接点被织入到目标对象。
+</code></pre>
+<h2 id="四-AOP流行框架比较"><a href="#四-AOP流行框架比较" class="headerlink" title="四. AOP流行框架比较"></a>四. AOP流行框架比较</h2><pre><code>当下最流行的AOP框架为Spring AOP 及 AspectJ。
+</code></pre>
+<ol>
+<li>能力和目标</li>
+</ol>
+<ul>
+<li>Spring AOP<br>  旨在通过Spring IOC 提供一个简单的AOP实现。<br>  不是一个完整的AOP解决方案，只能用于被Spring容器管理的bean。</li>
+<li>AspectJ<br>  完整的AOP解决方案，比Spirng AOP复杂。<br>  可以在应用于所有领域对象。</li>
+</ul>
+<ol start="2">
+<li>织入时机</li>
+</ol>
+<ul>
+<li>Spring AOP<br>  只能在运行时织入。</li>
+<li>AspectJ<br>  可以在编译期，加载期，编译后（jar包和字节码文件）。</li>
+</ul>
+<ol start="3">
+<li>依赖</li>
+</ol>
+<ul>
+<li>Spring AOP<br>  使用JDK动态代理或者VGLIB代理。</li>
+<li>AspectJ<br>  不依赖任何运行时环境，只需要AspectJ compiler(ajc)在运行前完成织入。</li>
+</ul>
+<ol start="4">
+<li>连接点</li>
+</ol>
+<ul>
+<li>Spring AOP<br>  由于要使用代理模式，所以不能作用域final类，static方法，final方法。<br>  只支持方法执行连接点。</li>
+<li>AspectJ<br>  没有限制。<br>  方法调用，方法执行，构造器调用，构造器执行，静态初始化执行，对象初始化，成员引用，成员赋值，处理器执行，通知执行。</li>
+</ul>
+<ol start="5">
+<li>复杂度</li>
+</ol>
+<ul>
+<li>Spring AOP<br>  不需要额外的编译器，只能和Spirng管理的bean一起工作。</li>
+<li>AspectJ<br>  需要引入ajc并重新打包。</li>
+</ul>
+<ol start="6">
+<li>总结</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Spring AOP</th>
+<th>AspectJ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Implemented in pure Java</td>
+<td>Implemented using extensions of Java programming language</td>
+</tr>
+<tr>
+<td>No need for separate compilation process</td>
+<td>Needs AspectJ compiler (ajc) unless LTW is set up</td>
+</tr>
+<tr>
+<td>Only runtime weaving is available</td>
+<td>Runtime weaving is not available. Supports compile-time, post-compile, and load-time Weaving</td>
+</tr>
+<tr>
+<td>Less Powerful – only supports method level weaving</td>
+<td>More Powerful – can weave fields, methods, constructors, static initializers, final class/methods, etc…</td>
+</tr>
+<tr>
+<td>Can only be implemented on beans managed by Spring container</td>
+<td>Can be implemented on all domain objects</td>
+</tr>
+<tr>
+<td>Supports only method execution pointcuts</td>
+<td>Support all pointcuts</td>
+</tr>
+<tr>
+<td>Proxies are created of targeted objects, and aspects are applied on these proxies</td>
+<td>Aspects are weaved directly into code before application is executed (before runtime)</td>
+</tr>
+<tr>
+<td>Much slower than AspectJ</td>
+<td>Better Performance</td>
+</tr>
+<tr>
+<td>Easy to learn and apply</td>
+<td>Comparatively more complicated than Spring AOP</td>
+</tr>
+</tbody></table>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><pre><code>https://www.baeldung.com/spring-aop-vs-aspectj
+</code></pre>
+<p>织入是把切面应用到目标对象并创建新的代理对象的过程。切面在指定的连接点被织入到目标对象。</p>
+<p>织入时期：编译器（aspectj），装载器（cglib），运行期</p>
+
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/05/Java/BeanValidation/" rel="prev" title="BeanValidation">
+      <i class="fa fa-chevron-left"></i> BeanValidation
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/28/%E5%85%83/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="next" title="Hexo搭建博客">
+      Hexo搭建博客 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E4%BB%80%E4%B9%88%E6%98%AFAOP"><span class="nav-number">1.</span> <span class="nav-text">一. 什么是AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E6%84%8F%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">二. 意图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-AOP-%E6%A6%82%E5%BF%B5"><span class="nav-number">3.</span> <span class="nav-text">三. AOP 概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E9%9D%A2-Aspect"><span class="nav-number">3.0.1.</span> <span class="nav-text">切面 Aspect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E7%82%B9-JointPoint"><span class="nav-number">3.0.2.</span> <span class="nav-text">连接点 JointPoint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E7%82%B9-PointCut"><span class="nav-number">3.0.3.</span> <span class="nav-text">切点 PointCut</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E7%9F%A5-Advice"><span class="nav-number">3.0.4.</span> <span class="nav-text">通知 Advice</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%87%E5%85%A5-Weaving"><span class="nav-number">3.0.5.</span> <span class="nav-text">织入 Weaving</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-AOP%E6%B5%81%E8%A1%8C%E6%A1%86%E6%9E%B6%E6%AF%94%E8%BE%83"><span class="nav-number">4.</span> <span class="nav-text">四. AOP流行框架比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">4.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">Knowing How, Knowing Why!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
