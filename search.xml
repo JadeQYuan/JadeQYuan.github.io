@@ -495,6 +495,33 @@
       </categories>
   </entry>
   <entry>
+    <title>String</title>
+    <url>/2021/11/15/Java/String/</url>
+    <content><![CDATA[<p>在C/C++中，字符串作为字符的数组被实现。而在Java中，字符串是作为对象实现，字符串实际上是对象类型。</p>
+<p>Java字面量：<br>    基本数据类型<br>    字符串<br>    数组 - 实际也是对象？</p>
+<p>字符串常量池： 在类加载时，在堆（方法区？）中创建一个对象，然后将它的引用存放在池中（还是方法区？）的一个常量表中。并且不会被垃圾回收。</p>
+<p>使用new创建字符串，是在运行期创建的。</p>
+<p>String s1 = “abc”;<br>String s2 = new String(“abc”);<br>s1.equals(s2) &amp;&amp; s1 != s2 &amp;&amp; s1.value == s2.value<br>字符串的值使用数组实现，在java中也是对象，s1，s2 的值都指向常量池中的数组对象。</p>
+<p>String intern(): 把自身替换为常量池中的引用</p>
+<p>字符串拼接：<br>    字面量拼接： 优化为一个字面量<br>    字面量和变量拼接： 使用StringBuilder优化<br>    int + char -&gt; char<br>    int + string -&gt; string<br>    string + 任意 -&gt; string</p>
+<p>String 实现方式<br>    Jdk 6 char[]、offset、count、hash<br>    Jdk 7、8  char[]、hash<br>    Jdk 9  byte[]、coder、hash  </p>
+<p>数组：<br>    数据是对象，但不是从某个类实例化来的，而是由JVM直接创建的，其父类是Object。<br>    每个数据都对应一个Class对象，通过RTTI，可以检查数据的运行时类型，签名，基类等。</p>
+<pre><code>数组        RTTI
+char[]        [C
+int[]        [I
+long[]        [J
+float[]        [F
+String[]    [Ljava.lang.String;
+</code></pre>
+<p>字面量初始化<br>int          直接定义, int i = 1;<br>short         2个字节以内的int，short s = (short)1;<br>long        l/L 结尾<br>byte        1个字节以内的byte，byte b = (byte)1;<br>float        f/F 结尾<br>double        整数+d/D结尾或小数<br>char        单引号<br>boolean     true/false<br>string        双引号<br>[]            大括号{} （简化了new）</p>
+<p>null        null</p>
+<p>null：<br>    null是一种数据类型，但可以忽略。<br>    null是关键字，是所有对象类型的默认值。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>classloader</title>
     <url>/2021/09/03/Java/classloader/</url>
     <content><![CDATA[<ol>
@@ -1367,6 +1394,40 @@ TypeDiscriminator
       </categories>
   </entry>
   <entry>
+    <title>IDEA 配置</title>
+    <url>/2021/11/16/default/IDEA-%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p>since InteilJ IDEA 2021.2.3.</p>
+</blockquote>
+<h3 id="换行显示"><a href="#换行显示" class="headerlink" title="换行显示"></a>换行显示</h3><blockquote>
+<p>Settings -&gt; Editor -&gt; General =&gt; Soft Wraps</p>
+</blockquote>
+<p>可以设置要换行显示的文件格式</p>
+<h3 id="文件末尾不加空行"><a href="#文件末尾不加空行" class="headerlink" title="文件末尾不加空行"></a>文件末尾不加空行</h3><blockquote>
+<p>Settings -&gt; Editor -&gt; General =&gt; On Save</p>
+</blockquote>
+<p>ensure every saved file ends with a line break</p>
+<h3 id="side-by-side"><a href="#side-by-side" class="headerlink" title="side-by-side"></a>side-by-side</h3><blockquote>
+<p>Settings -&gt; Appearance &amp; Behavior -&gt; Appearance =&gt; Tool Windows</p>
+</blockquote>
+<p>Side-by-side layout on the left/right<br>左上、左下/右上、右下 显示为一行两列还是两行一列</p>
+<h3 id="左侧隐藏文件-文件夹"><a href="#左侧隐藏文件-文件夹" class="headerlink" title="左侧隐藏文件/文件夹"></a>左侧隐藏文件/文件夹</h3><blockquote>
+<p>Settings -&gt; Editor -&gt; File Types =&gt; Ignored Files and Folders</p>
+</blockquote>
+<h3 id="编辑页标签"><a href="#编辑页标签" class="headerlink" title="编辑页标签"></a>编辑页标签</h3><blockquote>
+<p>Settings -&gt; Editor -&gt; General -&gt; Editor Tabls</p>
+</blockquote>
+<p>靠右显示、按字典序、修改标记、不显示关闭标签（Shift + 左键 = 关闭）、上限50</p>
+<h3 id="打开项目不打开ReadMe"><a href="#打开项目不打开ReadMe" class="headerlink" title="打开项目不打开ReadMe"></a>打开项目不打开ReadMe</h3><blockquote>
+<p>Settings -&gt; Advanced Setting =&gt; Startup</p>
+</blockquote>
+<p>Open README.md file if there are no open files on project startup</p>
+]]></content>
+      <categories>
+        <category>default</category>
+      </categories>
+  </entry>
+  <entry>
     <title>OAS</title>
     <url>/2020/07/14/default/OAS/</url>
     <content><![CDATA[<h2 id="OAS"><a href="#OAS" class="headerlink" title="OAS"></a>OAS</h2><p>OpenAPI Specification, 开放API声明，是一个API规范，用于描述一整套API接口。</p>
@@ -1469,6 +1530,30 @@ TypeDiscriminator
 ]]></content>
       <categories>
         <category>default</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>restful返回值疑问</title>
+    <url>/2021/11/12/default/restful%E8%BF%94%E5%9B%9E%E5%80%BC%E7%96%91%E9%97%AE/</url>
+    <content><![CDATA[<p>最近发现项目请求响应这块有点不友好，主要有两个地方：</p>
+<ol>
+<li>对响应做了包装，但是没有用http本身的status，在每次发生错误的时候，得在浏览器请求中一个个点击排除；</li>
+<li>前端对接口调用出了问题，提示并不明确，也需要后端去排查。</li>
+</ol>
+<p>对于后端响应处理，主要有两种方式：</p>
+<ol>
+<li>直接使用http状态码返回，但是http状态码有限；</li>
+<li>对响应做包装，统一返回，会出现上面问题1。</li>
+</ol>
+<p>所以可以使用http+包装的形式，使用http状态码表示是哪一类问题，使用包装返回具体错误码。</p>
+<p>概念问题</p>
+<ol>
+<li>Http状态码：web服务器对客户端请求做出的响应。如果请求没有到达服务器，则没有http response。</li>
+<li>自定义异常的作用只是为返回值？</li>
+</ol>
+]]></content>
+      <categories>
+        <category>dafault</category>
       </categories>
   </entry>
   <entry>
@@ -1875,14 +1960,61 @@ layout为scaffolds中定义的模板，默认为post</li>
 </ul>
 </blockquote>
 </blockquote>
+<ol start="3">
+<li>列表嵌套<br>子列表前面加四个空格</li>
+</ol>
+<blockquote>
+<p>示例</p>
+<blockquote>
+<ul>
+<li>1 - 1<ul>
+<li>1 - 2 - 1</li>
+<li>1 - 2 - 2</li>
+</ul>
+</li>
+<li>1 - 2</li>
+</ul>
+</blockquote>
+</blockquote>
+<ol start="4">
+<li>段落 使用空行<blockquote>
+<p>示例<br>1 - 1<br>1 - 2</p>
+<p>2 - 1</p>
+</blockquote>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>元</category>
       </categories>
   </entry>
   <entry>
+    <title>数据结构-树</title>
+    <url>/2021/11/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8810%EF%BC%89-%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>有n个结点的有限集合。<br>或者是空树，空树中不包含任何结点；或者是非空树，有且仅有一个特定的根节点，其余结点可分为m个互不相交的有限集，其每一个又是一棵树，且称为根的子树。<br>树的定义是递归的。</p>
+<h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><ul>
+<li>前序遍历 根-左-右</li>
+<li>后序遍历 左-右-根</li>
+<li>层序遍历 树的广度遍历，从上到下，从左到右</li>
+</ul>
+<h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><ul>
+<li>双亲表示法<br>静态链表。数组存放所有树结点，数据元素包含父节点在数组中的下标。</li>
+<li>孩子表示法<ul>
+<li>多重链表<br>数据元素包含所有子节点的指针。</li>
+<li>孩子链表<br>   数据元素包含一个链表，链接所有子节点的指针。</li>
+</ul>
+</li>
+<li>双亲孩子表示法<br>双亲表示法+孩子链表表示法。</li>
+<li>孩子兄弟表示法<br>二叉链表表示法。数据元素包含<em>结点的第一个子结点</em>及<em>右兄弟结点</em>的指针。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数据结构-二叉树</title>
-    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <url>/2021/11/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8811%EF%BC%89-%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<p>二叉树适合计算机存储和处理。且所有的树结构都可以转为二叉树。</p>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>n（n&gt;=0）个结点的有限集合，该集合或者为空集（空二叉树），或者由一个根节点和两棵互不相交的、分别称为根节点的左子树和右子树的二叉树组成。</p>
 <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
@@ -1916,26 +2048,23 @@ layout为scaffolds中定义的模板，默认为post</li>
   </entry>
   <entry>
     <title>数据结构-介绍</title>
-    <url>/2021/11/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h2 id="程序设计"><a href="#程序设计" class="headerlink" title="程序设计"></a>程序设计</h2><p>&emsp;&emsp;计算机求解任何问题都离不开程序设计，而程序设计的实质是数据表示和数据处理，数据表示的核心是数据结构，数据处理的核心是算法。所以 程序 = 数据结构 + 算法。</p>
+    <url>/2021/11/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%881%EF%BC%89-%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h2 id="程序设计"><a href="#程序设计" class="headerlink" title="程序设计"></a>程序设计</h2><p>计算机求解任何问题都离不开程序设计，而程序设计的实质是数据表示和数据处理，数据表示的核心是数据结构，数据处理的核心是算法。所以 程序 = 数据结构 + 算法。</p>
 <h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ul>
-<li>数据<br>  信息的载体，在计算机科学中指所有能输入到计算机中并能被计算机程序识别和处理的符号集合。</li>
-<li>数据元素<br>  数据的基本单位，通常作为一个整体进行考虑和处理。</li>
-<li>数据项<br>  数据元素中不可分割的最小单位。</li>
-<li>数据结构<br>  相互之间存在一定关系的数据元素的集合。分为逻辑结构和物理结构。</li>
+<li>数据<br>信息的载体，在计算机科学中指所有能输入到计算机中并能被计算机程序识别和处理的符号集合。</li>
+<li>数据元素<br>数据的基本单位，通常作为一个整体进行考虑和处理。</li>
+<li>数据项<br>数据元素中不可分割的最小单位。</li>
 </ul>
-<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>指数据元素之间逻辑关系的整体。面向要解决的问题。</p>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>相互之间存在一种或多种特定关系的数据元素的集合。分为逻辑结构和物理结构。<br>数据的逻辑结构和物理结构是数据结构的两个密切相关的方面，同一逻辑结构可以对应不同的存储结构。算法的设计取决于数据的逻辑结构，而算法的实现依赖于指定的存储结构。<br>数据结构通常指数据的逻辑结构。</p>
+<h3 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h3><p>指数据元素之间逻辑关系的整体。面向要解决的问题。</p>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ul>
 <li>集合： 数据元素之间属于同一个集合。</li>
 <li>线性结构： 数据元素之间存在一对一的线性关系。</li>
-<li>树结构： 数据元素之间存在一对多的层次关系。</li>
-<li>图结构： 数据元素之间存在多对多的任意关系。</li>
+<li>树形结构： 数据元素之间存在一对多的层次关系。</li>
+<li>图形结构： 数据元素之间存在多对多的任意关系。</li>
 </ul>
-<h2 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h2><p>又称为存储结构，是数据及其逻辑结构在计算机中的表示。面向计算机。</p>
-<h3 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h3><ul>
-<li>顺序存储结构</li>
-<li>链式存储结构</li>
-</ul>
+<h3 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h3><p>又称为存储结构，是数据的逻辑结构在计算机中的表示。面向计算机。</p>
+<h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h4><p>根据数据元素之间关系的不同表示方法，顺序映象和非顺序映象，得到两种不同的存储结构：顺序存储结构和链式存储结构。<br>在Java中，使用<strong>一维数组</strong>和<strong>对象引用</strong>来实现数据的存储结构。</p>
 <h2 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h2><ul>
 <li>数据类型<br>一组值的集合以及定义于这个值集上的一组操作的总称。</li>
 <li>抽象<br>抽出问题本质的特征而忽略非本质的细节，是对具体事务的一个概括。</li>
@@ -1957,63 +2086,75 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
   </entry>
   <entry>
-    <title>数据结构-图</title>
-    <url>/2021/11/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%9B%BE/</url>
-    <content><![CDATA[<p>图的存储结构应根据具体问题的要求来设计，文中列出的是常用的存储结构。</p>
-<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>在图结构中，任意两个顶点之间都可能有关系。</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>图是由顶点的有穷非空集合和顶尖之间边的集合组成。</p>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>顶点： 数据元素<br>简单图： 不存在顶点到其自身的边，且同一条边不重复出现<br>无向图： 任意两个顶底之间的边都是无向边<br>弧: 有向边<br>邻接：任意两个顶点存在边，则两个顶点互为邻接点<br>依附：边依附于顶点<br>无向完全图：无向图中，任意两个顶点之间都存在边<br>有向完全图： 有向图中，任意两顶点之间存在方向互为相反的两条弧<br>顶点的度： 无向图中，依附于该顶点的边的个数<br>顶点的入度： 有向图中，以该顶点为弧头的弧的个数<br>顶点的出度： 有向图中，以该顶点为弧为的弧的个数</p>
-<p>权：对边赋予有意义的数值量<br>网：边上带权的图称为网</p>
-<p>路径： 两顶点之间的路径是一个顶点序列<br>路径长度： 路径上边的数目<br>回路/环： 第一个顶点和最后一个顶点相同的路径<br>简单路径： 顶点不重复出现的路径<br>简单回路： 除了第一个和最后一个顶点，其余顶点不重复出现的回路</p>
-<p>连通图： 无向图中，若任意的两个顶点之间有路径，则称该图是连通图<br>连通分量： 非连通图的极大连通子图<br>强连通图： 有向图中，对任意结点i、j，从顶点i到j均有路径，则称该有向图是强连通图<br>强连通分量： 非强连通图的极大强连通子图</p>
-<p>生成树：…<br>生成森林：…</p>
-<h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>深度优先遍历<br>广度优先遍历</p>
-<h2 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h2><p>任意两个顶点之间可能都存在边，所以无法通过顶点的存储位置反映顶点之间的邻接关系，因此图没有顺序存储结构。</p>
-<h2 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h2><p>用一维数组存储顶点的信息，用二维数组存储图中边的信息，存储顶点之间的邻接关系的二维数组称为邻接矩阵。</p>
-<h2 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h2><h2 id="十字链表"><a href="#十字链表" class="headerlink" title="十字链表"></a>十字链表</h2><h2 id="链接多重表"><a href="#链接多重表" class="headerlink" title="链接多重表"></a>链接多重表</h2><h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2>]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数据结构-栈</title>
-    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</url>
-    <content><![CDATA[<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>限定仅在表尾（栈顶）进行插入和删除操作的线性表。<br>具有后进先出（LIFO）的特性。</p>
-<h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ADT Stack</span><br><span class="line">	Data</span><br><span class="line">   Operation</span><br><span class="line">   	...</span><br></pre></td></tr></table></figure>
-
-<h2 id="顺序存储-顺序栈"><a href="#顺序存储-顺序栈" class="headerlink" title="顺序存储 - 顺序栈"></a>顺序存储 - 顺序栈</h2><p>两栈共享空间：<br>    使用一个数组来存储两个栈，一个栈的栈底尾数组的始端，另一个栈的栈底为该数组的末端，每个栈从各自的端点向中间延伸。</p>
-<h2 id="链式储存-链栈"><a href="#链式储存-链栈" class="headerlink" title="链式储存 - 链栈"></a>链式储存 - 链栈</h2><p>通常用单链表实现。</p>
-<h2 id="顺序栈-VS-链栈"><a href="#顺序栈-VS-链栈" class="headerlink" title="顺序栈 VS 链栈"></a>顺序栈 VS 链栈</h2><ul>
-<li>时间性能<br>实现基本操作都只需要常数时间。</li>
-<li>空间性能<br>顺序栈： 初始化时需要确定长度，有存储个数限制和空间浪费问题。<br>链栈： 每个元素都需要一个指针域，产生了结构性开销。</li>
+    <title>数据结构-线性结构</title>
+    <url>/2021/11/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%882%EF%BC%89-%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h2><p>有序数据元素的集合。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol>
+<li>集合中必存在唯一的“第一个元素”；</li>
+<li>集合中必存在唯一的“最后的元素”；</li>
+<li>除最后元素外，其它数据元素均有唯一的“后继”；</li>
+<li>除第一个元素外，其它数据元素均有唯一的“前驱”。</li>
+</ol>
+<h2 id="常用结构"><a href="#常用结构" class="headerlink" title="常用结构"></a>常用结构</h2><ul>
+<li>线性表<ul>
+<li>顺序表</li>
+<li>单链表</li>
+<li>循环链表</li>
+<li>双向链表</li>
 </ul>
-<p>使用过程中元素个数变化较大时，适合用链栈；反之，适合使用顺序栈。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>进制转换<br>表达式求值，括号匹配</p>
+</li>
+<li>队列</li>
+<li>栈</li>
+<li>静态链表</li>
+<li>优先级队列</li>
+</ul>
+<h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><p>不是线性结构，是由线性结构组成。</p>
+<ul>
+<li>数组</li>
+<li>广义表</li>
+</ul>
 ]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
   </entry>
   <entry>
-    <title>数据结构-树</title>
-    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>前驱唯一而后继不唯一，是一对多的关系。</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>有n个结点的有限集合。<br>或者是空树，空树中不包含任何结点；或者是非空树，有且仅有一个特定的根节点，其余结点可分为m个互不相交的有限集，其每一个又是一棵树，且称为根的子树。<br>树的定义是递归的。</p>
+    <title>数据结构-树形结构</title>
+    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%883%EF%BC%89-%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="树形结构"><a href="#树形结构" class="headerlink" title="树形结构"></a>树形结构</h2><p>层次的嵌套结构。树形结构的外层和内层有相似的结构。</p>
 <h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>结点：数据元素<br>结点的度： 结点所拥有子树的个数<br>树的度： 树中个结点度的最大值<br>叶子结点： 度为0的结点<br>分支结点： 度不为0的结点<br>树的深度：树中所有结点的最大层数<br>层序编号：按照从上到下，从左到右的次序依次编号<br>有序树： 结点的各子树从左到右是有次序的。交换了结点各子树的相对位置，则构成不同的树。<strong>在数据结构中讨论的树一般是有序树</strong><br>森林： m棵互不相交的树的集合</p>
-<h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><ul>
-<li>前序遍历 根-左-右</li>
-<li>后序遍历 左-右-根</li>
-<li>层序遍历 树的广度遍历，从上到下，从左到右</li>
+<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><ul>
+<li>二叉树</li>
+<li>AVL树</li>
+<li>B-树</li>
+<li>B+树</li>
+<li>2-3树</li>
+<li>2-3-4树</li>
+<li>二叉堆</li>
+<li>堆</li>
+<li>红黑树</li>
 </ul>
-<h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><ul>
-<li>双亲表示法<br>静态链表。数组存放所有树结点，数据元素包含父节点在数组中的下标。</li>
-<li>孩子表示法<ul>
-<li>多重链表<br>数据元素包含所有子节点的指针。</li>
-<li>孩子链表<br>   数据元素包含一个链表，链接所有子节点的指针。</li>
-</ul>
-</li>
-<li>双亲孩子表示法<br>双亲表示法+孩子链表表示法。</li>
-<li>孩子兄弟表示法<br>二叉链表表示法。数据元素包含<em>结点的第一个子结点</em>及<em>右兄弟结点</em>的指针。</li>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构-图形结构</title>
+    <url>/2021/11/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%884%EF%BC%89-%E5%9B%BE%E5%BD%A2%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="图形结构"><a href="#图形结构" class="headerlink" title="图形结构"></a>图形结构</h2><p>数据元素对于关系的前驱和后继个数不加限制，即任意的关系，称为图形结构。</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>顶点： 数据元素<br>简单图： 不存在顶点到其自身的边，且同一条边不重复出现<br>无向图： 任意两个顶底之间的边都是无向边<br>弧: 有向边<br>邻接：任意两个顶点存在边，则两个顶点互为邻接点<br>依附：边依附于顶点<br>无向完全图：无向图中，任意两个顶点之间都存在边<br>有向完全图： 有向图中，任意两顶点之间存在方向互为相反的两条弧<br>顶点的度： 无向图中，依附于该顶点的边的个数<br>顶点的入度： 有向图中，以该顶点为弧头的弧的个数<br>顶点的出度： 有向图中，以该顶点为弧为的弧的个数</p>
+<p>权：对边赋予有意义的数值量<br>网：边上带权的图称为网</p>
+<p>路径： 两顶点之间的路径是一个顶点序列<br>路径长度： 路径上边的数目<br>回路/环： 第一个顶点和最后一个顶点相同的路径<br>简单路径： 顶点不重复出现的路径<br>简单回路： 除了第一个和最后一个顶点，其余顶点不重复出现的回路</p>
+<p>连通图： 无向图中，若任意的两个顶点之间有路径，则称该图是连通图<br>连通分量： 非连通图的极大连通子图<br>强连通图： 有向图中，对任意结点i、j，从顶点i到j均有路径，则称该有向图是强连通图<br>强连通分量： 非强连通图的极大强连通子图</p>
+<p>生成树：…<br>生成森林：…</p>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>深度优先遍历<br>广度优先遍历</p>
+<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><ul>
+<li>邻接矩阵<br>用一维数组存储顶点的信息，用二维数组存储图中边的信息，存储顶点之间的邻接关系的二维数组称为邻接矩阵。</li>
+<li>邻接表</li>
+<li>十字链表</li>
+<li>链接多重表</li>
+<li>最小生成树</li>
 </ul>
 ]]></content>
       <categories>
@@ -2022,9 +2163,9 @@ layout为scaffolds中定义的模板，默认为post</li>
   </entry>
   <entry>
     <title>数据结构-线性表</title>
-    <url>/2021/11/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
+    <url>/2021/11/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%885%EF%BC%89-%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
     <content><![CDATA[<p>线性表是线性结构的典型代表。是一种最基本、最简单的数据结构，数据元素直接仅具有单一的前驱和后继关系。</p>
-<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>是n个具有相同类型的数据元素的有限序列。</p>
+<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>是n（n&gt;=0）个具有相同类型的数据元素的有限序列。</p>
 <h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ADT List</span><br><span class="line">	Data</span><br><span class="line">	Operation</span><br><span class="line">		...</span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
 
 <h2 id="顺序存储-顺序表"><a href="#顺序存储-顺序表" class="headerlink" title="顺序存储 - 顺序表"></a>顺序存储 - 顺序表</h2><p>用一段地址连续的存储单元一次存储线性表的数据元素。<br>要确定数组的长度，来分配固定长度的数组空间。<br>只要确定了存储顺序的起始地址，计算任一元素的存储地址时间是相等的。</p>
@@ -2051,8 +2192,27 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
   </entry>
   <entry>
+    <title>数据结构-栈</title>
+    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%886%EF%BC%89-%E6%A0%88/</url>
+    <content><![CDATA[<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>限定仅在表尾（栈顶）进行插入和删除操作的线性表。<br>具有后进先出（LIFO）的特性。</p>
+<h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ADT Stack</span><br><span class="line">	Data</span><br><span class="line">   Operation</span><br><span class="line">   	...</span><br></pre></td></tr></table></figure>
+
+<h2 id="顺序存储-顺序栈"><a href="#顺序存储-顺序栈" class="headerlink" title="顺序存储 - 顺序栈"></a>顺序存储 - 顺序栈</h2><p>两栈共享空间：<br>    使用一个数组来存储两个栈，一个栈的栈底尾数组的始端，另一个栈的栈底为该数组的末端，每个栈从各自的端点向中间延伸。</p>
+<h2 id="链式储存-链栈"><a href="#链式储存-链栈" class="headerlink" title="链式储存 - 链栈"></a>链式储存 - 链栈</h2><p>通常用单链表实现。</p>
+<h2 id="顺序栈-VS-链栈"><a href="#顺序栈-VS-链栈" class="headerlink" title="顺序栈 VS 链栈"></a>顺序栈 VS 链栈</h2><ul>
+<li>时间性能<br>实现基本操作都只需要常数时间。</li>
+<li>空间性能<br>顺序栈： 初始化时需要确定长度，有存储个数限制和空间浪费问题。<br>链栈： 每个元素都需要一个指针域，产生了结构性开销。</li>
+</ul>
+<p>使用过程中元素个数变化较大时，适合用链栈；反之，适合使用顺序栈。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>进制转换<br>表达式求值，括号匹配</p>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数据结构-队列</title>
-    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/</url>
+    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%887%EF%BC%89-%E9%98%9F%E5%88%97/</url>
     <content><![CDATA[<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>只允许在一端（队头）进行插入操作，在另一端（队尾）进行删除操作的线性表。<br>具有先进先出（FIFO）的特性。</p>
 <h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><h2 id="顺序存储-循环队列"><a href="#顺序存储-循环队列" class="headerlink" title="顺序存储 - 循环队列"></a>顺序存储 - 循环队列</h2><p>可优化出队操作的开销，需要设置对头、队尾两个指针。<br>可用一个数据元素的空间，来解决队空和队满的判定。或添加一个标志。或者使用个数判断。</p>
 <h2 id="链式存储-链队列"><a href="#链式存储-链队列" class="headerlink" title="链式存储 - 链队列"></a>链式存储 - 链队列</h2><h2 id="循环队列-VS-链队列"><a href="#循环队列-VS-链队列" class="headerlink" title="循环队列 VS 链队列"></a>循环队列 VS 链队列</h2><ul>
@@ -2066,44 +2226,89 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
   </entry>
   <entry>
-    <title>数据结构</title>
-    <url>/2020/04/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>同一逻辑结构可以对应不同的存储结构。算法的设计取决于数的逻辑结构，而算法的实现依赖于指定的存储结构。</p>
-<h3 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h3><p>指反映数据元素之间的逻辑关系的数据结构。</p>
-<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ul>
-<li>集合 同属一个集合</li>
-<li>线程结构 一对一</li>
-<li>树形 一对多</li>
-<li>图形 多对对<h3 id="物理结构"><a href="#物理结构" class="headerlink" title="物理结构"></a>物理结构</h3>指数据的逻辑结构在计算机存储空间的存放形式。一种数据结构可表示成一种或多种存储结构。<h4 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h4></li>
-<li>顺序存储结构</li>
-<li>链式存储结构</li>
-<li>索引存储结构</li>
-<li>散列存储结构</li>
+    <title>数据结构-数组</title>
+    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%888%EF%BC%89-%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>由类型相同的数据元素构成的有序集合，每个数据元素称为一个数组元素（简称元素），每个元素受n（n&gt;=1）个线性关系的约束，每个元素在n个线性关系中的序号称为该元素的下标，并称该数组为n维数组。</p>
+<h2 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h2><p>数据元素本身可以具有某种结构，但属于同一数据类型。<br>一维数据可以看作一个线性表，二维数据可以看作线性表的线性表，以此类推。所以，数组是线性表的推广。</p>
+<h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><p>读、写</p>
+<h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><ul>
+<li>按行优先存储</li>
+<li>按列优先存储</li>
 </ul>
-<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
-<p>固定大小的结构</p>
-</blockquote>
-<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><blockquote>
-<p>顺序结构</p>
-</blockquote>
-<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><blockquote>
-<p>后进先去</p>
-</blockquote>
-<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><blockquote>
-<p>先进先出</p>
-</blockquote>
-<h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><blockquote>
-<p>哈希函数，存储key</p>
-</blockquote>
-<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><blockquote>
-<p>层次结构</p>
-</blockquote>
-<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><blockquote>
-<p>有顺序的树</p>
-</blockquote>
-<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><blockquote>
-<p>图结构</p>
-</blockquote>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="矩阵的压缩存储"><a href="#矩阵的压缩存储" class="headerlink" title="矩阵的压缩存储"></a>矩阵的压缩存储</h3><p>矩阵是很多科学与工程计算问题中的处理对象。<br>特殊矩阵： 有很多值相同的元素并且由一定的分布规律。（为多个值相同的元素只分配一个存储空间）<br>稀疏矩阵： 有很多零元素。（对零元素不分配存储空间）</p>
+<h4 id="对称矩阵"><a href="#对称矩阵" class="headerlink" title="对称矩阵"></a>对称矩阵</h4><p>在一个n阶方阵中，有aij=aji.</p>
+<h4 id="三角矩阵"><a href="#三角矩阵" class="headerlink" title="三角矩阵"></a>三角矩阵</h4><p>主对角线以上为常熟c，为下三角矩阵，主对角线以下为常数c，为上三角矩阵。</p>
+<h4 id="对角矩阵"><a href="#对角矩阵" class="headerlink" title="对角矩阵"></a>对角矩阵</h4><p>所有非零元素都集中在以主对角线为中心的带状区域，除了主对角线和它的上下若干条对角线的元素外，所有其它元素都为零。</p>
+<h4 id="稀疏矩阵"><a href="#稀疏矩阵" class="headerlink" title="稀疏矩阵"></a>稀疏矩阵</h4><p>零元素居多的矩阵。</p>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构-广义表</title>
+    <url>/2021/11/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%889%EF%BC%89-%E5%B9%BF%E4%B9%89%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><h2 id="ADT"><a href="#ADT" class="headerlink" title="ADT"></a>ADT</h2><h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2>]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构-疑难解答</title>
+    <url>/2021/11/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88X%EF%BC%89-%E7%96%91%E9%9A%BE%E8%A7%A3%E7%AD%94/</url>
+    <content><![CDATA[<h3 id="数据元素、结点、顶点"><a href="#数据元素、结点、顶点" class="headerlink" title="数据元素、结点、顶点"></a>数据元素、结点、顶点</h3><p>在线性结构中，就叫做数据元素，数据元素之间的关系为前驱、后继。<br>在树结构中，数据元素叫做结点，结点之间的关系为父节点、孩子结点、兄弟结点。<br>在图结构中，数据元素叫做顶点，顶点之间的关系为邻接。</p>
+<table>
+<thead>
+<tr>
+<th>结构</th>
+<th>数据元素名称</th>
+<th>数据元素关系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>线性结构</td>
+<td>数据元素</td>
+<td>前驱、后继</td>
+</tr>
+<tr>
+<td>树结构</td>
+<td>结点</td>
+<td>双亲结点、孩子结点、兄弟结点</td>
+</tr>
+<tr>
+<td>图结构</td>
+<td>顶点</td>
+<td>邻接</td>
+</tr>
+</tbody></table>
+<h3 id="数组是一种数据结构么"><a href="#数组是一种数据结构么" class="headerlink" title="数组是一种数据结构么"></a>数组是一种数据结构么</h3><p>是一种数据结构。<br>数组是最基础的数据结构，所以几乎所有的程序设计语言都把数组设定为固定的基础变量类型。<br>在Java中，数据的ADT由底层实现，操作方式不同于其它的操作方式，有它独特的操作方式。如直接赋值，下标访问，初始化等。<br>当数组维度为1时，退化为顺序表。</p>
+<h3 id="物理结构-存储结构"><a href="#物理结构-存储结构" class="headerlink" title="物理结构/存储结构"></a>物理结构/存储结构</h3><p>有说法：常用的存储结构有顺序存储、链式存储、索引存储和哈希存储等。（百度百科：数据结构）<br>也有说法： 数据元素之间的关系有两种不同的表示方法：顺序映象和非顺序映象，并由此得到两种不同的存储结构：顺序存储结构和链式存储结构。（百度百科：存储结构）</p>
+<p>根据物理结构的定义：数据及其逻辑结构在计算机中的表示。而其逻辑结构指的是数据元素之间的关系，即通过该元素，如何找到接下来的元素，即顺序存储和链式存储。<br>对于顺序存储，其关联元素位置由当前位置计算得出，不需要存储。而链式存储，关联元素位置需要存储。</p>
+<h4 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h4><p>拉链式哈希表，其存储结构是链式存储，数组存储的元素没有直接的关系，通过计算下标直接访问。剩下的链表是链式存储。<br>如果不使用数组，直接在内存中开辟空间，保存起来，通过哈希函数计算值获取内存空间，也可以实现。（保存地址也需要数组，或者设计对应的哈希函数）</p>
+<h4 id="二叉链表"><a href="#二叉链表" class="headerlink" title="二叉链表"></a>二叉链表</h4><p>链式存储结构。用数组存储所有结点，链表中存储关系结点在数组中的下标，同样，数组中的元素没有直接的关系，只是按照某种遍历次序依次存储，保证能存储所有结点。</p>
+<h4 id="索引存储"><a href="#索引存储" class="headerlink" title="索引存储"></a>索引存储</h4><p>索引存储是指分别存放数据元素和元素间关系的存储方式。<br>元素间关系的存储由之前的数据元素变为数据元素的地址，而这时候，数据元素本身已经变了，应该是地址了，后续操作就不属于数据结构的范畴了。</p>
+<p>所以，数据的存储结构就是指顺序存储结构和链式存储结构。</p>
+<h3 id="树结构"><a href="#树结构" class="headerlink" title="树结构"></a>树结构</h3><p>树、二叉树、森林是不同的数据结构。二叉树并不是树的一种特殊情况，而是平行的概念，都属于树结构。<br>树、二叉树其定义与性质都不相同。<br>如果二叉树只是在树的定义上，新增了一条或多条，则二叉树可以理解为一种特殊的树。</p>
+<h3 id="线性结构与线性表"><a href="#线性结构与线性表" class="headerlink" title="线性结构与线性表"></a>线性结构与线性表</h3><p>线性结构只有线性表么，队列、栈只是一种特殊的线性表，数组与广义表是线性表的推广，不属于线性结构，所以线性结构只有线性表。<br>一维数组也是线性结构。<br>所以线性结构不只是线性表。那还有其它的线性结构么？</p>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构-图</title>
+    <url>/2021/11/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%EF%BC%89-%E5%9B%BE/</url>
+    <content><![CDATA[<p>图的存储结构应根据具体问题的要求来设计，文中列出的是常用的存储结构。</p>
+<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p>在图结构中，任意两个顶点之间都可能有关系。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>图是由顶点的有穷非空集合和顶尖之间边的集合组成。</p>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><p>深度优先遍历<br>广度优先遍历</p>
+<h2 id="常用数据结构"><a href="#常用数据结构" class="headerlink" title="常用数据结构"></a>常用数据结构</h2><ul>
+<li>邻接矩阵<br>用一维数组存储顶点的信息，用二维数组存储图中边的信息，存储顶点之间的邻接关系的二维数组称为邻接矩阵。</li>
+<li>邻接表</li>
+<li>十字链表</li>
+<li>链接多重表</li>
+<li>最小生成树</li>
+</ul>
 ]]></content>
       <categories>
         <category>数据结构</category>
@@ -2394,6 +2599,46 @@ layout为scaffolds中定义的模板，默认为post</li>
 </ol>
 <p><em><strong>END</strong></em></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>设计模式-策略</title>
+    <url>/2021/11/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5/</url>
+    <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>指对象有某个行为，但是在不同的场景中，该行为有不同的算法实现。<br>行为型模式。</p>
+<h2 id="一般实现"><a href="#一般实现" class="headerlink" title="一般实现"></a>一般实现</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pub额</span><br><span class="line">lic class A &#123;</span><br><span class="line">	public int a() &#123;</span><br><span class="line">		int result;</span><br><span class="line">		if (ca) &#123;</span><br><span class="line">			result = computeA();</span><br><span class="line">		&#125; else if (cb) &#123;</span><br><span class="line">			result = computeB();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			result = computeC();</span><br><span class="line">		&#125;</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public int computeA() &#123;&#125;;</span><br><span class="line">	public int computeB() &#123;&#125;;</span><br><span class="line">	public int computeC() &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Client &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		A a = new A();</span><br><span class="line">		a.a();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据不同的条件，调用不同的方法。</p>
+<h2 id="模式实现"><a href="#模式实现" class="headerlink" title="模式实现"></a>模式实现</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class A &#123;</span><br><span class="line">	public int a() &#123;</span><br><span class="line">		// doing...</span><br><span class="line">		int result;</span><br><span class="line">		if (ca) &#123;</span><br><span class="line">			result = computeA();</span><br><span class="line">		&#125; else if (cb) &#123;</span><br><span class="line">			result = computeB();</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			result = computeC();</span><br><span class="line">		&#125;</span><br><span class="line">		// doing...</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public int computeA() &#123;&#125;;</span><br><span class="line">	public int computeB() &#123;&#125;;</span><br><span class="line">	public int computeC() &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public interface Strategy &#123;</span><br><span class="line">	int compute();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class StrategyA implements Strategy &#123;</span><br><span class="line">	public int compute() &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class StrategyA implements Strategy &#123;</span><br><span class="line">	public int compute() &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class StrategyA implements Strategy &#123;</span><br><span class="line">	public int compute() &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Context &#123;</span><br><span class="line">	public Strategy strategy;</span><br><span class="line">	</span><br><span class="line">	public void setStrategy(Strategy strategy) &#123;</span><br><span class="line">		this.strategy = strategy;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void a() &#123;</span><br><span class="line">		// doing...</span><br><span class="line">		int result = strategy.compute();</span><br><span class="line">		// doing...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Client &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Context c = new Context(new StrategyA());</span><br><span class="line">		// 根据条件设置具体的策略</span><br><span class="line">		if (ca) &#123;</span><br><span class="line">			c.setStrategy(new StrategyA());</span><br><span class="line">		&#125; else if (cb) &#123;</span><br><span class="line">			c.setStrategy(new StrategyB());</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			c.setStrategy(new StrategyC());</span><br><span class="line">		&#125;</span><br><span class="line">		c.a();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>抽象出统一接口，根据不同的条件使用对应的对象，调用接口的方法。<br>if可以使用switch代替，也可以将由工厂模式完成，实现工厂+策略的组合使用。</p>
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><ul>
+<li>策略接口</li>
+<li>策略具体实现类</li>
+<li>容器类/上下文</li>
+</ul>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ol>
+<li>将调用的不同方法抽象出策略接口</li>
+<li>将不同方法调整为具体策略实现类</li>
+<li>将策略接口注入到之前的上下文对象中</li>
+</ol>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
+<li>优点<br>  算法、行为可以动态改变<br>  扩展性良好，只需新增策略类<br>  可以避免if判断</li>
+<li>缺点<br>  需要暴露所有策略类<br>  每个策略都会产生一个新类，造成类过多</li>
+</ul>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>概念中的算法与行为，行为对应的是接口的方法，而接口的方法是不变的，即行为是不变的，变的只是行为的实现，即算法。</li>
+<li>容器类存在的意义<ol>
+<li>客户端与策略类解耦，改变、新增策略只需修改客户端代码。</li>
+<li>根据定义，对象有某个行为，该对象应为上下文对象，而不是客户端对象，客户端只是调用上下文对象的方法，而不关心具体实现。</li>
+</ol>
+</li>
+<li>客户端根据条件设置对应的策略，所以客户端需要知道所有的策略实现。</li>
+<li>容器类与策略接口的关系应根据情况确定（持有（能否修改），参数传递）。</li>
+</ul>
+<h2 id="源码中的使用"><a href="#源码中的使用" class="headerlink" title="源码中的使用"></a>源码中的使用</h2><ul>
+<li>JDK<br>  Comparator - Collections<br>  RejectedExecutionHandler - ThreadPoolExecutor</li>
+</ul>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
   </entry>
   <entry>
     <title></title>
