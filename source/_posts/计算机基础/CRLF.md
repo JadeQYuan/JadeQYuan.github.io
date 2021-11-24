@@ -1,5 +1,6 @@
 title: CRLF
-categories: 计算机原理
+categories:
+  - 计算机基础
 description: CRLF
 author: Jade
 date: 2021-06-03 15:12:00
