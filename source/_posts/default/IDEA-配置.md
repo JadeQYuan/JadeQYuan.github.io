@@ -3,7 +3,6 @@ description: IDEA 配置
 categories:
   - default
 author: Jade
-tags: []
 date: 2021-11-16 10:27:00
 ---
 > since InteilJ IDEA 2021.2.3.

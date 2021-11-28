@@ -1,9 +1,8 @@
 title: restful返回值疑问
 description: restful返回值疑问
 categories:
-  - dafault
+  - default
 author: Jade
-tags: []
 date: 2021-11-12 15:30:00
 ---
 
