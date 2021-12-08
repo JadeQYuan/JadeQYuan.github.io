@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="初始化与清理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初始化与清理">
+<meta property="og:url" content="http://example.com/2021/12/03/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%885%EF%BC%89%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%B8%85%E7%90%86/index.html">
+<meta property="og:site_name" content="Knowing">
+<meta property="og:description" content="初始化与清理">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-03T11:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-08T12:14:23.554Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="knowing, blog">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/12/03/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%885%EF%BC%89%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%B8%85%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>初始化与清理 | Knowing</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Knowing</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Knowing Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">115</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/03/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%885%EF%BC%89%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E6%B8%85%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="Knowing How, Knowing Why!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Knowing">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          初始化与清理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-03 19:00:00" itemprop="dateCreated datePublished" datetime="2021-12-03T19:00:00+08:00">2021-12-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-08 20:14:23" itemprop="dateModified" datetime="2021-12-08T20:14:23+08:00">2021-12-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" itemprop="url" rel="index"><span itemprop="name">编程思想</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">初始化与清理</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>随着计算机革命的发展，“不安全”的编程方式已逐渐成为编程代价高昂的主因之一。<br>初始化和清理正是设计安全的两个问题。</p>
+<h2 id="5-1-用构造器确保初始化"><a href="#5-1-用构造器确保初始化" class="headerlink" title="5.1 用构造器确保初始化"></a>5.1 用构造器确保初始化</h2><p>创建对象时，如果其内具有构造器，Java就会在用户有能力操作对象之前自动调用相应的构造器，从而保证了初始化的进行。<br>构造器命名：与类名相同，所以”每个方法首字母小写”的编程风格不适用于构造器。1. 不会与其它方法冲突；2. 编译器直到该调用哪个方法。<br>构造器有助于减少错误，并使代码更易于阅读。从概念上讲，初始化与创建使彼此独立的，在Java中，捆绑在一起，两者不能分离。<br>构造器没有返回值，与void不同。new表达式返回了对新建对象的引用，但构造器本省并没有返回任何值。</p>
+<h2 id="5-2-方法重载"><a href="#5-2-方法重载" class="headerlink" title="5.2 方法重载"></a>5.2 方法重载</h2><p>目的：为了让方法名相同而形式参数不同的构造器同时存在。<br>方法重载是构造器所必需的，但亦可用于其他方法。<br>区分：参数类型列表，参数顺序(代码难以维护)，涉及基本类型的重载(易混淆)，返回值(为了副作用而调用就会忽略其返回值 ×)。</p>
+<h2 id="5-3-默认构造器"><a href="#5-3-默认构造器" class="headerlink" title="5.3 默认构造器"></a>5.3 默认构造器</h2><p>如果类中没有构造器，编译器会自动创建一个默认构造器。<br>如果已有构造器，则不会创建。</p>
+<h2 id="5-4-this关键字"><a href="#5-4-this关键字" class="headerlink" title="5.4 this关键字"></a>5.4 this关键字</h2><p>为了能用简便，面向对象的语法来编写代码，编译器做了一些幕后工作，他把”所操作对象的引用”作为第一个参数传给方法(注：一般是通过对象的引用来调用方法，编译之后通过对象来调用)。<br>只能在方法内部使用，表示对”调用方法的那个对象”的引用。<br>如果在方法内部，调用同一个类的另一个方法，则不必使用this，直接调用即可。<br>需要返回当前对象的引用时，return this；。<br>将当前对象作为参数传递给其他对象。<br>在构造器中调用构造器(只能调用一个，且必须将构造器的调用至于最起始处)。<br>static方法：没有this的方法。</p>
+<h2 id="5-5-清理：终结处理和垃圾回收"><a href="#5-5-清理：终结处理和垃圾回收" class="headerlink" title="5.5 清理：终结处理和垃圾回收"></a>5.5 清理：终结处理和垃圾回收</h2><p>finalize()。<br>对象可能不被垃圾回收。<br>垃圾回收并不等于”析构”。<br>垃圾回收只与内存有关。<br>引用计数：常用开说明垃圾收集的工作方式。<br>复制式回收器：效率低(1,空间大；2，复制)。<br>标记-清扫 模式。</p>
+<h2 id="5-6-成员初始化"><a href="#5-6-成员初始化" class="headerlink" title="5.6 成员初始化"></a>5.6 成员初始化</h2><p>局部变量必须进行初始化。<br>类的数据成员(全局变量)，基本类型会默认有一个初始值，对象引用会获得特殊值null。<br>指定初始化：定义的时候直接赋值或通过方法调用赋值。</p>
+<h2 id="5-7-构造器初始化"><a href="#5-7-构造器初始化" class="headerlink" title="5.7 构造器初始化"></a>5.7 构造器初始化</h2><p>通过构造器来进行初始化(无法阻止自动初始化的进行，它将在构造器调用之前发生)。<br>变量定义的先后顺序决定了初始化的顺序。<br>静态数据初始化：只有在第一个对象创建(或者第一次访问静态数据)的时候，才会被初始化，仅执行一次。<br>显式的静态数据初始化：静态代码块。<br>非静态实例初始化：普通代码块(匿名内部类的chu’shi’hua)。<br>构造器没有显式地使用static，但也是静态方法。<br>对象的创建过程<br>  1.当诗词创建对象或者类的静态方法/静态域首次被访问时，Java解释器查找类路径，定位.class文件。<br>  2.载入.class，有关静态初始化的所有动作被执行(首次加载时进行一次)。<br>  3.用new操作符创建对象，在堆上为对象分配足够的存储空间。<br>  4.存储空间清零，为对象中的全局变量赋值。<br>  5.执行所有出现于字段定义处的初始化动作。<br>  6.执行构造器。</p>
+<h2 id="5-8-数组初始化"><a href="#5-8-数组初始化" class="headerlink" title="5.8 数组初始化"></a>5.8 数组初始化</h2><p>数组：相同类型的，用一个标识符名称封装到一起的一个对象序列或基本类型数据序列.通过方括号下标操作符来定义和使用的。<br>编译器不允许指定数组的大小。<br>初始化表达式：由一对花括号括起来的值组成。在这种情况下，存储空间的分配(等价于使用new)由编译器负责。<br>固有成员length，只能访问不能修改。<br>可变参数列表。</p>
+<h2 id="5-9-枚举类型"><a href="#5-9-枚举类型" class="headerlink" title="5.9 枚举类型"></a>5.9 枚举类型</h2><p>枚举类型的实例是常量，按照命名惯例使用大写字母表示(多个单词用下划线隔开)。<br>为了使用enum，需要创建一个该类型的引用，并将其赋值给某个实例。<br>编译器自动添加toString()，ordinal()(声明顺序)，values()(按声明顺序，产生由常量构成的数组)方法。<br>与switch配合使用。</p>
+
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/02/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%884%EF%BC%89%E6%8E%A7%E5%88%B6%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/" rel="prev" title="控制执行流程">
+      <i class="fa fa-chevron-left"></i> 控制执行流程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/04/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%886%EF%BC%89%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/" rel="next" title="访问权限控制">
+      访问权限控制 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E7%94%A8%E6%9E%84%E9%80%A0%E5%99%A8%E7%A1%AE%E4%BF%9D%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">5.1 用构造器确保初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text">5.2 方法重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">5.3 默认构造器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">4.</span> <span class="nav-text">5.4 this关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-%E6%B8%85%E7%90%86%EF%BC%9A%E7%BB%88%E7%BB%93%E5%A4%84%E7%90%86%E5%92%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-number">5.</span> <span class="nav-text">5.5 清理：终结处理和垃圾回收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-%E6%88%90%E5%91%98%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text">5.6 成员初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-7-%E6%9E%84%E9%80%A0%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">5.7 构造器初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">8.</span> <span class="nav-text">5.8 数组初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-9-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B"><span class="nav-number">9.</span> <span class="nav-text">5.9 枚举类型</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">Knowing How, Knowing Why!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

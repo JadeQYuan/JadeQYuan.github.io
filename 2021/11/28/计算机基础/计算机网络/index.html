@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络">
+<meta property="og:url" content="http://example.com/2021/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="Knowing">
+<meta property="og:description" content="计算机网络">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-28T13:45:00.000Z">
+<meta property="article:modified_time" content="2021-11-30T14:47:26.849Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="knowing, blog">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机网络 | Knowing</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Knowing</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Knowing Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">115</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="Knowing How, Knowing Why!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Knowing">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-28 21:45:00" itemprop="dateCreated datePublished" datetime="2021-11-28T21:45:00+08:00">2021-11-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-30 22:47:26" itemprop="dateModified" datetime="2021-11-30T22:47:26+08:00">2021-11-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机基础</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">计算机网络</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><p>数字化、信息化。<br>本文网络指计算机网络。</p>
+<h3 id="三网"><a href="#三网" class="headerlink" title="三网"></a>三网</h3><ul>
+<li>电信网络 提供电话、电报、传真等服务。</li>
+<li>有线电视网络 利用光缆或同轴电缆来传送广播电视信号或本地播放的电视信号的网络。提供各种电视节目。</li>
+<li>计算机网络 计算机通信网。能够迅速传送数据，获取各种资料。</li>
+</ul>
+<h3 id="三网融合"><a href="#三网融合" class="headerlink" title="三网融合"></a>三网融合</h3><p>相互渗透，互相兼容，并逐步整合称为全世界统一的信息通信网络。</p>
+<h2 id="因特网"><a href="#因特网" class="headerlink" title="因特网"></a>因特网</h2><h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
+<li>网络 由若干结点和连接这些结点的链路组成。</li>
+<li>互联网 网络的网络。网络把计算机连接在一起，而互联网把网络连接在一起。</li>
+<li>因特网 世界上最大的互联网络。</li>
+<li>网络互联 硬件+软件。</li>
+<li>ISP 因特网服务提供商（Internet Service Provider）。</li>
+</ul>
+<h3 id="发展阶段"><a href="#发展阶段" class="headerlink" title="发展阶段"></a>发展阶段</h3><ol>
+<li>第一阶段： 从单个网络ARPANET向互联网发展。</li>
+<li>第二阶段： 三级结构的互联网。主干网、地区网、校园网/企业网。</li>
+<li>第三阶段： 多层次ISP结构的互联网。</li>
+</ol>
+<h2 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h2><p>计算机通信： 主机A的某个进程和主机B的另一个进程进行通信。</p>
+<h3 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h3><ul>
+<li>C/S 客户-服务器模式。</li>
+<li>p2p 对等方式（peer to peer）。</li>
+</ul>
+<h3 id="交换方式"><a href="#交换方式" class="headerlink" title="交换方式"></a>交换方式</h3><ul>
+<li>电路交换 整个报文的比特流连续地从源点直达重点。</li>
+<li>报文交换 整个报文先传送到相邻结点，全部存储下来后查找转发表，转发到下一个结点。</li>
+<li>分组交换 单个分组传送到相邻结点（整个报文的一部分），存储下来后查找转发表，转发到下一个结点。</li>
+</ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="按网络作用范围"><a href="#按网络作用范围" class="headerlink" title="按网络作用范围"></a>按网络作用范围</h3><ul>
+<li>广域网WAN Wide Area Network</li>
+<li>城域网MAN Metropolitan Area Network</li>
+<li>局域网LAN Local Area Network</li>
+<li>个人区域网PAN Personal Area Network</li>
+</ul>
+<h3 id="按使用者"><a href="#按使用者" class="headerlink" title="按使用者"></a>按使用者</h3><ul>
+<li>公用网</li>
+<li>专用网</li>
+</ul>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><ul>
+<li>速率 传输数据的速率。</li>
+<li>带宽 网络的通信线路传送数据的能力。表示在单位时间内从网络的某一点到另一点所能通过的最高数据率。</li>
+<li>吞吐量 单位时间内通过某个网络的数据量。</li>
+<li>时延 数据从网络的一端传送到另一端的时间。总时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延。</li>
+<li>时延带宽积 传播时延 * 带宽。</li>
+<li>往返时间RTT Round-Trip Time。从数据发送方发送数据开始，到发送方收到来自接收方的确认。</li>
+<li>利用率 </li>
+</ul>
+<h2 id="网络体系结构"><a href="#网络体系结构" class="headerlink" title="网络体系结构"></a>网络体系结构</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>为进行网络中的数据交换而建立的规则、标准或约定，称为网络协议。主要由以下三要素组成：</p>
+<ul>
+<li>语法 数据与控制信息的结构或格式。</li>
+<li>语义 需要发出何种控制信息，完成何种动作以及做出何种响应。</li>
+<li>同步 事件实现顺序的详细说明。</li>
+</ul>
+<h3 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h3><p>各层之间是独立的、灵活性好、结构上可分隔开、易于实现和维护、能促进标准化工作。</p>
+<h3 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h3><p>把计算机网络的各层及其协议的集合，称为网络的体系结构。即计算机的体系结构就是这个计算机网络及其构件所应完成的功能的精确定义。<br>体系结构是抽象的，而实现则是具体的。</p>
+<h3 id="OSI-七层模型"><a href="#OSI-七层模型" class="headerlink" title="OSI 七层模型"></a>OSI 七层模型</h3><p>OSI/RM: 开放系统互联模型（Open Systems Interconnection Reference Model）。</p>
+<ul>
+<li>⑦ 应用层 用户接口</li>
+<li>⑥ 表示层 数据的表现形式，特定功能的实现</li>
+<li>⑤ 会话层 对应用回话的管理同步</li>
+<li>④ 传输层 可靠与不可靠的传输，传输前的错误检测，监控。</li>
+<li>③ 网络层 提供逻辑地址，选路</li>
+<li>② 数据链路层 成帧，用MAC地址访问媒介，错误检测与修正</li>
+<li>① 物理层 设备之间的比特流传输，物理接口，电气特性。</li>
+</ul>
+<p>OSI七层模型只获得了一些理论研究的成果，以失败告终。</p>
+<h3 id="TCP-IP-四层模型"><a href="#TCP-IP-四层模型" class="headerlink" title="TCP/IP 四层模型"></a>TCP/IP 四层模型</h3><ul>
+<li>应用层 应用层+表示层+会话层</li>
+<li>传输层</li>
+<li>网络互联层</li>
+<li>网络接口层 数据链路层+物理层</li>
+</ul>
+<p>实际事实标准。</p>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><h3 id="信道"><a href="#信道" class="headerlink" title="信道"></a>信道</h3><p>一般用来表示向某一个方向传送信息的媒体。<br>根据双方信息交互方式分类：</p>
+<ul>
+<li>单工通信 只能有一个方向的通信而美誉反方向的交互。（无线电广播、有线电广播、电视广播）</li>
+<li>半双工通信 通信的双方都可以发送信息，单不能双方同时发送。</li>
+<li>全双工通信 通信的双方可以同时发送和接受信息。</li>
+</ul>
+<h3 id="适配器-网卡"><a href="#适配器-网卡" class="headerlink" title="适配器/网卡"></a>适配器/网卡</h3><p>适配器和局域网之间的通信是通过电缆或双绞线以串行传输方式进行的。而适配器和计算机之间的通信是通过计算机主板上的I/O总线以并行传输方式进行的。</p>
+<h3 id="ADSL"><a href="#ADSL" class="headerlink" title="ADSL"></a>ADSL</h3><p>非对称数字用户线ADSL技术是用数字技术对现有模拟电话用户线进行改造。</p>
+<h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><p>是一种计算机局域网技术。</p>
+<h3 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h3><p>PPP point to point protocol 点对点协议。<br>PPPOE PPP Over Ethernet 以太网上的点对点协议。</p>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>任务：为分组交换网上的不同主机提供通信服务。<br>协议： IP</p>
+<p>正向查询： 域名 -&gt; IP<br>反向查询： IP -&gt; 域名</p>
+<h3 id="网段"><a href="#网段" class="headerlink" title="网段"></a>网段</h3><table>
+<thead>
+<tr>
+<th>网段</th>
+<th>最大网络数</th>
+<th>ip范围</th>
+<th>最大主机数</th>
+<th>私有ip范围</th>
+<th>子网掩码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>2^7-2</td>
+<td>1.0.0.0-126.255.255.255</td>
+<td>2^24-2</td>
+<td>10.0.0.0-10.255.255.255</td>
+<td>255.0.0.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2^14</td>
+<td>128.0.0.0-191.255.255.255</td>
+<td>2^16-2</td>
+<td>172.16.0.0-127.31.255.255</td>
+<td>255.255.0.0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>2^21</td>
+<td>192.0.0.0-223.255.255.255</td>
+<td>2^8-2</td>
+<td>192.168.0.0-192.168.255.255</td>
+<td>255.255.255.0</td>
+</tr>
+</tbody></table>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><p>任务： 向两个主机中进程之间的通信提供通用的数据传输服务。<br>协议： TCP、UDP</p>
+<ul>
+<li>TCP 传输控制协议 提供面向连接的，可靠的数据传输服务。数据传输的单位是报文段。</li>
+<li>UDP 用户数据报协议 提供无连接的，不可靠的数据传输服务。数据传输的单位是用户数据报。</li>
+</ul>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><p>任务： 通过应用进程间的交互来完成特定网络应用。<br>协议： 应用进程间通信和交互的规则。</p>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>Domain Name System，域名系统。</p>
+<h4 id="域名空间结构"><a href="#域名空间结构" class="headerlink" title="域名空间结构"></a>域名空间结构</h4><ul>
+<li>. 便于分级管理，根域。</li>
+<li>顶级域名/一级域名</li>
+<li>二级域名</li>
+<li>主机名</li>
+</ul>
+<h4 id="DNS查询过程"><a href="#DNS查询过程" class="headerlink" title="DNS查询过程"></a>DNS查询过程</h4><p>递归查询： 成功相应/失败相应。允许向其它DNS插叙<br>迭代查询： 服务器收到一次查询返回一次结果，结果不定。</p>
+<h2 id="无线网络"><a href="#无线网络" class="headerlink" title="无线网络"></a>无线网络</h2><p>无线局域网 WLAN<br>无线城域网 WMAN<br>无线局域网标准 IEEE 802.11 凡使用802.11系列协议的局域网又称为WiFI。</p>
+<h2 id="移动通信"><a href="#移动通信" class="headerlink" title="移动通信"></a>移动通信</h2><p>种类： 蜂窝移动通信（使用最多）、卫星移动通信、集群移动通信、无绳电话通信…<br>第一代蜂窝移动通信：1G<br>第二代蜂窝移动通信：2G…</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="TCP-IP连接"><a href="#TCP-IP连接" class="headerlink" title="TCP/IP连接"></a>TCP/IP连接</h3><p>三次握手，四次挥手</p>
+<h3 id="常见协议端口"><a href="#常见协议端口" class="headerlink" title="常见协议端口"></a>常见协议端口</h3><ul>
+<li>FTP 文件传输协议 20 21</li>
+<li>SSH 安全shell协议 22</li>
+<li>telnet 远程登录协议 23</li>
+<li>DNS 域名系统 53</li>
+<li>HTTP 超文本传输协议 80</li>
+<li>HTTPS 43</li>
+<li>SMTP 简单邮件传输协议 25</li>
+<li>POP3 邮局协议3代 110</li>
+</ul>
+
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/28/Linux/Linux%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" rel="prev" title="Linux软件安装">
+      <i class="fa fa-chevron-left"></i> Linux软件安装
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/30/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%881%EF%BC%89%E5%AF%B9%E8%B1%A1%E5%AF%BC%E8%AE%BA/" rel="next" title="对象导论">
+      对象导论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BD%91"><span class="nav-number">1.1.</span> <span class="nav-text">三网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%BD%91%E8%9E%8D%E5%90%88"><span class="nav-number">1.2.</span> <span class="nav-text">三网融合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91"><span class="nav-number">2.</span> <span class="nav-text">因特网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AF%E8%AF%AD"><span class="nav-number">2.1.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5"><span class="nav-number">2.2.</span> <span class="nav-text">发展阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1"><span class="nav-number">3.</span> <span class="nav-text">通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">通信方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">交换方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E7%BD%91%E7%BB%9C%E4%BD%9C%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">4.1.</span> <span class="nav-text">按网络作用范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E4%BD%BF%E7%94%A8%E8%80%85"><span class="nav-number">4.2.</span> <span class="nav-text">按使用者</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD"><span class="nav-number">5.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">6.</span> <span class="nav-text">网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE"><span class="nav-number">6.1.</span> <span class="nav-text">协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B1%82"><span class="nav-number">6.2.</span> <span class="nav-text">分层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">6.3.</span> <span class="nav-text">体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI-%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="nav-number">6.4.</span> <span class="nav-text">OSI 七层模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP-%E5%9B%9B%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="nav-number">6.5.</span> <span class="nav-text">TCP&#x2F;IP 四层模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-number">7.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E9%81%93"><span class="nav-number">7.1.</span> <span class="nav-text">信道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E9%85%8D%E5%99%A8-%E7%BD%91%E5%8D%A1"><span class="nav-number">7.2.</span> <span class="nav-text">适配器&#x2F;网卡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADSL"><span class="nav-number">7.3.</span> <span class="nav-text">ADSL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="nav-number">8.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91"><span class="nav-number">8.1.</span> <span class="nav-text">以太网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PPP"><span class="nav-number">8.2.</span> <span class="nav-text">PPP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="nav-number">9.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E6%AE%B5"><span class="nav-number">9.1.</span> <span class="nav-text">网段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="nav-number">10.</span> <span class="nav-text">传输层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-number">11.</span> <span class="nav-text">应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS"><span class="nav-number">11.1.</span> <span class="nav-text">DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E7%A9%BA%E9%97%B4%E7%BB%93%E6%9E%84"><span class="nav-number">11.1.1.</span> <span class="nav-text">域名空间结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B"><span class="nav-number">11.1.2.</span> <span class="nav-text">DNS查询过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="nav-number">12.</span> <span class="nav-text">无线网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E9%80%9A%E4%BF%A1"><span class="nav-number">13.</span> <span class="nav-text">移动通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">14.</span> <span class="nav-text">其它</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP%E8%BF%9E%E6%8E%A5"><span class="nav-number">14.1.</span> <span class="nav-text">TCP&#x2F;IP连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E5%8D%8F%E8%AE%AE%E7%AB%AF%E5%8F%A3"><span class="nav-number">14.2.</span> <span class="nav-text">常见协议端口</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">Knowing How, Knowing Why!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

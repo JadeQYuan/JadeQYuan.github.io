@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Linux基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基础">
+<meta property="og:url" content="http://example.com/2021/11/28/Linux/Linux%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Knowing">
+<meta property="og:description" content="Linux基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-28T12:35:00.000Z">
+<meta property="article:modified_time" content="2021-11-29T12:42:35.525Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="knowing, blog">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/11/28/Linux/Linux%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Linux基础 | Knowing</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Knowing</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Knowing Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">115</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/28/Linux/Linux%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="Knowing How, Knowing Why!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Knowing">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-28 20:35:00" itemprop="dateCreated datePublished" datetime="2021-11-28T20:35:00+08:00">2021-11-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-29 20:42:35" itemprop="dateModified" datetime="2021-11-29T20:42:35+08:00">2021-11-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Linux基础</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>/bin 系统普通用户命令</li>
+<li>/sbin root命令</li>
+<li>/usr/bin 系统普通用户命令</li>
+<li>/usr/sbin root命令</li>
+<li>/etc 系统默认配置目录</li>
+<li>/root </li>
+<li>/home </li>
+<li>/lib 函数库</li>
+<li>/media 光盘</li>
+<li>/mnt U盘、硬盘</li>
+<li>/misc 磁带</li>
+<li>/proc 内存的过载点</li>
+<li>/sys 内存的过载点</li>
+<li>/temp 临时目录</li>
+<li>/usr 系统资源</li>
+<li>/var 系统可变文档</li>
+<li>/boot 启动目录</li>
+</ul>
+<h2 id="运行级别"><a href="#运行级别" class="headerlink" title="运行级别"></a>运行级别</h2><ul>
+<li>0 关机</li>
+<li>1 单用户模式</li>
+<li>2 不完全的命令行</li>
+<li>3 完全的命令行</li>
+<li>4 系统保留</li>
+<li>5 图形界面</li>
+<li>6 重启</li>
+</ul>
+<p>查看： run level<br>修改： init x<br>修改开始时级别： /etc/inittab</p>
+<h2 id="用户、用户组"><a href="#用户、用户组" class="headerlink" title="用户、用户组"></a>用户、用户组</h2><h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><ul>
+<li>/etc/group 存储当前系统中所有用户组信息 （组名称:组密码占位符:组编号:组中用户名列表）</li>
+<li>/etc/gshadow 存储当前系统中用户组的密码信息 （组名称:组密码:组管理者:组中用户列表）</li>
+<li>/etc/passwd 存储用户组中用户信息 （用户名:密码占位符:用户编号:用户组编号:用户注释信息:用户主目录:shell类型）</li>
+<li>/etc/shadow 存储用户密码信息 （用户:密码:……）</li>
+</ul>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ul>
+<li>添加用户组： groupadd 组名</li>
+<li>修改用户组名称： groupmod -n 新组名 旧组名</li>
+<li>修改用户组编号： groupmod -g 编号 组名</li>
+<li>删除用户组：groupdel 组名</li>
+<li>添加用户： useradd 用户名</li>
+<li>修改用户： usermod -l 旧名 新名</li>
+<li>删除用户： userdel 用户名</li>
+<li>锁定： passwd 用户名 -l</li>
+<li>解锁： passwd 用户名 -u</li>
+<li>清除命令： passwd 用户名 -d</li>
+</ul>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod [选项] 模式 文件名</span><br><span class="line">chown [组名:]用户名 文件名</span><br><span class="line">chgrp 组名 文件名</span><br></pre></td></tr></table></figure>
+<p>-R 递归</p>
+<h2 id="压缩-解压缩"><a href="#压缩-解压缩" class="headerlink" title="压缩/解压缩"></a>压缩/解压缩</h2><p>压缩文件格式： .zip、.gz、.bz2、.tar.gz、.tar.gz2</p>
+<h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><ul>
+<li>-c 打包、-x 解压、 -t 查看</li>
+<li>-v 显示过程</li>
+<li>-f 指定打包后的文件名</li>
+<li>-z .tar.gz格式 -j .tar.bz2格式</li>
+</ul>
+<h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><ul>
+<li>压缩文件 zip *.zip *</li>
+<li>压缩目录 zip -r *.zip 目录</li>
+<li>解压缩 unzip 压缩文件</li>
+</ul>
+<h3 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h3><ul>
+<li>压缩文件 gzip 源文件 （源文件消失）</li>
+<li>压缩目录 gzip  -r 目录</li>
+<li>解压 gunzip 压缩文件</li>
+<li>解压 gzip -d 压缩文件</li>
+</ul>
+<h3 id="bzip"><a href="#bzip" class="headerlink" title="bzip"></a>bzip</h3><ul>
+<li>压缩文件 bzip2 源文件</li>
+<li>不能压缩目录</li>
+<li>解压 bzip2 -d 压缩文件</li>
+<li>解压 bunzip2 压缩文件</li>
+</ul>
+<h2 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h2><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><ul>
+<li>查看级别 map -f 命令  -&gt;  whatis 命令</li>
+<li>查找  map -k 命令  -&gt;  apropos 命令</li>
+</ul>
+<h3 id="help"><a href="#help" class="headerlink" title="help"></a>help</h3><h2 id="ssh操作"><a href="#ssh操作" class="headerlink" title="ssh操作"></a>ssh操作</h2><ul>
+<li>ctrl + L  清屏</li>
+<li>ctrl + c  强制退出</li>
+<li>ctrl + u  删除至行首</li>
+<li>ctrl + a  Home</li>
+<li>ctrl + e  End</li>
+<li>ctrl + r  在历史命令搜索</li>
+<li>ctrl + z  放入后台</li>
+</ul>
+<h2 id="VI操作模式"><a href="#VI操作模式" class="headerlink" title="VI操作模式"></a>VI操作模式</h2><p>virsual interface<br>命令模式、输入模式、底行模式</p>
+<ul>
+<li>:w 保存</li>
+<li>:q 退出</li>
+<li>:! 强制执行</li>
+<li>:ls 列出当前打开文件</li>
+<li>:n 切换到下一个打开的文件</li>
+<li>:N 切换到上一个打开的文件</li>
+<li>:15 定位到15行</li>
+<li>/xxx 向后搜索</li>
+<li>?xxx 向前搜索</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>命令格式： 命令 [选项] [参数]</p>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>print working directory</p>
+<ul>
+<li>~ 当前用户家目录</li>
+<li><h1 id="管理员用户"><a href="#管理员用户" class="headerlink" title="管理员用户"></a>管理员用户</h1></li>
+<li>$ 普通用户</li>
+</ul>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><ul>
+<li>-a all</li>
+<li>-l long 文件类型（-、d、l、…）</li>
+<li>-d 目录属性</li>
+<li>-h human 人性化显示</li>
+<li>-i inode i结点</li>
+</ul>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv [原文件/目录] [目标文件/目录]</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建目录-mkdir"><a href="#创建目录-mkdir" class="headerlink" title="创建目录 mkdir"></a>创建目录 mkdir</h3><ul>
+<li>-p 递归创建</li>
+</ul>
+<h3 id="删除-rm"><a href="#删除-rm" class="headerlink" title="删除 rm"></a>删除 rm</h3><ul>
+<li>-f force 强制</li>
+<li>-r 删除目录</li>
+</ul>
+<h3 id="复制-cp"><a href="#复制-cp" class="headerlink" title="复制 cp"></a>复制 cp</h3><ul>
+<li>-r 目录</li>
+<li>-p 连带文件属性复制</li>
+<li>-d 若源文件是链接文件，则复制链接属性</li>
+</ul>
+<h3 id="链接-ln"><a href="#链接-ln" class="headerlink" title="链接 ln"></a>链接 ln</h3><p>ln [原文件] [目标文件]<br>-s 软链接</p>
+<h3 id="文件搜索-locate"><a href="#文件搜索-locate" class="headerlink" title="文件搜索 locate"></a>文件搜索 locate</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locate 文件名</span><br></pre></td></tr></table></figure>
+
+<h3 id="命令搜索"><a href="#命令搜索" class="headerlink" title="命令搜索"></a>命令搜索</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">where is 命令</span><br><span class="line">which 命令</span><br></pre></td></tr></table></figure>
+<p>where 查看命令所在位置-b 和帮助文档-m<br>which 查看命令所在位置和别名</p>
+<h3 id="字符串搜索-grep"><a href="#字符串搜索-grep" class="headerlink" title="字符串搜索 grep"></a>字符串搜索 grep</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [选项] 字符串 文件名</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-i 忽略大小写</li>
+<li>-v 取反</li>
+</ul>
+<h3 id="文件搜索-find"><a href="#文件搜索-find" class="headerlink" title="文件搜索 find"></a>文件搜索 find</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find [搜索目录] [搜索条件（通配符）]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>atime 文件访问时间</li>
+<li>ctime 改变文件属性时间</li>
+<li>mtime 改变内容时间</li>
+<li>-10 10天内修改</li>
+<li>+10 10天前修改</li>
+<li>10 10天前当天修改</li>
+<li>-size 25k/+25k/-25k</li>
+<li>-inum</li>
+<li>-a and</li>
+<li>-o or</li>
+</ul>
+<h3 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h3><h4 id="df"><a href="#df" class="headerlink" title="df"></a>df</h4><ul>
+<li>-l 本地磁盘</li>
+<li>-a 所有文件系统</li>
+<li>-h 1024 进制换算</li>
+<li>-H 1000 进制换算</li>
+<li>-T 分区类型</li>
+<li>-t 显示指定类型</li>
+<li>-x 不显示指定类型</li>
+</ul>
+<h4 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount ntfs-3g 目录 目录</span><br><span class="line">umount 目录</span><br></pre></td></tr></table></figure>
+
+<h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><ul>
+<li>du 统计磁盘上的文件大小<ul>
+<li>-b -k -m</li>
+<li>-h -H </li>
+<li>-s 指定统计目标</li>
+</ul>
+</li>
+<li>fdish 添加MBR分区</li>
+<li>parted 添加GPT/MBR分区</li>
+<li>mkfs 格式化</li>
+</ul>
+
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%EF%BC%885%EF%BC%89-%E5%88%86%E6%94%AF%E9%99%90%E7%95%8C%E6%B3%95/" rel="prev" title="算法设计-分支限界法">
+      <i class="fa fa-chevron-left"></i> 算法设计-分支限界法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/28/Linux/Linux%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" rel="next" title="Linux软件安装">
+      Linux软件安装 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">运行级别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E3%80%81%E7%94%A8%E6%88%B7%E7%BB%84"><span class="nav-number">3.</span> <span class="nav-text">用户、用户组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">3.2.</span> <span class="nav-text">命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E9%99%90"><span class="nav-number">4.</span> <span class="nav-text">权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9-%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="nav-number">5.</span> <span class="nav-text">压缩&#x2F;解压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tar"><span class="nav-number">5.1.</span> <span class="nav-text">tar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zip"><span class="nav-number">5.2.</span> <span class="nav-text">zip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gzip"><span class="nav-number">5.3.</span> <span class="nav-text">gzip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bzip"><span class="nav-number">5.4.</span> <span class="nav-text">bzip</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">帮助命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">6.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#help"><span class="nav-number">6.2.</span> <span class="nav-text">help</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh%E6%93%8D%E4%BD%9C"><span class="nav-number">7.</span> <span class="nav-text">ssh操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VI%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">VI操作模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">9.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd"><span class="nav-number">9.1.</span> <span class="nav-text">pwd</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E5%91%98%E7%94%A8%E6%88%B7"><span class="nav-number"></span> <span class="nav-text">管理员用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-number">0.1.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv"><span class="nav-number">0.2.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95-mkdir"><span class="nav-number">0.3.</span> <span class="nav-text">创建目录 mkdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4-rm"><span class="nav-number">0.4.</span> <span class="nav-text">删除 rm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6-cp"><span class="nav-number">0.5.</span> <span class="nav-text">复制 cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5-ln"><span class="nav-number">0.6.</span> <span class="nav-text">链接 ln</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2-locate"><span class="nav-number">0.7.</span> <span class="nav-text">文件搜索 locate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%90%9C%E7%B4%A2"><span class="nav-number">0.8.</span> <span class="nav-text">命令搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%90%9C%E7%B4%A2-grep"><span class="nav-number">0.9.</span> <span class="nav-text">字符串搜索 grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2-find"><span class="nav-number">0.10.</span> <span class="nav-text">文件搜索 find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"><span class="nav-number">0.11.</span> <span class="nav-text">磁盘管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#df"><span class="nav-number">0.11.1.</span> <span class="nav-text">df</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%82%E8%BD%BD"><span class="nav-number">0.11.2.</span> <span class="nav-text">挂载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">0.11.3.</span> <span class="nav-text">其它</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">Knowing How, Knowing Why!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
