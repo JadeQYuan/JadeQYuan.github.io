@@ -28,7 +28,7 @@
 <meta property="og:description" content="复用类">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-04T12:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-05T02:42:38.162Z">
+<meta property="article:modified_time" content="2021-12-11T15:02:14.144Z">
 <meta property="article:author" content="Jade">
 <meta property="article:tag" content="knowing, blog">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-05 10:42:38" itemprop="dateModified" datetime="2021-12-05T10:42:38+08:00">2021-12-05</time>
+                <time title="修改时间：2021-12-11 23:02:14" itemprop="dateModified" datetime="2021-12-11T23:02:14+08:00">2021-12-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,7 +251,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>复用代码是Java众多引人注目的功能之一。但要想成为极具革命性的语言，仅仅能够复制代码并对之加以改变是不够的，它还必须能够做更多的事情。<br>使用类而不破坏现有程序代码。 1. 组合； 2. 继承。<br>继承是面向对象程序设计的基石之一。</p>
+<h2 id="7-1-组合语法"><a href="#7-1-组合语法" class="headerlink" title="7.1 组合语法"></a>7.1 组合语法</h2><p>将对象引用置于新类中。<br>组合对象初始化：1. 在定义对象的地方；2. 在类的构造器中；3. 使用对象之前； 4. 使用实例初始化（代码块）。</p>
+<h2 id="7-2-继承语法"><a href="#7-2-继承语法" class="headerlink" title="7.2 继承语法"></a>7.2 继承语法</h2><p>继承是所有OOP语言和Java语言不可缺少的组成部分。<br>当创建一个类时，总是在继承。除非已明确指出要从其他类中继承，否则就是在隐式地从Java的标准跟类Object进行继承。<br>继承声明式通过在类主体的左边花括号之前，书写后面紧随基类名称的关键字extends而实现的。会自动得到基类中所有域和方法。<br>Java中用super关键字表示超类的意思，当前类就是从超类继承的来。<br>在继承的过程中，并不一定非得使用基类的方法，也可以在导出类中添加新方法。<br>在构造器中调用基类构造器来执行初始化，而基类构造器具有执行基类初始化所需要的所有知识和能力。Java会自动在导出类的构造器中插入对基类构造器的调用。<br>如果没有默认的基类构造器，或想调用一个带参数的基类构造器，就必须用super显式地编写调用基类构造器的语句，并且配以适当的参数列表。</p>
+<h2 id="7-3-代理"><a href="#7-3-代理" class="headerlink" title="7.3 代理"></a>7.3 代理</h2><p>Java没有提供对代理的直接支持。<br>这是继承域组合之间的中庸之道，将一个成员对象置于所要构造的类中（就像组合），与此同时在新类中暴露了该成员对象的所有方法（就像继承）。</p>
+<h2 id="7-4-结合使用组合和继承"><a href="#7-4-结合使用组合和继承" class="headerlink" title="7.4 结合使用组合和继承"></a>7.4 结合使用组合和继承</h2><p>虽然编译器强制要求初始化基类，并且要求在构造器起始处就要这么做，但是并不监督必须将成员对象也初始化。<br>try-finally。<br>手动清理时注意清理顺序。一般来说与生成顺序相反。<br>如果Java的基类拥有多个已被多次重载的方法名称，那么在导出类中重新定义该方法名称并不会屏蔽其在基类中的任何版本（与C++不同）。无论是在该层或者它的基类中对方法进行定义，重载机制都可以正常工作。<br>Java SE5.0 新增加了@Override注解表示覆写每个方法。可以防止在不想重载时而意外地进行了重载。</p>
+<h2 id="7-5-在组合与继承之间选择"><a href="#7-5-在组合与继承之间选择" class="headerlink" title="7.5 在组合与继承之间选择"></a>7.5 在组合与继承之间选择</h2><p>组合和继承都允许在新的类中放置子对象，组合是显式做，继承是隐式地做。<br>组合技术通常用于想在新类中使用现有类地功能而非它地接口这种情形。即在新类中嵌入某个对象，让其实现所需要的功能，但类中的用户看到的只是为新类所定义的接口，而非所嵌入对象的接口。<br>在继承地时候，使用某个现有类，并开发一个它的特殊版本。</p>
+<h2 id="7-6-protected关键字"><a href="#7-6-protected关键字" class="headerlink" title="7.6 protected关键字"></a>7.6 protected关键字</h2><p>就类用户而言，这是private的，但对于任何继承于此类的导出类或其他任何位于同一个包内的类来说，它却是可以访问的。<br>尽管可以创建protected域，但最好的方式还是将域保持为private，应当一直保留“更改底层实现”的权利，然后通过protected方法来控制类的继承者的访问权限。</p>
+<h2 id="7-7-向上转型"><a href="#7-7-向上转型" class="headerlink" title="7.7 向上转型"></a>7.7 向上转型</h2><p>“为新的类提供方法”并不是继承技术最重要的方面，其最重要的方面是用来表现新类和基类之间的关系。这种关系可以用“新类是现有类的一种类型”这句话加以概括。<br>这个描述并非只是一种解释继承的华丽的方式，这直接是有语言所支撑的。<br>传统类的继承图的绘制方法：将根置于页面的顶端，然后逐渐向下。<br>由导出类转型成基类，在继承图上是向上移动的，因此一般成为向上转型。<br>在向上转型的过程中，类接口中唯一可能发生的事情是丢失方法，而不是获取它们。<br>慎用。</p>
+<h2 id="7-8-final关键字"><a href="#7-8-final关键字" class="headerlink" title="7.8 final关键字"></a>7.8 final关键字</h2><p>根据上下文环境，Java的关键字final的含义存在着细微的区别，但通常指的是“这是无法改变的”。<br>final可用于 数据、方法和类。</p>
+<p>编译时常量（带有恒定初始值）： final 基本类型/基本类型计算式。必须在定义的时候对其进行赋值。<br>一个既是static又是final的域只占据一段不能改变的存储空间。<br>对于基本类型，final使数值恒定不变；而用于对象引用，final使引用恒定不变。对象自身是可以被修改的。<br>static final 基本类型：用大写表示，用下划线分隔单词。<br>看起来，使引用成为final没有使基本类型成为final的用处大。</p>
+<p>空白final，指被声明为final但未给定处置的域。<br>编译器确保空白final在使用前必须被初始化。<br>空白final在关键字final的使用上提供了更大的灵活性。</p>
+<p>Java允许在参数列表中以声明的方式将参数指明为final。意味着无法在方法中更改参数引用所指向的对象。或无法修改基本类型的参数。<br>这一特性主要用来向匿名内部类传递数据。</p>
+<p>final方法：1. 锁定方法，以防继承。确保在继承中使方法行为保持不变，并且不会被覆盖；2. 效率（早期版本）。<br>类中所有的private方法都隐式地指定为是final的。<br>覆盖只有在某方法是基类的接口的一部分是才会出现。如果某方法是private，只不过是具有相同的名称而已。</p>
+<p>当将某个类的整体定义为final时，表明了你不打算继承该类，而且也不允许别人这样做。<br>final类的域可以根据需要选择为是或不是final。不论类是否被定义为final，相同的规则都适用于定义为final的域。<br>final类中的方法都隐式指定为是final的。可以添加final修饰词，但没有任何意义。</p>
+<p>要预见类是如何被复用的一般是很困难的。</p>
+<h2 id="7-9-初始化及类的加载"><a href="#7-9-初始化及类的加载" class="headerlink" title="7.9 初始化及类的加载"></a>7.9 初始化及类的加载</h2><p>在许多传统语言中，程序是作为启动过程的一部分立刻被加载的。然后是初始化，紧接着程序开始运行。<br>Java采用了一种不同的加载方式。每个类的编译代码都存在于它自己的独立的文件中，该文件只在需要使用程序代码时才会被加载。<br>构造器也是static方法。类是在任何static成员被访问时加载的。<br>加载顺序：基类static - 导出类static - 初始化 - 基类构造器 - 导出类构造器 - 实例变量 - 其余部分。</p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>继承和组合都能从现有类型生成新类型。组合一般是将现有类型作为新类型底层实现的一部分来加以复用，而继承复用的是接口。<br>程序开发是一个增量过程。<br>继承是面向对象的基础，但是每个语言的实现却并不相同。</p>
+
     </div>
 
     
@@ -332,6 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-%E7%BB%84%E5%90%88%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">7.1 组合语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-%E7%BB%A7%E6%89%BF%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">7.2 继承语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-%E4%BB%A3%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">7.3 代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8%E7%BB%84%E5%90%88%E5%92%8C%E7%BB%A7%E6%89%BF"><span class="nav-number">4.</span> <span class="nav-text">7.4 结合使用组合和继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-5-%E5%9C%A8%E7%BB%84%E5%90%88%E4%B8%8E%E7%BB%A7%E6%89%BF%E4%B9%8B%E9%97%B4%E9%80%89%E6%8B%A9"><span class="nav-number">5.</span> <span class="nav-text">7.5 在组合与继承之间选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-6-protected%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">6.</span> <span class="nav-text">7.6 protected关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-7-%E5%90%91%E4%B8%8A%E8%BD%AC%E5%9E%8B"><span class="nav-number">7.</span> <span class="nav-text">7.7 向上转型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-8-final%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">8.</span> <span class="nav-text">7.8 final关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-9-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="nav-number">9.</span> <span class="nav-text">7.9 初始化及类的加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">10.</span> <span class="nav-text">理解</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -28,7 +28,7 @@
 <meta property="og:description" content="对象导论">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-30T11:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-07T12:00:34.003Z">
+<meta property="article:modified_time" content="2021-12-10T14:01:15.754Z">
 <meta property="article:author" content="Jade">
 <meta property="article:tag" content="knowing, blog">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-07 20:00:34" itemprop="dateModified" datetime="2021-12-07T20:00:34+08:00">2021-12-07</time>
+                <time title="修改时间：2021-12-10 22:01:15" itemprop="dateModified" datetime="2021-12-10T22:01:15+08:00">2021-12-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +255,7 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Sun对Java的设计目标：“我们关系的是，减少开发健壮代码所需的事件以及困难。” – 为程序员减少复杂性。</p>
 <h2 id="1-1-抽象过程"><a href="#1-1-抽象过程" class="headerlink" title="1.1 抽象过程"></a>1.1 抽象过程</h2><p>所有编程语言都提供抽象机制。<br>建立机器模型（位于“解空间”）和实际待解决问题的模型（位于“问题空间”）之间的关联。<br>面向对象思想实质：程序可以通过添加新类型的对象使本身适用于某个特定问题。<br>OOP允许根据问题来描述问题，而不是根据运行解决方案的计算机来描述问题。<br>OOP与计算机的联系：每个对象看起来都有点像一台微型计算机，具有状态和操作，用户可以要求对象执行这些操作。<br>对象具有状态、行为和标识。每一个对象在内存中都有一个唯一的地址。</p>
 <h2 id="1-2-每个对象都有一个接口"><a href="#1-2-每个对象都有一个接口" class="headerlink" title="1.2 每个对象都有一个接口"></a>1.2 每个对象都有一个接口</h2><p>创建抽象数据类型（类）使面向对象程序设计的基本概念之一。<br>在面向对象程序设计中，实际进行的是创建新的数据类型，但事实上所有的面向对象程序设计语言都使用class关键词来表示数据类型。即类型和类是等价的。<br>类描述了具有相同特性（数据元素）和行为（功能）的对象集合，所以一个类实际上就是一个数据类型。</p>
-<h2 id="1-3-每个对象都提供服务"><a href="#1-3-每个对象都提供服务" class="headerlink" title="1.3 每个对象都提供服务"></a>1.3 每个对象都提供服务</h2><p>将对象看作“服务提供者”。程序本身向用户提供服务，它将通过调用其它对象提供的服务来实现这一目的。<br>有助于提供对象的内聚性。</p>
+<h2 id="1-3-每个对象都提供服务"><a href="#1-3-每个对象都提供服务" class="headerlink" title="1.3 每个对象都提供服务"></a>1.3 每个对象都提供服务</h2><p>将对象看作“服务提供者”。程序本身向用户提供服务，它将通过调用其它对象提供的服务来实现这一目的。<br>有助于提供对象的内聚性。高内聚是软件设计的基本质量要求之一，意味着一个软件构件的各个方面组合得很好。<br>构件是可复用的软件组成成分，可以是类、对象、方法等等。</p>
 <h2 id="1-4-被隐藏的具体实现"><a href="#1-4-被隐藏的具体实现" class="headerlink" title="1.4 被隐藏的具体实现"></a>1.4 被隐藏的具体实现</h2><p>访问权限控制。</p>
 <h2 id="1-5-复用具体实现"><a href="#1-5-复用具体实现" class="headerlink" title="1.5 复用具体实现"></a>1.5 复用具体实现</h2><p>组合（has-a）、继承（is-a）。<br>组合与继承的使用选择：首先考虑组合，因为更加灵活。</p>
 <h2 id="1-6-继承"><a href="#1-6-继承" class="headerlink" title="1.6 继承"></a>1.6 继承</h2><p>两个类型可以有相同的特性和行为，但是其中一个类型可能必另一个含有更多的特性，并且可以处理更多的消息（或以不同的方式来处理消息）。<br>基类与导出类产生差异方法：在导出类中添加新方法（is-like-a），改变现有基类方法的行为（is-a）。<br>导出类与基类具有相同的类型，但表示完全相同的类型。</p>
