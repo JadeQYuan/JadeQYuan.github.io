@@ -24,13 +24,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作符">
 <meta property="og:url" content="http://example.com/2021/12/02/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%883%EF%BC%89%E6%93%8D%E4%BD%9C%E7%AC%A6/index.html">
-<meta property="og:site_name" content="Knowing">
+<meta property="og:site_name" content="乐然 LeRan">
 <meta property="og:description" content="操作符">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-02T11:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-09T12:31:21.548Z">
+<meta property="article:modified_time" content="2021-12-18T14:47:58.200Z">
 <meta property="article:author" content="Jade">
-<meta property="article:tag" content="knowing, blog">
+<meta property="article:tag" content="乐之者, 知其然">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2021/12/02/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%883%EF%BC%89%E6%93%8D%E4%BD%9C%E7%AC%A6/">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>操作符 | Knowing</title>
+  <title>操作符 | 乐然 LeRan</title>
   
 
 
@@ -97,10 +97,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Knowing</h1>
+      <h1 class="site-title">乐然 LeRan</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">Knowing Blog</p>
+      <p class="site-subtitle" itemprop="description">乐之者知其所以然</p>
   </div>
 
   <div class="site-nav-right">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">115</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">125</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -198,11 +198,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Jade.png">
       <meta itemprop="name" content="Jade">
-      <meta itemprop="description" content="Knowing How, Knowing Why!">
+      <meta itemprop="description" content="知之者不如好之者，好之者不如乐之者。知其然，知其所以然。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Knowing">
+      <meta itemprop="name" content="乐然 LeRan">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-09 20:31:21" itemprop="dateModified" datetime="2021-12-09T20:31:21+08:00">2021-12-09</time>
+                <time title="修改时间：2021-12-18 22:47:58" itemprop="dateModified" datetime="2021-12-18T22:47:58+08:00">2021-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,26 +251,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在最底层，Java中的数据是通过使用操作符来操作的。</p>
-<h2 id="3-1-更简单的打印语句"><a href="#3-1-更简单的打印语句" class="headerlink" title="3.1 更简单的打印语句"></a>3.1 更简单的打印语句</h2><p>静态导入static import。</p>
-<h2 id="3-2-使用Java操作符"><a href="#3-2-使用Java操作符" class="headerlink" title="3.2 使用Java操作符"></a>3.2 使用Java操作符</h2><p>操作符作用于操作数，接受一个或多个参数，并生成一个新值。参数形式与普通方法调用不同。<br>副作用：操作符改变操作数自身的值。<br>能改变其操作数的操作符，最普遍的用途是用来产生副作用。使用有副作用的操作符和没有副作用的操作符，生成的值没有什么区别。<br>几乎所有的操作符都只能操作基本类型。例外的操作符是“=”、“==”、“！=”，这些能操作所有的对象。String类支持“+”、“+=”操作符。</p>
-<h2 id="3-3-优先级"><a href="#3-3-优先级" class="headerlink" title="3.3 优先级"></a>3.3 优先级</h2><p>当一个表达式中存在多个操作符时，操作符的优先级决定了各部分的计算顺序。<br>最简单的规则是先乘除后加减。程序员经常会忘记其他优先级规则，所以应该用括号明确规定计算顺序。</p>
-<h2 id="3-4-赋值"><a href="#3-4-赋值" class="headerlink" title="3.4 赋值"></a>3.4 赋值</h2><p>取右边的值，把它复制给左边。右值可以是任何常数、变量或者表达式。但左值必须是一个明确的，已命名的变量。即必须有一个物理空间可以存储等号右边的值。<br>基本类型存储了实际的数值，为其赋值时，是直接将一个地方的内容复制到了另一个地方。<br>别名现象：多个变量引用指向同一个对象。</p>
-<h2 id="3-5-算术操作符"><a href="#3-5-算术操作符" class="headerlink" title="3.5 算术操作符"></a>3.5 算术操作符</h2><p>包括”+”, “-“, “<em>“, “/“, “%”。整数除法会直接去掉结果的小数位。<br>操作符简化：”+=”, “-=”, “</em>=”, “/=”, “%=”。<br>一元加减号：编译器自动识别，规范加括号。（eg：x = a*(-b)）。<br>一元减号用于改变数据的符号. 一元加号只是为了与一元减号对应，但可以将较小类型的操作数提升为int。</p>
-<h2 id="3-6-自动递增和递减"><a href="#3-6-自动递增和递减" class="headerlink" title="3.6 自动递增和递减"></a>3.6 自动递增和递减</h2><p>递增、递减是两种快捷运算。Java提供了大量的快捷运算，使编码更方便。<br>包括”i++”,”++i”,”i–”,”–i”。<br>前缀会先执行运算，在生成值。后缀会先生成值，在执行运算。<br>除涉及赋值的操作符以外，唯一具有”副作用”的操作符（会改变操作数）。</p>
-<h2 id="3-7-关系操作符"><a href="#3-7-关系操作符" class="headerlink" title="3.7 关系操作符"></a>3.7 关系操作符</h2><p>包括”&gt;”, “&lt;”, “&gt;=”, “&lt;=”, “==”, “!=”。生成的是一个boolean结果（true/false）。<br>“==”,”!=”适用于所有基本类型，其它不适用于boolean类型。<br>==：比较引用。equals默认比较引用，重写比较内容，不适合用于基本类型。</p>
-<h2 id="3-8-逻辑操作符"><a href="#3-8-逻辑操作符" class="headerlink" title="3.8 逻辑操作符"></a>3.8 逻辑操作符</h2><p>包括”&amp;&amp;”, “||”, “!”。能根据参数的逻辑关系，生成一个boolean值。<br>只可应用于boolean值。<br>短路：一旦能够明确无误地确定整个表达式的值，就不再计算表达式余下的部分了。潜在的性能提升。</p>
-<h2 id="3-9-直接常量"><a href="#3-9-直接常量" class="headerlink" title="3.9 直接常量"></a>3.9 直接常量</h2><p>编译器可以明确地知道要生成什么样的类型。用与直接常量相关的某些字符来额外增加一些信息。<br>直接常量后面的后缀字符标志了它的类型。直接常量的前缀标识不同进制。<br>前缀：”0x”十六进制，”0”十进制。<br>后缀：”l/L”浮点型，”d/D”双精度型。<br>指数记数：e 代表 “10的幂次”。</p>
-<h2 id="3-10-按位操作符"><a href="#3-10-按位操作符" class="headerlink" title="3.10 按位操作符"></a>3.10 按位操作符</h2><p>包括”&amp;”, “|”, “<del>“, “^”。用来操作整个基本数据类型的单个bit，即二进制位。<br>来源于C语言面向底层的操作。Java的设计初衷是嵌入电视机顶盒内，所以这种操作被保留了下来。但是不会过多的使用到。<br>除“</del>”（一元操作符）外，可与”=”联合使用.</p>
-<h2 id="3-11-移位操作符"><a href="#3-11-移位操作符" class="headerlink" title="3.11 移位操作符"></a>3.11 移位操作符</h2><p>包括”&lt;&lt;”(左移，低位补0), “&gt;&gt;”(有符号右移，高位正插0，负插1), “&gt;&gt;&gt;”(无符号右移，高位插0)。操作对象是二进制的bit。<br>只可用来处理整数类型（基本数据的一种）。<br>可与”=”联合使用。</p>
-<h2 id="3-12-三元操作符-if-else"><a href="#3-12-三元操作符-if-else" class="headerlink" title="3.12 三元操作符 if-else"></a>3.12 三元操作符 if-else</h2><p>三元操作符也称条件操作符。有三个操作数。<br>表达式：boolean-exp ? value0 : value1;。</p>
-<h2 id="3-13-字符串操作符"><a href="#3-13-字符串操作符" class="headerlink" title="3.13 字符串操作符"></a>3.13 字符串操作符</h2><p>包括”+”， “+=”。用来连接不同的字符串。<br>C++可以为几乎所有操作符增加功能。而Java不能实现自己的重载操作符。<br>如果表达式以一个字符串起头，那么后续所有操作数都必须是字符串类型（编译器会把双引号内的字符序列自动转成字符串）。</p>
-<h2 id="3-14-使用操作符时常犯的错误"><a href="#3-14-使用操作符时常犯的错误" class="headerlink" title="3.14 使用操作符时常犯的错误"></a>3.14 使用操作符时常犯的错误</h2><p>即使对表达式如何计算优点不确定，也不愿意使用括号。<br>“=”“==”、“&amp;”“&amp;&amp;”、“|”“||” 可能会输入错误。Java编译器可防止这种错误发生，因为不允许把一种类型当作另一种类型来用。</p>
-<h2 id="3-15-类型转换操作符"><a href="#3-15-类型转换操作符" class="headerlink" title="3.15 类型转换操作符"></a>3.15 类型转换操作符</h2><p>类型转换(cast)。显式的进行类型的转换，或者在不能自动进行转换时强制进行类型转换。<br>将float、double转为整型，会截尾，即向下取整。可以使用Math.round()，四舍五入。<br>对基本数据类型进行执行算术运算或按位运算，只要类型比int小，在运算之前，会自动转换成int，最终结果就是int型，如果要把结果赋值给较小的类型，就必须使用类型转换。</p>
-<h2 id="3-16-Java没有sizeof"><a href="#3-16-Java没有sizeof" class="headerlink" title="3.16 Java没有sizeof"></a>3.16 Java没有sizeof</h2><p>C/C++中，sizeof()操作符返回数据分配的字节数。使用sizeof最大的原因是为了“移植”。<br>Java不需要sizeof，因为所有类型在所有机器中的大小是相同的。</p>
-<h2 id="3-17-操作符小结"><a href="#3-17-操作符小结" class="headerlink" title="3.17 操作符小结"></a>3.17 操作符小结</h2><p>对boolean的运算有限，只能赋予true和false。<br>对char、byte、short进行任何算术运算时，数据类型会提示为int。必须显示转换为原来的类型（可能会丢失信息）。<br>对int执行乘法运算，结果可能会溢出。</p>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>C中明确比较了操作符的优先级，而Java则建议使用括号来明确优先级。<br>除了字符串支持（+=、+）及赋值（=）操作符，其它操作符的操作数都是基本类型。</p>
+        <div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"3.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"在最底层，Java中的数据是通过使用操作符来操作的。"}]},{"t":"heading","d":1,"p":{"lines":[3,4]},"v":"3.1 更简单的打印语句","c":[{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"静态导入static import。"}]},{"t":"heading","d":1,"p":{"lines":[6,7]},"v":"3.2 使用Java操作符","c":[{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"操作符作用于操作数，接受一个或多个参数，并生成一个新值。参数形式与普通方法调用不同。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"副作用：操作符改变操作数自身的值。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"能改变其操作数的操作符，最普遍的用途是用来产生副作用。使用有副作用的操作符和没有副作用的操作符，生成的值没有什么区别。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"几乎所有的操作符都只能操作基本类型。例外的操作符是“=”、“==”、“！=”，这些能操作所有的对象。String类支持“+”、“+=”操作符。"}]},{"t":"heading","d":1,"p":{"lines":[12,13]},"v":"3.3 优先级","c":[{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"当一个表达式中存在多个操作符时，操作符的优先级决定了各部分的计算顺序。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"最简单的规则是先乘除后加减。程序员经常会忘记其他优先级规则，所以应该用括号明确规定计算顺序。"}]},{"t":"heading","d":1,"p":{"lines":[16,17]},"v":"3.4 赋值","c":[{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"取右边的值，把它复制给左边。右值可以是任何常数、变量或者表达式。但左值必须是一个明确的，已命名的变量。即必须有一个物理空间可以存储等号右边的值。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"基本类型存储了实际的数值，为其赋值时，是直接将一个地方的内容复制到了另一个地方。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"别名现象：多个变量引用指向同一个对象。"}]},{"t":"heading","d":1,"p":{"lines":[21,22]},"v":"3.5 算术操作符","c":[{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"包括&quot;+&quot;, &quot;-&quot;, &quot;*&quot;, &quot;/&quot;, &quot;%&quot;。整数除法会直接去掉结果的小数位。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"操作符简化：&quot;+=&quot;, &quot;-=&quot;, &quot;*=&quot;, &quot;/=&quot;, &quot;%=&quot;。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"一元加减号：编译器自动识别，规范加括号。（eg：x = a*(-b)）。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"一元减号用于改变数据的符号. 一元加号只是为了与一元减号对应，但可以将较小类型的操作数提升为int。"}]},{"t":"heading","d":1,"p":{"lines":[27,28]},"v":"3.6 自动递增和递减","c":[{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"递增、递减是两种快捷运算。Java提供了大量的快捷运算，使编码更方便。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"包括&quot;i++&quot;,&quot;++i&quot;,&quot;i--&quot;,&quot;--i&quot;。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"前缀会先执行运算，在生成值。后缀会先生成值，在执行运算。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"除涉及赋值的操作符以外，唯一具有&quot;副作用&quot;的操作符（会改变操作数）。"}]},{"t":"heading","d":1,"p":{"lines":[33,34]},"v":"3.7 关系操作符","c":[{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"包括&quot;&gt;&quot;, &quot;&lt;&quot;, &quot;&gt;=&quot;, &quot;&lt;=&quot;, &quot;==&quot;, &quot;!=&quot;。生成的是一个boolean结果（true/false）。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"&quot;==&quot;,&quot;!=&quot;适用于所有基本类型，其它不适用于boolean类型。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"==：比较引用。equals默认比较引用，重写比较内容，不适合用于基本类型。"}]},{"t":"heading","d":1,"p":{"lines":[38,39]},"v":"3.8 逻辑操作符","c":[{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"包括&quot;&amp;&amp;&quot;, &quot;||&quot;, &quot;!&quot;。能根据参数的逻辑关系，生成一个boolean值。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"只可应用于boolean值。"},{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"短路：一旦能够明确无误地确定整个表达式的值，就不再计算表达式余下的部分了。潜在的性能提升。"}]},{"t":"heading","d":1,"p":{"lines":[43,44]},"v":"3.9 直接常量","c":[{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"编译器可以明确地知道要生成什么样的类型。用与直接常量相关的某些字符来额外增加一些信息。"},{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"直接常量后面的后缀字符标志了它的类型。直接常量的前缀标识不同进制。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"前缀：&quot;0x&quot;十六进制，&quot;0&quot;十进制。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"后缀：&quot;l/L&quot;浮点型，&quot;d/D&quot;双精度型。"},{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"指数记数：e 代表 &quot;10的幂次&quot;。"}]},{"t":"heading","d":1,"p":{"lines":[50,51]},"v":"3.10 按位操作符","c":[{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"包括&quot;&amp;&quot;, &quot;|&quot;, &quot;~&quot;, &quot;^&quot;。用来操作整个基本数据类型的单个bit，即二进制位。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"来源于C语言面向底层的操作。Java的设计初衷是嵌入电视机顶盒内，所以这种操作被保留了下来。但是不会过多的使用到。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"除“~”（一元操作符）外，可与&quot;=&quot;联合使用."}]},{"t":"heading","d":1,"p":{"lines":[55,56]},"v":"3.11 移位操作符","c":[{"t":"list_item","d":3,"p":{"lines":[56,57]},"v":"包括&quot;&lt;&lt;&quot;(左移，低位补0), &quot;&gt;&gt;&quot;(有符号右移，高位正插0，负插1), &quot;&gt;&gt;&gt;&quot;(无符号右移，高位插0)。操作对象是二进制的bit。"},{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"只可用来处理整数类型（基本数据的一种）。"},{"t":"list_item","d":3,"p":{"lines":[58,59]},"v":"可与&quot;=&quot;联合使用。"}]},{"t":"heading","d":1,"p":{"lines":[60,61]},"v":"3.12 三元操作符 if-else","c":[{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"三元操作符也称条件操作符。有三个操作数。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"表达式：boolean-exp ? value0 : value1;。"}]},{"t":"heading","d":1,"p":{"lines":[64,65]},"v":"3.13 字符串操作符","c":[{"t":"list_item","d":3,"p":{"lines":[65,66]},"v":"包括&quot;+&quot;， &quot;+=&quot;。用来连接不同的字符串。"},{"t":"list_item","d":3,"p":{"lines":[66,67]},"v":"C++可以为几乎所有操作符增加功能。而Java不能实现自己的重载操作符。"},{"t":"list_item","d":3,"p":{"lines":[67,68]},"v":"如果表达式以一个字符串起头，那么后续所有操作数都必须是字符串类型（编译器会把双引号内的字符序列自动转成字符串）。"}]},{"t":"heading","d":1,"p":{"lines":[69,70]},"v":"3.14 使用操作符时常犯的错误","c":[{"t":"list_item","d":3,"p":{"lines":[70,71]},"v":"即使对表达式如何计算优点不确定，也不愿意使用括号。"},{"t":"list_item","d":3,"p":{"lines":[71,72]},"v":"“=”“==”、“&amp;”“&amp;&amp;”、“|”“||” 可能会输入错误。Java编译器可防止这种错误发生，因为不允许把一种类型当作另一种类型来用。"}]},{"t":"heading","d":1,"p":{"lines":[73,74]},"v":"3.15 类型转换操作符","c":[{"t":"list_item","d":3,"p":{"lines":[74,75]},"v":"类型转换(cast)。显式的进行类型的转换，或者在不能自动进行转换时强制进行类型转换。"},{"t":"list_item","d":3,"p":{"lines":[75,76]},"v":"将float、double转为整型，会截尾，即向下取整。可以使用Math.round()，四舍五入。"},{"t":"list_item","d":3,"p":{"lines":[76,77]},"v":"对基本数据类型进行执行算术运算或按位运算，只要类型比int小，在运算之前，会自动转换成int，最终结果就是int型，如果要把结果赋值给较小的类型，就必须使用类型转换。"}]},{"t":"heading","d":1,"p":{"lines":[78,79]},"v":"3.16 Java没有sizeof","c":[{"t":"list_item","d":3,"p":{"lines":[79,80]},"v":"C/C++中，sizeof()操作符返回数据分配的字节数。使用sizeof最大的原因是为了“移植”。"},{"t":"list_item","d":3,"p":{"lines":[80,81]},"v":"Java不需要sizeof，因为所有类型在所有机器中的大小是相同的。"}]},{"t":"heading","d":1,"p":{"lines":[82,83]},"v":"3.17 操作符小结","c":[{"t":"list_item","d":3,"p":{"lines":[83,84]},"v":"对boolean的运算有限，只能赋予true和false。"},{"t":"list_item","d":3,"p":{"lines":[84,85]},"v":"对char、byte、short进行任何算术运算时，数据类型会提示为int。必须显示转换为原来的类型（可能会丢失信息）。"},{"t":"list_item","d":3,"p":{"lines":[85,86]},"v":"对int执行乘法运算，结果可能会溢出。"}]}],"p":{}}</svg>
+              </div>
 
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
+<li>C中明确比较了操作符的优先级，而Java则建议使用括号来明确优先级。</li>
+<li>除了字符串支持（+=、+）及赋值（=）操作符，其它操作符的操作数都是基本类型。</li>
+</ul>
+
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> 
     </div>
 
     
@@ -351,7 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E6%9B%B4%E7%AE%80%E5%8D%95%E7%9A%84%E6%89%93%E5%8D%B0%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.</span> <span class="nav-text">3.1 更简单的打印语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E4%BD%BF%E7%94%A8Java%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">3.2 使用Java操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">3.</span> <span class="nav-text">3.3 优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E8%B5%8B%E5%80%BC"><span class="nav-number">4.</span> <span class="nav-text">3.4 赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E7%AE%97%E6%9C%AF%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">5.</span> <span class="nav-text">3.5 算术操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-%E8%87%AA%E5%8A%A8%E9%80%92%E5%A2%9E%E5%92%8C%E9%80%92%E5%87%8F"><span class="nav-number">6.</span> <span class="nav-text">3.6 自动递增和递减</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">7.</span> <span class="nav-text">3.7 关系操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">8.</span> <span class="nav-text">3.8 逻辑操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-%E7%9B%B4%E6%8E%A5%E5%B8%B8%E9%87%8F"><span class="nav-number">9.</span> <span class="nav-text">3.9 直接常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10-%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">10.</span> <span class="nav-text">3.10 按位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-11-%E7%A7%BB%E4%BD%8D%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">11.</span> <span class="nav-text">3.11 移位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-12-%E4%B8%89%E5%85%83%E6%93%8D%E4%BD%9C%E7%AC%A6-if-else"><span class="nav-number">12.</span> <span class="nav-text">3.12 三元操作符 if-else</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-13-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">13.</span> <span class="nav-text">3.13 字符串操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-14-%E4%BD%BF%E7%94%A8%E6%93%8D%E4%BD%9C%E7%AC%A6%E6%97%B6%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">14.</span> <span class="nav-text">3.14 使用操作符时常犯的错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-15-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="nav-number">15.</span> <span class="nav-text">3.15 类型转换操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-16-Java%E6%B2%A1%E6%9C%89sizeof"><span class="nav-number">16.</span> <span class="nav-text">3.16 Java没有sizeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-17-%E6%93%8D%E4%BD%9C%E7%AC%A6%E5%B0%8F%E7%BB%93"><span class="nav-number">17.</span> <span class="nav-text">3.17 操作符小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">18.</span> <span class="nav-text">理解</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">理解</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -360,21 +358,21 @@
     <img class="site-author-image" itemprop="image" alt="Jade"
       src="/images/Jade.png">
   <p class="site-author-name" itemprop="name">Jade</p>
-  <div class="site-description" itemprop="description">Knowing How, Knowing Why!</div>
+  <div class="site-description" itemprop="description">知之者不如好之者，好之者不如乐之者。知其然，知其所以然。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-count">125</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>

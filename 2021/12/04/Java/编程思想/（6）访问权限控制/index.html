@@ -24,13 +24,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="访问权限控制">
 <meta property="og:url" content="http://example.com/2021/12/04/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%886%EF%BC%89%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/index.html">
-<meta property="og:site_name" content="Knowing">
+<meta property="og:site_name" content="乐然 LeRan">
 <meta property="og:description" content="访问权限控制">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-04T10:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-11T12:05:07.415Z">
+<meta property="article:modified_time" content="2021-12-18T14:47:13.476Z">
 <meta property="article:author" content="Jade">
-<meta property="article:tag" content="knowing, blog">
+<meta property="article:tag" content="乐之者, 知其然">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2021/12/04/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%886%EF%BC%89%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>访问权限控制 | Knowing</title>
+  <title>访问权限控制 | 乐然 LeRan</title>
   
 
 
@@ -97,10 +97,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Knowing</h1>
+      <h1 class="site-title">乐然 LeRan</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">Knowing Blog</p>
+      <p class="site-subtitle" itemprop="description">乐之者知其所以然</p>
   </div>
 
   <div class="site-nav-right">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">115</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">125</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -198,11 +198,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Jade.png">
       <meta itemprop="name" content="Jade">
-      <meta itemprop="description" content="Knowing How, Knowing Why!">
+      <meta itemprop="description" content="知之者不如好之者，好之者不如乐之者。知其然，知其所以然。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Knowing">
+      <meta itemprop="name" content="乐然 LeRan">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-11 20:05:07" itemprop="dateModified" datetime="2021-12-11T20:05:07+08:00">2021-12-11</time>
+                <time title="修改时间：2021-12-18 22:47:13" itemprop="dateModified" datetime="2021-12-18T22:47:13+08:00">2021-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,21 +251,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>重构即重写代码，以使得它更可读、更易理解，并因此而更具有可维护性。<br>面向对象中需要考虑的一个基本问题：如何把变动的事物与保持不变的事物区分开来。<br>Java提供了访问权限修饰词，以供类库开发人员向客户端程序员指明哪些式可用的，哪些式不可用的。<br>访问权限控制的等级，从最大权限到最小权限依次为：public、protected、包访问权限、private。<br>Java中用关键字package将构建捆绑到一个内聚的类库单元中。而访问权限修饰词会因类是存在于一个相同的包，还是存在于一个单独的包而受到影响。</p>
-<h2 id="6-1-包：库单元"><a href="#6-1-包：库单元" class="headerlink" title="6.1 包：库单元"></a>6.1 包：库单元</h2><p>包内包含有一组类，它们在单一的名字空间之下被组织在了一起。<br>import关键字是程序变得简单。不使用import得用类全名来指定。<br>没有指定package，则在未命名包/默认包中。<br>每个编译单元都只能有一个public类，该类的名称必须与文件名称相同（包括大小写，不包括后缀名）。其它额外的类在包之外无法看到，因为它们主要用来为主public类提供支持。</p>
-<p>当编译.java文件时，文件中的每个类都会有一个输出文件。因此，在编译少量.java文件之后，会得到大量的.class文件。<br>Java可运行程序是一组可以打包并压缩为一个Java文档文件（JAR，Java Archive）的.class文件。Java解释器负责这些文件的查找、装载和解释。<br>类库实际上是一组类文件，如果希望这些构件从属于同一个群组，就可以使用关键字package。如果使用package语句，它必须是文件中除注释以外的第一句程序代码。<br>package和import关键字是将单一的全局名字空间分隔开，使得不会出现名称冲突问题。</p>
-<p>一个包从未真正将被打包的东西包装成单一的文件，并且要给包可以由许多.class文件构成。 – 操作系统层次化文件结构、jar工具？。<br>将所有的文件收入子目录还可以解决另外两个问题：怎样创建独一无二的名称以及怎样查找有可能隐藏于目录结构中某处的类。<br>package的第一部分是类的创建者的反顺序的域名，第二部分是把package分解为机器上的一个目录。<br>Java解释器运行过程：找出CLASSPATH（包含一个或多个目录，及JAR文件路径），从根目录开始，解释器获取包的名称并将每个句点替换成反斜杠，产生一个路径名称，查找相关的.class文件。</p>
-<p>Java没有C的条件编译功能，该功能绝大多数情况下是用来解决跨平台的问题的，对Java而言没有必要。</p>
-<p>务必记住，无论合适创建包，都已经在给定包的名称的时候隐含地指定了目录结构。这个包必须位于其名称所指定的目录之中，而该目录必须是在以CLASSPATH开始的目录中可以查询到的。</p>
-<h2 id="6-2-Java访问权限修饰词"><a href="#6-2-Java访问权限修饰词" class="headerlink" title="6.2 Java访问权限修饰词"></a>6.2 Java访问权限修饰词</h2><p>访问修饰词public、protected、private置于类中每个成员（域、方法）的定义之前。每个访问权限修饰词仅控制它所修饰的特定定义的访问权。<br>如果不提供任何访问权限修饰词，则意味着它是“包访问权限”。</p>
-<p>默认访问权限没有任何关键字，通常指包访问权限。意味着当前的包中的其他所有类对那个成员都有访问权限，但对于这个包之外的所有类，这个成员却是private。<br>一个编译单元只能隶属于一个包，所以经由包访问权限，处于一个编译单元中的所有类彼此之间都是自动可访问的。<br>包访问权限为把类群聚在一个包中的做法提供了意义和理由。</p>
-<p>关键字public意味着之后紧跟着的成员声明自己对每个人都是可用的，尤其是使用类库的客户程序员更是如此。<br>Java将没有设定任何包名称的文件自动看作是隶属于该目录的默认包之中。<br>    // TODO – 与设定了包名称的？？？</p>
-<p>private除了包含该成员的类之外，其他任何类都无法访问这个成员。</p>
-<p>protected处理的是继承的概念。<br>protected也提供了包访问权限。</p>
-<h2 id="6-3-接口和实现"><a href="#6-3-接口和实现" class="headerlink" title="6.3 接口和实现"></a>6.3 接口和实现</h2><p>访问权限的控制常被称为是具体实现的隐藏。把数据和方法包装进类中，以及具体实现的隐藏，常共同被称作封装。其结果是一个同时带有特征和行为的数据类型。<br>访问权限控制将权限的边界划在了数据类型的内部。1. 要设定客户端程序员可以使用和不可以使用的界限；2. 将接口和具体实现进行分离。<br>javadoc所提供的注释文档功能降低了程序代码的可读性对客户端程序员的重要性。</p>
-<h2 id="6-4-类的访问权限"><a href="#6-4-类的访问权限" class="headerlink" title="6.4 类的访问权限"></a>6.4 类的访问权限</h2><p>访问权限修饰词也可以用于确定库中的哪些类对于该库的使用者是可用的。<br>每个编译单元都只能包含有一个public类，且public类的名称必须完全与含有该编译单元的文件名相匹配，包括大小写。<br>编译单元可以不带public类。在这种情况下，可以随意对文件命名，该类只可以用于该包之中。<br>类不可以是private的，也不可以是protected的。<br>如果不希望其他任何人对该类拥有访问权限，可以把所有的构造器都指定为private。 – static例外。单例。</p>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>可以不使用操作系统的层次化文件结构，而直接使用package来指定，但这样会存在冲突。<br>package是java建立的用于解决命名冲突的。而这在实际开发中确实很有用，省去了很多麻烦。<br>访问权限控制虽然只有几个关键字，但要用好却不是一件简单的事。</p>
+        <div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"6.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"重构即重写代码，以使得它更可读、更易理解，并因此而更具有可维护性。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"面向对象中需要考虑的一个基本问题：如何把变动的事物与保持不变的事物区分开来。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"Java提供了访问权限修饰词，以供类库开发人员向客户端程序员指明哪些式可用的，哪些式不可用的。"},{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"访问权限控制的等级，从最大权限到最小权限依次为：public、protected、包访问权限、private。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"Java中用关键字package将构建捆绑到一个内聚的类库单元中。而访问权限修饰词会因类是存在于一个相同的包，还是存在于一个单独的包而受到影响。"}]},{"t":"heading","d":1,"p":{"lines":[7,8]},"v":"6.1 包：库单元","c":[{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"包内包含有一组类，它们在单一的名字空间之下被组织在了一起。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"import关键字是程序变得简单。不使用import得用类全名来指定。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"没有指定package，则在未命名包/默认包中。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"每个编译单元都只能有一个public类，该类的名称必须与文件名称相同（包括大小写，不包括后缀名）。其它额外的类在包之外无法看到，因为它们主要用来为主public类提供支持。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"当编译.java文件时，文件中的每个类都会有一个输出文件。因此，在编译少量.java文件之后，会得到大量的.class文件。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"Java可运行程序是一组可以打包并压缩为一个Java文档文件（JAR，Java Archive）的.class文件。Java解释器负责这些文件的查找、装载和解释。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"类库实际上是一组类文件，如果希望这些构件从属于同一个群组，就可以使用关键字package。如果使用package语句，它必须是文件中除注释以外的第一句程序代码。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"package和import关键字是将单一的全局名字空间分隔开，使得不会出现名称冲突问题。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"一个包从未真正将被打包的东西包装成单一的文件，并且要给包可以由许多.class文件构成。 -- 操作系统层次化文件结构、jar工具？。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"将所有的文件收入子目录还可以解决另外两个问题：怎样创建独一无二的名称以及怎样查找有可能隐藏于目录结构中某处的类。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"package的第一部分是类的创建者的反顺序的域名，第二部分是把package分解为机器上的一个目录。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"Java解释器运行过程：找出CLASSPATH（包含一个或多个目录，及JAR文件路径），从根目录开始，解释器获取包的名称并将每个句点替换成反斜杠，产生一个路径名称，查找相关的.class文件。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"Java没有C的条件编译功能，该功能绝大多数情况下是用来解决跨平台的问题的，对Java而言没有必要。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"务必记住，无论合适创建包，都已经在给定包的名称的时候隐含地指定了目录结构。这个包必须位于其名称所指定的目录之中，而该目录必须是在以CLASSPATH开始的目录中可以查询到的。"}]},{"t":"heading","d":1,"p":{"lines":[27,28]},"v":"6.2 Java访问权限修饰词","c":[{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"访问修饰词public、protected、private置于类中每个成员（域、方法）的定义之前。每个访问权限修饰词仅控制它所修饰的特定定义的访问权。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"如果不提供任何访问权限修饰词，则意味着它是“包访问权限”。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"默认访问权限没有任何关键字，通常指包访问权限。意味着当前的包中的其他所有类对那个成员都有访问权限，但对于这个包之外的所有类，这个成员却是private。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"一个编译单元只能隶属于一个包，所以经由包访问权限，处于一个编译单元中的所有类彼此之间都是自动可访问的。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"包访问权限为把类群聚在一个包中的做法提供了意义和理由。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"关键字public意味着之后紧跟着的成员声明自己对每个人都是可用的，尤其是使用类库的客户程序员更是如此。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"Java将没有设定任何包名称的文件自动看作是隶属于该目录的默认包之中。"},{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"// TODO -- 与设定了包名称的？？？"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"private除了包含该成员的类之外，其他任何类都无法访问这个成员。"},{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"protected处理的是继承的概念。"},{"t":"list_item","d":3,"p":{"lines":[42,43]},"v":"protected也提供了包访问权限。"}]},{"t":"heading","d":1,"p":{"lines":[44,45]},"v":"6.3 接口和实现","c":[{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"访问权限的控制常被称为是具体实现的隐藏。把数据和方法包装进类中，以及具体实现的隐藏，常共同被称作封装。其结果是一个同时带有特征和行为的数据类型。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"访问权限控制将权限的边界划在了数据类型的内部。1. 要设定客户端程序员可以使用和不可以使用的界限；2. 将接口和具体实现进行分离。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"javadoc所提供的注释文档功能降低了程序代码的可读性对客户端程序员的重要性。"}]},{"t":"heading","d":1,"p":{"lines":[49,50]},"v":"6.4 类的访问权限","c":[{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"访问权限修饰词也可以用于确定库中的哪些类对于该库的使用者是可用的。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"每个编译单元都只能包含有一个public类，且public类的名称必须完全与含有该编译单元的文件名相匹配，包括大小写。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"编译单元可以不带public类。在这种情况下，可以随意对文件命名，该类只可以用于该包之中。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"类不可以是private的，也不可以是protected的。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"如果不希望其他任何人对该类拥有访问权限，可以把所有的构造器都指定为private。 -- static例外。"},{"t":"list_item","d":3,"p":{"lines":[55,56]},"v":"单例模式。"}]}],"p":{}}</svg>
+              </div>
 
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
+<li>可以不使用操作系统的层次化文件结构，而直接使用package来指定，但这样会存在冲突。</li>
+<li>package是java建立的用于解决命名冲突的。而这在实际开发中确实很有用，省去了很多麻烦。</li>
+<li>访问权限控制虽然只有几个关键字，但要用好却不是一件简单的事。</li>
+</ul>
+
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> 
     </div>
 
     
@@ -346,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-%E5%8C%85%EF%BC%9A%E5%BA%93%E5%8D%95%E5%85%83"><span class="nav-number">1.</span> <span class="nav-text">6.1 包：库单元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-Java%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E8%AF%8D"><span class="nav-number">2.</span> <span class="nav-text">6.2 Java访问权限修饰词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-%E6%8E%A5%E5%8F%A3%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">6.3 接口和实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-%E7%B1%BB%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number">4.</span> <span class="nav-text">6.4 类的访问权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">理解</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">理解</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -355,21 +359,21 @@
     <img class="site-author-image" itemprop="image" alt="Jade"
       src="/images/Jade.png">
   <p class="site-author-name" itemprop="name">Jade</p>
-  <div class="site-description" itemprop="description">Knowing How, Knowing Why!</div>
+  <div class="site-description" itemprop="description">知之者不如好之者，好之者不如乐之者。知其然，知其所以然。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-count">125</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>

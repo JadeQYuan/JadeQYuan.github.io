@@ -24,13 +24,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="一切都是对象">
 <meta property="og:url" content="http://example.com/2021/12/01/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%882%EF%BC%89%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1/index.html">
-<meta property="og:site_name" content="Knowing">
+<meta property="og:site_name" content="乐然 LeRan">
 <meta property="og:description" content="一切都是对象">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-01T11:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-07T15:19:39.622Z">
+<meta property="article:modified_time" content="2021-12-18T14:48:10.660Z">
 <meta property="article:author" content="Jade">
-<meta property="article:tag" content="knowing, blog">
+<meta property="article:tag" content="乐之者, 知其然">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2021/12/01/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%882%EF%BC%89%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E5%AF%B9%E8%B1%A1/">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>一切都是对象 | Knowing</title>
+  <title>一切都是对象 | 乐然 LeRan</title>
   
 
 
@@ -97,10 +97,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Knowing</h1>
+      <h1 class="site-title">乐然 LeRan</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">Knowing Blog</p>
+      <p class="site-subtitle" itemprop="description">乐之者知其所以然</p>
   </div>
 
   <div class="site-nav-right">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">115</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">125</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -198,11 +198,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Jade.png">
       <meta itemprop="name" content="Jade">
-      <meta itemprop="description" content="Knowing How, Knowing Why!">
+      <meta itemprop="description" content="知之者不如好之者，好之者不如乐之者。知其然，知其所以然。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Knowing">
+      <meta itemprop="name" content="乐然 LeRan">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-07 23:19:39" itemprop="dateModified" datetime="2021-12-07T23:19:39+08:00">2021-12-07</time>
+                <time title="修改时间：2021-12-18 22:48:10" itemprop="dateModified" datetime="2021-12-18T22:48:10+08:00">2021-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,93 +251,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Java是杂合型语言。 –允许多种编程风格。</p>
-<h2 id="2-1-用引用操纵对象"><a href="#2-1-用引用操纵对象" class="headerlink" title="2.1 用引用操纵对象"></a>2.1 用引用操纵对象</h2><p>每种编程语言都有自己的操纵内存中元素的方式。Java中一切都被视为对象，因此可采用单一固定的语法。操纵的标识符实际上是对象的一个“引用”。<br>引用不一定需要一个对象与之关联。</p>
-<h2 id="2-2-必须由你创建所有对象"><a href="#2-2-必须由你创建所有对象" class="headerlink" title="2.2 必须由你创建所有对象"></a>2.2 必须由你创建所有对象</h2><p>通常使用new操作符来将一个新的对象和创建的引用相关联。<br>对象存储位置：寄存器（处理器内部）、堆栈、堆、常量存储（ROM）、非RAM存储（流对象、持久化对象）。<br>基本类型需要特殊对待，置于堆栈中。<br>基本类型所占存储空间大小是不变的。</p>
-<table>
-<thead>
-<tr>
-<th>基本类型</th>
-<th>大小</th>
-<th>最小值</th>
-<th>最大值</th>
-<th>包装器类型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>boolean</td>
-<td>1bit</td>
-<td>-</td>
-<td>-</td>
-<td>Boolean</td>
-</tr>
-<tr>
-<td>char</td>
-<td>16bit</td>
-<td>Unicode 0</td>
-<td>Unicode 2^16-1</td>
-<td>Character</td>
-</tr>
-<tr>
-<td>byte</td>
-<td>8bit</td>
-<td>-128</td>
-<td>+127</td>
-<td>Byte</td>
-</tr>
-<tr>
-<td>short</td>
-<td>16bit</td>
-<td>-2^15</td>
-<td>+2^15-1</td>
-<td>Short</td>
-</tr>
-<tr>
-<td>int</td>
-<td>32bit</td>
-<td>-2^31</td>
-<td>+2^31-1</td>
-<td>Int</td>
-</tr>
-<tr>
-<td>long</td>
-<td>64bit</td>
-<td>-2^63</td>
-<td>+2^63-1</td>
-<td>Long</td>
-</tr>
-<tr>
-<td>float</td>
-<td>32bit</td>
-<td></td>
-<td></td>
-<td>Float</td>
-</tr>
-<tr>
-<td>double</td>
-<td>64bit</td>
-<td></td>
-<td></td>
-<td>Double</td>
-</tr>
-<tr>
-<td>void</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>Void</td>
-</tr>
-</tbody></table>
-<p>高精度数字：BigInteger、BigDecimal。支持任意精度。使用方法调用取代运算符，运算速度慢。<br>数组：几乎所有的程序设计语言都支持数组。<br>安全性史Java的主要目标之一，确保数组会被初始化，使用时进行范围检查。以内存开销及运行时的下标检查为代价。<br>创建数组对象时，实际创建了一个引用数组。数组中的每个对象都为null。</p>
-<h2 id="2-3-永远不需要销毁对象"><a href="#2-3-永远不需要销毁对象" class="headerlink" title="2.3 永远不需要销毁对象"></a>2.3 永远不需要销毁对象</h2><p>在大多数程序设计语言中，变量生命周期的概念，占据了程序设计工作中非常重要的部分。<br>作用域定义了在其内定义的变量名的可见性和生命周期。作用域由花括号的位置决定。在作用域里定义的变量只可用于作用域结束之前。<br>Java对象不具备和基本类型一样的生命周期。当用new创建一个Java对象时，它可以存活于作用域之外。<br>Java垃圾回收器，用来监视new创建的所有对象，并辨别那些不会在被引用的对象。</p>
-<h2 id="2-4-创建新的数据类型：类"><a href="#2-4-创建新的数据类型：类" class="headerlink" title="2.4 创建新的数据类型：类"></a>2.4 创建新的数据类型：类</h2><p>从历史发展角度来看，大多数面向对象的程序设计语言习惯用关键字class来表示创建新的数据类型。<br>class关键字之后紧跟着的是新类型的名称。<br>可以在类中设置两种类型的元素：字段（数据成员）和方法（成员函数）。<br>在Java中所作的全部工作就是定义类，产生那些类的对象，以及发送消息给这些对象。<br>每个对象都有用来存储其字段的空间，普通字段不能在对象间共享。<br>点号操作符：引用对象的成员。<br>基本类型变量，即使没有初始化，Java确保获得一个默认值（只有成员变量）。</p>
-<h2 id="2-5-方法、参数和返回值"><a href="#2-5-方法、参数和返回值" class="headerlink" title="2.5 方法、参数和返回值"></a>2.5 方法、参数和返回值</h2><p>方法的基本组成包括：名称、参数、返回值和方法体。<br>方法签名（方法名+参数列表）唯一地标识出某个方法。<br>Java中的方法只能作为类的一部分创建，只有通过对象/类才能调用。<br>点号操作符：调用方法。对象名.方法名(参数列表)。<br>调用方法的行为通常被称为发送消息给对象。即向对象发送消息。<br>方法参数传递的实际是引用（除基本类型），且引用的类型必须正确。<br>return： 1. 离开此方法；2. 此方法产生了一个值。若返回类型是void，return关键字的作用只是用来退出方法。</p>
-<h2 id="2-6-构建一个Java程序"><a href="#2-6-构建一个Java程序" class="headerlink" title="2.6 构建一个Java程序"></a>2.6 构建一个Java程序</h2><p>名字管理对任何程序设计语言来说，都是一个重要问题。<br>C++类将函数包于其类，从而避免于其他类中的函数名相冲突。C++允许全局数据和全局函数的存在，使用名字空间来解决。<br>Java采用域名反转的方式，保证类库生成不会于其它名字混淆的名字。Java语言本身解决了同一个文件内的每个类都有唯一的标识符。<br>Java消除了“向前引用”问题：可以在类中使用在该类的后面定义的类。<br>使用import准确引入位于其它文件中的类，消除混淆情况。可以使用通配符“*”。<br>当创建类是，就是在描述那个类的对象的外观与行为。执行new创建对象时，数据存储空间才会被分配，其方法才供外界调用。<br>static： 1. 为特定域分配的那一存储空间；2. 方法不于包含它的那个类的任何对象关联（没有创建对象，也能调用方法）。<br>类数据、类方法，代表那些数据和方法只能是作为整个类，而不是类的某个特定对象而存在的。<br>引用static变量：1. 对象.变量名； 2. 类.变量名（推荐）。 调用static方法：1. 对象.方法名(…)； 2. 类.方法名(…)（推荐）。<br>当static作用于某个字段是，会改变数据创建的方式。static作用于方法，区别不大。</p>
-<h2 id="2-7-第一个Java程序"><a href="#2-7-第一个Java程序" class="headerlink" title="2.7 第一个Java程序"></a>2.7 第一个Java程序</h2><p>在每个程序文件的开头，声明import语句，引入在文件代码中需要用到的额外类（java.lang会自动被导入到每一个Java文件中）。<br>创建一个独立运行的程序，文件中必须存在某个类于该文件同名，且那个类包含一个main方法。<br>main方法参数args用来存储命令行参数。<br>编译（javac命令）、运行（java命令）Java程序必须要有Java开发环境JDK。</p>
-<h2 id="2-8-注释和嵌入式文档"><a href="#2-8-注释和嵌入式文档" class="headerlink" title="2.8 注释和嵌入式文档"></a>2.8 注释和嵌入式文档</h2><p>块注释：以“/*”开头，以“*/”结束，中间可以跨多行。源于C/C++。<br>单行注释：“//”。源于C++。<br>Java为实现代码同文档连接起来，使用一种特殊的注释语法来标记文档，还需要一个工具（javadoc，JDK安装的一部分）来提取注释，并将其转换成有用的形式。<br>javadoc输出的是一个HTML文件。<br>注释文档：以“/**”开头，以“*/”结束。可以使用嵌入式文档HTML和文档标签。<br>文档标签有独立文档标签（以”@“字符开头的命令，至于注释行”*“之后最前面）和行内文档标签（以”@“开头，括在花括号内）。<br>三种类型的注释文档，分别对应于注释位置后面的三种元素：类、域和方法。</p>
-<h2 id="2-9-编码风格"><a href="#2-9-编码风格" class="headerlink" title="2.9 编码风格"></a>2.9 编码风格</h2><p>类的首字母要大写。<br>使用”驼峰风格“</p>
-<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>本章讲述Java程序的基本组成部分，以及编写一个程序时所需要注意的地方，另外还有与其它语言的对比。</p>
+        <div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"2.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"Java是杂合型语言。 --允许多种编程风格。"}]},{"t":"heading","d":1,"p":{"lines":[3,4]},"v":"2.1 用引用操纵对象","c":[{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"每种编程语言都有自己的操纵内存中元素的方式。Java中一切都被视为对象，因此可采用单一固定的语法。操纵的标识符实际上是对象的一个“引用”。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"引用不一定需要一个对象与之关联。"}]},{"t":"heading","d":1,"p":{"lines":[7,8]},"v":"2.2 必须由你创建所有对象","c":[{"t":"bullet_list","d":2,"p":{"lines":[8,13]},"v":"","c":[{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"通常使用new操作符来将一个新的对象和创建的引用相关联。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"对象存储位置：寄存器（处理器内部）、堆栈、堆、常量存储（ROM）、非RAM存储（流对象、持久化对象）。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"基本类型需要特殊对待，置于堆栈中。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"基本类型所占存储空间大小是不变的。"}]},{"t":"table","d":2,"p":{"lines":[13,24]},"v":"","c":[{"t":"thead","d":3,"p":{"lines":[13,14]},"v":"","c":[{"t":"th","d":5,"p":{"lines":[13,14]},"v":"基本类型"},{"t":"th","d":5,"p":{"lines":[13,14]},"v":"大小"},{"t":"th","d":5,"p":{"lines":[13,14]},"v":"最小值"},{"t":"th","d":5,"p":{"lines":[13,14]},"v":"最大值"},{"t":"th","d":5,"p":{"lines":[13,14]},"v":"包装器类型"}]},{"t":"tbody","d":3,"p":{"lines":[15,24]},"v":"","c":[{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"boolean"},{"t":"td","d":5,"p":{},"v":"1bit"},{"t":"td","d":5,"p":{},"v":"-"},{"t":"td","d":5,"p":{},"v":"-"},{"t":"td","d":5,"p":{},"v":"Boolean"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"char"},{"t":"td","d":5,"p":{},"v":"16bit"},{"t":"td","d":5,"p":{},"v":"Unicode 0"},{"t":"td","d":5,"p":{},"v":"Unicode 2^16-1"},{"t":"td","d":5,"p":{},"v":"Character"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"byte"},{"t":"td","d":5,"p":{},"v":"8bit"},{"t":"td","d":5,"p":{},"v":"-128"},{"t":"td","d":5,"p":{},"v":"+127"},{"t":"td","d":5,"p":{},"v":"Byte"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"short"},{"t":"td","d":5,"p":{},"v":"16bit"},{"t":"td","d":5,"p":{},"v":"-2^15"},{"t":"td","d":5,"p":{},"v":"+2^15-1"},{"t":"td","d":5,"p":{},"v":"Short"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"int"},{"t":"td","d":5,"p":{},"v":"32bit"},{"t":"td","d":5,"p":{},"v":"-2^31"},{"t":"td","d":5,"p":{},"v":"+2^31-1"},{"t":"td","d":5,"p":{},"v":"Int"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"long"},{"t":"td","d":5,"p":{},"v":"64bit"},{"t":"td","d":5,"p":{},"v":"-2^63"},{"t":"td","d":5,"p":{},"v":"+2^63-1"},{"t":"td","d":5,"p":{},"v":"Long"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"float"},{"t":"td","d":5,"p":{},"v":"32bit"},{"t":"td","d":5,"p":{},"v":""},{"t":"td","d":5,"p":{},"v":""},{"t":"td","d":5,"p":{},"v":"Float"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"double"},{"t":"td","d":5,"p":{},"v":"64bit"},{"t":"td","d":5,"p":{},"v":""},{"t":"td","d":5,"p":{},"v":""},{"t":"td","d":5,"p":{},"v":"Double"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"void"},{"t":"td","d":5,"p":{},"v":"-"},{"t":"td","d":5,"p":{},"v":"-"},{"t":"td","d":5,"p":{},"v":"-"},{"t":"td","d":5,"p":{},"v":"Void"}]}]}]},{"t":"bullet_list","d":2,"p":{"lines":[25,30]},"v":"","c":[{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"高精度数字：BigInteger、BigDecimal。支持任意精度。使用方法调用取代运算符，运算速度慢。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"数组：几乎所有的程序设计语言都支持数组。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"安全性史Java的主要目标之一，确保数组会被初始化，使用时进行范围检查。以内存开销及运行时的下标检查为代价。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"创建数组对象时，实际创建了一个引用数组。数组中的每个对象都为null。"}]}]},{"t":"heading","d":1,"p":{"lines":[30,31]},"v":"2.3 永远不需要销毁对象","c":[{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"在大多数程序设计语言中，变量生命周期的概念，占据了程序设计工作中非常重要的部分。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"作用域定义了在其内定义的变量名的可见性和生命周期。作用域由花括号的位置决定。在作用域里定义的变量只可用于作用域结束之前。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"Java对象不具备和基本类型一样的生命周期。当用new创建一个Java对象时，它可以存活于作用域之外。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"Java垃圾回收器，用来监视new创建的所有对象，并辨别那些不会在被引用的对象。"}]},{"t":"heading","d":1,"p":{"lines":[36,37]},"v":"2.4 创建新的数据类型：类","c":[{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"从历史发展角度来看，大多数面向对象的程序设计语言习惯用关键字class来表示创建新的数据类型。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"class关键字之后紧跟着的是新类型的名称。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"可以在类中设置两种类型的元素：字段（数据成员）和方法（成员函数）。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"在Java中所作的全部工作就是定义类，产生那些类的对象，以及发送消息给这些对象。"},{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"每个对象都有用来存储其字段的空间，普通字段不能在对象间共享。"},{"t":"list_item","d":3,"p":{"lines":[42,43]},"v":"点号操作符：引用对象的成员。"},{"t":"list_item","d":3,"p":{"lines":[43,44]},"v":"基本类型变量，即使没有初始化，Java确保获得一个默认值（只有成员变量）。"}]},{"t":"heading","d":1,"p":{"lines":[45,46]},"v":"2.5 方法、参数和返回值","c":[{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"方法的基本组成包括：名称、参数、返回值和方法体。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"方法签名（方法名+参数列表）唯一地标识出某个方法。"},{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"Java中的方法只能作为类的一部分创建，只有通过对象/类才能调用。"},{"t":"list_item","d":3,"p":{"lines":[49,50]},"v":"点号操作符：调用方法。对象名.方法名(参数列表)。"},{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"调用方法的行为通常被称为发送消息给对象。即向对象发送消息。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"方法参数传递的实际是引用（除基本类型），且引用的类型必须正确。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"return： 1. 离开此方法；2. 此方法产生了一个值。若返回类型是void，return关键字的作用只是用来退出方法。"}]},{"t":"heading","d":1,"p":{"lines":[54,55]},"v":"2.6 构建一个Java程序","c":[{"t":"list_item","d":3,"p":{"lines":[55,56]},"v":"名字管理对任何程序设计语言来说，都是一个重要问题。"},{"t":"list_item","d":3,"p":{"lines":[56,57]},"v":"C++类将函数包于其类，从而避免于其他类中的函数名相冲突。C++允许全局数据和全局函数的存在，使用名字空间来解决。"},{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"Java采用域名反转的方式，保证类库生成不会于其它名字混淆的名字。Java语言本身解决了同一个文件内的每个类都有唯一的标识符。"},{"t":"list_item","d":3,"p":{"lines":[58,59]},"v":"Java消除了“向前引用”问题：可以在类中使用在该类的后面定义的类。"},{"t":"list_item","d":3,"p":{"lines":[59,60]},"v":"使用import准确引入位于其它文件中的类，消除混淆情况。可以使用通配符“*”。"},{"t":"list_item","d":3,"p":{"lines":[60,61]},"v":"当创建类是，就是在描述那个类的对象的外观与行为。执行new创建对象时，数据存储空间才会被分配，其方法才供外界调用。"},{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"static： 1. 为特定域分配的那一存储空间；2. 方法不于包含它的那个类的任何对象关联（没有创建对象，也能调用方法）。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"类数据、类方法，代表那些数据和方法只能是作为整个类，而不是类的某个特定对象而存在的。"},{"t":"list_item","d":3,"p":{"lines":[63,64]},"v":"引用static变量：1. 对象.变量名； 2. 类.变量名（推荐）。 调用static方法：1. 对象.方法名(...)； 2. 类.方法名(...)（推荐）。"},{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"当static作用于某个字段是，会改变数据创建的方式。static作用于方法，区别不大。"}]},{"t":"heading","d":1,"p":{"lines":[66,67]},"v":"2.7 第一个Java程序","c":[{"t":"list_item","d":3,"p":{"lines":[67,68]},"v":"在每个程序文件的开头，声明import语句，引入在文件代码中需要用到的额外类（java.lang会自动被导入到每一个Java文件中）。"},{"t":"list_item","d":3,"p":{"lines":[68,69]},"v":"创建一个独立运行的程序，文件中必须存在某个类于该文件同名，且那个类包含一个main方法。"},{"t":"list_item","d":3,"p":{"lines":[69,70]},"v":"main方法参数args用来存储命令行参数。"},{"t":"list_item","d":3,"p":{"lines":[70,71]},"v":"编译（javac命令）、运行（java命令）Java程序必须要有Java开发环境JDK。"}]},{"t":"heading","d":1,"p":{"lines":[72,73]},"v":"2.8 注释和嵌入式文档","c":[{"t":"list_item","d":3,"p":{"lines":[73,74]},"v":"块注释：以“/*”开头，以“*/”结束，中间可以跨多行。源于C/C++。"},{"t":"list_item","d":3,"p":{"lines":[74,75]},"v":"单行注释：“//”。源于C++。"},{"t":"list_item","d":3,"p":{"lines":[75,76]},"v":"Java为实现代码同文档连接起来，使用一种特殊的注释语法来标记文档，还需要一个工具（javadoc，JDK安装的一部分）来提取注释，并将其转换成有用的形式。"},{"t":"list_item","d":3,"p":{"lines":[76,77]},"v":"javadoc输出的是一个HTML文件。"},{"t":"list_item","d":3,"p":{"lines":[77,78]},"v":"注释文档：以“/**”开头，以“*/”结束。可以使用嵌入式文档HTML和文档标签。"},{"t":"list_item","d":3,"p":{"lines":[78,79]},"v":"文档标签有独立文档标签（以”@“字符开头的命令，至于注释行”*“之后最前面）和行内文档标签（以”@“开头，括在花括号内）。"},{"t":"list_item","d":3,"p":{"lines":[79,80]},"v":"三种类型的注释文档，分别对应于注释位置后面的三种元素：类、域和方法。"}]},{"t":"heading","d":1,"p":{"lines":[81,82]},"v":"2.9 编码风格","c":[{"t":"list_item","d":3,"p":{"lines":[82,83]},"v":"类的首字母要大写。"},{"t":"list_item","d":3,"p":{"lines":[83,84]},"v":"使用“驼峰风格”。"}]}],"p":{}}</svg>
+              </div>
 
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
+<li>本章讲述Java程序的基本组成部分，以及编写一个程序时所需要注意的地方，另外还有与其它语言的对比。</li>
+</ul>
+
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> 
     </div>
 
     
@@ -418,7 +348,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E7%94%A8%E5%BC%95%E7%94%A8%E6%93%8D%E7%BA%B5%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">2.1 用引用操纵对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%BF%85%E9%A1%BB%E7%94%B1%E4%BD%A0%E5%88%9B%E5%BB%BA%E6%89%80%E6%9C%89%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">2.2 必须由你创建所有对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E6%B0%B8%E8%BF%9C%E4%B8%8D%E9%9C%80%E8%A6%81%E9%94%80%E6%AF%81%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.</span> <span class="nav-text">2.3 永远不需要销毁对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">2.4 创建新的数据类型：类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E6%96%B9%E6%B3%95%E3%80%81%E5%8F%82%E6%95%B0%E5%92%8C%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">5.</span> <span class="nav-text">2.5 方法、参数和返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F"><span class="nav-number">6.</span> <span class="nav-text">2.6 构建一个Java程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-%E7%AC%AC%E4%B8%80%E4%B8%AAJava%E7%A8%8B%E5%BA%8F"><span class="nav-number">7.</span> <span class="nav-text">2.7 第一个Java程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-%E6%B3%A8%E9%87%8A%E5%92%8C%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%96%87%E6%A1%A3"><span class="nav-number">8.</span> <span class="nav-text">2.8 注释和嵌入式文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC"><span class="nav-number">9.</span> <span class="nav-text">2.9 编码风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">10.</span> <span class="nav-text">理解</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">理解</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -427,21 +357,21 @@
     <img class="site-author-image" itemprop="image" alt="Jade"
       src="/images/Jade.png">
   <p class="site-author-name" itemprop="name">Jade</p>
-  <div class="site-description" itemprop="description">Knowing How, Knowing Why!</div>
+  <div class="site-description" itemprop="description">知之者不如好之者，好之者不如乐之者。知其然，知其所以然。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-count">125</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>

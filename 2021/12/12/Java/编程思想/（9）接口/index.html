@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="接口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="接口">
+<meta property="og:url" content="http://example.com/2021/12/12/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%889%EF%BC%89%E6%8E%A5%E5%8F%A3/index.html">
+<meta property="og:site_name" content="乐然 LeRan">
+<meta property="og:description" content="接口">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-12T13:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-18T14:45:50.886Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="乐之者, 知其然">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/12/12/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%889%EF%BC%89%E6%8E%A5%E5%8F%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>接口 | 乐然 LeRan</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">乐然 LeRan</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">乐之者知其所以然</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">125</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/12/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%889%EF%BC%89%E6%8E%A5%E5%8F%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="知之者不如好之者，好之者不如乐之者。知其然，知其所以然。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乐然 LeRan">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          接口
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-12 21:00:00" itemprop="dateCreated datePublished" datetime="2021-12-12T21:00:00+08:00">2021-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-18 22:45:50" itemprop="dateModified" datetime="2021-12-18T22:45:50+08:00">2021-12-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" itemprop="url" rel="index"><span itemprop="name">编程思想</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">接口</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"9.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"接口和内部类提供了一种将接口与实现分离的更加结构化的概念。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"这种机制在编程语言中并不通用。在Java中存在语言关键字提供了直接支持。"}]},{"t":"heading","d":1,"p":{"lines":[4,5]},"v":"9.1 抽象类和抽象方法","c":[{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"创建抽象类是希望通过这个通用接口操纵一系列类。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"相较于没有抽象类的情况，抽象类可以在编译器捕获问题。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"包含抽象方法的类叫做抽象类。如果一个类包含一个或多个抽象方法，该类必须被限定为抽象的。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"抽象类是不完整的，为抽象类创建对象是不安全的。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"没有任何抽象方法的抽象类。 -- 阻止产生这个类的任何对象。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"抽象类和抽象方法可以使类的抽象性明确起来。是很有用的重构工具。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"用abstract关键字来限定抽象类和抽象方法。"}]},{"t":"heading","d":1,"p":{"lines":[13,14]},"v":"9.2 接口","c":[{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"interface关键字使抽象的概念更向前迈进了一步。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"interface关键字产生一个完全抽象的类，没有提供任何具体实现。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"接口被用来建立类与类之间的协议。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"interface允许通过创建一个能够被向上转型为多种基类的类型，来实现某种类似多重继承的特性。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"接口可以包含域，隐式声明为 static final。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"接口中的方法隐式声明为 public。实现一个接口时，实现的方法必须被定义为是public的。（Java编译器不允许继承过程中访问权限被降低。） 包访问权限的public意义？？？"}]},{"t":"heading","d":1,"p":{"lines":[21,22]},"v":"9.3 完全解耦","c":[{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"能够根据所传递的参数对象的不同而具有不同行为的方法，被称为策略模式。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"复用不在同一继承结构中的某个类。1. 遵循接口编写实现类。2. 适配器。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"将接口从具体实现中解耦使得接口可以应用于多种不同的具体实现，因此代码更具可复用性。"}]},{"t":"heading","d":1,"p":{"lines":[26,27]},"v":"9.4 Java中的多重继承","c":[{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"接口没有具体实现，也就是说，没有任何与接口相关的存储。因此，无法阻止与接口的组合。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"在C++中，组合多个类的接口的行为被称为多重继承（C++对接口只有间接的支持）。在Java中可以执行相同的行为，但是只有一个类可以有具体实现。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"从一个非接口的类继承，只能从一个类去继承，其它的基元素必须是接口。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"可以继承任意多个接口，并可以向上转型为每个接口，因为每一个接口都是一个独立类型。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"使用接口的原因：1. 为了能够向上转型为多个基类型； 2. 防止创建该类的对象。"}]},{"t":"heading","d":1,"p":{"lines":[33,34]},"v":"9.5 通过继承来扩展接口","c":[{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"通过继承，可以在接口中添加新的方法声明，还可以在新街口中组合接口。这两种情况都可以获得新的接口。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"在打算组合的不同接口中使用相同的方法名通常会造成代码可读性的混乱。应尽量避免这种情况。"}]},{"t":"heading","d":1,"p":{"lines":[37,38]},"v":"9.6 适配接口","c":[{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"允许同一个接口具有不同的具体实现。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"interface提供伪多重继承机制。适配器。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"让方法接受接口类型，是一种让任何类都可以对该方法进行适配的方式。"}]},{"t":"heading","d":1,"p":{"lines":[42,43]},"v":"9.7 接口中的域","c":[{"t":"list_item","d":3,"p":{"lines":[43,44]},"v":"接口中的域自动是 public static final，所以接口成为了一种很便捷的创建常量组的工具。在Java SE5 之前，产生与enum具有相同效果的类型的唯一途径。"},{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"Java中表示具有常量初始值的static final时，使用大写字母的风格（下划线分隔多个单词）。"},{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"接口中定义的域不能是“空final”，但可以是被非常量表达式初始化。在类第一次被加载时初始化。值被存储在该接口的静态存储区域内。"}]},{"t":"heading","d":1,"p":{"lines":[47,48]},"v":"9.8 嵌套接口","c":[{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"接口可以嵌套在类或其它接口中。嵌套接口可以被实现为private。"},{"t":"list_item","d":3,"p":{"lines":[49,50]},"v":"实现了一个private接口的内部类，同样可以被实现为public类，但是只能被其自身所使用。"},{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"实现一个private接口只是一种方式，强制该接口中的方法定义不要添加任何类型信息（不允许向上转型）。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"返回对private接口的引用的public方法，只有以各种方式可用，就是将返回值交给有权使用它的对象。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"嵌套在另一个接口中的接口自动就是public的，而不能声明为private的。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"当实现某个接口时，并不需要实现嵌套在其内部的任何接口。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"private接口不能在定义它的类之外被实现。"}]},{"t":"heading","d":1,"p":{"lines":[56,57]},"v":"9.9 接口与工厂","c":[{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"生成遵循某个接口的对象的典型方式就是工厂方法设计模式。"},{"t":"list_item","d":3,"p":{"lines":[58,59]},"v":"更加优雅的工厂实现方式： 匿名内部类。"}]},{"t":"heading","d":1,"p":{"lines":[60,61]},"v":"9.10 总结","c":[{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"对于创建类，几乎在任何时刻，都可以替代为创建一个接口和一个工厂。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"任何抽象性都应该是应真正的需求而产生的。"}]}],"p":{}}</svg>
+              </div>
+
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
+<li>接口和抽象类在某些方面确实做得很好。但是，添加了新的类型，意味着需要了解更多，才能更好的掌握它。如接口中域被非常量表达式初始化，需要了解类加载过程；接口中嵌套的修饰，需要了解其意义所在。</li>
+</ul>
+
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> 
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E6%A8%A1%E5%BC%8F/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/13/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8814%EF%BC%89%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/" rel="next" title="类型信息">
+      类型信息 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">理解</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">知之者不如好之者，好之者不如乐之者。知其然，知其所以然。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">125</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
