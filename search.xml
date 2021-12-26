@@ -3566,8 +3566,14 @@ layout为scaffolds中定义的模板，默认为post</li>
 </blockquote>
 <blockquote>
 <ul>
-<li>静态语言：强类型语言，变量类型在编译期就能确定。</li>
-<li>动态语言：弱类型语言，变量类型在运行期才能确定。</li>
+<li>静态语言：在编译期进行类型检查。</li>
+<li>动态语言：在运行期进行类型检查。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>强类型语言：强制类型定义的语言。一旦某个变量被定义类型，如果不经过强制转换，则它永远就是该类型。</li>
+<li>弱类型语言：弱类型定义的语言。一个变量被定义类型，该变量可根据环境自动进行转换。</li>
 </ul>
 </blockquote>
 <blockquote>
@@ -4210,7 +4216,7 @@ layout为scaffolds中定义的模板，默认为post</li>
 <li>适配器不是在设计时添加的，而是解决问题的一种方式。</li>
 </ul>
 <h2 id="源码中的使用"><a href="#源码中的使用" class="headerlink" title="源码中的使用"></a>源码中的使用</h2><ul>
-<li>JDK</li>
+<li>JDK<br>根据适配器定义，在JDK中不应有实现。</li>
 </ul>
 ]]></content>
       <categories>
@@ -5170,29 +5176,77 @@ layout为scaffolds中定义的模板，默认为post</li>
   <entry>
     <title>盲区</title>
     <url>/2021/11/30/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%E7%9B%B2%E5%8C%BA/</url>
-    <content><![CDATA[<h2 id="1-1-抽象过程"><a href="#1-1-抽象过程" class="headerlink" title="1.1 抽象过程"></a>1.1 抽象过程</h2><p>面向对象与面向过程的区别。 函数调用/对象。</p>
-<h2 id="1-2-抽象数据类型"><a href="#1-2-抽象数据类型" class="headerlink" title="1.2 抽象数据类型"></a>1.2 抽象数据类型</h2><p>在面向对象程序设计中，使用class表示数据类型。即数据类型和类是等价的。<br>字段：数据成员；方法： 成员函数。 成员 = 字段+函数+内部类？</p>
-<h2 id="2-8-javadoc"><a href="#2-8-javadoc" class="headerlink" title="2.8 javadoc"></a>2.8 javadoc</h2><p>自动生成文档，使用方面比源码更加方便。</p>
-<h2 id="3-操作符"><a href="#3-操作符" class="headerlink" title="3 操作符"></a>3 操作符</h2><p>除了“=”可用于对象，“+=”、“=”可用于字符串。其它情况都是基本数据类型。<br>使用操作符会自动提升类型。<br>操作符优先级建议使用括号来明确表示。</p>
-<h2 id="5-4-this"><a href="#5-4-this" class="headerlink" title="5.4 this"></a>5.4 this</h2><p>4中情况必须使用this，其他情况不需要。</p>
-<h2 id="5-5-垃圾回收器"><a href="#5-5-垃圾回收器" class="headerlink" title="5.5 垃圾回收器"></a>5.5 垃圾回收器</h2><p>自适应的、分代的、停止-复制、标记-清除 式垃圾回收器。<br>垃圾回收本身也有开销。</p>
-<h2 id="5-6-成员初始化"><a href="#5-6-成员初始化" class="headerlink" title="5.6 成员初始化"></a>5.6 成员初始化</h2><p>自动初始化，在调用构造器之前进行。<br>每个对象都有相同的初值。</p>
-<h2 id="5-8-数组"><a href="#5-8-数组" class="headerlink" title="5.8 数组"></a>5.8 数组</h2><p>Java不允许下标越界，通过每次在访问数组的时候检查边界实现。检查是需要开销的。</p>
-<h2 id="5-10-速度"><a href="#5-10-速度" class="headerlink" title="5.10 速度"></a>5.10 速度</h2><p>Java 的速度问题是涉足某些特定编程领域的障碍。</p>
-<h2 id="6-1-CLASSPATH"><a href="#6-1-CLASSPATH" class="headerlink" title="6.1 CLASSPATH"></a>6.1 CLASSPATH</h2><p>运行时通过参数指定CLASSPATH或者通过环境变量配置。</p>
-<h2 id="6-2-protected"><a href="#6-2-protected" class="headerlink" title="6.2 protected"></a>6.2 protected</h2><p>protected处理的是继承的概念。也提供了包访问权限。</p>
-<h2 id="6-3-封装"><a href="#6-3-封装" class="headerlink" title="6.3 封装"></a>6.3 封装</h2><p>访问权限的控制常被称为是具体实现的隐藏。把数据和方法包装进类中，以及具体实现的隐藏，常共同被称作封装。其结果是一个同时带有特征和行为的数据类型。</p>
-<h2 id="7-8-final"><a href="#7-8-final" class="headerlink" title="7.8 final"></a>7.8 final</h2><p>private方法被隐式声明为final。</p>
-<h2 id="7-9-初始化顺序"><a href="#7-9-初始化顺序" class="headerlink" title="7.9 初始化顺序"></a>7.9 初始化顺序</h2><p>基类 static - 导出类 static - 初始化 - 基类构造器 - 导出类构造器 - 实例变量 - 其余部分。<br>构造器也是static方法。</p>
-<h2 id="8-2-动态绑定"><a href="#8-2-动态绑定" class="headerlink" title="8.2 动态绑定"></a>8.2 动态绑定</h2><p>Java中除了static方法和final方法外，其他的所有方法都是后期绑定，且会自动发生。<br>想要实现动态绑定，就必须具有某种机制，在运行时判断对象的类型。</p>
-<h2 id="8-3-构造器和多态"><a href="#8-3-构造器和多态" class="headerlink" title="8.3 构造器和多态"></a>8.3 构造器和多态</h2><p>准则：构造器只用来初始化，避免调用其它方法。</p>
-<h2 id="8-4-协变返回类型"><a href="#8-4-协变返回类型" class="headerlink" title="8.4 协变返回类型"></a>8.4 协变返回类型</h2><p>在导出类的被覆盖方法可以返回基类的返回类型的某种导出类型。</p>
-<h2 id="9-2-包访问权限接口"><a href="#9-2-包访问权限接口" class="headerlink" title="9.2 包访问权限接口"></a>9.2 包访问权限接口</h2><p>实现包访问权限的接口，其方法必须声明为public。</p>
-<h2 id="9-7-接口中的域"><a href="#9-7-接口中的域" class="headerlink" title="9.7 接口中的域"></a>9.7 接口中的域</h2><p>如果是常量或常量表达式，则在类加载阶段赋值并放入常量池。如果是非常量表达式，则在类初始化阶段赋值。</p>
+    <content><![CDATA[<h2 id="1-1-抽象过程"><a href="#1-1-抽象过程" class="headerlink" title="1.1 抽象过程"></a>1.1 抽象过程</h2><ul>
+<li>面向对象与面向过程的区别。 函数调用/对象。</li>
+</ul>
+<h2 id="1-2-抽象数据类型"><a href="#1-2-抽象数据类型" class="headerlink" title="1.2 抽象数据类型"></a>1.2 抽象数据类型</h2><ul>
+<li>在面向对象程序设计中，使用class表示数据类型。即数据类型和类是等价的。</li>
+<li>字段：数据成员；方法： 成员函数。 成员 = 字段+函数+内部类？</li>
+</ul>
+<h2 id="2-8-javadoc"><a href="#2-8-javadoc" class="headerlink" title="2.8 javadoc"></a>2.8 javadoc</h2><ul>
+<li>自动生成文档，使用方面比源码更加方便。</li>
+</ul>
+<h2 id="3-操作符"><a href="#3-操作符" class="headerlink" title="3 操作符"></a>3 操作符</h2><ul>
+<li>除了“=”可用于对象，“+=”、“=”可用于字符串。其它情况都是基本数据类型。</li>
+<li>使用操作符会自动提升类型。</li>
+<li>操作符优先级建议使用括号来明确表示。</li>
+</ul>
+<h2 id="5-4-this"><a href="#5-4-this" class="headerlink" title="5.4 this"></a>5.4 this</h2><ul>
+<li>必须使用this情况： 1. 构造器初始化变量名区分； 2. return this;； 3. 构造器调用其它构造器； 4. this作为参数； 5. 泛型方法显式类型说明。</li>
+</ul>
+<h2 id="5-5-垃圾回收器"><a href="#5-5-垃圾回收器" class="headerlink" title="5.5 垃圾回收器"></a>5.5 垃圾回收器</h2><ul>
+<li>自适应的、分代的、停止-复制、标记-清除 式垃圾回收器。</li>
+<li>垃圾回收本身也有开销。</li>
+</ul>
+<h2 id="5-6-成员初始化"><a href="#5-6-成员初始化" class="headerlink" title="5.6 成员初始化"></a>5.6 成员初始化</h2><ul>
+<li>自动初始化，在调用构造器之前进行。</li>
+<li>每个对象都有相同的初值。</li>
+</ul>
+<h2 id="5-8-数组"><a href="#5-8-数组" class="headerlink" title="5.8 数组"></a>5.8 数组</h2><ul>
+<li>Java不允许下标越界，通过每次在访问数组的时候检查边界实现。检查是需要开销的。</li>
+</ul>
+<h2 id="5-10-速度"><a href="#5-10-速度" class="headerlink" title="5.10 速度"></a>5.10 速度</h2><ul>
+<li>Java 的速度问题是涉足某些特定编程领域的障碍。</li>
+</ul>
+<h2 id="6-1-CLASSPATH"><a href="#6-1-CLASSPATH" class="headerlink" title="6.1 CLASSPATH"></a>6.1 CLASSPATH</h2><ul>
+<li>运行时通过参数指定CLASSPATH或者通过环境变量配置。</li>
+</ul>
+<h2 id="6-2-protected"><a href="#6-2-protected" class="headerlink" title="6.2 protected"></a>6.2 protected</h2><ul>
+<li>protected处理的是继承的概念。也提供了包访问权限。</li>
+</ul>
+<h2 id="6-3-封装"><a href="#6-3-封装" class="headerlink" title="6.3 封装"></a>6.3 封装</h2><ul>
+<li>访问权限的控制常被称为是具体实现的隐藏。把数据和方法包装进类中，以及具体实现的隐藏，常共同被称作封装。其结果是一个同时带有特征和行为的数据类型。</li>
+</ul>
+<h2 id="7-8-final"><a href="#7-8-final" class="headerlink" title="7.8 final"></a>7.8 final</h2><ul>
+<li>private方法被隐式声明为final。</li>
+</ul>
+<h2 id="7-9-初始化顺序"><a href="#7-9-初始化顺序" class="headerlink" title="7.9 初始化顺序"></a>7.9 初始化顺序</h2><ul>
+<li>基类 static - 导出类 static - 初始化 - 基类构造器 - 导出类构造器 - 实例变量 - 其余部分。</li>
+<li>构造器也是static方法。</li>
+</ul>
+<h2 id="8-2-动态绑定"><a href="#8-2-动态绑定" class="headerlink" title="8.2 动态绑定"></a>8.2 动态绑定</h2><ul>
+<li>Java中除了static方法和final方法外，其他的所有方法都是后期绑定，且会自动发生。</li>
+<li>想要实现动态绑定，就必须具有某种机制，在运行时判断对象的类型。</li>
+</ul>
+<h2 id="8-3-构造器和多态"><a href="#8-3-构造器和多态" class="headerlink" title="8.3 构造器和多态"></a>8.3 构造器和多态</h2><ul>
+<li>准则：构造器只用来初始化，避免调用其它方法。</li>
+</ul>
+<h2 id="8-4-协变返回类型"><a href="#8-4-协变返回类型" class="headerlink" title="8.4 协变返回类型"></a>8.4 协变返回类型</h2><ul>
+<li>在导出类的被覆盖方法可以返回基类的返回类型的某种导出类型。</li>
+</ul>
+<h2 id="9-2-包访问权限接口"><a href="#9-2-包访问权限接口" class="headerlink" title="9.2 包访问权限接口"></a>9.2 包访问权限接口</h2><ul>
+<li>实现包访问权限的接口，其方法必须声明为public。</li>
+</ul>
+<h2 id="9-7-接口中的域"><a href="#9-7-接口中的域" class="headerlink" title="9.7 接口中的域"></a>9.7 接口中的域</h2><ul>
+<li>如果是常量或常量表达式，则在类加载阶段赋值并放入常量池。如果是非常量表达式，则在类初始化阶段赋值。</li>
+</ul>
 <h2 id="9-8-嵌套接口"><a href="#9-8-嵌套接口" class="headerlink" title="9.8 嵌套接口"></a>9.8 嵌套接口</h2><ul>
 <li>实现了一个private接口的内部类，同样可以被实现为public类，但是只能被其自身所使用。</li>
 <li>实现一个private接口只是一种方式，强制该接口中的方法定义不要添加任何类型信息（不允许向上转型）。</li>
 <li>返回对private接口的引用的public方法，只有以各种方式可用，就是将返回值交给有权使用它的对象。</li>
+</ul>
+<h2 id="11-13-Foreach与迭代器"><a href="#11-13-Foreach与迭代器" class="headerlink" title="11.13 Foreach与迭代器"></a>11.13 Foreach与迭代器</h2><ul>
+<li>Iterable接口被foreach用来在序列中移动。</li>
 </ul>
 <h2 id="12-9-异常的限制"><a href="#12-9-异常的限制" class="headerlink" title="12.9 异常的限制"></a>12.9 异常的限制</h2><ul>
 <li>当覆盖方法时，只能抛出在基类方法的异常说明里列出的那些异常。</li>
@@ -5202,6 +5256,17 @@ layout为scaffolds中定义的模板，默认为post</li>
 <li>强制派生类遵守基类方法的异常说明。</li>
 <li>派生类方法可以不抛出异常，即使它是基类所定义的异常。</li>
 <li>异常说明本身并不属于方法类型的一部分，因此不能基于异常说明来重载方法。</li>
+</ul>
+<h2 id="14-3-instance-of-isInstance-isAssignableFrom"><a href="#14-3-instance-of-isInstance-isAssignableFrom" class="headerlink" title="14.3 instance of|isInstance|isAssignableFrom"></a>14.3 instance of|isInstance|isAssignableFrom</h2><ul>
+<li>instance of 只能与命名类型比较，无法比较class对象。</li>
+<li>isInstance动态测试对象是否是该类实例。</li>
+<li>isAssignableFrom 针对子类class与父类class。</li>
+</ul>
+<h2 id="15-2-元组"><a href="#15-2-元组" class="headerlink" title="15.2 元组"></a>15.2 元组</h2><ul>
+<li>元组（数据传送对象、信使）：将一组对象直接打包存储于其中的一个单一对象。这个对象容器允许读取其中元素，但是不允许向其中存放新的对象。</li>
+</ul>
+<h2 id="15-4-泛型方法"><a href="#15-4-泛型方法" class="headerlink" title="15.4 泛型方法"></a>15.4 泛型方法</h2><ul>
+<li>泛型推断只对赋值操作有效。 JAVA SE7？</li>
 </ul>
 ]]></content>
       <categories>
@@ -5305,7 +5370,109 @@ layout为scaffolds中定义的模板，默认为post</li>
   </entry>
   <entry>
     <title>类型信息</title>
-    <url>/2021/12/13/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8814%EF%BC%89%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/</url>
+    <url>/2021/12/20/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8814%EF%BC%89%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"14.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"运行时类型信息（Runtime Type Information, RTTI）使得可以在程序运行时发现和使用类型信息。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"从只能在编译期执行面向类型的操作的禁锢中解脱了出来。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"Java在运行时识别对象和类的信息： 1. “传统的”RTTI，假定在编译时已经知道了所有的类型； 2. 反射，在运行时发现和使用类的信息。"}]},{"t":"heading","d":1,"p":{"lines":[5,6]},"v":"14.1 为什么需要RTTI","c":[{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"在Java中，所有的类型转换都是在运行时进行正确性检查的。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"RTTI名字的含义：在运行时，识别一个对象的类型。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"RTTI类型转换，在编译时，由容器和Java泛型系统来强制确保；在运行时，由类型转换操作来确保。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"多态机制决定引用所指向的具体对象实际执行的代码。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"特殊的编程问题，需要知道某个泛化引用的确切类型，使用最简单的问题解决。 -- 使用RTTI。"}]},{"t":"heading","d":1,"p":{"lines":[12,13]},"v":"14.2 Class对象","c":[{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"要理解RTTI在Java中的工作原理，首先必须知道类型信息在运行时是如何表示的。 -- Class对象。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"Class对象包含了与类有关的信息。Class对象就是用来创建类的所有“常规”对象的。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"Java使用Class对象来执行其RTTI。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"类是程序的一部分，每个类都有一个Class对象。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"JVM使用类加载来生成这个类的对象。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"所有的类都是在对其第一次使用时，动态加载到JVM中的。当程序创建第一个对类的静态成员的引用时，就会加载这个类。 -- 构造器也是类的静态方法。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"Class对象仅在需要的时候才被加载，static初始化是在类加载时进行的。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"Class.forName 时取得Class对象的引用的一种方法。副作用：没有类还没有加载就加载它。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"只要想在运行时使用类型信息，就必须首先获得对恰当的Class对象的引用。 1. Class.forName；2. getClass； 3. 类字面常量 .class。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"Class方法：getName、getSimpleName、getCanonicalName、getInterfaces、getSuperclass、newInstance。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"类字面常量更简单、跟安全。因为在编译时就会受到检查。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"类字面常量可用于普通的类、接口、数组以及基本数据类型。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"类字面常量对于基本数据类型的包装器，有一个标准字段TYPE，是一个引用，指向对应的基本数据类型的Class对象。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"为了使用类而做的准备工作的步骤： 1. 加载； 2. 链接； 3. 初始化。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"类字面常量不会自动地初始化该Class对象，被延迟到对静态方法或者非常数静态域进行首次引用时才执行。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"Class引用表示的是所指向的对象的确切类型，而该对象是Class类的一个对象。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"Java SE5 通过对Class引用所指向的Class对象的类型进行限定，使得类型变得更具体了一些。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"通过使用泛型语法，可以让编译器强制执行额外的类型检查。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"使用通配符“?”在使用泛化的Class引用时放松限制。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"在Java SE5中，Class&lt;?&gt;由于平凡的Class，即便它们时等价的。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"使用通配符与extends关键字结合，创建一个范围。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"向Class引用添加泛型语法的原因仅仅时为了提供编译期类型检查。否则直到运行时才发现错误，显得很不方便。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"Java SE5添加了用于Class引用的转型语法cast。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"新的转型语法对于无法使用普通转型的情况显得非常有用。存储了Class引用，并希望以后通过这个引用来执行转型。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"Java SE5中另一个没有任何用处的新特性是asSubclass。将一个类对象转型为更加具体的类型。"}]},{"t":"heading","d":1,"p":{"lines":[42,43]},"v":"14.3 类型转换前先做检查","c":[{"t":"list_item","d":3,"p":{"lines":[43,44]},"v":"RTTI形式： 1. 传统的类型转换，由RTTI确保类型转换的正确性； 2. 代表对象的类型Class对象，获取运行时所需的信息； 3. instanceof。"},{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"对instanceof有比较严格的限制：只可将其与命名类型进行比较，而不能与Class对象作比较。"},{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"使用类字面常量代替Class.forName。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"Class.isInstance方法提供了一种动态地测试对象的途径。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"Class.isAssignableFrom。"}]},{"t":"heading","d":1,"p":{"lines":[49,50]},"v":"14.4 注册工厂","c":[{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"使用工厂方法设计模式，将对象的创建工作交给类自己完成。"}]},{"t":"heading","d":1,"p":{"lines":[52,53]},"v":"14.5 instanceof与Class的等价性","c":[{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"instanceof和isInstance保持了类型的概念。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"用==比较实际的Class对象，没有考虑继承。"}]},{"t":"heading","d":1,"p":{"lines":[56,57]},"v":"14.6 反射：运行时的类信息","c":[{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"在编译时，编译器必须知道所有要通过RTTI来处理的类。"},{"t":"list_item","d":3,"p":{"lines":[58,59]},"v":"RTTI限制：获取一个指向某个并不在程序空间中的对象的引用，在编译时程序无法获知这个对象所属的类。 1. 基于构件的编程； 2. GUI事件的构件。"},{"t":"list_item","d":3,"p":{"lines":[59,60]},"v":"反射提供了一种机制，用来检查可用的方法，并返回方法名。"},{"t":"list_item","d":3,"p":{"lines":[60,61]},"v":"运行时获取类的信息的另一个动机：希望提供在跨网络的远程平台上创建和运行对象的能力。 --RMI。"},{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"远程方法调用（RMI）允许一个Java程序员将对象分布到多态机器上。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"Class类与java.lang.reflect类库（包含Field、Method以及Constructor，都实现了Member接口）一起对反射的概念进行了支持。"},{"t":"list_item","d":3,"p":{"lines":[63,64]},"v":"匿名对象的类信息就能在运行时被完全确定下来，而在编译时不需要知道任何事情。"},{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"RTTI和反射之间的真正区别只在于，对RTTI来说，编译器在编译时打开和检查.class文件，而对于反射来说，是在运行时打开和检查.class文件。"},{"t":"list_item","d":3,"p":{"lines":[65,66]},"v":"反射在Java中是用来支持其他特性的，例如对象序列化和JavaBean。"},{"t":"list_item","d":3,"p":{"lines":[66,67]},"v":"反射机制提供了一种方法，能够编写可以自动展示完整接口的简单工具。 -- 类方法提取器。"}]},{"t":"heading","d":1,"p":{"lines":[68,69]},"v":"14.7 动态代理","c":[{"t":"list_item","d":3,"p":{"lines":[69,70]},"v":"代理是为了提供额外的或不同的操作，而插入的用来代替实际对象的对象。"},{"t":"list_item","d":3,"p":{"lines":[70,71]},"v":"Java的动态代理比代理的思想更向前迈进了一步，因为它可以动态地创建代理并动态地代理对所代理方法的调用。"},{"t":"list_item","d":3,"p":{"lines":[71,72]},"v":"在动态代理上所做的所有调用都会被重定向到单一的调用处理器上，它的工作是揭示调用的类型并确定相应的对策。"},{"t":"list_item","d":3,"p":{"lines":[72,73]},"v":"通过调用静态方法Proxy.newProxyInstance()可以创建动态代理。"}]},{"t":"heading","d":1,"p":{"lines":[74,75]},"v":"14.8 空对象","c":[{"t":"list_item","d":3,"p":{"lines":[75,76]},"v":"当使用内置的null表示缺少对象时，在每次使用引用时都必须测试其是否为null，这显得枯燥，而且势必产生相当乏味的代码。"},{"t":"list_item","d":3,"p":{"lines":[76,77]},"v":"null除了在试图用它执行任何操作来产生NPE之外，没有其它任何行为。"},{"t":"list_item","d":3,"p":{"lines":[77,78]},"v":"空对象可以接受传递给它的所代表对象的消息，但是将返回表示为实际上并不存在任何“真实”对象的值。"},{"t":"list_item","d":3,"p":{"lines":[78,79]},"v":"空对象是看作是策略模式的特例。"},{"t":"list_item","d":3,"p":{"lines":[79,80]},"v":"到处使用空对象没有任何意义。"},{"t":"list_item","d":3,"p":{"lines":[80,81]},"v":"空对象最有用之处在于它更靠近数据，因为对象表示的是问题空间内的实体。"},{"t":"list_item","d":3,"p":{"lines":[81,82]},"v":"即使空对象可以相应实际对象可以相应的所有消息，仍需要某种方式去测试其是否为空。 -- 创建标记接口，使用内置工具instanceof。"},{"t":"list_item","d":3,"p":{"lines":[82,83]},"v":"空对象都是单例。使用静态内部类实现，添加static final域。"},{"t":"list_item","d":3,"p":{"lines":[83,84]},"v":"在某些地方仍必须测试空对象，与检查是否为null没有差异，但在其它地方不必执行额外测试，而可以直接假设所有的对象都是有效的。"},{"t":"list_item","d":3,"p":{"lines":[84,85]},"v":"多种不同类型的空对象。 -- 动态代理。"},{"t":"list_item","d":3,"p":{"lines":[85,86]},"v":"空对象的逻辑变体是模拟对象和桩。只是假扮可以传递实际信息的存活对象。"}]},{"t":"heading","d":1,"p":{"lines":[87,88]},"v":"14.9 接口与类型信息","c":[{"t":"list_item","d":3,"p":{"lines":[88,89]},"v":"interface关键字的一种重要目标是允许程序员隔离构件，进而降低耦合性。但是通过类型信息，这种耦合性还是会传播出去。"},{"t":"list_item","d":3,"p":{"lines":[89,90]},"v":"解决方案：1. 直接声明，自己负责； 2. 对实现使用包访问权限（反射可访问，没有任何方式可以阻止。final域不能修改）。"},{"t":"list_item","d":3,"p":{"lines":[90,91]},"v":"所有违反访问权限的操作并非世上最糟之事。通常反射带来的好处是不可否认的。"}]},{"t":"heading","d":1,"p":{"lines":[92,93]},"v":"14.10 总结","c":[{"t":"list_item","d":3,"p":{"lines":[93,94]},"v":"使用RTTI在代码开发和维护过程中损失了多态机制的重要价值。"},{"t":"list_item","d":3,"p":{"lines":[94,95]},"v":"面向编程语言的目的是凡是可以使用的地方都使用多态机制，只在必需的时候使用RTTI。"},{"t":"list_item","d":3,"p":{"lines":[95,96]},"v":"RTTI与多态的冲突。"},{"t":"list_item","d":3,"p":{"lines":[96,97]},"v":"反射允许更加动态的编程风格，开创了编程的新世界。"},{"t":"list_item","d":3,"p":{"lines":[97,98]},"v":"一致的错误报告模型的存在使得能够通过使用反射编写动态代码。"}]}],"p":{}}</svg>
+              </div>
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>编程思想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>泛型</title>
+    <url>/2021/12/20/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8815%EF%BC%89%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"15.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"一般的类和方法，只能使用具体的类型：要么是基本类型，要么是自定义的类。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"在面向对象编程语言中，多态算是一种泛化机制。这种灵活性大多数时候也会有一些性能损耗。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"有时候，拘泥于单继承体系，会使程序受限太多。有的时候，即便使用了接口，对程序的约束也还是太强。"},{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"泛型实现了参数化类型的概念，使代码可以应用于多种类型。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"泛型在编程语言中出现时，最初的目的是希望类或方法能够具备最广泛的表达能力。通过解耦类或方法与所使用的类型之间的约束。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"Java中的泛型并没有这么高的追求。"}]},{"t":"heading","d":1,"p":{"lines":[8,9]},"v":"15.1 与C++的比较","c":[{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"设计Java的灵感主要来自C++。尽管如此，学习Java时，基本上可以不用参考C++。除非与C++的比较可以加深理解。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"Java中的泛型需要与C++进行一番比较。理解C++模板的某些方面，有助于理解泛型的基础。"}]},{"t":"heading","d":1,"p":{"lines":[12,13]},"v":"15.2 简单泛型","c":[{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"有许多原因促成了泛型的出现，而最引人注目的一个原因，就是为了创造容器类。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"泛型的主要目的之一是用来指定容器要持有什么类型的对象，而且由编译器来保证类型的正确性。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"Java泛型的核心概念：告诉编译器想使用什么类型，然后编译器帮你处理一切细节。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"有了泛型，能够仅一次方法调用就能返回多个对象。同时，在编译期就能确保类型安全。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"元组（数据传送对象、信使）：将一组对象直接打包存储于其中的一个单一对象。这个对象容器允许读取其中元素，但是不允许向其中存放新的对象。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"通常，元组可以具有任意长度，同时，元组中的对象可以是任意不同的类型。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"可以读取，随心所欲的使用，但是无法赋值。使用 public final修饰。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"利用继承机制实现长度更长的元组。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"为了使用元组，只需定义一个长度适合的元组，将其作为方法的返回值，然后在return语句中创建该元组，并返回即可。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"使用泛型实现内部链式存储机制。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"使用末端哨兵来判断何时为空。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"使用泛型构建一个可以应用于各种类型的对象的工具。"}]},{"t":"heading","d":1,"p":{"lines":[29,30]},"v":"15.3 泛型接口","c":[{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"生成器，一种专门负责创建对象的类。是工厂方法的一种应用（生成器不需要参数，而工厂方法一般需要参数）。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"基本类型无法作为类型参数。 -- 自动装箱、自动拆箱。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"适配器。"}]},{"t":"heading","d":1,"p":{"lines":[34,35]},"v":"15.4 泛型方法","c":[{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"可以在类中包含参数化方法。是否拥有泛型方法，与其所在的类是否是泛型类没有关系。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"泛型方法使得该方法能够独立于类而产生变化。"},{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"如果使用泛型方法可以取代将整个类泛型化，那么就应该只使用泛型方法。对于一个static方法而言，无法访问泛型类的类型参数。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"使用泛型类时，必须在创建对象的时候指定类型参数的值。而使用泛型方法的时候，通常不必指明参数类型，编译器会进行类型参数推断。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"使用泛型类无法进行泛型推断。 -- 创建工具类，定义泛型方法，简化部分工作。 -- 额外复杂度。"},{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"类型推断只对赋值操作有效，其他时候并不起作用。"},{"t":"list_item","d":3,"p":{"lines":[42,43]},"v":"在泛型方法中，可以显式地指明类型。必须在点操作符与方法名之间插入尖括号，然后把类型置于尖括号内。"},{"t":"list_item","d":3,"p":{"lines":[43,44]},"v":"显式指明类型时，如果时定义在该方法的类的内部，必须在点操作符之前使用this关键字。如果是static方法，必须在点操作符之前加上类名。"},{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"只有在编写非赋值语句时，才需要显式指明类型。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"泛型方法与可变参数列表能够很好的共存。"},{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"有了类型参数推断，再加上static方法，可以重新编写之前的元组工具，使其成为更通用的工具类库。"},{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"用Set来表达数学中的关系式。并集、交集、差集、补集。"}]},{"t":"heading","d":1,"p":{"lines":[52,53]},"v":"15.5 匿名内部类","c":[{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"泛型可以应用于内部类以及匿名内部类。"}]},{"t":"heading","d":1,"p":{"lines":[55,56]},"v":"15.6 构建复杂类型","c":[{"t":"list_item","d":3,"p":{"lines":[56,57]},"v":"泛型的一个重要好处是能够简单而安全地创建复杂的模型。"}]},{"t":"heading","d":1,"p":{"lines":[58,59]},"v":"15.7 擦除的神秘之处","c":[{"t":"list_item","d":3,"p":{"lines":[59,60]},"v":"在泛型代码内部，无法获得任何有关泛型参数类型的信息。"},{"t":"list_item","d":3,"p":{"lines":[60,61]},"v":"Java泛型是使用擦除来实现的。使用泛型时，任何具体的类型信息都被擦除了。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"C++中，当模板被实例化时，模板代码知道其模板参数的类型。Java必须给定泛型类的边界，重用extends关键字。"},{"t":"list_item","d":3,"p":{"lines":[63,64]},"v":"泛型类型参数将擦除到它的第一个边界。"},{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"希望代码能够跨多个类工作时，使用泛型才有所帮助。"},{"t":"list_item","d":3,"p":{"lines":[66,67]},"v":"擦除不是一个语言特性，是Java的泛型实现的一种折中。"},{"t":"list_item","d":3,"p":{"lines":[67,68]},"v":"擦除减少了泛型的泛化性。"},{"t":"list_item","d":3,"p":{"lines":[68,69]},"v":"在基于擦除的实现中，泛型类被当作第二类类型处理，即不能在某些重要的上下文环境中使用的类型。"},{"t":"list_item","d":3,"p":{"lines":[69,70]},"v":"泛型类型只有在静态类型检查期间才出现，在此之后，程序中所有的泛型类型都将被擦除，替换为它们的非泛型上界。"},{"t":"list_item","d":3,"p":{"lines":[70,71]},"v":"擦除的核心动机是它使得泛化的客户端可以用非泛化的类库来使用，反之亦然，这经常被称为“迁移兼容性”。"},{"t":"list_item","d":3,"p":{"lines":[72,73]},"v":"擦除的代价是显著的。泛型不能用于显式地引用运行时类型的操作之中。例如转型、instanceof操作和new表达式。"},{"t":"list_item","d":3,"p":{"lines":[73,74]},"v":"擦除和迁移兼容性意味着，使用泛型并不是强制的。"},{"t":"list_item","d":3,"p":{"lines":[74,75]},"v":"当希望将类型参数不要仅仅当作Object处理时，需要付出额外努力来管理边界。"},{"t":"list_item","d":3,"p":{"lines":[75,76]},"v":"Java SE5提供了@SuppressWarnings注解关闭警告。"},{"t":"list_item","d":3,"p":{"lines":[77,78]},"v":"泛型最令人困惑的方面源自：可以表示没有任何意义的事物。"},{"t":"list_item","d":3,"p":{"lines":[78,79]},"v":"对于在泛型中创建数组，使用Array.newInstance是推荐的方式。"},{"t":"list_item","d":3,"p":{"lines":[79,80]},"v":"即便擦除在方法或类内部移除了有关实际类型的信息，编译器仍旧可以确保在方法或类中使用的类型的内部一致性。"},{"t":"list_item","d":3,"p":{"lines":[80,81]},"v":"因为擦除在方法体中移除了类型信息，所以在运行时的问题就是边界：即对象进入和离开方法的地点。"},{"t":"list_item","d":3,"p":{"lines":[81,82]},"v":"在泛型中的所有动作都发生在边界处。对传递进来的值进行额外的编译期检查，并插入对传递出去的值的转型。"}]},{"t":"heading","d":1,"p":{"lines":[83,84]},"v":"15.8 擦除的补偿","c":[{"t":"list_item","d":3,"p":{"lines":[84,85]},"v":"擦除丢失了在泛型代码中执行某些操作的能力。任何在运行时需要知道确切类型信息的操作都将无法工作。"},{"t":"list_item","d":3,"p":{"lines":[85,86]},"v":"有时必须通过引入类型标签来对擦除进行补偿。这意味着需要显式传递类型的Class对象，以便在类型表达式中使用。"},{"t":"list_item","d":3,"p":{"lines":[86,87]},"v":"编译器将确保类型标签可以匹配泛型参数。"},{"t":"list_item","d":3,"p":{"lines":[88,89]},"v":"无法创建一个new T()。在C++中，这种操作很自然、很直观，并且很安全。在编译期受到检查。"},{"t":"list_item","d":3,"p":{"lines":[89,90]},"v":"Java中的解决方案是传递一个工厂对象，并使用它来创建新的实例。最便利的工厂对象就是Class对象。"},{"t":"list_item","d":3,"p":{"lines":[90,91]},"v":"Sun建议使用显式的工厂，并将限制其类型，使得只能接受实现了这个工厂的类。"},{"t":"list_item","d":3,"p":{"lines":[91,92]},"v":"另一种方式是模板方法设计模式。"},{"t":"list_item","d":3,"p":{"lines":[93,94]},"v":"不能创建泛型数组。一般的解决方案是使用ArrayList。这将获得数组的行为，以及由泛型提供的编译期的类型安全。"},{"t":"list_item","d":3,"p":{"lines":[94,95]},"v":"可以定义一个泛型数组引用，但是永远都不能创建这个确切类型的数组（包括类型参数）。"},{"t":"list_item","d":3,"p":{"lines":[95,96]},"v":"创建一个Object数组，并将其转型为泛型数组类型。这可以编译，但是不能运行，将产生ClassCaseException。"},{"t":"list_item","d":3,"p":{"lines":[96,97]},"v":"所有数组无论它们持有的类型如何，都具有相同的结构（每个数组槽位的尺寸和数组的布局）。"},{"t":"list_item","d":3,"p":{"lines":[97,98]},"v":"成功创建泛型数组的唯一方式就是创建一个被擦除类型的新数组，然后对其转型。"},{"t":"list_item","d":3,"p":{"lines":[98,99]},"v":"最好是在集合内部使用Object[]，使用数组元素时，添加一个对T的转型。"},{"t":"list_item","d":3,"p":{"lines":[99,100]},"v":"Java SE5标准类库的源代码，从Object数组到参数化类型的转型遍及各处"},{"t":"list_item","d":3,"p":{"lines":[100,101]},"v":"即使在Java类库源代码中出现了某些惯用法，也不能表示这就是正确的解决之道。"}]},{"t":"heading","d":1,"p":{"lines":[102,103]},"v":"15.9 边界","c":[{"t":"list_item","d":3,"p":{"lines":[103,104]},"v":"边界使得可以在用于泛型的参数类型上设置限制条件。"},{"t":"list_item","d":3,"p":{"lines":[104,105]},"v":"尽管可以强制规定泛型可以应用的类型，但是其潜在的一个更重要的效果是可以按照自己的边界类型来调用方法。"},{"t":"list_item","d":3,"p":{"lines":[105,106]},"v":"extends关键字在泛型边界上下文环境中和在普通情况下所具有的意义是完全不同的。"},{"t":"list_item","d":3,"p":{"lines":[106,107]},"v":"在继承的每个层次上添加边界限制。"},{"t":"list_item","d":3,"p":{"lines":[107,108]},"v":"通配符被限制为单一边界。"}]},{"t":"heading","d":1,"p":{"lines":[109,110]},"v":"15.10 通配符","c":[{"t":"list_item","d":3,"p":{"lines":[110,111]},"v":"可以向导出类型的数组赋予基类型的数组引用。 -- 向上转型不合适用在这里。"},{"t":"list_item","d":3,"p":{"lines":[111,112]},"v":"数组的行为是它可以持有其它对象。数据对象可以保留有关它们包含的对象类型的规则。"},{"t":"list_item","d":3,"p":{"lines":[112,113]},"v":"对数组的赋值，在运行时可以发现插入了不正确的类型，但是泛型的主要目标之一是将这种错误检测移入到编译期。"},{"t":"list_item","d":3,"p":{"lines":[113,114]},"v":"试图使用泛型容器来代替数组。 -- 编译错误。"},{"t":"list_item","d":3,"p":{"lines":[114,115]},"v":"与数组不通过，泛型没有内建的协变类型。数组在语言中是完全定义的，因此可以内建了编译期和运行时的检查。"},{"t":"list_item","d":3,"p":{"lines":[115,116]},"v":"在两个类型之间建立某种类型的向上转型关系，这是通配符所允许的。 -- 丢失向其中床底任何对象的能力。"},{"t":"list_item","d":3,"p":{"lines":[117,118]},"v":"ArrayList，add接受一个具有泛型参数类型的参数，但是contains和indexOf接受Object类型的参数。"},{"t":"list_item","d":3,"p":{"lines":[118,119]},"v":"编译器将直接拒绝对参数列表中设计通配符的方法的调用。"},{"t":"list_item","d":3,"p":{"lines":[120,121]},"v":"超类型通配符，可以声明通配符是由某个特定类的任何基类来界定的。"},{"t":"list_item","d":3,"p":{"lines":[121,122]},"v":"不能对泛型类型给出一个超类型边界（&lt;T super MyClass&gt;）。使得可以安全地传递一个类型对象到泛型类型中。"},{"t":"list_item","d":3,"p":{"lines":[122,123]},"v":"超类型边界放松了在可以向方法传递的参数上所作的限制。"},{"t":"list_item","d":3,"p":{"lines":[124,125]},"v":"使用无界通配符好像等价于使用原生类型。"},{"t":"list_item","d":3,"p":{"lines":[125,126]},"v":"在处理多个泛型参数时，有时允许一个参数可以是任何类型（使用无界通配符），同时为其它参数确定某种特定类型。"},{"t":"list_item","d":3,"p":{"lines":[126,127]},"v":"原生类型将持有任何类型的组合，而通配符将持有具有某种具体类型的同构集合。"},{"t":"list_item","d":3,"p":{"lines":[127,128]},"v":"编译器何时关注原生类型和设计无界通配符的类型之间的差异？ -- 示例。"},{"t":"list_item","d":3,"p":{"lines":[128,129]},"v":"使用确切类型代替通配符类型的好处是，可以用泛型参数来做更多的事。"},{"t":"list_item","d":3,"p":{"lines":[129,130]},"v":"使用通配符必须接受范围更宽的参数化类型作为参数。"},{"t":"list_item","d":3,"p":{"lines":[131,132]},"v":"有一种情况特别需要使用&lt;?&gt;而不是原生类型。"},{"t":"list_item","d":3,"p":{"lines":[132,133]},"v":"如果向一个使用&lt;?&gt;的方法传递原生类型，编译器可能会推断出实际的类型参数，使得这个方法可以回转并调用另一个使用这个确切类型的方法。这被称为捕获转换。"},{"t":"list_item","d":3,"p":{"lines":[133,134]},"v":"捕获转换只有在方法内部，且需要使用确切的类型的情况下可以工作。"}]},{"t":"heading","d":1,"p":{"lines":[135,136]},"v":"15.11 问题","c":[{"t":"list_item","d":3,"p":{"lines":[136,137]},"v":"基本类型不能作为类型参数。 -- 包装器类及自动装箱。"},{"t":"list_item","d":3,"p":{"lines":[137,138]},"v":"自动包装机制不能应用于数组。"},{"t":"list_item","d":3,"p":{"lines":[139,140]},"v":"一个类不能实现同一个泛型接口的两种变体。由于擦除的原因，这两个变体会成为相同的接口。"},{"t":"list_item","d":3,"p":{"lines":[141,142]},"v":"使用带有泛型类型参数的转型或instanceof不会由任何效果。"},{"t":"list_item","d":3,"p":{"lines":[142,143]},"v":"有时，泛型没有消除对转型的需要，这就会由编译器产生警告，而这个警告是不恰当的。"},{"t":"list_item","d":3,"p":{"lines":[144,145]},"v":"由于擦除的原因，重载方法就产生相同的类型签名。"},{"t":"list_item","d":3,"p":{"lines":[145,146]},"v":"当被擦除的参数不能产生唯一的参数列表时，必须提供明显有区别的方法名。"},{"t":"list_item","d":3,"p":{"lines":[147,148]},"v":"基类劫持了接口。"}]},{"t":"heading","d":1,"p":{"lines":[149,150]},"v":"15.12 自限定的类型","c":[{"t":"list_item","d":3,"p":{"lines":[150,151]},"v":"古怪的循环泛型（CRG）的本质：基类用导出类替代其参数。"},{"t":"list_item","d":3,"p":{"lines":[151,152]},"v":"CRG意味着泛型基类变成了一种其所有导出类的公共功能的模板。在所产生的类中将使用确切类型而不是基类型。"},{"t":"list_item","d":3,"p":{"lines":[153,154]},"v":"自限定将采取额外的步骤，强制泛型当作其自己的边界参数来使用。"},{"t":"list_item","d":3,"p":{"lines":[154,155]},"v":"自限定的参数意义：可以保证类型参数必须与正在被定义的类相同。"},{"t":"list_item","d":3,"p":{"lines":[155,156]},"v":"自限定限制只能强制作用于继承关系。"},{"t":"list_item","d":3,"p":{"lines":[156,157]},"v":"如果使用自限定，就应该了解这个类所使用的类型参数将于使用这个参数的类具有相同的基类型。"},{"t":"list_item","d":3,"p":{"lines":[158,159]},"v":"自限定的价值在于它们可以产生协变参数类型（方法参数类型会随子类而变化）。"},{"t":"list_item","d":3,"p":{"lines":[159,160]},"v":"如果不适用自限定，将重载参数类型。如果使用了自限定，只能获得某个方法的一个版本，它将接受确切的参数类型。"}]},{"t":"heading","d":1,"p":{"lines":[161,162]},"v":"15.13 动态类型安全","c":[{"t":"list_item","d":3,"p":{"lines":[162,163]},"v":"Java SE5的Collections中有一组工具，可以解决向之前的代码传递泛型容器，从而可能会破坏容器的类型检查问题。"},{"t":"list_item","d":3,"p":{"lines":[163,164]},"v":"工具：checkedCollection、checkedList、checkedMap、checkedSet、checkedSortedMap、checkedSortedSet。"}]},{"t":"heading","d":1,"p":{"lines":[165,166]},"v":"15.14 异常","c":[{"t":"list_item","d":3,"p":{"lines":[166,167]},"v":"由于擦除的原因，将泛型应用于异常是非常受限的。"},{"t":"list_item","d":3,"p":{"lines":[167,168]},"v":"catch语句不能捕获泛型类型的异常，因为在编译期和运行时都必须知道异常的确切类型。"},{"t":"list_item","d":3,"p":{"lines":[168,169]},"v":"泛型类也不能直接或间接继承自Throwable。"},{"t":"list_item","d":3,"p":{"lines":[169,170]},"v":"类型参数可能会在一个方法的throws子句中用到，这使得可以编写随检查型异常的类型而发生变化大的泛型代码。"}]},{"t":"heading","d":1,"p":{"lines":[171,172]},"v":"15.15 混型","c":[{"t":"list_item","d":3,"p":{"lines":[172,173]},"v":"混型基本概念是：混合多个类的能力，以产生一个可以表示混型中所有类型的类。"},{"t":"list_item","d":3,"p":{"lines":[173,174]},"v":"混型的价值之一是它们可以将特性和行为一致地应用于多个类之上。"},{"t":"list_item","d":3,"p":{"lines":[174,175]},"v":"如果在混型中修改某些东西，这些修改会应用于混型所应用的所有类型之上。"},{"t":"list_item","d":3,"p":{"lines":[176,177]},"v":"在C++中，使用多重继承的最大理由，就是为了使用混型。"},{"t":"list_item","d":3,"p":{"lines":[177,178]},"v":"对于混型来说，更有趣、更优雅的方式是使用参数化类型，因为混型就是继承自其类型参数的类。"},{"t":"list_item","d":3,"p":{"lines":[178,179]},"v":"在C++中，可以很容易的创建混型，因为C++能够记住其模板参数的类型。 -- Java泛型不允许这样，擦除会忘记基类类型。"},{"t":"list_item","d":3,"p":{"lines":[180,181]},"v":"一种更常见的推荐解决方案是使用接口来产生混型效果。 -- 使用代理。"},{"t":"list_item","d":3,"p":{"lines":[182,183]},"v":"可以将基于参数化类型的混型当作是一种泛型装饰器机制，这种机制不需要装饰器的继承结构。"},{"t":"list_item","d":3,"p":{"lines":[183,184]},"v":"装饰器只是对由混型提出的问题的一种局限的解决方案。"},{"t":"list_item","d":3,"p":{"lines":[185,186]},"v":"可以使用动态代理来创建一种比装饰器更贴近混型模型的机制。"},{"t":"list_item","d":3,"p":{"lines":[186,187]},"v":"通过使用动态代理，所产生的类的动态类型将会是已经混入的组合类型。"},{"t":"list_item","d":3,"p":{"lines":[187,188]},"v":"仍旧不如C++的方式好，因为在调用方法之前，必须先向下转型。但是，它更接近于真正的混型。"}]},{"t":"heading","d":1,"p":{"lines":[189,190]},"v":"15.16 潜在类型机制","c":[{"t":"list_item","d":3,"p":{"lines":[190,191]},"v":"潜在类型机制是一种代码组织和复用机制。"},{"t":"list_item","d":3,"p":{"lines":[191,192]},"v":"两种支持潜在类型机制的语言实例是Python（动态类型语言）和C++（静态类型语言）。"},{"t":"list_item","d":3,"p":{"lines":[192,193]},"v":"Java没有对这种特性的支持。"}]},{"t":"heading","d":1,"p":{"lines":[194,195]},"v":"15.17 对缺乏潜在类型机制的补偿","c":[{"t":"list_item","d":3,"p":{"lines":[195,196]},"v":"通过反射使用潜在类型机制。但是将所有的类型检查都转移到了运行时。"},{"t":"list_item","d":3,"p":{"lines":[196,197]},"v":"反射和可变参数，内建的Iterable接口。"},{"t":"list_item","d":3,"p":{"lines":[197,198]},"v":"用适配器仿真潜在类型机制。"}]},{"t":"heading","d":1,"p":{"lines":[199,200]},"v":"15.18 将函数对象用作策略","c":[{"t":"list_item","d":3,"p":{"lines":[200,201]},"v":"函数对象就是在某种程度上行为像函数的对象。"},{"t":"list_item","d":3,"p":{"lines":[201,202]},"v":"函数对象的价值在于，与普通方法不同，它们可以传递出去，并且还可以拥有在多个调用之间持久化的状态。"},{"t":"list_item","d":3,"p":{"lines":[202,203]},"v":"在C++中，潜在类型机制将在调用函数是负责协调各个操作，但是在Java中，需要编写函数对象来将泛型方法适配为特定的需求。"},{"t":"list_item","d":3,"p":{"lines":[203,204]},"v":"适配器模式和策略模式的结合。"}]},{"t":"heading","d":1,"p":{"lines":[205,206]},"v":"15.19 总结"}],"p":{}}</svg>
+              </div>
+
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>编程思想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数组</title>
+    <url>/2021/12/21/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8816%EF%BC%89%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"16.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"对数组的基本看法是，可以创建并组装它们，通过使用整形索引值访问它们的元素，并且它们的尺寸不能改变。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"如何更加深入地思考数组。"}]},{"t":"heading","d":1,"p":{"lines":[4,5]},"v":"16.1 数组为什么特殊","c":[{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"数组与其它种类的容器之间的区别有三方面：效率、类型和保存基本类型的能力。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"在Java中，数组是一种效率最高的存储和随机访问对象引用序列的方式。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"为速度所付出的代价是数组对象的大小被固定，并且在其生命周期中不可改变。"}]},{"t":"heading","d":1,"p":{"lines":[9,10]},"v":"16.2 数组是第一级对象","c":[{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"数组标识符只是一个引用，指向在堆中创建的一个真实对象，这个对象用以保存指向其他对象的引用。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"可以作为数组初始化语法的一部分隐式地创建此对象，或者用new表达式显式地创建。"},{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"聚集初始化操作必须在定义数组的位置使用。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"动态聚集初始化可以在任意位置创建和初始数组对象。"}]},{"t":"heading","d":1,"p":{"lines":[15,16]},"v":"16.3 返回一个数组","c":[{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"C/C++不能返回一个数组，而只能返回指向数组的指针。"}]},{"t":"heading","d":1,"p":{"lines":[18,19]},"v":"16.4 多维数组","c":[{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"对于多维数组，可以通过花括号将每个向量分割开。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"Java SE5 Arrays.deepToString 可以将多维数组转换为多个String。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"数组中构成矩阵的每个向量都可以具有任意的长度（粗糙数组）。"}]},{"t":"heading","d":1,"p":{"lines":[23,24]},"v":"16.5 数组与泛型","c":[{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"通常，数组与泛型不能很好的结合。不能实例化具有参数化类型的数组。可以参数化数组本身的类型（T[]）。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"使用参数化方法而不使用参数化类的方便之处在于：不必为需要应用的每种不同的类型都使用一个参数去实例化这个类，并且可以将其定义为静态的。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"可以创建对泛型数组的引用，但是不能实例化。可以创建非泛型的数组，然后将其转型。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"数组是协变类型的。"}]},{"t":"heading","d":1,"p":{"lines":[29,30]},"v":"16.6 创建测试数据","c":[{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"Arrays.fill：只能用一个值填充各个位置，对对象而言，就是复制同一个引用进行填充。"}]},{"t":"heading","d":1,"p":{"lines":[32,33]},"v":"16.7 Arrays使用功能","c":[{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"Arrays基本方法：equals、fill、sort、binarySearch、toString、hashCode。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"System.arraycopy，复制数组比用for循环复制要快很多。针对所有类型做了重载。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"Arrays.equals 用来比较整个数组，对所有类型做了重载。数组相等的条件是元素个数相等，且对应位置的元素也相等。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"Java有两种方式用来提供比较功能，1. Comparable接口； 2. Comparator接口。"},{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"使用内置的排序方法，就可以对任意的基本类型数组排序；也可以对任意的对象数组排序，只要该对象实现了Comparable接口或具有相关联的Comparator。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"基本类型数组无法是哦那个Comparator进行排序。"}]},{"t":"heading","d":1,"p":{"lines":[40,41]},"v":"16.8 总结","c":[{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"在使用最近的Java版本编程时，应该优选容器而不是数组。"}]}],"p":{}}</svg>
+              </div>
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>编程思想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>容器深入研究</title>
+    <url>/2021/12/21/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8817%EF%BC%89%E5%AE%B9%E5%99%A8%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/</url>
+    <content><![CDATA[<div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"17.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"更深入地探索这个重要的类库。"}]},{"t":"heading","d":1,"p":{"lines":[3,4]},"v":"17.1 完整的容器分类法","c":[{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"Java SE5 新添加了Queue、PriorityQueue、BlockingQueue、ConcurrentMap、ConcurrentHashMap、CopyOnWriteArrayList、CopyOnWriteSet、EnumSet、EnumMap、Collections中的多个便利方法。"}]},{"t":"heading","d":1,"p":{"lines":[6,7]},"v":"17.2 填充容器","c":[{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"Collections.fill，只复制同一个对象引用来填充整个容器，只对List对象有用。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"Collections.nCopies填充。"},{"t":"list_item","d":3,"p":{"lines":[9,11]},"v":""}]},{"t":"heading","d":1,"p":{"lines":[11,12]},"v":"17.3 Collection的功能方法","c":[{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"add、addAll、contains、containsAll、isEmpty、iterator、remove、removeAll、retainAll、size、toArray。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"不包括随机访问所选择元素的get方法。如果想检查Collection中的元素，那就必须使用迭代器。"}]},{"t":"heading","d":1,"p":{"lines":[15,16]},"v":"17.4 可选操作","c":[{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"执行各种不同的添加和移除的方法在Collection接口中都是可选操作。这意味着实现类并不需要为这些方法提供功能定义。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"可选操作声明调用某些方法将不会执行有意义的行为，相反，它们会抛出异常。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"如果一个操作是可选的，编译器仍旧会严格要求只能调用该接口中的方法。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"将Collection当作参数接受的大部分方法只会从该Collection中读取，而Collection的读取方法都不是可选的。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"将方法定义为可选的，可以防止在设计中出现接口爆炸的情况。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"未获支持的操作只有在运行时才能探测到，因此它们表示动态类型检查。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"最常见的未获支持的操作，都来源于背后由固定尺寸的数据结构支持的容器。Arrays.asList、Collections类中unmodifiable的方法等。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"对于将容器作为参数接受的方法，其文档应该指定哪些可选方法必须实现。"}]},{"t":"heading","d":1,"p":{"lines":[26,27]},"v":"17.5 List的功能方法","c":[{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"大多数时候只是调用add添加对象，使用get一次取出一个元素，以及调用iterator获取用于该序列的Iterator。"}]},{"t":"heading","d":1,"p":{"lines":[29,30]},"v":"17.6 Set和存储顺序","c":[{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"Set与Collection有完全一样的接口。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"HashSet，为快速查找而设计的Set。元素必须定义hashCode。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"TreeSet，保持次序的Set，底层为树结构。元素必须实现Comparable接口。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"LinkedHashSet，具有HashSet的查询速度，且内部使用链表维护元素插入的顺序。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"应该在覆盖equals时，覆盖hashCode方法。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"SortedSet方法：first、last、subSet、headSet、tailSet。"}]},{"t":"heading","d":1,"p":{"lines":[37,38]},"v":"17.7 队列","c":[{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"除了并发应用，Queue在Java SE5中仅有的两个实现是LinkedList和PriorityQueue。它们的差异在于排序行为而不是性能。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"优先队列的排序顺序也是通过实现Comparable而进行控制的。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"双向队列，可以在任何一端添加或移除元素。"},{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"在LinkedList中包含支持双向队列的方法，但是Java标准类库中没有任何显式的用于双向队列的接口。"}]},{"t":"heading","d":1,"p":{"lines":[43,44]},"v":"17.8 理解Map","c":[{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"映射表的基本思想是它维护的是键-值关联，可以使用键来查找值。"},{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"标准的Java类库中包含了Map的几种基本实现，包括：HashMap、TreeMap、LinkedHashMap、WeakHashMap、ConcurrentHashMap、IdentityHashMap。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"它们的行为特性各不相同，表现在效率、键值对的保存及呈现次序、对象的保存周期、映射表如何在多线程中工作和判断键等价的策略等方面。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"hashCode是根类Object中的方法，因此所有Java对象都能产生散列码。"},{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"IdentityHashMap使用==代替equals，用来解决某种特定问题。"}]},{"t":"heading","d":1,"p":{"lines":[50,51]},"v":"17.9 散列与散列码","c":[{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"Object的hashCode方法，默认使用对象的地址计算散列码。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"正确的equals方法必须满足5个条件： 1. 自反性； 2. 对称性； 3. 传递性； 4. 一致性； 5. 对任何不是null的x，x.equals(null)一定返回false。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"默认的Object.equals只是比较对象的地址。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"如果要使用自己的类作为HashMap的键，必须同时重载hashCode和equals。"}]},{"t":"heading","d":1,"p":{"lines":[56,57]},"v":"17.10 选择接口的不同实现","c":[{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"实际上只有四种容器：Map、List、Set和Queue。但是每种接口都有不止一个实现版本。"},{"t":"list_item","d":3,"p":{"lines":[58,59]},"v":"性能表现。"},{"t":"list_item","d":3,"p":{"lines":[59,60]},"v":"HashMap的性能因子：容量、初始容量、尺寸、负载因子。"}]},{"t":"heading","d":1,"p":{"lines":[61,62]},"v":"17.11 实用方法","c":[{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"java.util.Collections类内部的静态方法。"},{"t":"list_item","d":3,"p":{"lines":[63,64]},"v":"unmodifiable、synchronized。"},{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"Java容器有一种保护机制，能够防止多个线程同时修改同一个容器的内容。-- 快速报错机制。ConcurrentModificationException。"}]},{"t":"heading","d":1,"p":{"lines":[66,67]},"v":"17.12 持有引用","c":[{"t":"list_item","d":3,"p":{"lines":[67,68]},"v":"java.lang.ref类库包含了一组类，这些类为垃圾回收提供了更大的灵活性。"},{"t":"list_item","d":3,"p":{"lines":[68,69]},"v":"有三个继承自抽象类Reference的类: SoftReference、WeakReference、PhantomReference。"},{"t":"list_item","d":3,"p":{"lines":[69,70]},"v":"容器类中有一种特殊的Map，即WeakHashMap，被用来保存WeakReference。"}]},{"t":"heading","d":1,"p":{"lines":[71,72]},"v":"17.13 Java1.0/1.1的容器","c":[{"t":"list_item","d":3,"p":{"lines":[72,73]},"v":"Vector、Enumeration、Hashtable、Stack、BitSet"}]},{"t":"heading","d":1,"p":{"lines":[74,75]},"v":"17.14 总结","c":[{"t":"list_item","d":3,"p":{"lines":[75,76]},"v":"容器类库对于面向对象语言来说是最重要的类库，"},{"t":"list_item","d":3,"p":{"lines":[76,77]},"v":"Java容器类库具有成熟的类库应该具有的完备的功能。"}]}],"p":{}}</svg>
+              </div>
+
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>编程思想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java I/O系统</title>
+    <url>/2021/12/27/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8818%EF%BC%89Java%20IO%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","p":{}}</svg>
+              </div>
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>编程思想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>枚举类型</title>
+    <url>/2021/12/27/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8819%EF%BC%89%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/</url>
     <content><![CDATA[<div class="markmap-container" style="height:undefined">
                 <svg class="markmap-svg">{"t":"root","d":0,"v":"","p":{}}</svg>
               </div>
@@ -5338,6 +5505,66 @@ layout为scaffolds中定义的模板，默认为post</li>
 <li>每一种语言，都有它流行的原因，也有它不得已而为之的地方。例如C++，它之所以流行是因为它完全向前兼容了C，而这也是它里面有些语法令人诟病的地方。Java同样也是。</li>
 </ul>
 
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>编程思想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>注解</title>
+    <url>/2021/12/28/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8820%EF%BC%89%E6%B3%A8%E8%A7%A3/</url>
+    <content><![CDATA[<div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","p":{}}</svg>
+              </div>
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>编程思想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>并发</title>
+    <url>/2021/12/28/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8821%EF%BC%89%E5%B9%B6%E5%8F%91/</url>
+    <content><![CDATA[<div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","p":{}}</svg>
+              </div>
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> ]]></content>
+      <categories>
+        <category>Java</category>
+        <category>编程思想</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>图形化用户界面</title>
+    <url>/2021/12/31/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8822%EF%BC%89%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2/</url>
+    <content><![CDATA[<div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","p":{}}</svg>
+              </div>
   <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
   <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>

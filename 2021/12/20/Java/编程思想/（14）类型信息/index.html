@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="类型信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类型信息">
+<meta property="og:url" content="http://example.com/2021/12/20/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8814%EF%BC%89%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/index.html">
+<meta property="og:site_name" content="乐然 LeRan">
+<meta property="og:description" content="类型信息">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-20T02:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-23T10:27:56.496Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="乐之者, 知其然">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/12/20/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8814%EF%BC%89%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>类型信息 | 乐然 LeRan</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">乐然 LeRan</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">乐之者知其所以然</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">133</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/20/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8814%EF%BC%89%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="知之者不如好之者，好之者不如乐之者。知其然，知其所以然。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乐然 LeRan">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          类型信息
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-20 10:00:00" itemprop="dateCreated datePublished" datetime="2021-12-20T10:00:00+08:00">2021-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-23 18:27:56" itemprop="dateModified" datetime="2021-12-23T18:27:56+08:00">2021-12-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" itemprop="url" rel="index"><span itemprop="name">编程思想</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">类型信息</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"14.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"运行时类型信息（Runtime Type Information, RTTI）使得可以在程序运行时发现和使用类型信息。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"从只能在编译期执行面向类型的操作的禁锢中解脱了出来。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"Java在运行时识别对象和类的信息： 1. “传统的”RTTI，假定在编译时已经知道了所有的类型； 2. 反射，在运行时发现和使用类的信息。"}]},{"t":"heading","d":1,"p":{"lines":[5,6]},"v":"14.1 为什么需要RTTI","c":[{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"在Java中，所有的类型转换都是在运行时进行正确性检查的。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"RTTI名字的含义：在运行时，识别一个对象的类型。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"RTTI类型转换，在编译时，由容器和Java泛型系统来强制确保；在运行时，由类型转换操作来确保。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"多态机制决定引用所指向的具体对象实际执行的代码。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"特殊的编程问题，需要知道某个泛化引用的确切类型，使用最简单的问题解决。 -- 使用RTTI。"}]},{"t":"heading","d":1,"p":{"lines":[12,13]},"v":"14.2 Class对象","c":[{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"要理解RTTI在Java中的工作原理，首先必须知道类型信息在运行时是如何表示的。 -- Class对象。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"Class对象包含了与类有关的信息。Class对象就是用来创建类的所有“常规”对象的。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"Java使用Class对象来执行其RTTI。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"类是程序的一部分，每个类都有一个Class对象。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"JVM使用类加载来生成这个类的对象。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"所有的类都是在对其第一次使用时，动态加载到JVM中的。当程序创建第一个对类的静态成员的引用时，就会加载这个类。 -- 构造器也是类的静态方法。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"Class对象仅在需要的时候才被加载，static初始化是在类加载时进行的。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"Class.forName 时取得Class对象的引用的一种方法。副作用：没有类还没有加载就加载它。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"只要想在运行时使用类型信息，就必须首先获得对恰当的Class对象的引用。 1. Class.forName；2. getClass； 3. 类字面常量 .class。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"Class方法：getName、getSimpleName、getCanonicalName、getInterfaces、getSuperclass、newInstance。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"类字面常量更简单、跟安全。因为在编译时就会受到检查。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"类字面常量可用于普通的类、接口、数组以及基本数据类型。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"类字面常量对于基本数据类型的包装器，有一个标准字段TYPE，是一个引用，指向对应的基本数据类型的Class对象。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"为了使用类而做的准备工作的步骤： 1. 加载； 2. 链接； 3. 初始化。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"类字面常量不会自动地初始化该Class对象，被延迟到对静态方法或者非常数静态域进行首次引用时才执行。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"Class引用表示的是所指向的对象的确切类型，而该对象是Class类的一个对象。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"Java SE5 通过对Class引用所指向的Class对象的类型进行限定，使得类型变得更具体了一些。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"通过使用泛型语法，可以让编译器强制执行额外的类型检查。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"使用通配符“?”在使用泛化的Class引用时放松限制。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"在Java SE5中，Class&lt;?&gt;由于平凡的Class，即便它们时等价的。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"使用通配符与extends关键字结合，创建一个范围。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"向Class引用添加泛型语法的原因仅仅时为了提供编译期类型检查。否则直到运行时才发现错误，显得很不方便。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"Java SE5添加了用于Class引用的转型语法cast。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"新的转型语法对于无法使用普通转型的情况显得非常有用。存储了Class引用，并希望以后通过这个引用来执行转型。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"Java SE5中另一个没有任何用处的新特性是asSubclass。将一个类对象转型为更加具体的类型。"}]},{"t":"heading","d":1,"p":{"lines":[42,43]},"v":"14.3 类型转换前先做检查","c":[{"t":"list_item","d":3,"p":{"lines":[43,44]},"v":"RTTI形式： 1. 传统的类型转换，由RTTI确保类型转换的正确性； 2. 代表对象的类型Class对象，获取运行时所需的信息； 3. instanceof。"},{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"对instanceof有比较严格的限制：只可将其与命名类型进行比较，而不能与Class对象作比较。"},{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"使用类字面常量代替Class.forName。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"Class.isInstance方法提供了一种动态地测试对象的途径。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"Class.isAssignableFrom。"}]},{"t":"heading","d":1,"p":{"lines":[49,50]},"v":"14.4 注册工厂","c":[{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"使用工厂方法设计模式，将对象的创建工作交给类自己完成。"}]},{"t":"heading","d":1,"p":{"lines":[52,53]},"v":"14.5 instanceof与Class的等价性","c":[{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"instanceof和isInstance保持了类型的概念。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"用==比较实际的Class对象，没有考虑继承。"}]},{"t":"heading","d":1,"p":{"lines":[56,57]},"v":"14.6 反射：运行时的类信息","c":[{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"在编译时，编译器必须知道所有要通过RTTI来处理的类。"},{"t":"list_item","d":3,"p":{"lines":[58,59]},"v":"RTTI限制：获取一个指向某个并不在程序空间中的对象的引用，在编译时程序无法获知这个对象所属的类。 1. 基于构件的编程； 2. GUI事件的构件。"},{"t":"list_item","d":3,"p":{"lines":[59,60]},"v":"反射提供了一种机制，用来检查可用的方法，并返回方法名。"},{"t":"list_item","d":3,"p":{"lines":[60,61]},"v":"运行时获取类的信息的另一个动机：希望提供在跨网络的远程平台上创建和运行对象的能力。 --RMI。"},{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"远程方法调用（RMI）允许一个Java程序员将对象分布到多态机器上。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"Class类与java.lang.reflect类库（包含Field、Method以及Constructor，都实现了Member接口）一起对反射的概念进行了支持。"},{"t":"list_item","d":3,"p":{"lines":[63,64]},"v":"匿名对象的类信息就能在运行时被完全确定下来，而在编译时不需要知道任何事情。"},{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"RTTI和反射之间的真正区别只在于，对RTTI来说，编译器在编译时打开和检查.class文件，而对于反射来说，是在运行时打开和检查.class文件。"},{"t":"list_item","d":3,"p":{"lines":[65,66]},"v":"反射在Java中是用来支持其他特性的，例如对象序列化和JavaBean。"},{"t":"list_item","d":3,"p":{"lines":[66,67]},"v":"反射机制提供了一种方法，能够编写可以自动展示完整接口的简单工具。 -- 类方法提取器。"}]},{"t":"heading","d":1,"p":{"lines":[68,69]},"v":"14.7 动态代理","c":[{"t":"list_item","d":3,"p":{"lines":[69,70]},"v":"代理是为了提供额外的或不同的操作，而插入的用来代替实际对象的对象。"},{"t":"list_item","d":3,"p":{"lines":[70,71]},"v":"Java的动态代理比代理的思想更向前迈进了一步，因为它可以动态地创建代理并动态地代理对所代理方法的调用。"},{"t":"list_item","d":3,"p":{"lines":[71,72]},"v":"在动态代理上所做的所有调用都会被重定向到单一的调用处理器上，它的工作是揭示调用的类型并确定相应的对策。"},{"t":"list_item","d":3,"p":{"lines":[72,73]},"v":"通过调用静态方法Proxy.newProxyInstance()可以创建动态代理。"}]},{"t":"heading","d":1,"p":{"lines":[74,75]},"v":"14.8 空对象","c":[{"t":"list_item","d":3,"p":{"lines":[75,76]},"v":"当使用内置的null表示缺少对象时，在每次使用引用时都必须测试其是否为null，这显得枯燥，而且势必产生相当乏味的代码。"},{"t":"list_item","d":3,"p":{"lines":[76,77]},"v":"null除了在试图用它执行任何操作来产生NPE之外，没有其它任何行为。"},{"t":"list_item","d":3,"p":{"lines":[77,78]},"v":"空对象可以接受传递给它的所代表对象的消息，但是将返回表示为实际上并不存在任何“真实”对象的值。"},{"t":"list_item","d":3,"p":{"lines":[78,79]},"v":"空对象是看作是策略模式的特例。"},{"t":"list_item","d":3,"p":{"lines":[79,80]},"v":"到处使用空对象没有任何意义。"},{"t":"list_item","d":3,"p":{"lines":[80,81]},"v":"空对象最有用之处在于它更靠近数据，因为对象表示的是问题空间内的实体。"},{"t":"list_item","d":3,"p":{"lines":[81,82]},"v":"即使空对象可以相应实际对象可以相应的所有消息，仍需要某种方式去测试其是否为空。 -- 创建标记接口，使用内置工具instanceof。"},{"t":"list_item","d":3,"p":{"lines":[82,83]},"v":"空对象都是单例。使用静态内部类实现，添加static final域。"},{"t":"list_item","d":3,"p":{"lines":[83,84]},"v":"在某些地方仍必须测试空对象，与检查是否为null没有差异，但在其它地方不必执行额外测试，而可以直接假设所有的对象都是有效的。"},{"t":"list_item","d":3,"p":{"lines":[84,85]},"v":"多种不同类型的空对象。 -- 动态代理。"},{"t":"list_item","d":3,"p":{"lines":[85,86]},"v":"空对象的逻辑变体是模拟对象和桩。只是假扮可以传递实际信息的存活对象。"}]},{"t":"heading","d":1,"p":{"lines":[87,88]},"v":"14.9 接口与类型信息","c":[{"t":"list_item","d":3,"p":{"lines":[88,89]},"v":"interface关键字的一种重要目标是允许程序员隔离构件，进而降低耦合性。但是通过类型信息，这种耦合性还是会传播出去。"},{"t":"list_item","d":3,"p":{"lines":[89,90]},"v":"解决方案：1. 直接声明，自己负责； 2. 对实现使用包访问权限（反射可访问，没有任何方式可以阻止。final域不能修改）。"},{"t":"list_item","d":3,"p":{"lines":[90,91]},"v":"所有违反访问权限的操作并非世上最糟之事。通常反射带来的好处是不可否认的。"}]},{"t":"heading","d":1,"p":{"lines":[92,93]},"v":"14.10 总结","c":[{"t":"list_item","d":3,"p":{"lines":[93,94]},"v":"使用RTTI在代码开发和维护过程中损失了多态机制的重要价值。"},{"t":"list_item","d":3,"p":{"lines":[94,95]},"v":"面向编程语言的目的是凡是可以使用的地方都使用多态机制，只在必需的时候使用RTTI。"},{"t":"list_item","d":3,"p":{"lines":[95,96]},"v":"RTTI与多态的冲突。"},{"t":"list_item","d":3,"p":{"lines":[96,97]},"v":"反射允许更加动态的编程风格，开创了编程的新世界。"},{"t":"list_item","d":3,"p":{"lines":[97,98]},"v":"一致的错误报告模型的存在使得能够通过使用反射编写动态代码。"}]}],"p":{}}</svg>
+              </div>
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> 
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/16/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8813%EF%BC%89%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="prev" title="字符串">
+      <i class="fa fa-chevron-left"></i> 字符串
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/20/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8815%EF%BC%89%E6%B3%9B%E5%9E%8B/" rel="next" title="泛型">
+      泛型 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">知之者不如好之者，好之者不如乐之者。知其然，知其所以然。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
