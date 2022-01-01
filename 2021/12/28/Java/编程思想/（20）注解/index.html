@@ -28,7 +28,7 @@
 <meta property="og:description" content="注解">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-28T02:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-26T13:07:28.575Z">
+<meta property="article:modified_time" content="2021-12-29T13:07:06.232Z">
 <meta property="article:author" content="Jade">
 <meta property="article:tag" content="乐之者, 知其然">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-26 21:07:28" itemprop="dateModified" datetime="2021-12-26T21:07:28+08:00">2021-12-26</time>
+                <time title="修改时间：2021-12-29 21:07:06" itemprop="dateModified" datetime="2021-12-29T21:07:06+08:00">2021-12-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
 
       
         <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","p":{}}</svg>
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"20.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"注解为在代码中添加信息提供了一种形式化的方法，使得可以在稍后某个时刻非常方便地使用这些数据。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"注解在一定程度上是在把元数据与源代码文件结合在一起，而不是保存在外部文档中这一大的趋势之下所催生的。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"注解是众多引入到Java SE5中的重要的语言变化之一。"},{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"注解可以提供用来完整地描述程序所需的信息，而这些信息是无法用Java来表达的。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"注解的语法比较简单，除了@符号的使用之外，基本与Java固有的语法一致。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"Java SE5内置了三种，定义在java.lang中的注解：@Override、@Deprecated、@SuppressWarnings。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"Java另外提供了四种注解，专门负责新注解的创建。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"注解的出现，可以替代某些现存的系统。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"注解是真正的语言级的概念，一旦构造出来，就享有编译期的类型检查保护。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"注解是在实际的源代码级别保存所有的信息，而不是某种注释性的文字，这使得代码更整洁，且便于维护。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"通过使用扩展的annotation API，或外部的字节码工具类库，拥有对源代码以及字节码强大的检查与操作能力。"}]},{"t":"heading","d":1,"p":{"lines":[13,14]},"v":"20.1 基本语法","c":[{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"被注解的方法与其它的方法没有区别。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"从语法的角度来看，注解的使用方式几乎与修饰符的使用一摸一样。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"注解的定义看起来很像接口的定义。事实上，与其他任何Java接口一样，注解也将会编译成class文件。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"在注解中，一般都会包含一些元素以表示某些值。没有元素的注解称为标记注解。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"元注解负责注解其他的注解：@Target、@Retention、@Documented、@Inherited。"}]},{"t":"heading","d":1,"p":{"lines":[20,21]},"v":"20.2 编写注解处理器","c":[{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"使用注解的过程中，很重要的一个部分就是创建与使用注解处理器（用来读取注解的工具）。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"Java SE5扩展了反射机制的API，以帮助构造注解处理器。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"同时，还提供了一个外部工具apt帮助解析带有注解的Java源代码。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"注解元素可用的类型：基本类型、String、Class、enum、Annotation、以上类型的数组。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"注解元素不能由不确定的值。对于非基本类型的元素，不能以null作为其值。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"使用注解将信息保存在JavaBean源文件中。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"快捷方式。名为value的元素。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"可以使用多种不同的方式来定义自己的注解。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"编译器允许对一个目标同时使用多个注解。同一个注解不能重复使用。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"不能使用关键字extends来继承某个@interface。"}]},{"t":"heading","d":1,"p":{"lines":[36,37]},"v":"20.3 使用apt处理注解","c":[{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"注解处理工具apt是Sun为了帮助注解的处理过程而提供的工具。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"apt被设计为操作Java源文件，而不是编译后的类。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"自定义的每一个注解都需要自己的处理器，而apt工具能够很容易地将多个注解处理器结合在一起。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"通过使用AnnotationProcessorFactory，apt能够为每一个它发现的注解生成一个正确的注解处理器。"}]},{"t":"heading","d":1,"p":{"lines":[42,43]},"v":"20.4 将观察者模式用于apt","c":[{"t":"list_item","d":3,"p":{"lines":[43,44]},"v":"一个访问者会遍历某个数据结构或一个对象的集合，对其中的每一个对象执行一个操作。"}]},{"t":"heading","d":1,"p":{"lines":[45,46]},"v":"20.5 基于注解的单元测试","c":[{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"单元测试是对类中的每个方法提供一个或多个测试的一种实践，其目的是为了有规律地测试一个类的各个部分是都具备正确的行为。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"在Java中，最著名的单元测试工具是JUnit。"},{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"有了注解，可以直接在要验证的类里面编写测试，这将大大减少单元测试所需的时间和麻烦之处。"},{"t":"list_item","d":3,"p":{"lines":[49,50]},"v":"单元测试的方法没有参数，且返回值是boolean或void。"},{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"编写单元测试时，唯一需要做的就是决定测试是成功还是失败。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"要生成一个非嵌入式的测试，最简单的办法就是继承。还可以使用组合的方式创建非嵌入式的测试。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"Java的断言机制一般要求在命令行中加上-ea标志。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"如果创建对象的类没有默认构造器， 或者新对象需要复杂的构造过程，可以创建一个static方法专门负责构造对象。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"用注解标记的域表示只在单元测试中使用。"},{"t":"list_item","d":3,"p":{"lines":[55,56]},"v":"也可以标记只在测试中使用的方法，而本身并不是测试方法。"},{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"测试必须针对某个特定类型的参数或参数集才能进行。 -- 让测试类继承自泛型类的一个特定版本即可。"},{"t":"list_item","d":3,"p":{"lines":[59,60]},"v":"用套件来组织测试。"},{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"开源的Java assist工具类库将字节码工程带入了一个可行的领域。 -- 可以根据注解删除所有的单元测试。"}]},{"t":"heading","d":1,"p":{"lines":[63,64]},"v":"20.6 总结","c":[{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"注解是Java引入的一项非常受欢迎的补充。"}]}],"p":{}}</svg>
               </div>
   <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
   <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
@@ -400,7 +400,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

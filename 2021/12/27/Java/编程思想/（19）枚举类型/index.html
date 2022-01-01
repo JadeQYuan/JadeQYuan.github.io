@@ -28,7 +28,7 @@
 <meta property="og:description" content="枚举类型">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-27T11:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-26T13:07:24.497Z">
+<meta property="article:modified_time" content="2021-12-29T09:12:40.273Z">
 <meta property="article:author" content="Jade">
 <meta property="article:tag" content="乐之者, 知其然">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-26 21:07:24" itemprop="dateModified" datetime="2021-12-26T21:07:24+08:00">2021-12-26</time>
+                <time title="修改时间：2021-12-29 17:12:40" itemprop="dateModified" datetime="2021-12-29T17:12:40+08:00">2021-12-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
 
       
         <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","p":{}}</svg>
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"19.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"关键字enum可以将一组具名的值的有限集合创建为一种新的类型，而这些具名的值可以作为常规的程序组件使用。"}]},{"t":"heading","d":1,"p":{"lines":[3,4]},"v":"19.1 基本enum特性","c":[{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"values方法返回enum实例的数组，而且该数组中的元素严格保持其在enum中声明时的顺序。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"创建enum时，编译器会生成一个相关的类，这个类继承自java.lang.Enum。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"ordinal返回一个int值，是每个enum实例在声明时的次序，从0开始。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"编译器自动提供equals和hashCode方法。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"Enum类实现了Comparable接口，所以具有compareTo方法。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"Enum类实现了Serializable接口。"}]},{"t":"heading","d":1,"p":{"lines":[11,12]},"v":"19.2 向enum中添加新方法","c":[{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"除了不能继承自一个enum之外，可以将enum看作一个常规的类。"}]},{"t":"heading","d":1,"p":{"lines":[14,15]},"v":"19.3 switch语句中的enum","c":[{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"在switch中使用enum，是enum提供的一项非常便利的功能。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"枚举实例天生就具备整数值的次序，并且可以通过ordinal方法取得其次序。"}]},{"t":"heading","d":1,"p":{"lines":[18,19]},"v":"19.4 values的神秘之处","c":[{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"Enum类并没有values方法。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"values是由编译器添加的static方法。还添加了valueOf方法。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"可以通过Class对象获取所有enum实例。getEnumConstants。"}]},{"t":"heading","d":1,"p":{"lines":[23,24]},"v":"19.5 实现，而非继承","c":[{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"enum继承自Enum列，不能再继承其他类。可以同时实现一个或多个接口。"}]},{"t":"heading","d":1,"p":{"lines":[26,27]},"v":"19.6 随机选取","c":[{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"虽然Enum只是一个相当短小的类，但是它能消除很多重复的代码。"}]},{"t":"heading","d":1,"p":{"lines":[29,30]},"v":"19.7 实用接口组织枚举","c":[{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"在一个接口的内部，创建实现该接口的枚举，以此将元素进行分组，可以达到将枚举元素分类组织的目的。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"对于enum而言，实现接口是使其子类化的唯一办法。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"当需要与一大堆类型打交道时，接口就不如enum好用了。 -- 枚举的枚举。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"一种更简洁的管理枚举的办法：将一个enum嵌套在另一个enum内。"}]},{"t":"heading","d":1,"p":{"lines":[35,36]},"v":"19.8 使用EnumSet替代标志","c":[{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"Java SE5引入EnumSet，为了通过enum创建一种替代品，以替代传统的基于int的位标志。"},{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"EnumSet的优点是，在说明一个二进制位是否存在时，具有更好的表达能力，并且无需担心性能。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"EnumSet中的元素必须来自一个enum。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"EnumSet的基础时long，一个long值有64位，而一个enum实例只需一位bit表示其是否存在。"}]},{"t":"heading","d":1,"p":{"lines":[41,42]},"v":"19.9 使用EnumMap","c":[{"t":"list_item","d":3,"p":{"lines":[42,43]},"v":"EnumMap是一种特殊的Map，它要求其中的键必须来自一个enum。"},{"t":"list_item","d":3,"p":{"lines":[43,44]},"v":"EnumMap内部可由数组实现。"},{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"命令模式。首先需要一个只有单一方法的接口，然后从该接口实现具有各自不同的行为的多个子类。"},{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"与EnumSet一样，enum实例定义时的次序决定了其在EnumMap中的顺序。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"EnumMap允许改变值对象。"}]},{"t":"heading","d":1,"p":{"lines":[48,49]},"v":"19.10 常量相关的方法","c":[{"t":"list_item","d":3,"p":{"lines":[49,50]},"v":"Java的enum允许为enum实例编写方法，从而为每个enum实例赋予各自不同的行为。"},{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"常量相关的方法。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"表驱动的代码。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"每个enum元素都是一个其类型的static final实例。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"由于它们时static实例，无法访问外部类的非static元素或方法，所以对于内部的enum的实例而言，其行为与一般的内部类并不相同。"},{"t":"list_item","d":3,"p":{"lines":[55,56]},"v":"通过常量相关的方法，可以很容易实现一个简单的责任链。"},{"t":"list_item","d":3,"p":{"lines":[56,57]},"v":"枚举类型非常适合用来创建状态机。"}]},{"t":"heading","d":1,"p":{"lines":[58,59]},"v":"19.11 多路分发","c":[{"t":"list_item","d":3,"p":{"lines":[59,60]},"v":"Java只支持单路分发。"},{"t":"list_item","d":3,"p":{"lines":[60,61]},"v":"如果要执行的操作包含了不止一个类型未知的对象时，那么Java的动态绑定机制只能处理其中一个的类型。"},{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"所以必须自己来判定其他的类型，从而实现自己的动态绑定。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"要利用多路分发，必须为每一个类型提供一个实际的方法调用。"},{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"使用enum分发。一种方式是使用构造器来初始化每个enum实例，并以一组结果作为参数。形成类似查询表的结构。"},{"t":"list_item","d":3,"p":{"lines":[65,66]},"v":"使用常量相关的方法。将enum用在switch语句中。"},{"t":"list_item","d":3,"p":{"lines":[66,67]},"v":"使用EnumMap分发。使用EnumMap能够实现两路分发。"},{"t":"list_item","d":3,"p":{"lines":[67,68]},"v":"使用二维数组。进一步简化实现两路分发的解决方案。"}]},{"t":"heading","d":1,"p":{"lines":[69,70]},"v":"19.12 总结","c":[{"t":"list_item","d":3,"p":{"lines":[70,71]},"v":"可以将enum与Java语言其他功能结合使用，例如多态、泛型和反射。"}]}],"p":{}}</svg>
               </div>
   <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
   <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
@@ -400,7 +400,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
