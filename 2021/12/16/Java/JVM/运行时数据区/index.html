@@ -28,7 +28,7 @@
 <meta property="og:description" content="运行时数据区">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-16T09:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-17T11:27:05.578Z">
+<meta property="article:modified_time" content="2022-01-06T14:28:34.808Z">
 <meta property="article:author" content="Jade">
 <meta property="article:tag" content="乐之者, 知其然">
 <meta name="twitter:card" content="summary">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">133</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">147</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-17 19:27:05" itemprop="dateModified" datetime="2021-12-17T19:27:05+08:00">2021-12-17</time>
+                <time title="修改时间：2022-01-06 22:28:34" itemprop="dateModified" datetime="2022-01-06T22:28:34+08:00">2022-01-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,7 +257,7 @@
 <h3 id="局部变量表"><a href="#局部变量表" class="headerlink" title="局部变量表"></a>局部变量表</h3><p>编译时确定大小。<br>非static方法第一个参数为调用对象。</p>
 <h3 id="操作数栈"><a href="#操作数栈" class="headerlink" title="操作数栈"></a>操作数栈</h3><p>用来准备调用方法参数以及接受方法的返回结果。 ？？？<br>用来处理操作数操作符 ？？？</p>
 <h3 id="动态链接"><a href="#动态链接" class="headerlink" title="动态链接"></a>动态链接</h3><p>用来完成运行时绑定操作。 – 实现？？？</p>
-<h2 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h2><p>与虚拟机栈功能一致，但针对的时native方法。<br>在HotSpot虚拟机中，虚拟机栈与本地方法栈合二为一。</p>
+<h3 id="方法出口"><a href="#方法出口" class="headerlink" title="方法出口"></a>方法出口</h3><h2 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h2><p>与虚拟机栈功能一致，但针对的时native方法。<br>在HotSpot虚拟机中，虚拟机栈与本地方法栈合二为一。</p>
 <h2 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h2><p>存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码。</p>
 <h3 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h3><p>字面量等等。<br>永久代。<br>属于类信息的一部分，还是单独保存？？？</p>
 <h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>内存最大的区域，垃圾回收器主要作用的地方。<br>分为新生代（Eden + From Survivor0 + To Survivor1）、老年代。</p>
@@ -284,8 +284,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82/" rel="prev" title="设计模式-外观">
-      <i class="fa fa-chevron-left"></i> 设计模式-外观
+    <a href="/2021/12/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B-%E5%A4%96%E8%A7%82/" rel="prev" title="设计模式-结构型-外观（Facade）">
+      <i class="fa fa-chevron-left"></i> 设计模式-结构型-外观（Facade）
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/12/16/Java/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" rel="next" title="类加载">
@@ -349,7 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA"><span class="nav-number">1.</span> <span class="nav-text">运行时数据区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">程序寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text">虚拟机栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E8%A1%A8"><span class="nav-number">3.1.</span> <span class="nav-text">局部变量表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%A0%88"><span class="nav-number">3.2.</span> <span class="nav-text">操作数栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">3.3.</span> <span class="nav-text">动态链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%96%B9%E6%B3%95%E6%A0%88"><span class="nav-number">4.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%8C%BA"><span class="nav-number">5.</span> <span class="nav-text">方法区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-number">5.1.</span> <span class="nav-text">运行时常量池</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86"><span class="nav-number">6.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM%E5%B8%B8%E8%A7%81%E5%8F%82%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">JVM常见参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK-8"><span class="nav-number">7.</span> <span class="nav-text">JDK 8</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA"><span class="nav-number">1.</span> <span class="nav-text">运行时数据区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">程序寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88"><span class="nav-number">3.</span> <span class="nav-text">虚拟机栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E8%A1%A8"><span class="nav-number">3.1.</span> <span class="nav-text">局部变量表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%A0%88"><span class="nav-number">3.2.</span> <span class="nav-text">操作数栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-number">3.3.</span> <span class="nav-text">动态链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%87%BA%E5%8F%A3"><span class="nav-number">3.4.</span> <span class="nav-text">方法出口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%96%B9%E6%B3%95%E6%A0%88"><span class="nav-number">4.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%8C%BA"><span class="nav-number">5.</span> <span class="nav-text">方法区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-number">5.1.</span> <span class="nav-text">运行时常量池</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A0%86"><span class="nav-number">6.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM%E5%B8%B8%E8%A7%81%E5%8F%82%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">JVM常见参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK-8"><span class="nav-number">7.</span> <span class="nav-text">JDK 8</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -365,14 +365,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-count">147</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>

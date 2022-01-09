@@ -28,7 +28,7 @@
 <meta property="og:description" content="maven">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-14T06:11:00.000Z">
-<meta property="article:modified_time" content="2021-11-06T07:01:00.057Z">
+<meta property="article:modified_time" content="2022-01-06T09:09:20.139Z">
 <meta property="article:author" content="Jade">
 <meta property="article:tag" content="乐之者, 知其然">
 <meta name="twitter:card" content="summary">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">133</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">147</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-06 15:01:00" itemprop="dateModified" datetime="2021-11-06T15:01:00+08:00">2021-11-06</time>
+                <time title="修改时间：2022-01-06 17:09:20" itemprop="dateModified" datetime="2022-01-06T17:09:20+08:00">2022-01-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,9 +247,75 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h1><ul>
-<li>relativePath / pom<br>  relativePath 默认情况下，从当前pom.xml的父级目录查找， 为空值时从仓库查找<br>  pom 聚合工程，install时不会jar包，其它文件都会生成</li>
+        <h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><p>版本管理工具。</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>maven有三套相互独立的声明周期。<br>不论要执行生命周期的哪一个阶段，都是从这个生命周期的开始执行。</p>
+<h3 id="Clean-Lifecycle"><a href="#Clean-Lifecycle" class="headerlink" title="Clean Lifecycle"></a>Clean Lifecycle</h3><ul>
+<li>pre-clean</li>
+<li>clean</li>
+<li>post-clean</li>
 </ul>
+<h3 id="Default-Lifecycle"><a href="#Default-Lifecycle" class="headerlink" title="Default Lifecycle"></a>Default Lifecycle</h3><ul>
+<li>validate</li>
+<li>generate-sources</li>
+<li>process-sources</li>
+<li>generate-resources</li>
+<li>process-resources</li>
+<li>compile</li>
+<li>process-classed</li>
+<li>generate-test-sources</li>
+<li>process-test-sources</li>
+<li>generate-test-resources</li>
+<li>process-test-resources</li>
+<li>test-compile</li>
+<li>process-test-classed</li>
+<li>test</li>
+<li>prepare-package</li>
+<li>package</li>
+<li>pre-integration-test</li>
+<li>integration-test</li>
+<li>verify</li>
+<li>install</li>
+<li>deploy</li>
+</ul>
+<h3 id="Site-Lifecycle"><a href="#Site-Lifecycle" class="headerlink" title="Site Lifecycle"></a>Site Lifecycle</h3><ul>
+<li>pre-site</li>
+<li>site</li>
+<li>post-site</li>
+<li>site-deploy</li>
+</ul>
+<h2 id="pom配置"><a href="#pom配置" class="headerlink" title="pom配置"></a>pom配置</h2><p>pom（project object model）文件是maven的配置文件。设置所有构建的配置。<br>project标签是根标签。<br>modelVersion标签声明pom文件project描述的版本。</p>
+<h2 id="pom配置：描述"><a href="#pom配置：描述" class="headerlink" title="pom配置：描述"></a>pom配置：描述</h2><p>name、url、description 用于生成maven文档（mvn site）。</p>
+<h2 id="pom配置：常用property"><a href="#pom配置：常用property" class="headerlink" title="pom配置：常用property"></a>pom配置：常用property</h2><h3 id="maven-compile-source-target-release"><a href="#maven-compile-source-target-release" class="headerlink" title="maven.compile.source/target/release"></a>maven.compile.source/target/release</h3><p>对应javac指令的-source、-target参数。</p>
+<h3 id="project-build-sourceEncoding-project-reporting-outputEncoding"><a href="#project-build-sourceEncoding-project-reporting-outputEncoding" class="headerlink" title="project.build.sourceEncoding/project.reporting.outputEncoding"></a>project.build.sourceEncoding/project.reporting.outputEncoding</h3><h2 id="pom配置：坐标"><a href="#pom配置：坐标" class="headerlink" title="pom配置：坐标"></a>pom配置：坐标</h2><p>groupId、artifactId、version。<br>仓库jar包路径：[groupId]/[artifactId]/[version]/[artifactId]-[version].jar。</p>
+<h2 id="pom配置：继承与子模块"><a href="#pom配置：继承与子模块" class="headerlink" title="pom配置：继承与子模块"></a>pom配置：继承与子模块</h2><h3 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h3><p>在父模块打包时可将所有子模块进行打包，如果没有子模块，只打包当前目录。</p>
+<h3 id="parent"><a href="#parent" class="headerlink" title="parent"></a>parent</h3><p>实现继承，可以继承父模块properties、dependencies、dependencyManagement、…</p>
+<h4 id="relativePath"><a href="#relativePath" class="headerlink" title="relativePath"></a>relativePath</h4><p>指定查找父模块的路径。<br>默认情况下，从当前pom.xml的上级目录查找， 为空值时从仓库查找。</p>
+<h3 id="modules-与-parent"><a href="#modules-与-parent" class="headerlink" title="modules 与 parent"></a>modules 与 parent</h3><p>modules的功能是打包，parent的功能是继承。两者没有关系。即modules的子模块的parent可以是任意模块。</p>
+<h2 id="pom配置：依赖与依赖声明"><a href="#pom配置：依赖与依赖声明" class="headerlink" title="pom配置：依赖与依赖声明"></a>pom配置：依赖与依赖声明</h2><h3 id="dependencyManagement与dependency"><a href="#dependencyManagement与dependency" class="headerlink" title="dependencyManagement与dependency"></a>dependencyManagement与dependency</h3><p>dependencyManagement 只是管理版本，并不下载依赖。<br>dependency 添加依赖。</p>
+<h4 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h4><ul>
+<li>compile 默认值</li>
+<li>provided 只在编译器提供，打包的时候过滤，</li>
+<li>runtime 强制面向接口编程，不能引入该包的类。</li>
+<li>test 编译器与测试阶段，打包的时候过滤。</li>
+<li>import 只在dependencyManagement标签且type=pom时有用，会用目标pom的dependencyManagement里的内容替换该依赖。</li>
+<li>system 类似provided，但需要显式提供jar路径（systemPath标签），不会在repository中查找。</li>
+</ul>
+<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>pom，表示全部引入其它packing类型为pom的内容。与scope=import配合使用。</p>
+<h2 id="pom配置：依赖传递"><a href="#pom配置：依赖传递" class="headerlink" title="pom配置：依赖传递"></a>pom配置：依赖传递</h2><ul>
+<li>非compile范围的依赖不能传递。</li>
+<li>路径最短者优先原则。</li>
+<li>路径相同声明优先原则。</li>
+<li>optional=true显式声明不传递依赖。</li>
+<li>exclusions显式声明过滤依赖。</li>
+</ul>
+<h2 id="pom配置：打包方式"><a href="#pom配置：打包方式" class="headerlink" title="pom配置：打包方式"></a>pom配置：打包方式</h2><p>packing 默认jar，可选jar、pom、war。</p>
+<ul>
+<li>jar 调用或者作为服务</li>
+<li>pom 一般为父子继承使用</li>
+<li>war web项目</li>
+</ul>
+<h2 id="pom配置：不同环境"><a href="#pom配置：不同环境" class="headerlink" title="pom配置：不同环境"></a>pom配置：不同环境</h2><p>profile标签。</p>
+<h2 id="pom配置：plugins"><a href="#pom配置：plugins" class="headerlink" title="pom配置：plugins"></a>pom配置：plugins</h2><p>maven是插件驱动的工具。插件是核心。</p>
 
     </div>
 
@@ -331,7 +397,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#maven"><span class="nav-number">1.</span> <span class="nav-text">maven</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#maven"><span class="nav-number">1.</span> <span class="nav-text">maven</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clean-Lifecycle"><span class="nav-number">2.1.</span> <span class="nav-text">Clean Lifecycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-Lifecycle"><span class="nav-number">2.2.</span> <span class="nav-text">Default Lifecycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Site-Lifecycle"><span class="nav-number">2.3.</span> <span class="nav-text">Site Lifecycle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">pom配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9A%E6%8F%8F%E8%BF%B0"><span class="nav-number">4.</span> <span class="nav-text">pom配置：描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9A%E5%B8%B8%E7%94%A8property"><span class="nav-number">5.</span> <span class="nav-text">pom配置：常用property</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven-compile-source-target-release"><span class="nav-number">5.1.</span> <span class="nav-text">maven.compile.source&#x2F;target&#x2F;release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#project-build-sourceEncoding-project-reporting-outputEncoding"><span class="nav-number">5.2.</span> <span class="nav-text">project.build.sourceEncoding&#x2F;project.reporting.outputEncoding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9A%E5%9D%90%E6%A0%87"><span class="nav-number">6.</span> <span class="nav-text">pom配置：坐标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9A%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="nav-number">7.</span> <span class="nav-text">pom配置：继承与子模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#modules"><span class="nav-number">7.1.</span> <span class="nav-text">modules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parent"><span class="nav-number">7.2.</span> <span class="nav-text">parent</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#relativePath"><span class="nav-number">7.2.1.</span> <span class="nav-text">relativePath</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modules-%E4%B8%8E-parent"><span class="nav-number">7.3.</span> <span class="nav-text">modules 与 parent</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9A%E4%BE%9D%E8%B5%96%E4%B8%8E%E4%BE%9D%E8%B5%96%E5%A3%B0%E6%98%8E"><span class="nav-number">8.</span> <span class="nav-text">pom配置：依赖与依赖声明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dependencyManagement%E4%B8%8Edependency"><span class="nav-number">8.1.</span> <span class="nav-text">dependencyManagement与dependency</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scope"><span class="nav-number">8.1.1.</span> <span class="nav-text">scope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#type"><span class="nav-number">8.1.2.</span> <span class="nav-text">type</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9A%E4%BE%9D%E8%B5%96%E4%BC%A0%E9%80%92"><span class="nav-number">9.</span> <span class="nav-text">pom配置：依赖传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9A%E6%89%93%E5%8C%85%E6%96%B9%E5%BC%8F"><span class="nav-number">10.</span> <span class="nav-text">pom配置：打包方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9A%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">11.</span> <span class="nav-text">pom配置：不同环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pom%E9%85%8D%E7%BD%AE%EF%BC%9Aplugins"><span class="nav-number">12.</span> <span class="nav-text">pom配置：plugins</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -347,14 +413,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">133</span>
+          <span class="site-state-item-count">147</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
