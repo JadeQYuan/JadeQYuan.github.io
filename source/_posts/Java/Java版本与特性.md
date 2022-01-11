@@ -36,10 +36,22 @@ Java是由Sun Microsystems公司（简称Sun公司）于1995年5月推出的Java
 - 2020-11-22，Jakarta EE9发布。
 - 2021-9-17，Java SE 17发布，从此免费提供，LTS（2029-9）。
 
+## Open JDK
+Sun在JavaOne 2006中宣布将成为开源软件，并建立了Open JDK社区。
+2006-11-13，Sun根据GNU通用公共许可证将Java HotSpot虚拟机和编译器作为免费软件发布。
+2007-5-8，Sun在GPL下发布了Java类库的完整源代码。
+
+OpenJDK是Java 平台标准版 (Java SE) 的免费开源实现。
+OpenJDK是由OpenJDK Community 、Oracle、IBM 领导，连同 Alibaba，Amazon，Ampere，Azul，BellSoft，Canonical，Fujitsu，Google，Huawei，Intel，Java Community，JetBrains，London Java Community，Microsoft，Red Hat，SAP，SouJava，SUSE，Tencent，Twitter ，VMWare等第三方共同开发、维护的 JavaSE开源参考实现。
+
+自 Java SE7开始往后的版本，所有的JDK都源自于Open JDK。
+OpenJDK Community领导的OpenJDK Project是Java SE的官方参考实现，只产生OpenJDK源码，并不提供可以直接使用的二进制文件格式。现在能直接使用的二进制文件格式的 JDK都是被编译之后的程序。
+OpenJDK官网指向的可下载二进制文件的地址，实际是 Oracle’s OpenJDK builds下载的地址。
+
 ## Java/JDK 新特性
 ### Java SE 11
 - String API isBlank、strip、stripTrailing、stripLeading、repeat、lines.count
-- Optinal API isEmpty...
+- Optional API isEmpty...
 - 局部变量类型推断加强 var上可以加注解
 - HttpClient
 - 垃圾回收ZGC
