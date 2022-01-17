@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="异常、断言、日志和调试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异常、断言、日志和调试">
+<meta property="og:url" content="http://example.com/2022/01/13/Java/%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7%E2%85%A0/%EF%BC%8811%EF%BC%89%E5%BC%82%E5%B8%B8%E3%80%81%E6%96%AD%E8%A8%80%E3%80%81%E6%97%A5%E5%BF%97%E5%92%8C%E8%B0%83%E8%AF%95/index.html">
+<meta property="og:site_name" content="乐然 LeRan">
+<meta property="og:description" content="异常、断言、日志和调试">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-13T09:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-13T12:58:06.758Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="乐之者, 知其然">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/01/13/Java/%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7%E2%85%A0/%EF%BC%8811%EF%BC%89%E5%BC%82%E5%B8%B8%E3%80%81%E6%96%AD%E8%A8%80%E3%80%81%E6%97%A5%E5%BF%97%E5%92%8C%E8%B0%83%E8%AF%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>异常、断言、日志和调试 | 乐然 LeRan</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">乐然 LeRan</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">乐之者知其所以然</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">171</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/13/Java/%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7%E2%85%A0/%EF%BC%8811%EF%BC%89%E5%BC%82%E5%B8%B8%E3%80%81%E6%96%AD%E8%A8%80%E3%80%81%E6%97%A5%E5%BF%97%E5%92%8C%E8%B0%83%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="知之者不如好之者，好之者不如乐之者。知其然，知其所以然。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乐然 LeRan">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          异常、断言、日志和调试
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-13 17:00:00 / 修改时间：20:58:06" itemprop="dateCreated datePublished" datetime="2022-01-13T17:00:00+08:00">2022-01-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7I/" itemprop="url" rel="index"><span itemprop="name">核心技术卷I</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">异常、断言、日志和调试</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="markmap-container" style="height:undefined">
+                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"11.1 处理错误","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"对于异常情况，Java使用一种称为异常处理的错误捕获机制处理。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"如果由于出现错误而使得某些操作没有完成，程序应该 返回到一种安全状态，并能够让用户执行一些其他的命令； 或者允许用户保存所有的操作的结果，并以适当的方式终止程序。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"在Java中，如果某个方法不能够采用正常的途径完整它的任务，就可以通过另外一个路径退出方法。throw。"},{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"调用这个方法的代码也将无法继续执行，异常处理机制开始搜索能够处理这种异常状况的异常处理器。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"在Java程序设计语言中，异常对象都是派生于Throwable类的一个实例。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"Throwable =&gt; Error、Exception。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"Error类层次结构描述了Java运行时系统的内部错误和资源耗尽错误。应用程序不应该抛出这种类型的对象。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"Exception =&gt; RuntimeException、其它异常。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"Java语言规范将派生于Error类或RuntimeException类的所有异常称为未检查异常，所有其它的异常称为已检查异常。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"编译器将检查是否为所有的已检查异常提供了异常处理器。"},{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"对于那些可能被他人使用的Java方法，应该根据异常规范，在方法的首部声明这个方法可能抛出的异常。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"子类方法中声明的已检查异常不能比超类方法中声明的异常更通用。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"如果超类方法没有抛出任何已检查异常，子类也不能抛出任何已检查异常。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"抛出异常：throw。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"创建异常类：定义一个派生于Exception的类，或者派生于Exception子类的类。"}]},{"t":"heading","d":1,"p":{"lines":[18,19]},"v":"11.2 捕获异常","c":[{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"要想捕获一个异常，必须设置try/catch语句块。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"如果在try语句块中的任何代码抛出了一个在catch子句中说明的异常类，那么程序将跳过try语句块的其余代码，将执行catch子句中的处理器代码。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"如果在try语句块中的代码没有抛出异常，那么程序将跳过catch子句。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"如果方法中的任何代码抛出了一个在catch子句中没有声明的异常类型，那么这个方法就会立刻退出。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"在一个try语句块中可以捕获多个异常类型，并对不同类型的异常做出不同的处理。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"在Java SE 7中，同一个catch子句中可以捕获多个异常类型。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"在catch子句中可以抛出一个异常，这样做的目的时改变异常的类型。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"不管是否由异常被捕获，finally子句中的代码都被执行。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"Java SE7提供了try-with-resources。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"堆栈跟踪时一个方法调用过程的列表，它包含了程序执行过程中方法调用的特定位置。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"printStackTrace、getStackTrace、getAllStackTrace。"}]},{"t":"heading","d":1,"p":{"lines":[36,37]},"v":"11.3 使用异常机制的技巧","c":[{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"异常处理不能代替简单的测试。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"不要过分的细化异常。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"利用异常层次结构。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"不要压制异常。"},{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"在检查错误时，苛刻要比放任更好。"},{"t":"list_item","d":3,"p":{"lines":[42,43]},"v":"不要羞于传递异常。"}]},{"t":"heading","d":1,"p":{"lines":[44,45]},"v":"11.4 使用断言","c":[{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"在一个具有自我保护能力的程序中，断言很常用。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"断言机制允许在测试期间向代码中插入一些检查语句。当代码发布时，这些插入的检测语句将会被自动地移走。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"Java语言引入了关键字assert。有两种形式： assert 条件; 、 assert 条件:表达式;。"},{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"表达式部分的唯一目的是产生一个消息字符串。"},{"t":"list_item","d":3,"p":{"lines":[49,50]},"v":"在默认情况下，断言被禁用。可以在运行程序时用-enableassertions或-ea选项启用它。"},{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"启用或禁用断言时类加载器的功能。当断言被禁用时，类加载器将跳过断言代码，不会降低程序运行的速度。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"也可以在某个类或某个包中使用/禁用断言。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"断言失败是致命的、不可恢复的错误。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"断言检查只用于开发和测试阶段。"},{"t":"list_item","d":3,"p":{"lines":[55,56]},"v":"断言是一种测试和调试阶段所使用的战术性工具；而日志记录是一种在程序的整个生命周期都可以使用的策略性工具。"}]},{"t":"heading","d":1,"p":{"lines":[57,58]},"v":"11.5 记录日志","c":[{"t":"list_item","d":3,"p":{"lines":[58,59]},"v":"可以很容易地取消全部日志记录，或者仅仅取消某个级别的日志，而且打开和关闭这个操作也很容易。"},{"t":"list_item","d":3,"p":{"lines":[59,60]},"v":"可以很简单地禁止日志记录的输出，因此，将这些日志代码留在程序中的开销很小。"},{"t":"list_item","d":3,"p":{"lines":[60,61]},"v":"日志记录可以被定向到不同的处理器，用于在控制台中显示，用于存储在文件中等。"},{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"日志记录器和处理器都可以对进路进行过滤。过滤器可以根据过滤器实现器指定的标准丢弃那些无用的记录项。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"日志记录可以采用不同的方式格式化。"},{"t":"list_item","d":3,"p":{"lines":[63,64]},"v":"应用程序可以使用多个日志记录器，它们使用类似包名的这种具有层次结构的名字。"},{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"在默认情况下，日志系统的配置由配置文件控制。如果需要的话，应用程序可以替换这个配置。"}]},{"t":"heading","d":1,"p":{"lines":[66,67]},"v":"11.6 调试技巧","c":[{"t":"list_item","d":3,"p":{"lines":[67,68]},"v":"System.out、log。"},{"t":"list_item","d":3,"p":{"lines":[68,69]},"v":"每个类中放置一个main方法。"},{"t":"list_item","d":3,"p":{"lines":[69,70]},"v":"JUnit。"},{"t":"list_item","d":3,"p":{"lines":[70,71]},"v":"日志代理。"},{"t":"list_item","d":3,"p":{"lines":[71,72]},"v":"Throwable.printStackTrace。"},{"t":"list_item","d":3,"p":{"lines":[72,73]},"v":"System.err。"},{"t":"list_item","d":3,"p":{"lines":[73,74]},"v":"文件。"},{"t":"list_item","d":3,"p":{"lines":[74,75]},"v":"Xlint选项告诉编译器对一些普遍容易出现的代码问题进行检查。"},{"t":"list_item","d":3,"p":{"lines":[75,76]},"v":"jconsole。"},{"t":"list_item","d":3,"p":{"lines":[76,77]},"v":"jmap。"},{"t":"list_item","d":3,"p":{"lines":[77,78]},"v":"Xprof标志。"}]},{"t":"heading","d":1,"p":{"lines":[79,80]},"v":"11.7 GUI程序排错技巧"},{"t":"heading","d":1,"p":{"lines":[81,82]},"v":"11.8 使用调试器"}],"p":{}}</svg>
+              </div>
+
+  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
+  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
+  <script>
+    const mindmaps = document.querySelectorAll('.markmap-svg');
+    for(let mindmap of mindmaps) {
+        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
+    }
+  </script> 
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/13/Java/%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7%E2%85%A0/%EF%BC%8810%EF%BC%89%E9%83%A8%E7%BD%B2%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%92%8Capplet/" rel="prev" title="部署应用程序和applet">
+      <i class="fa fa-chevron-left"></i> 部署应用程序和applet
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/13/Java/%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E5%8D%B7%E2%85%A0/%EF%BC%8812%EF%BC%89%E6%B3%9B%E5%9E%8B%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="next" title="泛型程序设计">
+      泛型程序设计 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">知之者不如好之者，好之者不如乐之者。知其然，知其所以然。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">171</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
