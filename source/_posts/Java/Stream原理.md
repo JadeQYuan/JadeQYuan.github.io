@@ -17,7 +17,7 @@ Java 8 中定义了四种流，分别是Stream、IntStream、LongStream、Double
 
 ## PipelineHelper
 流水线，通过其将流串起来。
-### AbastractPipeline
+### AbstractPipeline
 抽象类，定义了流水线串联起来的属性，及一些方法。
 ### Pipeline
 与流类型，也分为四类。ReferencePipeline、IntPipeline、LongPipeline、DoublePipeline。

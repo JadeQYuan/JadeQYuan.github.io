@@ -1,16 +1,15 @@
-title: Java体系结构
+title: Java SE API
 categories:
   - Java
-description: Java体系结构
+  - Java平台
+description: Java SE API
 author: Jade
-date: 2022-01-04 11:00:00
+date: 2022-01-19 16:00:00
 ---
 
-![upload successful](/images/pasted-8.png)
-
-## lang and util Base Libraries
+### lang and util Base Libraries
 java.lang.*、java.util.* 包提供了基础功能。
- 
+
 - java.lang 提供java基础类。
 - java.lang.annotation 注解。
 - java.lang.instrument 允许Java代理检测运行在JVM上的服务。
