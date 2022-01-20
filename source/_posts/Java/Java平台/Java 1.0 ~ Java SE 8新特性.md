@@ -22,7 +22,7 @@ date: 2020-07-21 16:39:00
 
 ## J2SE 1.2 （1998-12-08）
 - 集合框架
-- Java IDL（平台对象请求代理体系结构）
+- Java IDL（接口描述语言）支持CORBA（平台对象请求代理体系结构）
 - JIT(Just In Time)编译器
 - 数字签名
 - 控制授权/访问系统资源的策略工具
@@ -51,7 +51,7 @@ date: 2020-07-21 16:39:00
 - Java Web Start
 - JDBC 3.0 API（jdbc高级)
 - Preferences API
-- 链式异常处理
+- 链式异常处理（try-catch-catch...）
 - 引入Image I/O API （图片流)
 - NIO（高级流）
 - XSLT转换器
