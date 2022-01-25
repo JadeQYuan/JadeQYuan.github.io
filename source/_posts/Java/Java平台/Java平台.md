@@ -51,6 +51,12 @@ OpenJDK是由OpenJDK Community 、Oracle、IBM 领导，连同 Alibaba，Amazon�
 OpenJDK Community领导的OpenJDK Project是Java SE的官方参考实现，只产生OpenJDK源码，并不提供可以直接使用的二进制文件格式。现在能直接使用的二进制文件格式的 JDK都是被编译之后的程序。
 OpenJDK官网指向的可下载二进制文件的地址，实际是 Oracle’s OpenJDK builds下载的地址。
 
+## Open JDK VS Oracle JDK
+- Open JDK是一个参考模型并且是完全开源的，Oracle JDK是Open JDK的一个实现，并不是完全开源的。
+- Oracle JDK比Open JDK更稳定。Open JDK和Oracle JDK的代码几乎相同，但Oracle JDK有更多的类和一些错误修复。
+- 在响应性和JVM性能方面，Oracle JDK与Open JDK相比提供了更好的性能。
+- Oracle JDK根据二进制代码许可协议获得许可，而Open JDK根据GPL v2许可获得许可。
+
 ## Java名称及版本
 Java在5的时候改名，但内部还是使用1.x作为版本号。直到9。
 Java1.x版本用在以下情况：
