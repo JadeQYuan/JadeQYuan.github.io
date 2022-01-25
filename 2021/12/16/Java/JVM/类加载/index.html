@@ -28,7 +28,7 @@
 <meta property="og:description" content="类加载">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-16T09:00:00.000Z">
-<meta property="article:modified_time" content="2021-12-17T11:27:05.578Z">
+<meta property="article:modified_time" content="2022-01-20T03:13:23.698Z">
 <meta property="article:author" content="Jade">
 <meta property="article:tag" content="乐之者, 知其然">
 <meta name="twitter:card" content="summary">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">171</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">172</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">19</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-17 19:27:05" itemprop="dateModified" datetime="2021-12-17T19:27:05+08:00">2021-12-17</time>
+                <time title="修改时间：2022-01-20 11:13:23" itemprop="dateModified" datetime="2022-01-20T11:13:23+08:00">2022-01-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
 
       
         <h2 id="类的声明周期"><a href="#类的声明周期" class="headerlink" title="类的声明周期"></a>类的声明周期</h2><p>加载 -&gt; 连接（验证 -&gt; 准备 -&gt; 解析） -&gt; 初始化 -&gt; 使用 -&gt; 卸载。<br>类型的加载、连接、初始化过程都是在程序运行期间完成的。</p>
-<h2 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h2><p>加载、连接、初始化 三个阶段是连续完成的，所以合成为类加载或类初始化。</p>
+<h2 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h2><p>加载、连接、初始化 三个阶段是连续完成的，所以合称为类加载或类初始化。</p>
 <h2 id="各阶段功能"><a href="#各阶段功能" class="headerlink" title="各阶段功能"></a>各阶段功能</h2><h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>将class文件加载进方法区，在堆上创建class对象。class对象拥有访问方法区中数据的接口。<br>加载来源：</p>
 <ul>
 <li>从本地系统中直接加载。</li>
@@ -273,6 +273,12 @@
 <li>初始化子类，父类也会被初始化。</li>
 <li>Java虚拟机启动时被标明为启动类的类、Main方法所在的类。</li>
 </ul>
+<p>不会加载情况：</p>
+<ul>
+<li>常量在编译阶段会存入调用类的常量池中，使用常量不会加载。</li>
+<li>创建数组不会加载。</li>
+<li>通过子类引用父类静态属性/方法，只会加载父类。</li>
+</ul>
 <h3 id="声明周期结束"><a href="#声明周期结束" class="headerlink" title="声明周期结束"></a>声明周期结束</h3><ul>
 <li>执行了System.exit()方法。</li>
 <li>程序正常执行结束。</li>
@@ -283,20 +289,34 @@
 <h2 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h2><p>对于子类直接访问父类static变量的情况，会初始化父类，但不会初始化子类。<br>子类直接访问父类static变量，导致父类初始化，说明子类知道这个变量是父类的，即子类的数据已被加载。那就是说子类加载了，但是没有初始化。所以在这种情况下， 加载、连接、初始化 就不是连续进行的了？？？</p>
 <h2 id="预加载与按需加载"><a href="#预加载与按需加载" class="headerlink" title="预加载与按需加载"></a>预加载与按需加载</h2><p>Java运行所需要的基本类采用预加载方式，JRE运行时全部加载到内存中。<br>程序中需要使用的自定义类使用按需加载，需要用到的时候再加载。减少内存消耗。</p>
 <h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><h3 id="机制"><a href="#机制" class="headerlink" title="机制"></a>机制</h3><ul>
-<li>委托：加载一个类的请求西安交给父类加载器，如果父类加载器找不到或不能加载时，再有子类加载器加载。</li>
+<li>委托：加载一个类的请求先交给父类加载器，如果父类加载器找不到或不能加载时，再由子类加载器加载。</li>
 <li>可见性：子类的加载器可以看见父类加载器加载的类，而父类加载器看不到子类加载器加载的类。</li>
 <li>单一性：一个类只被加载一次。</li>
 </ul>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
-<li>引导类加载器</li>
-<li>扩展类加载器</li>
-<li>应用类加载器</li>
-<li>自定义类加载器： 扩展java虚拟机动态加载类的机制。如加密字节码解密。</li>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>安全、性能（避免重复加载，避免核心类被篡改）。</li>
+</ul>
+<h4 id="缺陷："><a href="#缺陷：" class="headerlink" title="缺陷："></a>缺陷：</h4><ul>
+<li>基础类无法调用用户类。<br>不知道具体实现类，无法创建对象。<br>如果类A中调用了类B，那么加载B的时候，需要使用A的类加载器去加载B。 如果A是基础类，B是用户类，那么A对应的最上层类加载器，是没办法处理下层的用户类的。</li>
+</ul>
+<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>SPI + Thread ClassLoader。</p>
+<ol>
+<li>SPI只是一种机制/规范，具体加载部分还是使用Thread ClassLoader加载。</li>
+<li>使用Thread ClassLoader 破坏了双亲委派机制。</li>
+</ol>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>每个classLoader都有一个parent，在创建时指定。AppClassLoader的parent为ExtClassLoader，自定义parent默认为AppClassLoader。</p>
+<ul>
+<li>引导类加载器。Bootstrap ClassLoader，加载环境变量[sun.boot.class.path]目录下jar和class。</li>
+<li>扩展类加载器。Extension ClassLoader，加载环境变量[java.ext.dirs]目录下jar和class。</li>
+<li>系统类加载器。System ClassLoader，加载环境变量[java.class.path]目录下jar和class（项目当前路径）。</li>
+<li>自定义类加载器。 扩展java虚拟机动态加载类的机制。如加密字节码解密。</li>
+<li>上下文类加载器。Context ClassLoader，Thread ClassLoader，线程默认加载器为AppClassLoader，可自行设置更改，子线程会继承父线程的ClassLoader。</li>
 </ul>
 <h2 id="加载方式"><a href="#加载方式" class="headerlink" title="加载方式"></a>加载方式</h2><ul>
 <li>隐式加载/静态加载 new、static、子类。</li>
 <li>显示加载/动态加载 Class.forName()、 ClassLoader.loadClass()。</li>
 </ul>
+<h2 id="Launcher"><a href="#Launcher" class="headerlink" title="Launcher"></a>Launcher</h2><p>Launcher是jvm的启动类。</p>
 
     </div>
 
@@ -313,12 +333,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/16/Java/JVM/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA/" rel="prev" title="运行时数据区">
-      <i class="fa fa-chevron-left"></i> 运行时数据区
+    <a href="/2021/12/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B-%E5%A4%96%E8%A7%82/" rel="prev" title="设计模式-结构型-外观（Facade）">
+      <i class="fa fa-chevron-left"></i> 设计模式-结构型-外观（Facade）
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/12/16/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8813%EF%BC%89%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="next" title="字符串">
-      字符串 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/12/16/Java/JVM/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA/" rel="next" title="运行时数据区">
+      运行时数据区 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -378,7 +398,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F"><span class="nav-number">1.</span> <span class="nav-text">类的声明周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text">类加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%84%E9%98%B6%E6%AE%B5%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">各阶段功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD"><span class="nav-number">3.1.</span> <span class="nav-text">加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81"><span class="nav-number">3.2.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">3.3.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90"><span class="nav-number">3.4.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.5.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F%E7%BB%93%E6%9D%9F"><span class="nav-number">3.6.</span> <span class="nav-text">声明周期结束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="nav-number">4.</span> <span class="nav-text">接口的加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q"><span class="nav-number">5.</span> <span class="nav-text">Q</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD"><span class="nav-number">6.</span> <span class="nav-text">预加载与按需加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E5%88%B6"><span class="nav-number">7.1.</span> <span class="nav-text">机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">7.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">加载方式</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F"><span class="nav-number">1.</span> <span class="nav-text">类的声明周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD"><span class="nav-number">2.</span> <span class="nav-text">类加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%84%E9%98%B6%E6%AE%B5%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">各阶段功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD"><span class="nav-number">3.1.</span> <span class="nav-text">加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81"><span class="nav-number">3.2.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">3.3.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90"><span class="nav-number">3.4.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.5.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F%E7%BB%93%E6%9D%9F"><span class="nav-number">3.6.</span> <span class="nav-text">声明周期结束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8A%A0%E8%BD%BD"><span class="nav-number">4.</span> <span class="nav-text">接口的加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q"><span class="nav-number">5.</span> <span class="nav-text">Q</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD"><span class="nav-number">6.</span> <span class="nav-text">预加载与按需加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E5%88%B6"><span class="nav-number">7.1.</span> <span class="nav-text">机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">7.1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E9%99%B7%EF%BC%9A"><span class="nav-number">7.1.2.</span> <span class="nav-text">缺陷：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3"><span class="nav-number">7.1.3.</span> <span class="nav-text">解决</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">7.2.</span> <span class="nav-text">分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">加载方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Launcher"><span class="nav-number">9.</span> <span class="nav-text">Launcher</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -394,14 +414,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">171</span>
+          <span class="site-state-item-count">172</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
