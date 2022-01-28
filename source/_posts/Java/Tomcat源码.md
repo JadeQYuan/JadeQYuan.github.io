@@ -71,6 +71,14 @@ date: 2022-01-27 13:00:00
 
 ## 设计模式
 
+## TODO
+- 加载web.xml，loadOnStartUp。
+- 封装Servlet，Request、Response。
+- tomcat配置，context标签。
+- 生命周期接口。
+- Web容器、Servlet容器实现区分。
+- tomcat架构图/server.xml配置文件的理解。
+- NIO的使用。
 
 ## Q
 - org.apache.catalina  org.apache.tomcat
