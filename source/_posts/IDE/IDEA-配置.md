@@ -1,11 +1,11 @@
 title: IDEA 配置
 description: IDEA 配置
 categories:
-  - default
+  - IDE
 author: Jade
 date: 2021-11-16 10:27:00
 ---
-> since InteilJ IDEA 2021.2.3.
+> since IntelliJ IDEA 2021.2.3.
 
 ### 换行显示
 > Settings -> Editor -> General => Soft Wraps
@@ -29,7 +29,7 @@ Side-by-side layout on the left/right
 
 
 ### 编辑页标签
-> Settings -> Editor -> General -> Editor Tabls
+> Settings -> Editor -> General -> Editor Tabs
 
 靠右显示、按字典序、修改标记、不显示关闭标签（Shift + 左键 = 关闭）、上限50
 

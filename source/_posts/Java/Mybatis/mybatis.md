@@ -1,5 +1,6 @@
 title: mybatis
 categories:
+  - Java
   - Mybatis
 description: mybatis
 author: Jade

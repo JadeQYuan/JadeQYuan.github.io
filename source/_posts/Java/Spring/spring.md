@@ -1,5 +1,6 @@
 title: spring
 categories:
+  - Java
   - Spring
 description: spring
 author: Jade

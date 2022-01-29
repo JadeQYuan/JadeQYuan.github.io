@@ -1,7 +1,7 @@
 title: C 语法
 description: C 语法
 categories:
-  - 计算机基础
+  - C
 author: Jade
 date: 2021-11-24 13:00:00
 ---

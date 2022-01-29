@@ -1,5 +1,5 @@
-title: 流与文件
-description: 流与文件
+title: JavaBean构件
+description: JavaBean构件
 categories: 
   - Java
   - 核心技术卷Ⅱ

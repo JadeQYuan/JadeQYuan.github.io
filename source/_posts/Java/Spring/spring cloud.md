@@ -1,5 +1,6 @@
 title: spring cloud
 categories:
+  - Java
   - Spring
 description: spring cloud
 author: Jade

@@ -1,5 +1,6 @@
 title: spring-configuration
 categories:
+  - Java
   - Spring
 description: spring-configuration
 author: Jade

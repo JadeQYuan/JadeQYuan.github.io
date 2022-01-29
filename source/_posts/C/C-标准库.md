@@ -1,7 +1,7 @@
 title: C 标准库
 description: C 标准库
 categories:
-  - 计算机基础
+  - C
 author: Jade
 date: 2021-11-25 19:36:00
 ---

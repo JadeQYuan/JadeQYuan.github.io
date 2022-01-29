@@ -1,7 +1,7 @@
 title: C 介绍
 description: C 介绍
 categories:
-  - 计算机基础
+  - C
 author: Jade
 date: 2021-11-24 11:05:00
 ---

@@ -1,6 +1,7 @@
 title: Mybatis 源码
 categories:
-  - Mybatis
+  - Java
+  - 源码
 description: Mybatis 源码
 author: Jade
 date: 2021-06-24 17:15:00

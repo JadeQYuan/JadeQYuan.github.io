@@ -1,6 +1,6 @@
 title: CRLF
 categories:
-  - 计算机基础
+  - 计算机组成原理
 description: CRLF
 author: Jade
 date: 2021-06-03 15:12:00
