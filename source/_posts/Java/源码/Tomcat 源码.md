@@ -27,6 +27,7 @@ date: 2022-01-27 13:00:00
 - Connector，Coyote Connector的实现。
 - Container，处理请求并相应的对象。实现类按层级为Engine（Servlet引擎）、Host、Context、Wrapper。
 - Lifecycle，Catalina组件生命周期接口。
+- PipeLine、Valve，控制和/或修改请求和响应。
   
 ## 流程
 1. startup.bat -> catalina.bat -> Bootstrap。
@@ -40,6 +41,7 @@ date: 2022-01-27 13:00:00
 9. 根据XML中的配置及一些默认配置，对组件进行处理。且每个组件负责其子组件的处理。处理主要包括initial、start。另外还有监听器。
 10. Container组件监听器。
 11. ContextConfig解析context.xml、web.xml。
+12. Pipeline与Valve。
 
 ### 1.tomcat启动流程
    tomcat/bin/startup.bat -> tomcat/bin/catalina.bat -> org.apache.catalina.startup.Bootstrap。
@@ -91,6 +93,8 @@ date: 2022-01-27 13:00:00
    digester.parse -> getXMLReader(设置handler，DTDHandler、ContentHandler、EntityResolver、ErrorHandler) -> xmlReader.parse -> 解析xml，调用各种handler处理 -> 根据标签信息，获取对应的rule -> 调用rule创建对象、设置属性、调用方法等。
 
 ### 9.Lifecycle
+状态：New、Initializing、Initialized、Starting_Prep、Starting、Started、Stop_Prep、Stopping、Stopped、Destroying、Destroyed、Failed。
+事件：before_init、after_init、start、before_start、after_start、stop、before_stop、after_stop、before_destroy、after_destroy、periodic、configure_start、configure_stop。
 StandardServer初始化：StandardService初始化。
 StandardService初始化：Connector初始化，Container初始化。
 ...
@@ -100,9 +104,21 @@ EngineConfig:
 HostConfig:
 ContextConfig:
 
-### 11.解析web.xml
+### 11.解析context.xml、web.xml
+context.xml: config/context.xml +> EngineName/HostName/context.xml.default +> META-INF/context.xml。
+web.xml: config/web.xml +> EngineName/HostName/web.xml.default +> WEB-INF/web.xml +> WEB-INF/lib/!jar/META-INF/web-fragment.xml。
+
+### 12. Pipeline与Valve
+对request处理 -> 调用getNext().invoke() -> 对response处理。
+如果valve不通过，则不调用getNext().invoke()。
+pipeline中只保存了第一个valve，而valve之间使用责任链的方式进行处理。
+每个Container中都有一个basicValve，用来处理下级容器的valve，直到WrapperValve处理Servlet。
 
 ## 设计模式
+- 模板方法：LifecycleBase。
+- 简单工厂：ApplicationFilterChain。
+- 责任链：Valve、FilterChain。
+- 观察者：Lifecycle、LifecycleEvent、LifecycleListener。
 
 ## TODO
 - 加载web.xml，loadOnStartUp。
