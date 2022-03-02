@@ -8,9 +8,33 @@ date: 2021-06-24 17:15:00
 ---
 
 ## Mybatis
-动态代理 Mapper、Inteceptor
-装饰器 Executor
-建造者 Environment.Builder
+MyBatis 是一款优秀的持久层框架，它支持自定义 SQL、存储过程以及高级映射。MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。
+
+## 关键类
+- SqlSession
+- Configuration
+- TypeHandler
+- Mapper
+- Interceptor
+
+## 流程
+1. 获取SqlSessionFactory。
+2. 解析xml配置文件。
+3. 通过SqlSessionFactory创建SqlSession。
+4. 通过SqlSession获取Mapper。
+5. 通过Mapper调用方法。
+6. Mapper为动态代理类，调用InvocationHandler的invoke方法。
+7. 通过mapper调用的方法，及mapper的类名，获取MappedStatement，生成MapperMethod。
+8. 通过MapperMethod，调用sqlSession的方法进行操作。
+9. sqlSession的操作通过Executor实现。通过CachingExecutor或BaseExecutor中的doXXX执行。
+10. doXXX方法通过Configuration创建StatementHandler，关联ParameterHandler及ResultSetHandler。
+11. 插件处理，返回结果。
+
+### 1.获取SqlSessionFactory
+
+### 9.SqlSession、Executor
+通过SqlSession调用的方法又调用Executor执行，那SqlSession的作用？ 1. 对外暴露多个重载方法，而对应同一个Executor方法；2. 对Executor方法抛出的异常进行处理。
+
 
 	动态代理 - 接口、类加载器
 	ognl表达式
@@ -52,11 +76,11 @@ date: 2021-06-24 17:15:00
 
 ### XMLConfigBuilder extends BaseBuilder
 - org.apache.ibatis.builder.xml
-- XPathPaser
+- XPathParser
 - environment
 - parse()
 
-### XPathPaser
+### XPathParser
 - org.apache.ibatis.parsing
 - Properties variables
 
@@ -100,7 +124,7 @@ date: 2021-06-24 17:15:00
 		register(TypeReference, TypeHandler);
 		register(Class, JdbcType, TypeHandler);
 		private register(Type, JdbcType, TypeHandler); 第二个通用处理方法。
-		另外支持TypeHandler 以Class为参数，通过getInstence转换， jdbcType不支持String。
+		另外支持TypeHandler 以Class为参数，通过getInstance转换， jdbcType不支持String。
 		支持String代替Class，通过Resource转换。
 		支持包名全部注册。
 - register Map<JdbcType, TypeHandler<?>>  jdbcTypeHandlerMap： register(JdbcType, TypeHandler)。
@@ -152,10 +176,6 @@ date: 2021-06-24 17:15:00
 - mapperBuilderAssistant 为XMLMapperBuilder的成员变量
 
 
-
-
-
-
 ### Q&A
 1. mapper通过url、resource、class加载，且xml会加载class，class会加载xml，怎么去重
 	所有的资源都在configuration的loadedResources中保存，加载xml其key为resource路径/url路径，加载class其key为 class.toString(), 通过class加载xml与通过xml加载class 都是通过全限定类名/namespace查询加载，其key相同，为 `namespace:` + 全限定类名。
@@ -192,16 +212,13 @@ date: 2021-06-24 17:15:00
 ### 
 1. MapperRegistry中config属性只为创建XmlAnnotationBuilder，没有其它使用地方。将其作为全局变量来存储，而不是方法参数带过来。
 
-
-
-
 ## SqlSessionFactory
 
 #### 构建方式
 1. 通过xml方式
    将配置信息放在xml中，然后通过加载xml配置文件，使用SqlSessionFactoryBuilder来创建。
 2. 通过java代码
-   通过DataSource、 Enverionment、 TransactionFactory、 Configuration 等类来创建。
+   通过DataSource、 Environment、 TransactionFactory、 Configuration 等类来创建。
 3. 通过spring
    // TODO
    3.1 通过xml
@@ -235,7 +252,7 @@ date: 2021-06-24 17:15:00
   ResultSetHandler (handleResultSets, handleOutputParameters)
   StatementHandler (prepare, parameterize, batch, update, query)
 - environments
-  每个environment 包含transactionMangager 和 dataSource 配置‘
+  每个environment 包含transactionManager 和 dataSource 配置‘
   transactionManager 配置事务的提交和回滚规则，使用数据库提供的（type=JDBC），还是自己配置的（type=MANAGED）。
 - databaseIdProvider
 - mappers
@@ -243,6 +260,8 @@ date: 2021-06-24 17:15:00
 	2. 通过package标签
 
 
-
-
-
+## 设计模式
+- 工厂方法： SqlSessionFactory。
+- 代理： CachingExecutor（代理控制对象的访问，装饰器增加对象的行为）。RoutingStatementHandler（这里应该可以使用简单工厂）。
+- 责任链： Interceptor。
+- 模板方法： BaseExecutor。
