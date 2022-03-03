@@ -42,7 +42,7 @@ date: 2020-02-05 11:04:00
 
 ## 软件安装
 ### 规范
-/usr/lcoal 安装系统软件
+/usr/local 安装系统软件
 /opt 安装临时软件，存储安装包（压缩包安装方式）
 /var 放日志文件
 
@@ -92,7 +92,7 @@ systemctl enable nginx
 - nginx日志文件路径：/var/nginx
 
 
-  ngigx路径/结尾
+  nginx路径/结尾
 - 在某些情况下，Nginx内部重定向规则会被启动，例如，当 URL 指向一个目录并且在最后没有包含“/”时，Nginx 内部会自动的做一个 301 重定向
 - location
     - 以/结尾：url与location路径完全匹配
@@ -191,7 +191,7 @@ git init --bare
 > 使用 >> 操作可以将公钥追加到文件里面。
 > 使用 > 操作会清空文件的内容，并把新内容添加到文件里面。
 - git clone
-> 在使用 TortoistGit 进行git clone 的时候，需要勾选 Load Putty Key 选项，并选择私钥。
+> 在使用 TortoiseGit 进行git clone 的时候，需要勾选 Load Putty Key 选项，并选择私钥。
 > 在使用 git bash clone的时候需要保证当前用户目录.ssh文件夹下面存在私钥。
 - RSA
 > RSAAuthentication 是对ssh 1版本的支持，在本环境中，使用ssh 2，所以没有这个配置，忽略即可。

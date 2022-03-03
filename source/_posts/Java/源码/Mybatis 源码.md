@@ -261,7 +261,8 @@ MyBatis 是一款优秀的持久层框架，它支持自定义 SQL、存储过�
 
 
 ## 设计模式
-- 工厂方法： SqlSessionFactory。
+- 工厂方法： SqlSessionFactory。MapperProxyFactory。
 - 代理： CachingExecutor（代理控制对象的访问，装饰器增加对象的行为）。RoutingStatementHandler（这里应该可以使用简单工厂）。
 - 责任链： Interceptor。
 - 模板方法： BaseExecutor。
+- 组合： SqlNode。

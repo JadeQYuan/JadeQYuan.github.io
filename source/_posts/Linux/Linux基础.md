@@ -107,7 +107,7 @@ chgrp 组名 文件名
 - ctrl + z  放入后台
 
 ## VI操作模式
-virsual interface
+visual interface
 命令模式、输入模式、底行模式
 
 - :w 保存

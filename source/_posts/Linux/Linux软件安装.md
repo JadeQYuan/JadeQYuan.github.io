@@ -61,7 +61,7 @@ rpm -v 包名
 - -f file
 
 ### 默认安装路径
-rpm包安装位置由rpm包确定，可以指定perfix，但不建议。
+rpm包安装位置由rpm包确定，可以指定prefix，但不建议。
 /etc/ 配置文件
 /usr/share/doc/ 软件使用手册
 /usr/bin/ 可执行命令
@@ -77,7 +77,7 @@ rpm2cpio 包全名 | epio -idu 文件绝对路径
 /etc/yum.repos.d/Centos-Base.repo
 - [base]: 容器名称
 - name: 容器说明
-- mrrorlist: 镜像站点
+- mirrorlist: 镜像站点
 - baseurl: yum源服务器地址
 - enable: 是否生效，默认1，1生效，0无效
 - gpgcheck: RPM数字证书，1生效，0无效
