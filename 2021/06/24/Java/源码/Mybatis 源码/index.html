@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Mybatis 源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis 源码">
+<meta property="og:url" content="http://example.com/2021/06/24/Java/%E6%BA%90%E7%A0%81/Mybatis%20%E6%BA%90%E7%A0%81/index.html">
+<meta property="og:site_name" content="乐然 LeRan">
+<meta property="og:description" content="Mybatis 源码">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-24T09:15:00.000Z">
+<meta property="article:modified_time" content="2022-03-06T08:27:05.453Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="乐之者, 知其然">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/06/24/Java/%E6%BA%90%E7%A0%81/Mybatis%20%E6%BA%90%E7%A0%81/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Mybatis 源码 | 乐然 LeRan</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">乐然 LeRan</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">乐之者知其所以然</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/24/Java/%E6%BA%90%E7%A0%81/Mybatis%20%E6%BA%90%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="知之者不如好之者，好之者不如乐之者。知其然，知其所以然。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乐然 LeRan">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mybatis 源码
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-24 17:15:00" itemprop="dateCreated datePublished" datetime="2021-06-24T17:15:00+08:00">2021-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-06 16:27:05" itemprop="dateModified" datetime="2022-03-06T16:27:05+08:00">2022-03-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E6%BA%90%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">源码</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Mybatis 源码</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h2><p>MyBatis 是一款优秀的持久层框架，它支持自定义 SQL、存储过程以及高级映射。MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。</p>
+<h2 id="关键类"><a href="#关键类" class="headerlink" title="关键类"></a>关键类</h2><ul>
+<li>SqlSession</li>
+<li>Configuration</li>
+<li>TypeHandler</li>
+<li>Mapper</li>
+<li>Interceptor</li>
+</ul>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li>获取SqlSessionFactory。</li>
+<li>解析xml配置文件。</li>
+<li>通过SqlSessionFactory创建SqlSession。</li>
+<li>通过SqlSession获取Mapper。</li>
+<li>通过Mapper调用方法。</li>
+<li>Mapper为动态代理类，调用InvocationHandler的invoke方法。</li>
+<li>通过mapper调用的方法，及mapper的类名，获取MappedStatement，生成MapperMethod。</li>
+<li>通过MapperMethod，调用sqlSession的方法进行操作。</li>
+<li>sqlSession的操作通过Executor实现。通过CachingExecutor或BaseExecutor中的doXXX执行。</li>
+<li>doXXX方法通过Configuration创建StatementHandler，关联ParameterHandler及ResultSetHandler。</li>
+<li>插件处理，返回结果。</li>
+</ol>
+<h3 id="1-获取SqlSessionFactory"><a href="#1-获取SqlSessionFactory" class="headerlink" title="1.获取SqlSessionFactory"></a>1.获取SqlSessionFactory</h3><h3 id="9-SqlSession、Executor"><a href="#9-SqlSession、Executor" class="headerlink" title="9.SqlSession、Executor"></a>9.SqlSession、Executor</h3><p>通过SqlSession调用的方法又调用Executor执行，那SqlSession的作用？ 1. 对外暴露多个重载方法，而对应同一个Executor方法；2. 对Executor方法抛出的异常进行处理。</p>
+<pre><code>动态代理 - 接口、类加载器
+ognl表达式
+mapper 实例化、单例 
+Log
+TypeDiscriminator
+@Select &lt;script&gt; 与不加
+</code></pre>
+<ol>
+<li>属性替换： 每次加载节点，转换为XNode数据时，在XNode构造方法中实现 ${} 属性替换。 即 XNode.evalNode(“”)时。</li>
+<li>setting赋值顺寻：</li>
+<li>TypeHandler中存储数据：保存在typeHandlerMap中。保存的是实例。如果javaType为null（实现TypeHandler接口 &amp;&amp; 不适用注解  或者手动注册null），则忽略。</li>
+<li>TypeHandler配置优先级： xml配置 &gt; 注解 &gt; 泛型（继承BaseHandler），手动使用TypeReference也会检查注解。</li>
+<li>cache、cache-ref 只能存在一个且只能配置一份。 ？？？</li>
+<li>如果指定了databaseId，则每个sql、statement标签都需要指定databaseId。 ？？？</li>
+<li>SelectKey</li>
+<li>mapUnderscoreToCamelCase 默认false, 要真正存在一个与它对应的驼峰Bean才生效</li>
+</ol>
+<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><ul>
+<li><p>org.apache.ibatis.session</p>
+</li>
+<li><p>typeHandlerRegistry</p>
+</li>
+<li><p>typeAliasRegistry</p>
+</li>
+<li><p>interceptorChain</p>
+</li>
+<li><p>mapperRegister</p>
+</li>
+<li><p>ScriptMap sqlFragments  解析sql标签的语句</p>
+</li>
+<li><p>loadedResources<br>  key：     通过mapper标签指定url： url</p>
+<pre><code>      通过mapper标签指定resource： resource
+      通过mapper解析namespace: `namespace:` + namespace
+      通过java类解析：`interface ` + className
+      通过java类解析相同名称及路径的xml：`namespace:` + className
+</code></pre>
+</li>
+<li><p>addMapper() / addMappers() -&gt; mapperRegister.addMapper()/addMappers()</p>
+</li>
+</ul>
+<h3 id="BaseBuilder"><a href="#BaseBuilder" class="headerlink" title="BaseBuilder"></a>BaseBuilder</h3><ul>
+<li>org.apache.ibatis.builder</li>
+<li>Configuration</li>
+<li>typeAliasRegistry</li>
+<li>typeHandlerRegistry</li>
+</ul>
+<h3 id="XMLConfigBuilder-extends-BaseBuilder"><a href="#XMLConfigBuilder-extends-BaseBuilder" class="headerlink" title="XMLConfigBuilder extends BaseBuilder"></a>XMLConfigBuilder extends BaseBuilder</h3><ul>
+<li>org.apache.ibatis.builder.xml</li>
+<li>XPathParser</li>
+<li>environment</li>
+<li>parse()</li>
+</ul>
+<h3 id="XPathParser"><a href="#XPathParser" class="headerlink" title="XPathParser"></a>XPathParser</h3><ul>
+<li>org.apache.ibatis.parsing</li>
+<li>Properties variables</li>
+</ul>
+<h3 id="ResolverUtil"><a href="#ResolverUtil" class="headerlink" title="ResolverUtil"></a>ResolverUtil<T></h3><ul>
+<li><p>org.apache.ibatis.io</p>
+</li>
+<li><p>定义接口及实现类，进行条件匹配。</p>
+</li>
+<li><p>定义classloader、matches</p>
+</li>
+<li><p>根据接口查询、根据注解查询、根据条件查询</p>
+</li>
+<li><p>解析类有多步操作，用一个属性存储之前的结果，所有操作结束后调用方法返回所有结果。</p>
+</li>
+<li><p>接口参数后期才能确定，直接把接口作为参数。</p>
+</li>
+</ul>
+<h3 id="TypeAliasRegistry"><a href="#TypeAliasRegistry" class="headerlink" title="TypeAliasRegistry"></a>TypeAliasRegistry</h3><ul>
+<li>org.apache.ibatis.type</li>
+<li>注册别名，不是匿名类、不是接口、不是成员类</li>
+<li>获取注解指定别名</li>
+<li>别名转小写</li>
+<li>解析别名，不存在根据字符串解析，但不存储。</li>
+<li>对基础类型及常用类型的保存。</li>
+<li>直接根据类注册，跳过的类类型的判断。</li>
+<li>根据别名、字符串注册与其它方式注册 加载类方式不一样，一种是直接通过classloader 加载，另一种通过resource加载。</li>
+</ul>
+<h3 id="TypeHandlerRegistry"><a href="#TypeHandlerRegistry" class="headerlink" title="TypeHandlerRegistry"></a>TypeHandlerRegistry</h3><ul>
+<li>org.apache.ibatis.type</li>
+<li>register  Map&lt;Type, Map&lt;JdbcType, TypeHandler<?>>> typeHandlerMap、 Map<Class<?>, TypeHandler&lt;?&gt;&gt; allTypeHandlersMap：<br>  第一步：<pre><code>  1. 查找MappedTypes注解，注册其每一个value。
+  2. 判断是否实现TypeReference，若是，注册。
+  3. 注册javaType为null。
+</code></pre>
+  第二步： <pre><code>  1. 查找MappedJdbcTypes注册，注册其每一个value，并判断是否也需要注册jdbcType为null。
+  2. 注册jdbcType为null。
+</code></pre>
+  第三步：<pre><code>  1. 若javaType不为null，则添加到typeHandlerMap。
+  2. 以typeHandler.getClass()为key，添加到allTypeHandlersMap。
+</code></pre>
+  添加方法：<pre><code>  register(TypeHandler);
+  register(Class, TypeHandler);
+  private register(Type, TypeHandler);  相当于第一个通用处理方法。
+  register(TypeReference, TypeHandler);
+  register(Class, JdbcType, TypeHandler);
+  private register(Type, JdbcType, TypeHandler); 第二个通用处理方法。
+  另外支持TypeHandler 以Class为参数，通过getInstance转换， jdbcType不支持String。
+  支持String代替Class，通过Resource转换。
+  支持包名全部注册。
+</code></pre>
+</li>
+<li>register Map&lt;JdbcType, TypeHandler&lt;?&gt;&gt;  jdbcTypeHandlerMap： register(JdbcType, TypeHandler)。</li>
+<li>TypeHandler<Object> unknownTypeHandler</li>
+<li>Class&lt;? extends TypeHandler&gt; defaultEnumTypeHandler</li>
+<li>getTypeHandler:</li>
+</ul>
+<h3 id="MapperRegistry"><a href="#MapperRegistry" class="headerlink" title="MapperRegistry"></a>MapperRegistry</h3><ul>
+<li>org.apache.ibatis.binding</li>
+<li>Configuration</li>
+<li>Map&lt;Class<?>, MapperProxyFactory<?>&gt; knownMappers</li>
+<li>addMapper(Class) 最终执行方法</li>
+<li>addMappers(String packageName)</li>
+<li>addMappers(String packageName, Class superType)</li>
+</ul>
+<h3 id="MapperProxyFactory"><a href="#MapperProxyFactory" class="headerlink" title="MapperProxyFactory"></a>MapperProxyFactory</h3><ul>
+<li>org.apache.ibatis.binding</li>
+<li>Class mapperInterface</li>
+<li>Map&lt;Method, MapperMethodInvoker&gt; methodCache</li>
+</ul>
+<h3 id="XMLMapperBuilder-extends-BaseBuilder"><a href="#XMLMapperBuilder-extends-BaseBuilder" class="headerlink" title="XMLMapperBuilder extends BaseBuilder"></a>XMLMapperBuilder extends BaseBuilder</h3><ul>
+<li>org.apache.ibatis.builder.xml</li>
+<li>parser</li>
+<li>MapperBuilderAssistant mapperBuilderAssistant</li>
+<li>sqlFragments</li>
+<li>parse()</li>
+</ul>
+<h3 id="MapperAnnotationBuilder"><a href="#MapperAnnotationBuilder" class="headerlink" title="MapperAnnotationBuilder"></a>MapperAnnotationBuilder</h3><ul>
+<li>org.apache.ibatis.builder.annotation</li>
+<li>configuration</li>
+<li>mapperBuilderAssistant</li>
+<li>type</li>
+<li>解析：<br>  解析Cache: @CacheNamespace<br>  解析CacheRef: @CacheNamespaceRef<br>  解析ResultMap: </li>
+</ul>
+<h3 id="MapperBuilderAssistant-extends-BaseBuilder"><a href="#MapperBuilderAssistant-extends-BaseBuilder" class="headerlink" title="MapperBuilderAssistant extends BaseBuilder"></a>MapperBuilderAssistant extends BaseBuilder</h3><ul>
+<li>org.apache.ibatis.builder.xml</li>
+<li>namespace</li>
+<li>resource</li>
+</ul>
+<h3 id="XMLStatementBuilder-extends-BaseBuilder"><a href="#XMLStatementBuilder-extends-BaseBuilder" class="headerlink" title="XMLStatementBuilder extends BaseBuilder"></a>XMLStatementBuilder extends BaseBuilder</h3><ul>
+<li>org.apache.ibatis.builder.xml</li>
+<li>mapperBuilderAssistant 为XMLMapperBuilder的成员变量</li>
+</ul>
+<h3 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h3><ol>
+<li>mapper通过url、resource、class加载，且xml会加载class，class会加载xml，怎么去重<br> 所有的资源都在configuration的loadedResources中保存，加载xml其key为resource路径/url路径，加载class其key为 class.toString(), 通过class加载xml与通过xml加载class 都是通过全限定类名/namespace查询加载，其key相同，为 <code>namespace:</code> + 全限定类名。</li>
+<li>加载class -&gt; 先加载xml -&gt; xml加载完查询class加载 —&gt; … 会一直加载下去么<br> class的加载，都需经过mapperRegistry的addMapper()方法， 先行存储加载的class。<br> 通过xml加载后，会根据namespace加载class，并在此判断mapperRegistry中是否已加载该class。</li>
+<li>会不会加载完xml找不到对应的class，从而getMapper拿不到实体<br> xml可以加载，mapper拿不到。</li>
+<li>getMapper()返回的代理类是每次创建么，如果不是，怎么保存的<br> 不是，因为每次调用的sqlSession是不同的，创建出来的代理的sqlSession为当前sqlSession。</li>
+<li>mybatis获取不到接口的参数名，而只能使用param1、param2之类的<br> java在编译的时候，默认不会保留方法名参数，因此无法在运行时获取参数名称。<br> 编译时可以使用-g参数来保留方法名参数。<br> maven在编译时会默认添加-g参数，所以通过maven可以拿到具体方法名参数。</li>
+<li>resultMap标签中的type、ofType、javaType、resultType<br> type: resultMap标签的属性，为类的全限定名称，表示返回的结果。<br> ofType：collection标签的属性，表示哪一种类型的集合。<br> javaType：property标签的属性，表示这个属性的类型。<br> resultType：select标签的属性。</li>
+<li>XmlMapperBuilder、MapperBuilderAssistant、MapperAnnotationBuilder<br> XMLMapperBuilder、MapperAnnotationBuilder 继承自BaseBuilder，为什么AnnotationMapperBuilder没有呢？<br> XMlMapperBuilder、MapperAnnotationBuilder都定义了MapperBuilderAssistant属性，是抽象公用？<br> 因为除了AnnotationMapperBuilder，其它都是解析xml，BaseBuilder提供了将字符串解析为对象的方法，而注解可以直接使用类型定义。<br> MapperBuilderAssistant相当于工具类，且需要使用BaseBuilder的基础方法。</li>
+<li>为什么XML和DAO中的ResultMap不能通用呢？<br> 注解方式ResultMap是通过 类名、方法名、方法参数 拼起来的， 可以通过@Results的id属性指定。<br> XML方式是显示id和namespace拼接的，xml的id必须指定，通过dtd约束。<br> 使用解析后的resultMapId是可以通用的。</li>
+<li>MapperProxy中的MapperMethodInvoker与使用函数式接口的区别。<ol>
+<li>通过接口能体现出多态的特性。</li>
+<li>接口需要在其它地方引用。</li>
+</ol>
+</li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><ol>
+<li>MapperRegistry中config属性只为创建XmlAnnotationBuilder，没有其它使用地方。将其作为全局变量来存储，而不是方法参数带过来。</li>
+</ol>
+<h2 id="SqlSessionFactory"><a href="#SqlSessionFactory" class="headerlink" title="SqlSessionFactory"></a>SqlSessionFactory</h2><h4 id="构建方式"><a href="#构建方式" class="headerlink" title="构建方式"></a>构建方式</h4><ol>
+<li>通过xml方式<br>将配置信息放在xml中，然后通过加载xml配置文件，使用SqlSessionFactoryBuilder来创建。</li>
+<li>通过java代码<br>通过DataSource、 Environment、 TransactionFactory、 Configuration 等类来创建。</li>
+<li>通过spring<br>// TODO<br>3.1 通过xml<br>3.2 通过yml</li>
+</ol>
+<h2 id="SqlSession"><a href="#SqlSession" class="headerlink" title="SqlSession"></a>SqlSession</h2><h4 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h4><pre><code>try (SqlSession session = sqlSessionFactory.openSession()) &#123;
+    ...
+&#125;
+</code></pre>
+<h2 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h2><h4 id="映射器"><a href="#映射器" class="headerlink" title="映射器"></a>映射器</h4><pre><code>绑定映射语句的接口。
+</code></pre>
+<h2 id="configuration"><a href="#configuration" class="headerlink" title="configuration"></a>configuration</h2><ul>
+<li>properties</li>
+<li>settings</li>
+<li>typeAliases<ol>
+<li>通过typeAlia标签配置</li>
+<li>通过package标签及@Alias注解（没有注解时使用Java Bean首字母小写的非限定类名）配置</li>
+</ol>
+</li>
+<li>typeHandlers<ol>
+<li>通过typeHandler标签配置</li>
+<li>通过package标签</li>
+</ol>
+</li>
+<li>objectFactory 无自动义的情况下使用默认的DefaultObjectFactory.java</li>
+<li>plugins<br>Executor (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)<br>ParameterHandler (getParameterObject, setParameters)<br>ResultSetHandler (handleResultSets, handleOutputParameters)<br>StatementHandler (prepare, parameterize, batch, update, query)</li>
+<li>environments<br>每个environment 包含transactionManager 和 dataSource 配置‘<br>transactionManager 配置事务的提交和回滚规则，使用数据库提供的（type=JDBC），还是自己配置的（type=MANAGED）。</li>
+<li>databaseIdProvider</li>
+<li>mappers<ol>
+<li>通过mapper标签，使用resource/URL/class属性。</li>
+<li>通过package标签</li>
+</ol>
+</li>
+</ul>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><ul>
+<li>工厂方法： SqlSessionFactory。MapperProxyFactory。</li>
+<li>代理： CachingExecutor（代理控制对象的访问，装饰器增加对象的行为）。RoutingStatementHandler（这里应该可以使用简单工厂）。</li>
+<li>责任链： Interceptor。</li>
+<li>模板方法： BaseExecutor。</li>
+<li>组合： SqlNode。</li>
+</ul>
+
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/24/%E5%85%83/Hexo-%E7%BC%BA%E7%82%B9/" rel="prev" title="Hexo 缺点">
+      <i class="fa fa-chevron-left"></i> Hexo 缺点
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/29/JS/vue/" rel="next" title="vue">
+      vue <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis"><span class="nav-number">1.</span> <span class="nav-text">Mybatis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">关键类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%8E%B7%E5%8F%96SqlSessionFactory"><span class="nav-number">3.1.</span> <span class="nav-text">1.获取SqlSessionFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-SqlSession%E3%80%81Executor"><span class="nav-number">3.2.</span> <span class="nav-text">9.SqlSession、Executor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuration"><span class="nav-number">3.3.</span> <span class="nav-text">Configuration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BaseBuilder"><span class="nav-number">3.4.</span> <span class="nav-text">BaseBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLConfigBuilder-extends-BaseBuilder"><span class="nav-number">3.5.</span> <span class="nav-text">XMLConfigBuilder extends BaseBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XPathParser"><span class="nav-number">3.6.</span> <span class="nav-text">XPathParser</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResolverUtil"><span class="nav-number">3.7.</span> <span class="nav-text">ResolverUtil</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeAliasRegistry"><span class="nav-number">3.8.</span> <span class="nav-text">TypeAliasRegistry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeHandlerRegistry"><span class="nav-number">3.9.</span> <span class="nav-text">TypeHandlerRegistry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MapperRegistry"><span class="nav-number">3.10.</span> <span class="nav-text">MapperRegistry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MapperProxyFactory"><span class="nav-number">3.11.</span> <span class="nav-text">MapperProxyFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLMapperBuilder-extends-BaseBuilder"><span class="nav-number">3.12.</span> <span class="nav-text">XMLMapperBuilder extends BaseBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MapperAnnotationBuilder"><span class="nav-number">3.13.</span> <span class="nav-text">MapperAnnotationBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MapperBuilderAssistant-extends-BaseBuilder"><span class="nav-number">3.14.</span> <span class="nav-text">MapperBuilderAssistant extends BaseBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XMLStatementBuilder-extends-BaseBuilder"><span class="nav-number">3.15.</span> <span class="nav-text">XMLStatementBuilder extends BaseBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-amp-A"><span class="nav-number">3.16.</span> <span class="nav-text">Q&amp;A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.17.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SqlSessionFactory"><span class="nav-number">4.</span> <span class="nav-text">SqlSessionFactory</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">4.0.1.</span> <span class="nav-text">构建方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SqlSession"><span class="nav-number">5.</span> <span class="nav-text">SqlSession</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA"><span class="nav-number">5.0.1.</span> <span class="nav-text">构建</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%A0%E5%B0%84"><span class="nav-number">6.</span> <span class="nav-text">映射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%98%A0%E5%B0%84%E5%99%A8"><span class="nav-number">6.0.1.</span> <span class="nav-text">映射器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#configuration"><span class="nav-number">7.</span> <span class="nav-text">configuration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">设计模式</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">知之者不如好之者，好之者不如乐之者。知其然，知其所以然。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

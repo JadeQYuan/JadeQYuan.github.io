@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Tomcat 源码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tomcat 源码">
+<meta property="og:url" content="http://example.com/2022/01/27/Java/%E6%BA%90%E7%A0%81/Tomcat%20%E6%BA%90%E7%A0%81/index.html">
+<meta property="og:site_name" content="乐然 LeRan">
+<meta property="og:description" content="Tomcat 源码">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-27T05:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-01T13:37:07.158Z">
+<meta property="article:author" content="Jade">
+<meta property="article:tag" content="乐之者, 知其然">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/01/27/Java/%E6%BA%90%E7%A0%81/Tomcat%20%E6%BA%90%E7%A0%81/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Tomcat 源码 | 乐然 LeRan</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">乐然 LeRan</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">乐之者知其所以然</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/JadeQYuan/JadeQYuan.github.io.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/27/Java/%E6%BA%90%E7%A0%81/Tomcat%20%E6%BA%90%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Jade.png">
+      <meta itemprop="name" content="Jade">
+      <meta itemprop="description" content="知之者不如好之者，好之者不如乐之者。知其然，知其所以然。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="乐然 LeRan">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Tomcat 源码
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-27 13:00:00" itemprop="dateCreated datePublished" datetime="2022-01-27T13:00:00+08:00">2022-01-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-01 21:37:07" itemprop="dateModified" datetime="2022-03-01T21:37:07+08:00">2022-03-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E6%BA%90%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">源码</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">Tomcat 源码</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><ul>
+<li>Tomcat具有接受并处理Http请求的能力，所以Tomcat是Http服务器。</li>
+<li>Tomcat满足Servlet接口和协议，所以Tomcat是Servlet容器。</li>
+<li>Web服务器对应Coyote框架，具体为Connector组件。</li>
+<li>Servlet容器对应Catalina容器，具体为Container组件。</li>
+<li>Tomcat主要运行JSP和Servlet，处理静态HTML的能力不如Apache服务器。</li>
+</ul>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ul>
+<li>Catalina，Tomcat内部Servlet容器。</li>
+<li>Coyote，Tomcat连接框架。</li>
+<li>JMX，Java Management Extensions。</li>
+</ul>
+<h2 id="关键类"><a href="#关键类" class="headerlink" title="关键类"></a>关键类</h2><ul>
+<li>Bootstrap，Catalina启动加载类。</li>
+<li>Catalina，为Catalina容器处理shell命令。</li>
+<li>Server(StandardServer)，代表整个Servlet容器，NamingResources最顶层，包含一个或多个Service。</li>
+<li>Service(StandardService)，包含一个或多个Connector，共享一个Container，Container处理从Connector来的请求。</li>
+<li>Connector，Coyote Connector的实现。</li>
+<li>Container，处理请求并相应的对象。实现类按层级为Engine（Servlet引擎）、Host、Context、Wrapper。</li>
+<li>Lifecycle，Catalina组件生命周期接口。</li>
+<li>PipeLine、Valve，控制和/或修改请求和响应。</li>
+</ul>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li>startup.bat -&gt; catalina.bat -&gt; Bootstrap。</li>
+<li>bat中引用的变量，设置的参数，执行的命令等。</li>
+<li>Bootstrap类静态加载使用System.getProperty获取数据，而这是启动类，所以应该是命令行参数传递过来的。</li>
+<li>Bootstrap使用反射调用Catalina方法原因分析。</li>
+<li>解压tomcat\bin\bootstrap.jar。</li>
+<li>Bootstrap初始化类加载器，最后通过AccessController.doPrivileged。</li>
+<li>初始化了三个类加载。都是URLClassLoader的实例，顺便看一下JVM源码里面的类加载器结构。这块还有Thread.contextClassLoader。</li>
+<li>Bootstrap反射调用了Catalina的load、start方法，但是server为null，且无设置地方。分析load方法中的解析server.xml部分。</li>
+<li>根据XML中的配置及一些默认配置，对组件进行处理。且每个组件负责其子组件的处理。处理主要包括initial、start。另外还有监听器。</li>
+<li>Container组件监听器。</li>
+<li>ContextConfig解析context.xml、web.xml。</li>
+<li>Pipeline与Valve。</li>
+</ol>
+<h3 id="1-tomcat启动流程"><a href="#1-tomcat启动流程" class="headerlink" title="1.tomcat启动流程"></a>1.tomcat启动流程</h3><p>   tomcat/bin/startup.bat -&gt; tomcat/bin/catalina.bat -&gt; org.apache.catalina.startup.Bootstrap。<br>   在eclipse中，使用javaw指令。</p>
+<h3 id="2-CATALINA-HOME、CATALINA-BASE、JAVA-HOME、jdb、jpda、juli"><a href="#2-CATALINA-HOME、CATALINA-BASE、JAVA-HOME、jdb、jpda、juli" class="headerlink" title="2.CATALINA_HOME、CATALINA_BASE、JAVA_HOME、jdb、jpda、juli"></a>2.CATALINA_HOME、CATALINA_BASE、JAVA_HOME、jdb、jpda、juli</h3><p>   CATALINA_HOME环境变量，应该设置tomcat根目录，而不是tomcat\bin目录。如果没有设置，tomcat只能在tomcat目录和bin目录下执行，其它目录下执行找不到对应的catalina.bat文件。<br>   catalina.bat中引用了JAVA_HOME的环境变量。</p>
+<h3 id="3-java-Dproperty-value"><a href="#3-java-Dproperty-value" class="headerlink" title="3.java -Dproperty=value"></a>3.java -Dproperty=value</h3><p>   -D set a system property value。<br>   tomcat可以设置 catalina.home、catalina.base 两个参数。<br>   在Bootstrap中，使用了System.getProperty，set操作是在命令行进行的。<br>   在catalina.bat中，对catalina.home、catalina.base做了判断赋值。</p>
+<h3 id="4-Bootstrap使用反射调用Catalina方法，包括new、load、start。"><a href="#4-Bootstrap使用反射调用Catalina方法，包括new、load、start。" class="headerlink" title="4.Bootstrap使用反射调用Catalina方法，包括new、load、start。"></a>4.Bootstrap使用反射调用Catalina方法，包括new、load、start。</h3><p>   通过反射进行解耦。<br>   启动时添加了classpath为tomcat\bin\bootstrap.jar，其中没有Catalina类。通过配置文件，使用ClassLoader加载tomcat\lib\下面的jar。（Bootstrap.initClassLoaders）<br>    1. commonClassLoader做为catalinaClassLoader和shareClassLoader的parent。<br>    2. CatalinaProperties使用静态初始化加载配置文件。<br>    3. 配置文件顺序： 1.命令行指定-Dcatalina.config； 2.tomcat目录tomcat\conf\catalina.properties文件； 3.bootstrap.jar中org.apache.catalina.startup.catalina.properties文件。</p>
+<h3 id="5-bootstrap-jar中只使用了几个类"><a href="#5-bootstrap-jar中只使用了几个类" class="headerlink" title="5.bootstrap.jar中只使用了几个类"></a>5.bootstrap.jar中只使用了几个类</h3><p>   Bootstrap 主类<br>   CatalinaProperties 加载配置文件<br>   ClassLoaderFactory 创建类加载器，并指定相应的parent<br>   Constants 常量<br>   SafeForkJoinWorkerThreadFactory<br>   Tool</p>
+<h3 id="6-AccessController-doPrivileged"><a href="#6-AccessController-doPrivileged" class="headerlink" title="6.AccessController.doPrivileged"></a>6.AccessController.doPrivileged</h3><p>   Java安全： 沙箱 -&gt; 代码签名 -&gt; 权限 -&gt; 域（系统域、应用域）<br>   使用-Djava.security.SecurityManage开启权限验证。指定policy文件。不指定使用JDK默认的。<br>   AccessController.checkPermission 验证权限，会验证操作栈中每一个栈帧的权限。<br>   AccessController.doPrivileged 验证权限，只在当前栈帧验证，中断栈上验证的操作。<br>   acc AccessControlContext。<br>   tomcat\conf\catalina.policy。</p>
+<h3 id="7-URLClassLoader"><a href="#7-URLClassLoader" class="headerlink" title="7.URLClassLoader"></a>7.URLClassLoader</h3><p>   JDK11<br>   null(ClassLoaders.BootClassLoader) -&gt; platform(ClassLoaders.PlatformClassLoader) -&gt; app(ClassLoaders.AppClassLoader)<br>   JDK8<br>   null(BootstrapClassLoader) -&gt; Launch.ExtClassLoader -&gt; Launch.AppClassLoader<br>   CLassLoader: app -&gt; commonLoader -&gt; catalinaLoader、sharedLoader   catalina.parentClassLoader = shared。</p>
+<h3 id="8-server-xml-解析"><a href="#8-server-xml-解析" class="headerlink" title="8.server.xml 解析"></a>8.server.xml 解析</h3><p>   org.apache.tomcat.util.digeter包。<br>   Digester[Rules, ArrayStack, SAXPaser、XMLReader]。<br>   digester.parse -&gt; getXMLReader(设置handler，DTDHandler、ContentHandler、EntityResolver、ErrorHandler) -&gt; xmlReader.parse -&gt; 解析xml，调用各种handler处理 -&gt; 根据标签信息，获取对应的rule -&gt; 调用rule创建对象、设置属性、调用方法等。</p>
+<h3 id="9-Lifecycle"><a href="#9-Lifecycle" class="headerlink" title="9.Lifecycle"></a>9.Lifecycle</h3><p>状态：New、Initializing、Initialized、Starting_Prep、Starting、Started、Stop_Prep、Stopping、Stopped、Destroying、Destroyed、Failed。<br>事件：before_init、after_init、start、before_start、after_start、stop、before_stop、after_stop、before_destroy、after_destroy、periodic、configure_start、configure_stop。<br>StandardServer初始化：StandardService初始化。<br>StandardService初始化：Connector初始化，Container初始化。<br>…</p>
+<h3 id="10-Container组件监听器"><a href="#10-Container组件监听器" class="headerlink" title="10.Container组件监听器"></a>10.Container组件监听器</h3><p>EngineConfig:<br>HostConfig:<br>ContextConfig:</p>
+<h3 id="11-解析context-xml、web-xml"><a href="#11-解析context-xml、web-xml" class="headerlink" title="11.解析context.xml、web.xml"></a>11.解析context.xml、web.xml</h3><p>context.xml: config/context.xml +&gt; EngineName/HostName/context.xml.default +&gt; META-INF/context.xml。<br>web.xml: config/web.xml +&gt; EngineName/HostName/web.xml.default +&gt; WEB-INF/web.xml +&gt; WEB-INF/lib/!jar/META-INF/web-fragment.xml。</p>
+<h3 id="12-Pipeline与Valve"><a href="#12-Pipeline与Valve" class="headerlink" title="12. Pipeline与Valve"></a>12. Pipeline与Valve</h3><p>对request处理 -&gt; 调用getNext().invoke() -&gt; 对response处理。<br>如果valve不通过，则不调用getNext().invoke()。<br>pipeline中只保存了第一个valve，而valve之间使用责任链的方式进行处理。<br>每个Container中都有一个basicValve，用来处理下级容器的valve，直到WrapperValve处理Servlet。</p>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><ul>
+<li>模板方法：LifecycleBase。</li>
+<li>简单工厂：ApplicationFilterChain。</li>
+<li>责任链：Valve、FilterChain。</li>
+<li>观察者：Lifecycle、LifecycleEvent、LifecycleListener。</li>
+</ul>
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul>
+<li>加载web.xml，loadOnStartUp。</li>
+<li>封装Servlet，Request、Response。</li>
+<li>tomcat配置，context标签。</li>
+<li>生命周期接口。</li>
+<li>Web容器、Servlet容器实现区分。</li>
+<li>tomcat架构图/server.xml配置文件的理解。</li>
+<li>NIO的使用。</li>
+</ul>
+<h2 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h2><ul>
+<li>org.apache.catalina  org.apache.tomcat</li>
+<li>tomcat maven插件与tomcat-embeded版本有什么区别</li>
+<li>tomcat maven插件配置完启动的tomcat是在哪里<ol>
+<li>添加tomcat maven插件后在依赖里并没有相关的包。</li>
+<li>将依赖下载的jar包解压，找到pom文件，里面依赖的是tomcat-embeded等。jar包比spring-boot-starter-tomcat中依赖的tomcat jar包要多。</li>
+<li>解压包里面有一些配置文件，使用的还是tomcat本身的配置文件，而tomcat-embeded里面没有找到。</li>
+</ol>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    <p style="text-align: center; font-size: 20px;"><strong>END</strong></p>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/19/Java/Java%E5%B9%B3%E5%8F%B0/Java%20SE%20API/" rel="prev" title="Java SE API">
+      <i class="fa fa-chevron-left"></i> Java SE API
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%8F%E8%AE%AE/" rel="next" title="协议">
+      协议 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat"><span class="nav-number">1.</span> <span class="nav-text">Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AF%E8%AF%AD"><span class="nav-number">2.</span> <span class="nav-text">术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">关键类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-tomcat%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">1.tomcat启动流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-CATALINA-HOME%E3%80%81CATALINA-BASE%E3%80%81JAVA-HOME%E3%80%81jdb%E3%80%81jpda%E3%80%81juli"><span class="nav-number">4.2.</span> <span class="nav-text">2.CATALINA_HOME、CATALINA_BASE、JAVA_HOME、jdb、jpda、juli</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-java-Dproperty-value"><span class="nav-number">4.3.</span> <span class="nav-text">3.java -Dproperty&#x3D;value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Bootstrap%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E8%B0%83%E7%94%A8Catalina%E6%96%B9%E6%B3%95%EF%BC%8C%E5%8C%85%E6%8B%ACnew%E3%80%81load%E3%80%81start%E3%80%82"><span class="nav-number">4.4.</span> <span class="nav-text">4.Bootstrap使用反射调用Catalina方法，包括new、load、start。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-bootstrap-jar%E4%B8%AD%E5%8F%AA%E4%BD%BF%E7%94%A8%E4%BA%86%E5%87%A0%E4%B8%AA%E7%B1%BB"><span class="nav-number">4.5.</span> <span class="nav-text">5.bootstrap.jar中只使用了几个类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-AccessController-doPrivileged"><span class="nav-number">4.6.</span> <span class="nav-text">6.AccessController.doPrivileged</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-URLClassLoader"><span class="nav-number">4.7.</span> <span class="nav-text">7.URLClassLoader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-server-xml-%E8%A7%A3%E6%9E%90"><span class="nav-number">4.8.</span> <span class="nav-text">8.server.xml 解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Lifecycle"><span class="nav-number">4.9.</span> <span class="nav-text">9.Lifecycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Container%E7%BB%84%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8"><span class="nav-number">4.10.</span> <span class="nav-text">10.Container组件监听器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E8%A7%A3%E6%9E%90context-xml%E3%80%81web-xml"><span class="nav-number">4.11.</span> <span class="nav-text">11.解析context.xml、web.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-Pipeline%E4%B8%8EValve"><span class="nav-number">4.12.</span> <span class="nav-text">12. Pipeline与Valve</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO"><span class="nav-number">6.</span> <span class="nav-text">TODO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q"><span class="nav-number">7.</span> <span class="nav-text">Q</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jade"
+      src="/images/Jade.png">
+  <p class="site-author-name" itemprop="name">Jade</p>
+  <div class="site-description" itemprop="description">知之者不如好之者，好之者不如乐之者。知其然，知其所以然。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/JadeQYuan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;JadeQYuan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:knowingplus@hotmail.com" title="E-Mail → mailto:knowingplus@hotmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jade</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
