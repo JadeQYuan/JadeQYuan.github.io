@@ -33,6 +33,7 @@ date: 2022-07-01 22:00:00
 
 ## junit4 junit5
 - org.junit.*  org.junit.jupiter.api.*
+- @SpringBootTest + @RunWith  =>  @SpringBootTest（组合注解）
 
 ## @SpringBootTest @RunWith
 - @SpringBootTest 使用Spring上下文。
