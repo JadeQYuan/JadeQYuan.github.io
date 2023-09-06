@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">184</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -251,19 +251,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"13.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"可以证明，字符串操作是计算机程序设计中最常见的行为。"}]},{"t":"heading","d":1,"p":{"lines":[3,4]},"v":"13.1 不可变String","c":[{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"String对象是不可变的。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"String类中每一个看起来会修改String值的方法，实际上都是创建了一个全新的String对象，以包含修稿后的字符串内容。"}]},{"t":"heading","d":1,"p":{"lines":[7,8]},"v":"13.2 重载“+”与StringBuilder","c":[{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"不可变性会带来一定的效率问题。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"重载：一个操作符在应用于特定的类时，被赋予了特殊的意义。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"进行重载时，编译器自动引入了StringBuilder类，因为它更高效。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"显式创建StringBuilder允许预先指定大熊啊，避免多次重新分配缓存。"},{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"如果在字符串拼接中使用循环，最好创建一个StringBuilder，用它来构造最终的结果。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"StringBuilder方法：append、insert、replace、substring、reverse、toString。"}]},{"t":"heading","d":1,"p":{"lines":[15,16]},"v":"13.3 无意识的递归","c":[{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"toString中使用this，导致递归调用。发生了自动转换，编译器将this转换为String，调用this上的toString。"}]},{"t":"heading","d":1,"p":{"lines":[18,19]},"v":"13.4 String上的操作"},{"t":"heading","d":1,"p":{"lines":[20,21]},"v":"13.5 格式化输出","c":[{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"Java SE5 推出了C语言中printf风格的格式化输出功能。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"占位符，称作格式修饰符。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"Java SE5 引入的format方法可用于PrintStream或PrintWriter对象，其中也包括System.out对象。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"在Java中，所有新的格式化功能都有java.util.Formatter类处理。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"格式修饰符语法： %[argument_index$][flags][width][.precision]coversion。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"类型转换字符：d（十进制整数）、c（Unicode字符）、b（Boolean值）、s（String）、f（十进制浮点数）、e（科学技术浮点数）、x（十六进制整数）、h（十六进制散列码）、%。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"Java SE5参考了C中的sprintf方法，以生成格式化的String对象。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"String.format是一个static方法，接受与Formatter.format方法一样的参数，返回一个String对象。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"在String。format内部，也是创建一个Formatter对象，然后将传入的参数转给该Formatter。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"使用String.format，制作以十六进制格式查看内容的工具。"}]},{"t":"heading","d":1,"p":{"lines":[32,33]},"v":"13.6 正则表达式","c":[{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"在Java中，字符串操作主要集中在String、StringBuffer和StringTokenizer类，与正则表达式相比，只能提供相当简单的功能。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"正则表达式是一种强大而灵活的文本处理工具。使用正则表达式，能够以编程的方式，构造复杂的文本模式，并对输入的字符串进行搜索。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"正则表达式提供一种完全通用的方式，能够解决各种字符串处理相关的问题：匹配、选择、编译及验证。"},{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"一般来说，正则表达式就是以某种方式来描述字符串。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"Java对反斜线的不同处理。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"应用正则表达式最简单的途径，就是利用String类内建的功能。matches、split、replace、replaceAll、replaceFirst。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"如果正则表达式不是只使用一次的话，非String对象的正则表达式明显具备更佳的性能。"},{"t":"list_item","d":3,"p":{"lines":[42,43]},"v":"参考java.util.regex.Pattern。"},{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"量词描述了一个模式吸收输入文本的方式： 贪婪型、勉强型、占有型。"},{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"接口CharSequence从CharBuffer、String、StringBuffer、StringBuilder类之中抽象出了字符序列的一般化定义： charAt、length、subSequence、toString。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"多数正则表达式都接受CharSequence类型的参数。"},{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"使用Pattern.compile方法编译正则表达式构造功能强大的正则表达式对象。"},{"t":"list_item","d":3,"p":{"lines":[49,50]},"v":"Pattern.matcher方法生成要给Matcher对象。参考java.util.regex.Matcher。"},{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"组是用括号划分的正则表达式，可以根据组的编号来引用某个组。组号为0表示整个表达式。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"Pattern标记。"}]},{"t":"heading","d":1,"p":{"lines":[53,54]},"v":"13.7 扫描输入","c":[{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"Java SE5新增了Scanner类，可以大大减轻扫描输入的工作负担。"},{"t":"list_item","d":3,"p":{"lines":[55,56]},"v":"Scanner的构造器可以接受任何类型的输入对象，包括File、InputStream、String、Readable。"},{"t":"list_item","d":3,"p":{"lines":[56,57]},"v":"默认情况下，Scanner根据空白字符对输入进行分词，但可用正则表达式指定所需的定界符。"},{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"使用正则表达式指定定界符时，仅仅针对下一个输入分词进行匹配，如果正则表达式中含有定界符，那永远不可能匹配成功。"}]},{"t":"heading","d":1,"p":{"lines":[59,60]},"v":"13.8 StringTokenizer","c":[{"t":"list_item","d":3,"p":{"lines":[60,61]},"v":"在Java引入正则表达式（J2SE 1.4）和Scanner（Java SE5）类之前，分隔字符串的唯一方法是使用StringTokenizer来分词。"},{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"StringTokenizer已经可以废弃不用了。"}]},{"t":"heading","d":1,"p":{"lines":[63,64]},"v":"13.9 总结","c":[{"t":"list_item","d":3,"p":{"lines":[64,65]},"v":"过去，Java对字符串操作的支持相当不完善。到目前为止，已经很完善了。"}]}],"p":{}}</svg>
-              </div>
+        
+<div class="markmap-container" style="height:undefined">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;13.0 序&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;可以证明，字符串操作是计算机程序设计中最常见的行为。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;13.1 不可变String&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;String对象是不可变的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;String类中每一个看起来会修改String值的方法，实际上都是创建了一个全新的String对象，以包含修稿后的字符串内容。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;13.2 重载“+”与StringBuilder&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;不可变性会带来一定的效率问题。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;重载：一个操作符在应用于特定的类时，被赋予了特殊的意义。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;进行重载时，编译器自动引入了StringBuilder类，因为它更高效。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;显式创建StringBuilder允许预先指定大熊啊，避免多次重新分配缓存。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;如果在字符串拼接中使用循环，最好创建一个StringBuilder，用它来构造最终的结果。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;StringBuilder方法：append、insert、replace、substring、reverse、toString。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;13.3 无意识的递归&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;toString中使用this，导致递归调用。发生了自动转换，编译器将this转换为String，调用this上的toString。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;13.4 String上的操作&quot;},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;13.5 格式化输出&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;Java SE5 推出了C语言中printf风格的格式化输出功能。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;占位符，称作格式修饰符。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;Java SE5 引入的format方法可用于PrintStream或PrintWriter对象，其中也包括System.out对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[25,26]},&quot;v&quot;:&quot;在Java中，所有新的格式化功能都有java.util.Formatter类处理。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[26,27]},&quot;v&quot;:&quot;格式修饰符语法： %[argument_index$][flags][width][.precision]coversion。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;类型转换字符：d（十进制整数）、c（Unicode字符）、b（Boolean值）、s（String）、f（十进制浮点数）、e（科学技术浮点数）、x（十六进制整数）、h（十六进制散列码）、%。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;Java SE5参考了C中的sprintf方法，以生成格式化的String对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[29,30]},&quot;v&quot;:&quot;String.format是一个static方法，接受与Formatter.format方法一样的参数，返回一个String对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[30,31]},&quot;v&quot;:&quot;在String。format内部，也是创建一个Formatter对象，然后将传入的参数转给该Formatter。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[31,32]},&quot;v&quot;:&quot;使用String.format，制作以十六进制格式查看内容的工具。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[33,34]},&quot;v&quot;:&quot;13.6 正则表达式&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;在Java中，字符串操作主要集中在String、StringBuffer和StringTokenizer类，与正则表达式相比，只能提供相当简单的功能。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[35,36]},&quot;v&quot;:&quot;正则表达式是一种强大而灵活的文本处理工具。使用正则表达式，能够以编程的方式，构造复杂的文本模式，并对输入的字符串进行搜索。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[36,37]},&quot;v&quot;:&quot;正则表达式提供一种完全通用的方式，能够解决各种字符串处理相关的问题：匹配、选择、编译及验证。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[38,39]},&quot;v&quot;:&quot;一般来说，正则表达式就是以某种方式来描述字符串。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[39,40]},&quot;v&quot;:&quot;Java对反斜线的不同处理。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[40,41]},&quot;v&quot;:&quot;应用正则表达式最简单的途径，就是利用String类内建的功能。matches、split、replace、replaceAll、replaceFirst。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[41,42]},&quot;v&quot;:&quot;如果正则表达式不是只使用一次的话，非String对象的正则表达式明显具备更佳的性能。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[43,44]},&quot;v&quot;:&quot;参考java.util.regex.Pattern。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[45,46]},&quot;v&quot;:&quot;量词描述了一个模式吸收输入文本的方式： 贪婪型、勉强型、占有型。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[46,47]},&quot;v&quot;:&quot;接口CharSequence从CharBuffer、String、StringBuffer、StringBuilder类之中抽象出了字符序列的一般化定义： charAt、length、subSequence、toString。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[47,48]},&quot;v&quot;:&quot;多数正则表达式都接受CharSequence类型的参数。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[49,50]},&quot;v&quot;:&quot;使用Pattern.compile方法编译正则表达式构造功能强大的正则表达式对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[50,51]},&quot;v&quot;:&quot;Pattern.matcher方法生成要给Matcher对象。参考java.util.regex.Matcher。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[51,52]},&quot;v&quot;:&quot;组是用括号划分的正则表达式，可以根据组的编号来引用某个组。组号为0表示整个表达式。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[52,53]},&quot;v&quot;:&quot;Pattern标记。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[54,55]},&quot;v&quot;:&quot;13.7 扫描输入&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[55,56]},&quot;v&quot;:&quot;Java SE5新增了Scanner类，可以大大减轻扫描输入的工作负担。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[56,57]},&quot;v&quot;:&quot;Scanner的构造器可以接受任何类型的输入对象，包括File、InputStream、String、Readable。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[57,58]},&quot;v&quot;:&quot;默认情况下，Scanner根据空白字符对输入进行分词，但可用正则表达式指定所需的定界符。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[58,59]},&quot;v&quot;:&quot;使用正则表达式指定定界符时，仅仅针对下一个输入分词进行匹配，如果正则表达式中含有定界符，那永远不可能匹配成功。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[60,61]},&quot;v&quot;:&quot;13.8 StringTokenizer&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[61,62]},&quot;v&quot;:&quot;在Java引入正则表达式（J2SE 1.4）和Scanner（Java SE5）类之前，分隔字符串的唯一方法是使用StringTokenizer来分词。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[62,63]},&quot;v&quot;:&quot;StringTokenizer已经可以废弃不用了。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[64,65]},&quot;v&quot;:&quot;13.9 总结&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[65,66]},&quot;v&quot;:&quot;过去，Java对字符串操作的支持相当不完善。到目前为止，已经很完善了。&quot;}]}],&quot;p&quot;:{}}"></svg>
+</div>
 
-  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
-  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
-  <script>
-    const mindmaps = document.querySelectorAll('.markmap-svg');
-    for(let mindmap of mindmaps) {
-        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
-    }
-  </script> 
+
     </div>
 
     
@@ -279,8 +272,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/16/Java/JVM/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA/" rel="prev" title="运行时数据区">
-      <i class="fa fa-chevron-left"></i> 运行时数据区
+    <a href="/2021/12/16/Java/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" rel="prev" title="类加载">
+      <i class="fa fa-chevron-left"></i> 类加载
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/12/20/Java/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%EF%BC%8814%EF%BC%89%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF/" rel="next" title="类型信息">
@@ -359,14 +352,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">184</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -401,7 +394,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -526,5 +519,5 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
-</body>
+<script src="/js/markmap.js"></script></body>
 </html>

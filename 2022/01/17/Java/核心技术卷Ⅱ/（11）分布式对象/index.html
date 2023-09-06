@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">184</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -245,19 +245,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"11.1 客户与服务器的角色","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"所有分布式编程技术的基本思想都很简单：客户计算机产生一个请求，然后将这个请求通过网络发送到服务器。服务器处理这个请求，并发送回一个针对该客户端的响应，供客户端进行分析。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"代理之间通信：CORBA（通用对象请求代理架构）、SOAP（简单对象访问协议）、RMI（远程方法调用）。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"CORBA与SOAP都是完全独立于语言的。"}]},{"t":"heading","d":1,"p":{"lines":[5,6]},"v":"11.2 远程方法调用","c":[{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"分布式计算的关键是远程方法调用。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"当客户代码要在远程对象上调用一个远程方法是，实际上调用的是代理对象上的一个普通的方法，称此代理对象为存根（stub）。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"存根位于客户端机器上，而非服务器上，它知道如何通过网络与服务器联系。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"存根会将远程方法所需的参数打包称一组字节。对参数编码的过程称作参数编组，目的是将参数转换成适合在虚拟机之间进行传递的格式。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"在RMI协议中，对象是使用序列化机制进行编码的。在SOAP协议中，对象被编码成XML。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"客户端的存根方法构造了一个信息块，包括： 被使用的远程对象的标识符，被调用的方法的描述，编组后的参数。"},{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"客户端存根对来自服务器端的返回值或异常进行反编组，其结果就成为调用存根的返回值。"}]},{"t":"heading","d":1,"p":{"lines":[14,15]},"v":"11.3 RMI编程模型","c":[{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"远程对象的接口必须扩展java.rmi.Remote接口。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"接口中的方法还必须抛出RemoteException异常。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"JDK提供了自举注册服务。服务器程序应该使用自举注册服务来注册至少一个远程对象。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"要注册一个远程对象，需要一个RMI URL和一个对实现对象的引用。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"当部署RMI应用时，通常需要动态地将类交付给运行程序。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"记录RMI活动的日志。"}]},{"t":"heading","d":1,"p":{"lines":[24,25]},"v":"11.4 远程方法中的参数与返回值","c":[{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"在开始进行远程方法调用时，调用参数需要从客户端的虚拟机中移动到服务器的虚拟机中。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"在调用完成之后，返回值需要进行反方向传递。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"传递远程对象，远程远程对象的发送者和接收者都将持有一个对同一个实体的引用。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"传递非远程对象，对象时可序列化的。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"使用RMI的程序应该安装一个安全管理器，去控制动态加载类的行为。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"一个远程类可以实现多个接口。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"远程对象与equals、hashCode和clone方法。"}]},{"t":"heading","d":1,"p":{"lines":[33,34]},"v":"11.5 远程对象激活","c":[{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"激活机制允许延迟构造远程对象，仅当至少有一个客户端调用远程对象上的远程方法时，才真正去构造该远程对象。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"客户端代码完全无需改动，服务器程序需由一个激活程序来代替。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"Activatable类。"}]}],"p":{}}</svg>
-              </div>
+        
+<div class="markmap-container" style="height:undefined">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;11.1 客户与服务器的角色&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;所有分布式编程技术的基本思想都很简单：客户计算机产生一个请求，然后将这个请求通过网络发送到服务器。服务器处理这个请求，并发送回一个针对该客户端的响应，供客户端进行分析。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;代理之间通信：CORBA（通用对象请求代理架构）、SOAP（简单对象访问协议）、RMI（远程方法调用）。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;CORBA与SOAP都是完全独立于语言的。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;11.2 远程方法调用&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;分布式计算的关键是远程方法调用。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;当客户代码要在远程对象上调用一个远程方法是，实际上调用的是代理对象上的一个普通的方法，称此代理对象为存根（stub）。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;存根位于客户端机器上，而非服务器上，它知道如何通过网络与服务器联系。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;存根会将远程方法所需的参数打包称一组字节。对参数编码的过程称作参数编组，目的是将参数转换成适合在虚拟机之间进行传递的格式。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;在RMI协议中，对象是使用序列化机制进行编码的。在SOAP协议中，对象被编码成XML。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;客户端的存根方法构造了一个信息块，包括： 被使用的远程对象的标识符，被调用的方法的描述，编组后的参数。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;客户端存根对来自服务器端的返回值或异常进行反编组，其结果就成为调用存根的返回值。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;11.3 RMI编程模型&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;远程对象的接口必须扩展java.rmi.Remote接口。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;接口中的方法还必须抛出RemoteException异常。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;JDK提供了自举注册服务。服务器程序应该使用自举注册服务来注册至少一个远程对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;要注册一个远程对象，需要一个RMI URL和一个对实现对象的引用。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;当部署RMI应用时，通常需要动态地将类交付给运行程序。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;记录RMI活动的日志。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[25,26]},&quot;v&quot;:&quot;11.4 远程方法中的参数与返回值&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[26,27]},&quot;v&quot;:&quot;在开始进行远程方法调用时，调用参数需要从客户端的虚拟机中移动到服务器的虚拟机中。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;在调用完成之后，返回值需要进行反方向传递。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;传递远程对象，远程远程对象的发送者和接收者都将持有一个对同一个实体的引用。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[29,30]},&quot;v&quot;:&quot;传递非远程对象，对象时可序列化的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[30,31]},&quot;v&quot;:&quot;使用RMI的程序应该安装一个安全管理器，去控制动态加载类的行为。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[31,32]},&quot;v&quot;:&quot;一个远程类可以实现多个接口。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[32,33]},&quot;v&quot;:&quot;远程对象与equals、hashCode和clone方法。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;11.5 远程对象激活&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[35,36]},&quot;v&quot;:&quot;激活机制允许延迟构造远程对象，仅当至少有一个客户端调用远程对象上的远程方法时，才真正去构造该远程对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[36,37]},&quot;v&quot;:&quot;客户端代码完全无需改动，服务器程序需由一个激活程序来代替。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[37,38]},&quot;v&quot;:&quot;Activatable类。&quot;}]}],&quot;p&quot;:{}}"></svg>
+</div>
 
-  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
-  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
-  <script>
-    const mindmaps = document.querySelectorAll('.markmap-svg');
-    for(let mindmap of mindmaps) {
-        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
-    }
-  </script> 
+
     </div>
 
     
@@ -353,14 +346,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">184</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -395,7 +388,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -520,5 +513,5 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
-</body>
+<script src="/js/markmap.js"></script></body>
 </html>

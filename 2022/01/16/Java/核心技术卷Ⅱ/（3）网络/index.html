@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">184</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -245,19 +245,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"3.1 连接到服务器","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"telnet。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"Java库隐藏了建立网络连接和通过连接发送数据的复杂过程。java.net包提供的编程接口与操作文件时使用的接口基本相同。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"从套接字读取信息时，在有数据可供访问之前，读操作将会被阻塞。"},{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"如果主机不可达，那么应用将要等待很长的时间，并且因为受底层操作系统的限制而最终会导致超时。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"对于不同的应用，应该确定合理的超时值。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"如果需要在主机名和因特网地址之间进行切换，那么就可以使用InetAddress类。"}]},{"t":"heading","d":1,"p":{"lines":[8,9]},"v":"3.2 实现服务器","c":[{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"ServerSocket类用来建立套接字。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"为多了个客户端服务： 循环操作、每一个连接启动一个新的线程。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"半关闭提供了这样一种能力： 套接字连接的一端可以终止其输出，同时仍旧可以接收来自另一端的数据。"},{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"可以通过关闭一个套接字的输出流来表示发送给服务器的请求数据已经结束，但是必须保持输入流处于打开状态。"}]},{"t":"heading","d":1,"p":{"lines":[14,15]},"v":"3.3 可中断套接字","c":[{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"当线程因套接字无法相应而发生阻塞时，则无法通过调用interrupt来解除阻塞。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"为了中断套接字操作，可以使用java.nio包提供的一个特性：SocketChannel类。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"通道并没有与之相关联的流。实际上，它所拥有的read和write方法都是通过使用Buffer对象来实现的。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"将通道转换成输出流。Channels.newOutputStream。"}]},{"t":"heading","d":1,"p":{"lines":[20,21]},"v":"3.4 获取Web数","c":[{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"URL和URLConnection类封装了大量复杂的实现细节，这些细节涉及如何从远程站点获取信息。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"java.net包对统一资源定位符（URL）和统一资源标识符（URI）做了非常有用的区分。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"在Java类库中，URI类不包含任何用于访问资源的方法，它的唯一作用就是解析。URL类可以打开一个到达资源的流。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"URL类只能作用于那些Java类库直到该如何处理的模式。例如http:、https:、ftp:、file:、jar:。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"URI句法： [scheme:]schemeSpecificPart[#fragment]。绝对URI、相对URI。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"所有绝对的透明URI和所有相对URI都是分层的。分层结构： [//authority][path][?query]。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"对于基于服务器的URI，authority形式： [user-info@]host[:port]。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"URI类的另一个作用是处理绝对标识符和相对标识符。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"如果想从某个Web资源获取更多信息，那么应该使用URLConnection类，通过它能够得到比基本的URL类更多的控制功能。"}]},{"t":"heading","d":1,"p":{"lines":[32,33]},"v":"3.5 发送E-mail","c":[{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"如果要使用JavaMail，需要设置一些和邮件服务器相关的属性。"}]}],"p":{}}</svg>
-              </div>
+        
+<div class="markmap-container" style="height:undefined">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;3.1 连接到服务器&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;telnet。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;Java库隐藏了建立网络连接和通过连接发送数据的复杂过程。java.net包提供的编程接口与操作文件时使用的接口基本相同。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;从套接字读取信息时，在有数据可供访问之前，读操作将会被阻塞。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;如果主机不可达，那么应用将要等待很长的时间，并且因为受底层操作系统的限制而最终会导致超时。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;对于不同的应用，应该确定合理的超时值。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;如果需要在主机名和因特网地址之间进行切换，那么就可以使用InetAddress类。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;3.2 实现服务器&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;ServerSocket类用来建立套接字。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;为多了个客户端服务： 循环操作、每一个连接启动一个新的线程。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;半关闭提供了这样一种能力： 套接字连接的一端可以终止其输出，同时仍旧可以接收来自另一端的数据。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;可以通过关闭一个套接字的输出流来表示发送给服务器的请求数据已经结束，但是必须保持输入流处于打开状态。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;3.3 可中断套接字&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;当线程因套接字无法相应而发生阻塞时，则无法通过调用interrupt来解除阻塞。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;为了中断套接字操作，可以使用java.nio包提供的一个特性：SocketChannel类。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;通道并没有与之相关联的流。实际上，它所拥有的read和write方法都是通过使用Buffer对象来实现的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;将通道转换成输出流。Channels.newOutputStream。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;3.4 获取Web数&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;URL和URLConnection类封装了大量复杂的实现细节，这些细节涉及如何从远程站点获取信息。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;java.net包对统一资源定位符（URL）和统一资源标识符（URI）做了非常有用的区分。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;在Java类库中，URI类不包含任何用于访问资源的方法，它的唯一作用就是解析。URL类可以打开一个到达资源的流。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[25,26]},&quot;v&quot;:&quot;URL类只能作用于那些Java类库直到该如何处理的模式。例如http:、https:、ftp:、file:、jar:。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[26,27]},&quot;v&quot;:&quot;URI句法： [scheme:]schemeSpecificPart[#fragment]。绝对URI、相对URI。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;所有绝对的透明URI和所有相对URI都是分层的。分层结构： [//authority][path][?query]。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;对于基于服务器的URI，authority形式： [user-info@]host[:port]。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[29,30]},&quot;v&quot;:&quot;URI类的另一个作用是处理绝对标识符和相对标识符。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[31,32]},&quot;v&quot;:&quot;如果想从某个Web资源获取更多信息，那么应该使用URLConnection类，通过它能够得到比基本的URL类更多的控制功能。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[33,34]},&quot;v&quot;:&quot;3.5 发送E-mail&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;如果要使用JavaMail，需要设置一些和邮件服务器相关的属性。&quot;}]}],&quot;p&quot;:{}}"></svg>
+</div>
 
-  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
-  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
-  <script>
-    const mindmaps = document.querySelectorAll('.markmap-svg');
-    for(let mindmap of mindmaps) {
-        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
-    }
-  </script> 
+
     </div>
 
     
@@ -353,14 +346,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">184</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -395,7 +388,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -520,5 +513,5 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
-</body>
+<script src="/js/markmap.js"></script></body>
 </html>

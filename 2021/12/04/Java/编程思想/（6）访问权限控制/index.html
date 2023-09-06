@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">184</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -251,9 +251,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"6.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"重构即重写代码，以使得它更可读、更易理解，并因此而更具有可维护性。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"面向对象中需要考虑的一个基本问题：如何把变动的事物与保持不变的事物区分开来。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"Java提供了访问权限修饰词，以供类库开发人员向客户端程序员指明哪些式可用的，哪些式不可用的。"},{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"访问权限控制的等级，从最大权限到最小权限依次为：public、protected、包访问权限、private。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"Java中用关键字package将构建捆绑到一个内聚的类库单元中。而访问权限修饰词会因类是存在于一个相同的包，还是存在于一个单独的包而受到影响。"}]},{"t":"heading","d":1,"p":{"lines":[7,8]},"v":"6.1 包：库单元","c":[{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"包内包含有一组类，它们在单一的名字空间之下被组织在了一起。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"import关键字是程序变得简单。不使用import得用类全名来指定。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"没有指定package，则在未命名包/默认包中。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"每个编译单元都只能有一个public类，该类的名称必须与文件名称相同（包括大小写，不包括后缀名）。其它额外的类在包之外无法看到，因为它们主要用来为主public类提供支持。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"当编译.java文件时，文件中的每个类都会有一个输出文件。因此，在编译少量.java文件之后，会得到大量的.class文件。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"Java可运行程序是一组可以打包并压缩为一个Java文档文件（JAR，Java Archive）的.class文件。Java解释器负责这些文件的查找、装载和解释。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"类库实际上是一组类文件，如果希望这些构件从属于同一个群组，就可以使用关键字package。如果使用package语句，它必须是文件中除注释以外的第一句程序代码。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"package和import关键字是将单一的全局名字空间分隔开，使得不会出现名称冲突问题。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"一个包从未真正将被打包的东西包装成单一的文件，并且要给包可以由许多.class文件构成。 -- 操作系统层次化文件结构、jar工具？。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"将所有的文件收入子目录还可以解决另外两个问题：怎样创建独一无二的名称以及怎样查找有可能隐藏于目录结构中某处的类。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"package的第一部分是类的创建者的反顺序的域名，第二部分是把package分解为机器上的一个目录。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"Java解释器运行过程：找出CLASSPATH（包含一个或多个目录，及JAR文件路径），从根目录开始，解释器获取包的名称并将每个句点替换成反斜杠，产生一个路径名称，查找相关的.class文件。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"Java没有C的条件编译功能，该功能绝大多数情况下是用来解决跨平台的问题的，对Java而言没有必要。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"务必记住，无论合适创建包，都已经在给定包的名称的时候隐含地指定了目录结构。这个包必须位于其名称所指定的目录之中，而该目录必须是在以CLASSPATH开始的目录中可以查询到的。"}]},{"t":"heading","d":1,"p":{"lines":[27,28]},"v":"6.2 Java访问权限修饰词","c":[{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"访问修饰词public、protected、private置于类中每个成员（域、方法）的定义之前。每个访问权限修饰词仅控制它所修饰的特定定义的访问权。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"如果不提供任何访问权限修饰词，则意味着它是“包访问权限”。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"默认访问权限没有任何关键字，通常指包访问权限。意味着当前的包中的其他所有类对那个成员都有访问权限，但对于这个包之外的所有类，这个成员却是private。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"一个编译单元只能隶属于一个包，所以经由包访问权限，处于一个编译单元中的所有类彼此之间都是自动可访问的。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"包访问权限为把类群聚在一个包中的做法提供了意义和理由。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"关键字public意味着之后紧跟着的成员声明自己对每个人都是可用的，尤其是使用类库的客户程序员更是如此。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"Java将没有设定任何包名称的文件自动看作是隶属于该目录的默认包之中。"},{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"// TODO -- 与设定了包名称的？？？"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"private除了包含该成员的类之外，其他任何类都无法访问这个成员。"},{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"protected处理的是继承的概念。"},{"t":"list_item","d":3,"p":{"lines":[42,43]},"v":"protected也提供了包访问权限。"}]},{"t":"heading","d":1,"p":{"lines":[44,45]},"v":"6.3 接口和实现","c":[{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"访问权限的控制常被称为是具体实现的隐藏。把数据和方法包装进类中，以及具体实现的隐藏，常共同被称作封装。其结果是一个同时带有特征和行为的数据类型。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"访问权限控制将权限的边界划在了数据类型的内部。1. 要设定客户端程序员可以使用和不可以使用的界限；2. 将接口和具体实现进行分离。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"javadoc所提供的注释文档功能降低了程序代码的可读性对客户端程序员的重要性。"}]},{"t":"heading","d":1,"p":{"lines":[49,50]},"v":"6.4 类的访问权限","c":[{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"访问权限修饰词也可以用于确定库中的哪些类对于该库的使用者是可用的。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"每个编译单元都只能包含有一个public类，且public类的名称必须完全与含有该编译单元的文件名相匹配，包括大小写。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"编译单元可以不带public类。在这种情况下，可以随意对文件命名，该类只可以用于该包之中。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"类不可以是private的，也不可以是protected的。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"如果不希望其他任何人对该类拥有访问权限，可以把所有的构造器都指定为private。 -- static例外。"},{"t":"list_item","d":3,"p":{"lines":[55,56]},"v":"单例模式。"}]}],"p":{}}</svg>
-              </div>
+        
+<div class="markmap-container" style="height:undefined">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;6.0 序&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;重构即重写代码，以使得它更可读、更易理解，并因此而更具有可维护性。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;面向对象中需要考虑的一个基本问题：如何把变动的事物与保持不变的事物区分开来。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;Java提供了访问权限修饰词，以供类库开发人员向客户端程序员指明哪些式可用的，哪些式不可用的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;访问权限控制的等级，从最大权限到最小权限依次为：public、protected、包访问权限、private。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;Java中用关键字package将构建捆绑到一个内聚的类库单元中。而访问权限修饰词会因类是存在于一个相同的包，还是存在于一个单独的包而受到影响。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;6.1 包：库单元&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;包内包含有一组类，它们在单一的名字空间之下被组织在了一起。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;import关键字是程序变得简单。不使用import得用类全名来指定。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;没有指定package，则在未命名包/默认包中。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;每个编译单元都只能有一个public类，该类的名称必须与文件名称相同（包括大小写，不包括后缀名）。其它额外的类在包之外无法看到，因为它们主要用来为主public类提供支持。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;当编译.java文件时，文件中的每个类都会有一个输出文件。因此，在编译少量.java文件之后，会得到大量的.class文件。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;Java可运行程序是一组可以打包并压缩为一个Java文档文件（JAR，Java Archive）的.class文件。Java解释器负责这些文件的查找、装载和解释。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;类库实际上是一组类文件，如果希望这些构件从属于同一个群组，就可以使用关键字package。如果使用package语句，它必须是文件中除注释以外的第一句程序代码。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;package和import关键字是将单一的全局名字空间分隔开，使得不会出现名称冲突问题。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;一个包从未真正将被打包的东西包装成单一的文件，并且要给包可以由许多.class文件构成。 -- 操作系统层次化文件结构、jar工具？。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;将所有的文件收入子目录还可以解决另外两个问题：怎样创建独一无二的名称以及怎样查找有可能隐藏于目录结构中某处的类。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;package的第一部分是类的创建者的反顺序的域名，第二部分是把package分解为机器上的一个目录。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;Java解释器运行过程：找出CLASSPATH（包含一个或多个目录，及JAR文件路径），从根目录开始，解释器获取包的名称并将每个句点替换成反斜杠，产生一个路径名称，查找相关的.class文件。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;Java没有C的条件编译功能，该功能绝大多数情况下是用来解决跨平台的问题的，对Java而言没有必要。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[26,27]},&quot;v&quot;:&quot;务必记住，无论合适创建包，都已经在给定包的名称的时候隐含地指定了目录结构。这个包必须位于其名称所指定的目录之中，而该目录必须是在以CLASSPATH开始的目录中可以查询到的。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;6.2 Java访问权限修饰词&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[29,30]},&quot;v&quot;:&quot;访问修饰词public、protected、private置于类中每个成员（域、方法）的定义之前。每个访问权限修饰词仅控制它所修饰的特定定义的访问权。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[30,31]},&quot;v&quot;:&quot;如果不提供任何访问权限修饰词，则意味着它是“包访问权限”。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[32,33]},&quot;v&quot;:&quot;默认访问权限没有任何关键字，通常指包访问权限。意味着当前的包中的其他所有类对那个成员都有访问权限，但对于这个包之外的所有类，这个成员却是private。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[33,34]},&quot;v&quot;:&quot;一个编译单元只能隶属于一个包，所以经由包访问权限，处于一个编译单元中的所有类彼此之间都是自动可访问的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;包访问权限为把类群聚在一个包中的做法提供了意义和理由。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[36,37]},&quot;v&quot;:&quot;关键字public意味着之后紧跟着的成员声明自己对每个人都是可用的，尤其是使用类库的客户程序员更是如此。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[37,38]},&quot;v&quot;:&quot;Java将没有设定任何包名称的文件自动看作是隶属于该目录的默认包之中。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[38,39]},&quot;v&quot;:&quot;// TODO -- 与设定了包名称的？？？&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[40,41]},&quot;v&quot;:&quot;private除了包含该成员的类之外，其他任何类都无法访问这个成员。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[42,43]},&quot;v&quot;:&quot;protected处理的是继承的概念。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[43,44]},&quot;v&quot;:&quot;protected也提供了包访问权限。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[45,46]},&quot;v&quot;:&quot;6.3 接口和实现&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[46,47]},&quot;v&quot;:&quot;访问权限的控制常被称为是具体实现的隐藏。把数据和方法包装进类中，以及具体实现的隐藏，常共同被称作封装。其结果是一个同时带有特征和行为的数据类型。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[47,48]},&quot;v&quot;:&quot;访问权限控制将权限的边界划在了数据类型的内部。1. 要设定客户端程序员可以使用和不可以使用的界限；2. 将接口和具体实现进行分离。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[48,49]},&quot;v&quot;:&quot;javadoc所提供的注释文档功能降低了程序代码的可读性对客户端程序员的重要性。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[50,51]},&quot;v&quot;:&quot;6.4 类的访问权限&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[51,52]},&quot;v&quot;:&quot;访问权限修饰词也可以用于确定库中的哪些类对于该库的使用者是可用的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[52,53]},&quot;v&quot;:&quot;每个编译单元都只能包含有一个public类，且public类的名称必须完全与含有该编译单元的文件名相匹配，包括大小写。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[53,54]},&quot;v&quot;:&quot;编译单元可以不带public类。在这种情况下，可以随意对文件命名，该类只可以用于该包之中。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[54,55]},&quot;v&quot;:&quot;类不可以是private的，也不可以是protected的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[55,56]},&quot;v&quot;:&quot;如果不希望其他任何人对该类拥有访问权限，可以把所有的构造器都指定为private。 -- static例外。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[56,57]},&quot;v&quot;:&quot;单例模式。&quot;}]}],&quot;p&quot;:{}}"></svg>
+</div>
+
 
 <h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
 <li>可以不使用操作系统的层次化文件结构，而直接使用package来指定，但这样会存在冲突。</li>
@@ -261,15 +263,6 @@
 <li>访问权限控制虽然只有几个关键字，但要用好却不是一件简单的事。</li>
 </ul>
 
-  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
-  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
-  <script>
-    const mindmaps = document.querySelectorAll('.markmap-svg');
-    for(let mindmap of mindmaps) {
-        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
-    }
-  </script> 
     </div>
 
     
@@ -366,14 +359,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">184</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -408,7 +401,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -533,5 +526,5 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
-</body>
+<script src="/js/markmap.js"></script></body>
 </html>

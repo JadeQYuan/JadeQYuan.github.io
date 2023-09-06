@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">184</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -251,23 +251,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"9.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"接口和内部类提供了一种将接口与实现分离的更加结构化的概念。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"这种机制在编程语言中并不通用。在Java中存在语言关键字提供了直接支持。"}]},{"t":"heading","d":1,"p":{"lines":[4,5]},"v":"9.1 抽象类和抽象方法","c":[{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"创建抽象类是希望通过这个通用接口操纵一系列类。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"相较于没有抽象类的情况，抽象类可以在编译器捕获问题。"},{"t":"list_item","d":3,"p":{"lines":[7,8]},"v":"包含抽象方法的类叫做抽象类。如果一个类包含一个或多个抽象方法，该类必须被限定为抽象的。"},{"t":"list_item","d":3,"p":{"lines":[8,9]},"v":"抽象类是不完整的，为抽象类创建对象是不安全的。"},{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"没有任何抽象方法的抽象类。 -- 阻止产生这个类的任何对象。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"抽象类和抽象方法可以使类的抽象性明确起来。是很有用的重构工具。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"用abstract关键字来限定抽象类和抽象方法。"}]},{"t":"heading","d":1,"p":{"lines":[13,14]},"v":"9.2 接口","c":[{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"interface关键字使抽象的概念更向前迈进了一步。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"interface关键字产生一个完全抽象的类，没有提供任何具体实现。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"接口被用来建立类与类之间的协议。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"interface允许通过创建一个能够被向上转型为多种基类的类型，来实现某种类似多重继承的特性。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"接口可以包含域，隐式声明为 static final。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"接口中的方法隐式声明为 public。实现一个接口时，实现的方法必须被定义为是public的。（Java编译器不允许继承过程中访问权限被降低。） 包访问权限的public意义？？？"}]},{"t":"heading","d":1,"p":{"lines":[21,22]},"v":"9.3 完全解耦","c":[{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"能够根据所传递的参数对象的不同而具有不同行为的方法，被称为策略模式。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"复用不在同一继承结构中的某个类。1. 遵循接口编写实现类。2. 适配器。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"将接口从具体实现中解耦使得接口可以应用于多种不同的具体实现，因此代码更具可复用性。"}]},{"t":"heading","d":1,"p":{"lines":[26,27]},"v":"9.4 Java中的多重继承","c":[{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"接口没有具体实现，也就是说，没有任何与接口相关的存储。因此，无法阻止与接口的组合。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"在C++中，组合多个类的接口的行为被称为多重继承（C++对接口只有间接的支持）。在Java中可以执行相同的行为，但是只有一个类可以有具体实现。"},{"t":"list_item","d":3,"p":{"lines":[29,30]},"v":"从一个非接口的类继承，只能从一个类去继承，其它的基元素必须是接口。"},{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"可以继承任意多个接口，并可以向上转型为每个接口，因为每一个接口都是一个独立类型。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"使用接口的原因：1. 为了能够向上转型为多个基类型； 2. 防止创建该类的对象。"}]},{"t":"heading","d":1,"p":{"lines":[33,34]},"v":"9.5 通过继承来扩展接口","c":[{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"通过继承，可以在接口中添加新的方法声明，还可以在新街口中组合接口。这两种情况都可以获得新的接口。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"在打算组合的不同接口中使用相同的方法名通常会造成代码可读性的混乱。应尽量避免这种情况。"}]},{"t":"heading","d":1,"p":{"lines":[37,38]},"v":"9.6 适配接口","c":[{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"允许同一个接口具有不同的具体实现。"},{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"interface提供伪多重继承机制。适配器。"},{"t":"list_item","d":3,"p":{"lines":[40,41]},"v":"让方法接受接口类型，是一种让任何类都可以对该方法进行适配的方式。"}]},{"t":"heading","d":1,"p":{"lines":[42,43]},"v":"9.7 接口中的域","c":[{"t":"list_item","d":3,"p":{"lines":[43,44]},"v":"接口中的域自动是 public static final，所以接口成为了一种很便捷的创建常量组的工具。在Java SE5 之前，产生与enum具有相同效果的类型的唯一途径。"},{"t":"list_item","d":3,"p":{"lines":[44,45]},"v":"Java中表示具有常量初始值的static final时，使用大写字母的风格（下划线分隔多个单词）。"},{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"接口中定义的域不能是“空final”，但可以是被非常量表达式初始化。在类第一次被加载时初始化。值被存储在该接口的静态存储区域内。"}]},{"t":"heading","d":1,"p":{"lines":[47,48]},"v":"9.8 嵌套接口","c":[{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"接口可以嵌套在类或其它接口中。嵌套接口可以被实现为private。"},{"t":"list_item","d":3,"p":{"lines":[49,50]},"v":"实现了一个private接口的内部类，同样可以被实现为public类，但是只能被其自身所使用。"},{"t":"list_item","d":3,"p":{"lines":[50,51]},"v":"实现一个private接口只是一种方式，强制该接口中的方法定义不要添加任何类型信息（不允许向上转型）。"},{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"返回对private接口的引用的public方法，只有以各种方式可用，就是将返回值交给有权使用它的对象。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"嵌套在另一个接口中的接口自动就是public的，而不能声明为private的。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"当实现某个接口时，并不需要实现嵌套在其内部的任何接口。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"private接口不能在定义它的类之外被实现。"}]},{"t":"heading","d":1,"p":{"lines":[56,57]},"v":"9.9 接口与工厂","c":[{"t":"list_item","d":3,"p":{"lines":[57,58]},"v":"生成遵循某个接口的对象的典型方式就是工厂方法设计模式。"},{"t":"list_item","d":3,"p":{"lines":[58,59]},"v":"更加优雅的工厂实现方式： 匿名内部类。"}]},{"t":"heading","d":1,"p":{"lines":[60,61]},"v":"9.10 总结","c":[{"t":"list_item","d":3,"p":{"lines":[61,62]},"v":"对于创建类，几乎在任何时刻，都可以替代为创建一个接口和一个工厂。"},{"t":"list_item","d":3,"p":{"lines":[62,63]},"v":"任何抽象性都应该是应真正的需求而产生的。"}]}],"p":{}}</svg>
-              </div>
+        
+<div class="markmap-container" style="height:undefined">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;9.0 序&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;接口和内部类提供了一种将接口与实现分离的更加结构化的概念。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;这种机制在编程语言中并不通用。在Java中存在语言关键字提供了直接支持。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;9.1 抽象类和抽象方法&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;创建抽象类是希望通过这个通用接口操纵一系列类。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;相较于没有抽象类的情况，抽象类可以在编译器捕获问题。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[8,9]},&quot;v&quot;:&quot;包含抽象方法的类叫做抽象类。如果一个类包含一个或多个抽象方法，该类必须被限定为抽象的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;抽象类是不完整的，为抽象类创建对象是不安全的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;没有任何抽象方法的抽象类。 -- 阻止产生这个类的任何对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;抽象类和抽象方法可以使类的抽象性明确起来。是很有用的重构工具。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;用abstract关键字来限定抽象类和抽象方法。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;9.2 接口&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;interface关键字使抽象的概念更向前迈进了一步。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;interface关键字产生一个完全抽象的类，没有提供任何具体实现。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;接口被用来建立类与类之间的协议。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;interface允许通过创建一个能够被向上转型为多种基类的类型，来实现某种类似多重继承的特性。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;接口可以包含域，隐式声明为 static final。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;接口中的方法隐式声明为 public。实现一个接口时，实现的方法必须被定义为是public的。（Java编译器不允许继承过程中访问权限被降低。） 包访问权限的public意义？？？&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;9.3 完全解耦&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;能够根据所传递的参数对象的不同而具有不同行为的方法，被称为策略模式。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;复用不在同一继承结构中的某个类。1. 遵循接口编写实现类。2. 适配器。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[25,26]},&quot;v&quot;:&quot;将接口从具体实现中解耦使得接口可以应用于多种不同的具体实现，因此代码更具可复用性。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;9.4 Java中的多重继承&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;接口没有具体实现，也就是说，没有任何与接口相关的存储。因此，无法阻止与接口的组合。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[29,30]},&quot;v&quot;:&quot;在C++中，组合多个类的接口的行为被称为多重继承（C++对接口只有间接的支持）。在Java中可以执行相同的行为，但是只有一个类可以有具体实现。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[30,31]},&quot;v&quot;:&quot;从一个非接口的类继承，只能从一个类去继承，其它的基元素必须是接口。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[31,32]},&quot;v&quot;:&quot;可以继承任意多个接口，并可以向上转型为每个接口，因为每一个接口都是一个独立类型。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[32,33]},&quot;v&quot;:&quot;使用接口的原因：1. 为了能够向上转型为多个基类型； 2. 防止创建该类的对象。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;9.5 通过继承来扩展接口&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[35,36]},&quot;v&quot;:&quot;通过继承，可以在接口中添加新的方法声明，还可以在新街口中组合接口。这两种情况都可以获得新的接口。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[36,37]},&quot;v&quot;:&quot;在打算组合的不同接口中使用相同的方法名通常会造成代码可读性的混乱。应尽量避免这种情况。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[38,39]},&quot;v&quot;:&quot;9.6 适配接口&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[39,40]},&quot;v&quot;:&quot;允许同一个接口具有不同的具体实现。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[40,41]},&quot;v&quot;:&quot;interface提供伪多重继承机制。适配器。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[41,42]},&quot;v&quot;:&quot;让方法接受接口类型，是一种让任何类都可以对该方法进行适配的方式。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[43,44]},&quot;v&quot;:&quot;9.7 接口中的域&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[44,45]},&quot;v&quot;:&quot;接口中的域自动是 public static final，所以接口成为了一种很便捷的创建常量组的工具。在Java SE5 之前，产生与enum具有相同效果的类型的唯一途径。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[45,46]},&quot;v&quot;:&quot;Java中表示具有常量初始值的static final时，使用大写字母的风格（下划线分隔多个单词）。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[46,47]},&quot;v&quot;:&quot;接口中定义的域不能是“空final”，但可以是被非常量表达式初始化。在类第一次被加载时初始化。值被存储在该接口的静态存储区域内。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[48,49]},&quot;v&quot;:&quot;9.8 嵌套接口&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[49,50]},&quot;v&quot;:&quot;接口可以嵌套在类或其它接口中。嵌套接口可以被实现为private。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[50,51]},&quot;v&quot;:&quot;实现了一个private接口的内部类，同样可以被实现为public类，但是只能被其自身所使用。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[51,52]},&quot;v&quot;:&quot;实现一个private接口只是一种方式，强制该接口中的方法定义不要添加任何类型信息（不允许向上转型）。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[52,53]},&quot;v&quot;:&quot;返回对private接口的引用的public方法，只有以各种方式可用，就是将返回值交给有权使用它的对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[53,54]},&quot;v&quot;:&quot;嵌套在另一个接口中的接口自动就是public的，而不能声明为private的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[54,55]},&quot;v&quot;:&quot;当实现某个接口时，并不需要实现嵌套在其内部的任何接口。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[55,56]},&quot;v&quot;:&quot;private接口不能在定义它的类之外被实现。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[57,58]},&quot;v&quot;:&quot;9.9 接口与工厂&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[58,59]},&quot;v&quot;:&quot;生成遵循某个接口的对象的典型方式就是工厂方法设计模式。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[59,60]},&quot;v&quot;:&quot;更加优雅的工厂实现方式： 匿名内部类。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[61,62]},&quot;v&quot;:&quot;9.10 总结&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[62,63]},&quot;v&quot;:&quot;对于创建类，几乎在任何时刻，都可以替代为创建一个接口和一个工厂。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[63,64]},&quot;v&quot;:&quot;任何抽象性都应该是应真正的需求而产生的。&quot;}]}],&quot;p&quot;:{}}"></svg>
+</div>
+
 
 <h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
 <li>接口和抽象类在某些方面确实做得很好。但是，添加了新的类型，意味着需要了解更多，才能更好的掌握它。如接口中域被非常量表达式初始化，需要了解类加载过程；接口中嵌套的修饰，需要了解其意义所在。</li>
 </ul>
 
-  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
-  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
-  <script>
-    const mindmaps = document.querySelectorAll('.markmap-svg');
-    for(let mindmap of mindmaps) {
-        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
-    }
-  </script> 
     </div>
 
     
@@ -364,14 +357,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">184</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -406,7 +399,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -531,5 +524,5 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
-</body>
+<script src="/js/markmap.js"></script></body>
 </html>

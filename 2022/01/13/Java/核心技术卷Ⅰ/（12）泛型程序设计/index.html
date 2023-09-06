@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">184</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -251,19 +251,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"12.1 为什么要使用泛型程序设计","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"泛型程序设计（Generic programming）意味着编写的代码可以被很多不同类型的对象所重用。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"在Java中增加泛型类之前，泛型程序设计使用继承实现的。"}]},{"t":"heading","d":1,"p":{"lines":[4,5]},"v":"12.2 定义简单泛型类","c":[{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"一个泛型类就是具有一个或多个类型变量的类。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"类定义中的类型变量指定方法的返回类型以及域和局部变量的类型。"}]},{"t":"heading","d":1,"p":{"lines":[8,9]},"v":"12.3 泛型方法","c":[{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"可以定义一个带有类型参数的简单方法。"}]},{"t":"heading","d":1,"p":{"lines":[11,12]},"v":"12.4 类型变量的限定","c":[{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"有时，类或方法需要对类型变量加以约束。extends。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"限定类型用&amp;分隔，而逗号用来分隔类型变量。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"在Java的继承中，可以根据需要拥有多个接口超类型，但限定中至多有一个类。如果用一个类作为限定，它必须是限定列表中第一个。"}]},{"t":"heading","d":1,"p":{"lines":[16,17]},"v":"12.5 泛型代码和虚拟机","c":[{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"虚拟机没有泛型类型对象。所有的对象都属于普通类。"},{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"无论何时定义一个泛型类型，都自动提供了一个响应的原始类型。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"擦除类型变量，并替换为限定类型（无限定的变量用Object）。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"当程序调用泛型方法时，如果擦除返回类型，编译器插入强制类型转换。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"泛型方法擦除，桥方法。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"虚拟机中没有泛型，只有普通的类和方法。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"所有的类型参数都用它们的限定类型替换。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"桥方法被合成来保持多态。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"为保持类型安全性，必要时插入强制类型转换。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"设计Java泛型类型时，主要目标时允许泛型代码和遗留代码之间能够互操作。"}]},{"t":"heading","d":1,"p":{"lines":[29,30]},"v":"12.6 约束与局限性","c":[{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"不能用基本类型实例化参数类型。（类型擦除，擦除之后，只有Object类型的域，而Object不能存储基本类型的值）"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"运行时类型查询只适用于原始类型。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"不能创建参数化类型的数组。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"Varargs警告。 =&gt;  @SafeVarargs。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"不能实例化类型变量。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"泛型类的静态上下文中类型变量无效。"},{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"不能抛出或捕获泛型类的实例。"},{"t":"list_item","d":3,"p":{"lines":[37,38]},"v":"注意擦除后的冲突。"},{"t":"list_item","d":3,"p":{"lines":[38,39]},"v":"要想支持擦除的转换，就需要强制限制一个类或类型变量不能同时成为两个接口类型的子类，而这两个接口是同一接口的不同参数化。"}]},{"t":"heading","d":1,"p":{"lines":[40,41]},"v":"12.7 泛型类型的继承规则","c":[{"t":"list_item","d":3,"p":{"lines":[41,42]},"v":"永远可以将参数化类型转换为一个原始类型。"},{"t":"list_item","d":3,"p":{"lines":[42,43]},"v":"泛型类可以扩展或实现其它的泛型类。"}]},{"t":"heading","d":1,"p":{"lines":[44,45]},"v":"12.8 通配符类型","c":[{"t":"list_item","d":3,"p":{"lines":[45,46]},"v":"通配符类型： ? 。"},{"t":"list_item","d":3,"p":{"lines":[46,47]},"v":"通配符限定域类型变量限定十分类似。但是可以指定一个超类型限定。"},{"t":"list_item","d":3,"p":{"lines":[47,48]},"v":"可以使用无限定的通配符。与原始类型有很大不同。"},{"t":"list_item","d":3,"p":{"lines":[48,49]},"v":"通配符捕获。"}]},{"t":"heading","d":1,"p":{"lines":[50,51]},"v":"12.9 反射和泛型","c":[{"t":"list_item","d":3,"p":{"lines":[51,52]},"v":"现在，Class类是泛型的。"},{"t":"list_item","d":3,"p":{"lines":[52,53]},"v":"类型参数十分有用，这是因为它允许Class&lt;T&gt;方法的返回类型更加具有针对性。"},{"t":"list_item","d":3,"p":{"lines":[53,54]},"v":"有时，匹配泛型方法中的Class&lt;T&gt;参数的类型变量很有实用价值。"},{"t":"list_item","d":3,"p":{"lines":[54,55]},"v":"擦除的类仍然保留一些泛型祖先的微弱记忆。"},{"t":"list_item","d":3,"p":{"lines":[55,56]},"v":"为了表达泛型类型声明，Java SE 5.0在java.lang.reflect包中提供了一个新的接口Type。"},{"t":"list_item","d":3,"p":{"lines":[56,57]},"v":"Type接口包含了子类型： Class类、TypeVariable接口、WildcardType接口、ParameterizedType接口、GenericArrayType接口。"}]}],"p":{}}</svg>
-              </div>
+        
+<div class="markmap-container" style="height:undefined">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;12.1 为什么要使用泛型程序设计&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;泛型程序设计（Generic programming）意味着编写的代码可以被很多不同类型的对象所重用。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;在Java中增加泛型类之前，泛型程序设计使用继承实现的。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;12.2 定义简单泛型类&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;一个泛型类就是具有一个或多个类型变量的类。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;类定义中的类型变量指定方法的返回类型以及域和局部变量的类型。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;12.3 泛型方法&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;可以定义一个带有类型参数的简单方法。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;12.4 类型变量的限定&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;有时，类或方法需要对类型变量加以约束。extends。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;限定类型用&amp;amp;分隔，而逗号用来分隔类型变量。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;在Java的继承中，可以根据需要拥有多个接口超类型，但限定中至多有一个类。如果用一个类作为限定，它必须是限定列表中第一个。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;12.5 泛型代码和虚拟机&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;虚拟机没有泛型类型对象。所有的对象都属于普通类。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;无论何时定义一个泛型类型，都自动提供了一个响应的原始类型。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;擦除类型变量，并替换为限定类型（无限定的变量用Object）。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;当程序调用泛型方法时，如果擦除返回类型，编译器插入强制类型转换。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;泛型方法擦除，桥方法。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;虚拟机中没有泛型，只有普通的类和方法。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[25,26]},&quot;v&quot;:&quot;所有的类型参数都用它们的限定类型替换。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[26,27]},&quot;v&quot;:&quot;桥方法被合成来保持多态。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;为保持类型安全性，必要时插入强制类型转换。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;设计Java泛型类型时，主要目标时允许泛型代码和遗留代码之间能够互操作。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[30,31]},&quot;v&quot;:&quot;12.6 约束与局限性&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[31,32]},&quot;v&quot;:&quot;不能用基本类型实例化参数类型。（类型擦除，擦除之后，只有Object类型的域，而Object不能存储基本类型的值）&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[32,33]},&quot;v&quot;:&quot;运行时类型查询只适用于原始类型。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[33,34]},&quot;v&quot;:&quot;不能创建参数化类型的数组。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;Varargs警告。 =&amp;gt;  @SafeVarargs。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[35,36]},&quot;v&quot;:&quot;不能实例化类型变量。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[36,37]},&quot;v&quot;:&quot;泛型类的静态上下文中类型变量无效。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[37,38]},&quot;v&quot;:&quot;不能抛出或捕获泛型类的实例。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[38,39]},&quot;v&quot;:&quot;注意擦除后的冲突。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[39,40]},&quot;v&quot;:&quot;要想支持擦除的转换，就需要强制限制一个类或类型变量不能同时成为两个接口类型的子类，而这两个接口是同一接口的不同参数化。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[41,42]},&quot;v&quot;:&quot;12.7 泛型类型的继承规则&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[42,43]},&quot;v&quot;:&quot;永远可以将参数化类型转换为一个原始类型。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[43,44]},&quot;v&quot;:&quot;泛型类可以扩展或实现其它的泛型类。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[45,46]},&quot;v&quot;:&quot;12.8 通配符类型&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[46,47]},&quot;v&quot;:&quot;通配符类型： ? 。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[47,48]},&quot;v&quot;:&quot;通配符限定域类型变量限定十分类似。但是可以指定一个超类型限定。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[48,49]},&quot;v&quot;:&quot;可以使用无限定的通配符。与原始类型有很大不同。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[49,50]},&quot;v&quot;:&quot;通配符捕获。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[51,52]},&quot;v&quot;:&quot;12.9 反射和泛型&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[52,53]},&quot;v&quot;:&quot;现在，Class类是泛型的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[53,54]},&quot;v&quot;:&quot;类型参数十分有用，这是因为它允许Class&amp;lt;T&amp;gt;方法的返回类型更加具有针对性。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[54,55]},&quot;v&quot;:&quot;有时，匹配泛型方法中的Class&amp;lt;T&amp;gt;参数的类型变量很有实用价值。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[55,56]},&quot;v&quot;:&quot;擦除的类仍然保留一些泛型祖先的微弱记忆。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[56,57]},&quot;v&quot;:&quot;为了表达泛型类型声明，Java SE 5.0在java.lang.reflect包中提供了一个新的接口Type。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[57,58]},&quot;v&quot;:&quot;Type接口包含了子类型： Class类、TypeVariable接口、WildcardType接口、ParameterizedType接口、GenericArrayType接口。&quot;}]}],&quot;p&quot;:{}}"></svg>
+</div>
 
-  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
-  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
-  <script>
-    const mindmaps = document.querySelectorAll('.markmap-svg');
-    for(let mindmap of mindmaps) {
-        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
-    }
-  </script> 
+
     </div>
 
     
@@ -359,14 +352,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">184</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -401,7 +394,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -526,5 +519,5 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
-</body>
+<script src="/js/markmap.js"></script></body>
 </html>

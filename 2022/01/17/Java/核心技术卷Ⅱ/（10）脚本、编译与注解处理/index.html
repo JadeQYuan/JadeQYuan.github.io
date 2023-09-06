@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">184</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -245,19 +245,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"10.1 Java平台的脚本","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"脚本引擎是要一个可以执行用某种特定语言编写的脚本的类库。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"可以通过在类路径中提供必要的JAR文件来添加对额外的语言支持。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"一旦拥有了引擎，就可以直接调用脚本。"},{"t":"list_item","d":3,"p":{"lines":[4,5]},"v":"可以在同一个引擎上调用多个脚本。"},{"t":"list_item","d":3,"p":{"lines":[5,6]},"v":"可以通过脚本上下文来重定向脚本的标准输入和输出。"},{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"在使用许多脚本引擎时，都可以调用脚本语言的函数，而不必对处理实际的脚本代码的计算。"}]},{"t":"heading","d":1,"p":{"lines":[8,9]},"v":"10.2 编译器API","c":[{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"编译Java代码的Java程序。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"有许多工具都需要调用Java编译器。"},{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"控制程序代码的来源。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"控制类文件的位置。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"监听在编译过程中产生的错误和警告信息。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"在后台运行编译器。"}]},{"t":"heading","d":1,"p":{"lines":[17,18]},"v":"10.3 使用注解","c":[{"t":"list_item","d":3,"p":{"lines":[18,19]},"v":"注解是那些插入到源代码中使用其他工具可以对其进行处理的标签。"},{"t":"list_item","d":3,"p":{"lines":[19,20]},"v":"这些工具可以在源码层次上进行操作，或者可以处理编译器在其中放置了注解的类文件。"},{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"注解不会改变程序的编译方式。Java编译器对于包含注解和不包含注解的代码会生成相同的虚拟机指令。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"为了能够受益于注解，需要选择一个处理工具，然后向处理工具可以理解的代码中插入注解，之后运用该处理工具处理代码。"}]},{"t":"heading","d":1,"p":{"lines":[23,24]},"v":"10.4 注解语法","c":[{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"注解是由注解接口来定义的。"},{"t":"list_item","d":3,"p":{"lines":[25,26]},"v":"单值注解。value。"},{"t":"list_item","d":3,"p":{"lines":[26,27]},"v":"所有的注解接口都隐式地扩展自java.lang.annotation.Annotation接口。"},{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"注解元素的类型：基本类型、String、Class、enum类型、注解类型、由前面类型组成的数组。"},{"t":"list_item","d":3,"p":{"lines":[28,29]},"v":"注解是由编译器计算而来的，所有的元素值必须是编译期常量。"}]},{"t":"heading","d":1,"p":{"lines":[30,31]},"v":"10.5 标准注解","c":[{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"用于编译的注解。@Deprecated、@SuppressWarnings、@Override、@Generated。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"用于资源管理的注解。@PostConstruct、@PreDestroy、@Resource。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"元注解。@Target、@Retention、@Documented、@Inherited。"}]},{"t":"heading","d":1,"p":{"lines":[35,36]},"v":"10.6 源码级注解处理","c":[{"t":"list_item","d":3,"p":{"lines":[36,37]},"v":"从Java SE6开始，可以将注解处理器添加到Java编译器中。"}]},{"t":"heading","d":1,"p":{"lines":[38,39]},"v":"10.7 字节码工程","c":[{"t":"list_item","d":3,"p":{"lines":[39,40]},"v":"在字节码级别上处理注解。"}]}],"p":{}}</svg>
-              </div>
+        
+<div class="markmap-container" style="height:undefined">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;10.1 Java平台的脚本&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;脚本引擎是要一个可以执行用某种特定语言编写的脚本的类库。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;可以通过在类路径中提供必要的JAR文件来添加对额外的语言支持。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;一旦拥有了引擎，就可以直接调用脚本。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[5,6]},&quot;v&quot;:&quot;可以在同一个引擎上调用多个脚本。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;可以通过脚本上下文来重定向脚本的标准输入和输出。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;在使用许多脚本引擎时，都可以调用脚本语言的函数，而不必对处理实际的脚本代码的计算。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;10.2 编译器API&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;编译Java代码的Java程序。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;有许多工具都需要调用Java编译器。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;控制程序代码的来源。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;控制类文件的位置。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;监听在编译过程中产生的错误和警告信息。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;在后台运行编译器。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;10.3 使用注解&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[19,20]},&quot;v&quot;:&quot;注解是那些插入到源代码中使用其他工具可以对其进行处理的标签。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;这些工具可以在源码层次上进行操作，或者可以处理编译器在其中放置了注解的类文件。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;注解不会改变程序的编译方式。Java编译器对于包含注解和不包含注解的代码会生成相同的虚拟机指令。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;为了能够受益于注解，需要选择一个处理工具，然后向处理工具可以理解的代码中插入注解，之后运用该处理工具处理代码。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;10.4 注解语法&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[25,26]},&quot;v&quot;:&quot;注解是由注解接口来定义的。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[26,27]},&quot;v&quot;:&quot;单值注解。value。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;所有的注解接口都隐式地扩展自java.lang.annotation.Annotation接口。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;注解元素的类型：基本类型、String、Class、enum类型、注解类型、由前面类型组成的数组。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[29,30]},&quot;v&quot;:&quot;注解是由编译器计算而来的，所有的元素值必须是编译期常量。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[31,32]},&quot;v&quot;:&quot;10.5 标准注解&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[32,33]},&quot;v&quot;:&quot;用于编译的注解。@Deprecated、@SuppressWarnings、@Override、@Generated。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[33,34]},&quot;v&quot;:&quot;用于资源管理的注解。@PostConstruct、@PreDestroy、@Resource。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;元注解。@Target、@Retention、@Documented、@Inherited。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[36,37]},&quot;v&quot;:&quot;10.6 源码级注解处理&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[37,38]},&quot;v&quot;:&quot;从Java SE6开始，可以将注解处理器添加到Java编译器中。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[39,40]},&quot;v&quot;:&quot;10.7 字节码工程&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[40,41]},&quot;v&quot;:&quot;在字节码级别上处理注解。&quot;}]}],&quot;p&quot;:{}}"></svg>
+</div>
 
-  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
-  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
-  <script>
-    const mindmaps = document.querySelectorAll('.markmap-svg');
-    for(let mindmap of mindmaps) {
-        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
-    }
-  </script> 
+
     </div>
 
     
@@ -353,14 +346,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">184</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -395,7 +388,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -520,5 +513,5 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
-</body>
+<script src="/js/markmap.js"></script></body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -122,12 +122,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">174</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">184</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -251,24 +251,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="markmap-container" style="height:undefined">
-                <svg class="markmap-svg">{"t":"root","d":0,"v":"","c":[{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"8.0 序","c":[{"t":"list_item","d":3,"p":{"lines":[1,2]},"v":"在面向对象的程序设计语言中，多态是继数据抽象和继承之后的第三种基本特征。"},{"t":"list_item","d":3,"p":{"lines":[2,3]},"v":"多态通过分离做什么和怎么做，从另一角度将接口和实现分离开来。"},{"t":"list_item","d":3,"p":{"lines":[3,4]},"v":"多态的作用是消除类型之间的耦合关系。"}]},{"t":"heading","d":1,"p":{"lines":[5,6]},"v":"8.1 再论向上转型","c":[{"t":"list_item","d":3,"p":{"lines":[6,7]},"v":"忘记对象类型。"}]},{"t":"heading","d":1,"p":{"lines":[8,9]},"v":"8.2 转机","c":[{"t":"list_item","d":3,"p":{"lines":[9,10]},"v":"将一个方法调用同一个方法主体关联起来被称为绑定。"},{"t":"list_item","d":3,"p":{"lines":[10,11]},"v":"在程序执行前进行绑定（如果有的话，由编译器和连接程序实现）叫做前期绑定。 --面向过程语言中不需要选择就默认的绑定方式。"},{"t":"list_item","d":3,"p":{"lines":[11,12]},"v":"在运行时根据对象的类型进行绑定叫做后期绑定（也叫动态绑定或运行时绑定）。"},{"t":"list_item","d":3,"p":{"lines":[12,13]},"v":"如果一种语言想实现后期绑定，就必须具有某种机制，以便在运行时能判断对象的类型，从而调用恰当的方法。"},{"t":"list_item","d":3,"p":{"lines":[13,14]},"v":"Java中除了static方法和final方法之外，其他的所有方法都是后期绑定，且会自动发生。"},{"t":"list_item","d":3,"p":{"lines":[14,15]},"v":"在编译时，编译器不需要获得任何特殊信息就能进行正确的调用。"},{"t":"list_item","d":3,"p":{"lines":[15,16]},"v":"只与基类通信，这样的程序时可扩展的，因为可以从通用的基类继承出新的数据类型，从而新添一些功能。那些操作基类的接口的方法不需要任何改动就可以应用于新类。"},{"t":"list_item","d":3,"p":{"lines":[16,17]},"v":"只有非private才可以被覆盖。在导出类中，对于基类中的private方法，最好采用不同的名字。"},{"t":"list_item","d":3,"p":{"lines":[17,18]},"v":"只有普通方法的方法调用可以是多态的。任何域访问操作都由编译器解析。"}]},{"t":"heading","d":1,"p":{"lines":[19,20]},"v":"8.3 构造器和多态","c":[{"t":"list_item","d":3,"p":{"lines":[20,21]},"v":"只有基类的构造器才具有恰当的知识和权限来对自己的元素进行初始化。因此，必须令所有构造器都得到调用，否咋就不可能正确构造完整对象。"},{"t":"list_item","d":3,"p":{"lines":[21,22]},"v":"通过组合和继承方法来创建新类时，永远不必担心对象的清理问题，子对象通常都会留给垃圾回收器进行处理。"},{"t":"list_item","d":3,"p":{"lines":[22,23]},"v":"构造器内部的多态方法的行为。 --可能会造成一些难于发现的隐藏错误。"},{"t":"list_item","d":3,"p":{"lines":[23,24]},"v":"初始化过程：1. 分配对象存储空间初始化； 2. 调用基类构造器； 3. 按照声明顺序调用成员的初始化方法； 4. 调用导出类的构造器主体。"},{"t":"list_item","d":3,"p":{"lines":[24,25]},"v":"构造器准则：用尽可能简单的方法使对象进入正常状态，如果可以的话，避免调用其他方法。"}]},{"t":"heading","d":1,"p":{"lines":[26,27]},"v":"8.4 协变返回类型","c":[{"t":"list_item","d":3,"p":{"lines":[27,28]},"v":"Java SE5 中添加了协变返回类型，它表示在导出类的被覆盖方法可以返回基类的返回类型的某种导出类型。"}]},{"t":"heading","d":1,"p":{"lines":[29,30]},"v":"8.5 用继承进行设计","c":[{"t":"list_item","d":3,"p":{"lines":[30,31]},"v":"用继承表达行为间的差异，并用字段表达状态上的变化。"},{"t":"list_item","d":3,"p":{"lines":[31,32]},"v":"状态模式。"},{"t":"list_item","d":3,"p":{"lines":[32,33]},"v":"is-a：采用纯粹的方式来创建继承层次结构。"},{"t":"list_item","d":3,"p":{"lines":[33,34]},"v":"is-like-a：有着相同的基本接口，但是它还具有由额外方法实现的其他特性。"},{"t":"list_item","d":3,"p":{"lines":[34,35]},"v":"必须由某种方法来确保向下转型的正确性。早某些程序设计语言中，必须执行一个特殊的操作符来获得安全的向下转型。在Java中，所有转型都会得到检查。"},{"t":"list_item","d":3,"p":{"lines":[35,36]},"v":"在运行期间对类型进行检查的行为称作“运行时类型识别（RTTI）”。"}]}],"p":{}}</svg>
-              </div>
+        
+<div class="markmap-container" style="height:undefined">
+  <svg data="{&quot;t&quot;:&quot;root&quot;,&quot;d&quot;:0,&quot;v&quot;:&quot;&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[1,2]},&quot;v&quot;:&quot;8.0 序&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[2,3]},&quot;v&quot;:&quot;在面向对象的程序设计语言中，多态是继数据抽象和继承之后的第三种基本特征。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[3,4]},&quot;v&quot;:&quot;多态通过分离做什么和怎么做，从另一角度将接口和实现分离开来。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[4,5]},&quot;v&quot;:&quot;多态的作用是消除类型之间的耦合关系。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[6,7]},&quot;v&quot;:&quot;8.1 再论向上转型&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[7,8]},&quot;v&quot;:&quot;忘记对象类型。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[9,10]},&quot;v&quot;:&quot;8.2 转机&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[10,11]},&quot;v&quot;:&quot;将一个方法调用同一个方法主体关联起来被称为绑定。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[11,12]},&quot;v&quot;:&quot;在程序执行前进行绑定（如果有的话，由编译器和连接程序实现）叫做前期绑定。 --面向过程语言中不需要选择就默认的绑定方式。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[12,13]},&quot;v&quot;:&quot;在运行时根据对象的类型进行绑定叫做后期绑定（也叫动态绑定或运行时绑定）。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[13,14]},&quot;v&quot;:&quot;如果一种语言想实现后期绑定，就必须具有某种机制，以便在运行时能判断对象的类型，从而调用恰当的方法。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[14,15]},&quot;v&quot;:&quot;Java中除了static方法和final方法之外，其他的所有方法都是后期绑定，且会自动发生。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[15,16]},&quot;v&quot;:&quot;在编译时，编译器不需要获得任何特殊信息就能进行正确的调用。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[16,17]},&quot;v&quot;:&quot;只与基类通信，这样的程序时可扩展的，因为可以从通用的基类继承出新的数据类型，从而新添一些功能。那些操作基类的接口的方法不需要任何改动就可以应用于新类。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[17,18]},&quot;v&quot;:&quot;只有非private才可以被覆盖。在导出类中，对于基类中的private方法，最好采用不同的名字。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[18,19]},&quot;v&quot;:&quot;只有普通方法的方法调用可以是多态的。任何域访问操作都由编译器解析。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[20,21]},&quot;v&quot;:&quot;8.3 构造器和多态&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[21,22]},&quot;v&quot;:&quot;只有基类的构造器才具有恰当的知识和权限来对自己的元素进行初始化。因此，必须令所有构造器都得到调用，否咋就不可能正确构造完整对象。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[22,23]},&quot;v&quot;:&quot;通过组合和继承方法来创建新类时，永远不必担心对象的清理问题，子对象通常都会留给垃圾回收器进行处理。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[23,24]},&quot;v&quot;:&quot;构造器内部的多态方法的行为。 --可能会造成一些难于发现的隐藏错误。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[24,25]},&quot;v&quot;:&quot;初始化过程：1. 分配对象存储空间初始化； 2. 调用基类构造器； 3. 按照声明顺序调用成员的初始化方法； 4. 调用导出类的构造器主体。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[25,26]},&quot;v&quot;:&quot;构造器准则：用尽可能简单的方法使对象进入正常状态，如果可以的话，避免调用其他方法。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[27,28]},&quot;v&quot;:&quot;8.4 协变返回类型&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[28,29]},&quot;v&quot;:&quot;Java SE5 中添加了协变返回类型，它表示在导出类的被覆盖方法可以返回基类的返回类型的某种导出类型。&quot;}]},{&quot;t&quot;:&quot;heading&quot;,&quot;d&quot;:1,&quot;p&quot;:{&quot;lines&quot;:[30,31]},&quot;v&quot;:&quot;8.5 用继承进行设计&quot;,&quot;c&quot;:[{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[31,32]},&quot;v&quot;:&quot;用继承表达行为间的差异，并用字段表达状态上的变化。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[32,33]},&quot;v&quot;:&quot;状态模式。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[33,34]},&quot;v&quot;:&quot;is-a：采用纯粹的方式来创建继承层次结构。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[34,35]},&quot;v&quot;:&quot;is-like-a：有着相同的基本接口，但是它还具有由额外方法实现的其他特性。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[35,36]},&quot;v&quot;:&quot;必须由某种方法来确保向下转型的正确性。早某些程序设计语言中，必须执行一个特殊的操作符来获得安全的向下转型。在Java中，所有转型都会得到检查。&quot;},{&quot;t&quot;:&quot;list_item&quot;,&quot;d&quot;:3,&quot;p&quot;:{&quot;lines&quot;:[36,37]},&quot;v&quot;:&quot;在运行期间对类型进行检查的行为称作“运行时类型识别（RTTI）”。&quot;}]}],&quot;p&quot;:{}}"></svg>
+</div>
+
 
 <h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
 <li>Java比其它一些程序设计语言在底层做了更多的事，让程序员能够更加不关心底层实现，这样做在使用上会比其他程序设计语言更加简单。</li>
 <li>虽然有些操作编译器运行我们进行，但结果可能并不是期望的。所以在实际使用时还得遵循一些准则。</li>
 </ul>
 
-  <style>.markmap-container{display:flex;justify-content:center;margin:0 auto;width:90%;height:500px}.markmap-container svg{width:100%;height:100%}@media(max-width:768px){.markmap-container{height:400px}}</style>
-  <script src="https://cdn.jsdelivr.net/npm/d3@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.4/dist/browser/view.min.js"></script>
-  <script>
-    const mindmaps = document.querySelectorAll('.markmap-svg');
-    for(let mindmap of mindmaps) {
-        markmap.markmap(mindmap, JSON.parse(mindmap.innerHTML));
-    }
-  </script> 
     </div>
 
     
@@ -365,14 +358,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">174</span>
+          <span class="site-state-item-count">184</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -407,7 +400,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -532,5 +525,5 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
-</body>
+<script src="/js/markmap.js"></script></body>
 </html>
