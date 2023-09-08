@@ -37,3 +37,8 @@ Side-by-side layout on the left/right
 > Settings -> Advanced Setting => Startup
 
 Open README.md file if there are no open files on project startup
+
+### 隐藏底部工具栏与两边工具栏
+>  View -> Appearance -> Tool Windows Bars
+
+取消勾选
