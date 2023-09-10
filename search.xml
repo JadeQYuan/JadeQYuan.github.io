@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C 介绍</title>
+    <url>/2021/11/24/C/C-%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p>为了编写Unix系统，早期使用汇编语言，为了编写Unix系统，创建了C。但其发展早已超出了作为Unix操作系统的初衷。</p>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>1973年 C语言诞生。<br>1978 K&amp;R 《The C Programming Language》 出版。<br>1983 ANSI（American National Standards Institute 美国国家标准学会）成立C标准委员会，建立C语言的标准。<br>1989 ANSI发布了第一个完整的C标准 ANSI X3.159-1989，简称C89。<br>1990 ISO（International Standard Organization 国际标准化组织）发布了 ISO/IEC 9899:1990，内容与C89一致，简称 C90。<br>1999 ISO发布了ISO/IEC 9899:1999， 简称 C99。<br>2011 ISO发布了ISO/IEC 9899:2011， 简称 C11。<br>2018 ISO发布了ISO/IEC 9899:2018， 简称 C18。</p>
+<h2 id="基于C的语言"><a href="#基于C的语言" class="headerlink" title="基于C的语言"></a>基于C的语言</h2><p>C++：包含了所有C的特性，增加了类和其它特性以支持面向对象编程。<br>Java：基于C++，所以也继承了许多C的特性。<br>C#：由C++和Java发展起来的一门语言。<br>Prel: 脚本语言，发展过程中采取了许多C的特性。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>运行速度快、高效 </li>
+<li>功能强大</li>
+<li>灵活 为了系统编程设计，但不是只能编写系统。非法的操作在C中是允许的。</li>
+</ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>危险性高</li>
+<li>没有模块化</li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ul>
+<li>数据类型</li>
+<li>流程控制语句</li>
+<li>函数</li>
+<li>编译 预处理阶段对程序文本进行宏替换、包含其它源文件以及进行条件编译。</li>
+<li>处理大部分计算机能够处理的对象，如字符、数字、地址。</li>
+<li>不提供直接处理复合对象的操作。</li>
+<li>单线程</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C 标准库</title>
     <url>/2021/11/25/C/C-%E6%A0%87%E5%87%86%E5%BA%93/</url>
     <content><![CDATA[<h2 id="标准输入输出-lt-stdio-h-gt"><a href="#标准输入输出-lt-stdio-h-gt" class="headerlink" title="标准输入输出 &lt;stdio.h&gt;"></a>标准输入输出 &lt;stdio.h&gt;</h2><p>stdio standard input and output</p>
@@ -116,35 +145,6 @@
 <h2 id="字符操作-lt-ctype-h-gt"><a href="#字符操作-lt-ctype-h-gt" class="headerlink" title="字符操作 &lt;ctype.h&gt;"></a>字符操作 &lt;ctype.h&gt;</h2><p>isalpha<br>isupper<br>islower<br>isdigit<br>isalnum<br>isspace<br>toupper<br>tolower</p>
 <h2 id="通用-lt-stdlib-h-gt"><a href="#通用-lt-stdlib-h-gt" class="headerlink" title="通用 &lt;stdlib.h&gt;"></a>通用 &lt;stdlib.h&gt;</h2><p>atof<br>malloc<br>calloc<br>free<br>exit<br>system<br>frand</p>
 <h2 id="数学函数-lt-math-h-gt"><a href="#数学函数-lt-math-h-gt" class="headerlink" title="数学函数 &lt;math.h&gt;"></a>数学函数 &lt;math.h&gt;</h2><p>sin<br>cos<br>atan2<br>exp<br>log<br>log10<br>pow<br>sqrt<br>fabs</p>
-]]></content>
-      <categories>
-        <category>C</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C 介绍</title>
-    <url>/2021/11/24/C/C-%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><p>为了编写Unix系统，早期使用汇编语言，为了编写Unix系统，创建了C。但其发展早已超出了作为Unix操作系统的初衷。</p>
-<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p>1973年 C语言诞生。<br>1978 K&amp;R 《The C Programming Language》 出版。<br>1983 ANSI（American National Standards Institute 美国国家标准学会）成立C标准委员会，建立C语言的标准。<br>1989 ANSI发布了第一个完整的C标准 ANSI X3.159-1989，简称C89。<br>1990 ISO（International Standard Organization 国际标准化组织）发布了 ISO/IEC 9899:1990，内容与C89一致，简称 C90。<br>1999 ISO发布了ISO/IEC 9899:1999， 简称 C99。<br>2011 ISO发布了ISO/IEC 9899:2011， 简称 C11。<br>2018 ISO发布了ISO/IEC 9899:2018， 简称 C18。</p>
-<h2 id="基于C的语言"><a href="#基于C的语言" class="headerlink" title="基于C的语言"></a>基于C的语言</h2><p>C++：包含了所有C的特性，增加了类和其它特性以支持面向对象编程。<br>Java：基于C++，所以也继承了许多C的特性。<br>C#：由C++和Java发展起来的一门语言。<br>Prel: 脚本语言，发展过程中采取了许多C的特性。</p>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>运行速度快、高效 </li>
-<li>功能强大</li>
-<li>灵活 为了系统编程设计，但不是只能编写系统。非法的操作在C中是允许的。</li>
-</ul>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>危险性高</li>
-<li>没有模块化</li>
-</ul>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ul>
-<li>数据类型</li>
-<li>流程控制语句</li>
-<li>函数</li>
-<li>编译 预处理阶段对程序文本进行宏替换、包含其它源文件以及进行条件编译。</li>
-<li>处理大部分计算机能够处理的对象，如字符、数字、地址。</li>
-<li>不提供直接处理复合对象的操作。</li>
-<li>单线程</li>
-</ul>
 ]]></content>
       <categories>
         <category>C</category>
@@ -288,72 +288,238 @@
       </categories>
   </entry>
   <entry>
-    <title>js prototye</title>
-    <url>/2021/07/29/JS/js-prototye/</url>
-    <content><![CDATA[<ol>
-<li><strong>proto</strong> 和 contructor 是对象属性，prototype是函数属性（函数也是对象）。</li>
-<li><strong>proto</strong> 由一个对象指向它的原型对象。</li>
-<li>prototype 从一个函数指向所创建实例的原型对象。</li>
-<li>contructor 从一个对象指向给对象的构造函数。</li>
-</ol>
-<h2 id="prototype-的目的"><a href="#prototype-的目的" class="headerlink" title="prototype 的目的"></a>prototype 的目的</h2><p>共享方法、共享属性、面向对象</p>
-<ol>
-<li>函数内部定义的变量及函数，只能在内部调用，是私有的，外部无法访问。</li>
-<li>函数添加静态变量及函数，通过函数对象本身可以访问，但是通过实例访问不到。</li>
-<li>函数内部通过this添加变量及函数，创建实例时详单与做了拷贝，无法共享。（函数本身拷贝没有意义，且浪费资源）</li>
-</ol>
-<p>故，只要创建一个函数，就为该函数创建一个prototype属性，prototype本身是个对象，其contructor属性指向该函数本身，其__proto__属性指向Function.prototype。</p>
-<h2 id="对象创建方式及区别"><a href="#对象创建方式及区别" class="headerlink" title="对象创建方式及区别"></a>对象创建方式及区别</h2><ol>
-<li>字面量创建<br> <strong>proto</strong> 指向Object.prototype。</li>
-<li>函数对象<br> <strong>proto</strong> 指向Function.prototype。<br> prototype 指向 该对象的prototype。</li>
-<li>new创建<ol>
-<li>生成一个新对象</li>
-<li>设置对象__proto__指向函数的prototype属性。</li>
-<li>绑定this</li>
-<li>返回</li>
-</ol>
+    <title>ElasticSearch</title>
+    <url>/2022/06/12/Elastic/ElasticSearch/</url>
+    <content><![CDATA[<p>V7.17.3</p>
+<h2 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h2><h3 id="数据分类"><a href="#数据分类" class="headerlink" title="数据分类"></a>数据分类</h3><ul>
+<li>结构化数据 固定格式、有限长度</li>
+<li>非结构化数据 不定长，无固定格式</li>
+<li>半结构化数据 结合</li>
+</ul>
+<h2 id="搜索分类"><a href="#搜索分类" class="headerlink" title="搜索分类"></a>搜索分类</h2><ul>
+<li>结构化数据： 关系型数据库</li>
+<li>非结构化数据： 顺序扫描/全文检索</li>
+</ul>
+<h2 id="全文检索-1"><a href="#全文检索-1" class="headerlink" title="全文检索"></a>全文检索</h2><ul>
+<li>分词</li>
+<li>索引</li>
+</ul>
+<h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><ul>
+<li>正排 id -&gt; 内容</li>
+<li>倒排 关键词 -&gt; id</li>
+<li>倒排索引 数据 -&gt; 分词 -&gt; 去重 -&gt; 排序</li>
+</ul>
+<h2 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h2><ul>
+<li><p>分布式、RestFul风格的搜索和数据分析引擎，用Java开发。</p>
 </li>
-</ol>
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><pre><code>内部使用this变量，使用new调用创建。
-构造函数生成的实例对象都有__proto__属性，指向构造函数的prototype。
-利用构造函数继承属性，利用原型对象继承方法。（组合继承）
-</code></pre>
-<h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><pre><code>构造函数的另一种写法。
-语法糖。
-</code></pre>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><pre><code>1. 原型链继承
-2. 构造函数继承
-3. 组合继承
-其它。。。
-</code></pre>
+<li><p>Lucene，单机版的搜索引擎，不支持水平扩展，只针对Java语言。</p>
+</li>
+<li><p>2004年，基于Lucene开发了Comparse。</p>
+</li>
+<li><p>2010年，重命名为ElasticSearch。</p>
+</li>
+</ul>
+<h2 id="版本新特性"><a href="#版本新特性" class="headerlink" title="版本新特性"></a>版本新特性</h2><h2 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h2><ul>
+<li>Solr</li>
+<li>ElasticSearch</li>
+</ul>
+<h2 id="Elastic-Stack"><a href="#Elastic-Stack" class="headerlink" title="Elastic Stack"></a>Elastic Stack</h2><p>解决方案，搜索、日志分析、指标分析、安全分析。</p>
+<ul>
+<li>ElasticSearch</li>
+<li>Logstash</li>
+<li>Kibana</li>
+<li>Beats</li>
+</ul>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>ES5 - JDK 8.0</li>
+<li>ES6 - JDK 11</li>
+<li>ES7 内置JDK，配置优先级： ES_JAVA_HOME &gt; JAVA_HOME &gt; ES_HOME</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="elasticsearch-yml"><a href="#elasticsearch-yml" class="headerlink" title="elasticsearch.yml"></a>elasticsearch.yml</h3><ul>
+<li>cluster</li>
+<li>node</li>
+<li>path</li>
+<li>Host</li>
+<li>Network<h3 id="JVM-配置"><a href="#JVM-配置" class="headerlink" title="JVM 配置"></a>JVM 配置</h3>占用内存较大。</li>
+<li>-Xms</li>
+<li>-Xmx</li>
+</ul>
+<h2 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h2><p>索引命名必须小写，不能以_开头</p>
+<ul>
+<li>创建索引 [PUT /index] {}</li>
+<li>删除索引 [DELETE /index]</li>
+<li>修改索引 [PUT /index/_setting]</li>
+<li>查询索引 [GET /index/..]</li>
+<li>是否存在 [HEAD /index]</li>
+</ul>
+<h2 id="索引属性"><a href="#索引属性" class="headerlink" title="索引属性"></a>索引属性</h2><ul>
+<li>aliases</li>
+<li>mapping</li>
+<li>settings</li>
+</ul>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ul>
+<li>索引</li>
+<li>文档</li>
+</ul>
+<h3 id="文档元数据"><a href="#文档元数据" class="headerlink" title="文档元数据"></a>文档元数据</h3><ul>
+<li>_index</li>
+<li>_type</li>
+<li>_source</li>
+<li>version</li>
+<li>seq_no 解决并发写数据的问题</li>
+<li>primary_term  解决并发写数据的问题</li>
+</ul>
+<h2 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h2><ul>
+<li>添加文档 [PUT/POST /index/[_doc/_create]/id]<br>有id时创建新文档，删除旧文档。全局更新。</li>
+<li>修改文档 [POST /index/[_update/_updateByQuery]/id]</li>
+<li>批量操作 [POST _bulk] 偶数行参数 可以操作不同的index</li>
+<li>批量读取 [GET [_mget/_msearch]]</li>
+</ul>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h4 id="检索原理"><a href="#检索原理" class="headerlink" title="检索原理"></a>检索原理</h4><ul>
+<li>索引</li>
+<li>磁盘IO与预读  局部预读性原理</li>
+<li>倒排索引 单词词典、倒排列表、倒排索引项</li>
+</ul>
+<h4 id="Query-DSL"><a href="#Query-DSL" class="headerlink" title="Query DSL"></a>Query DSL</h4><ul>
+<li>GET /index/_doc/_search _doc省略后kibana有提示</li>
+<li>默认只返回10条数据，默认from+size&lt;10000</li>
+<li>只有text类型分词</li>
+<li>from、size 分页</li>
+<li>分页查询scroll</li>
+<li>sort 排序 （_score 为null）</li>
+<li>_source 指定返回某些字段</li>
+<li>match_all 查询所有数据</li>
+<li>match 对关键字进行分词，然后进行匹配（默认or，可改为and）(其它参数)</li>
+<li>match_phrase  短语匹配，要求分词是连续的（slop指定间隔个数）</li>
+<li>multi_match 多字段匹配，一个查询条件多个字段</li>
+<li>query_string </li>
+<li>simple_query_string + | - 替代 AND OR NOT</li>
+<li>term filed.keyword 关键词查询，不分词，精确匹配 (term必须使用keyword)  使用filter避免算分</li>
+<li>prefix 前缀搜索，匹配分词的前缀，而不是文本的前缀</li>
+<li>wildcard 通配符查询，匹配分词</li>
+<li>range 范围查询 （当前时间now的用法）</li>
+<li>ids 多id查询</li>
+<li>fuzzy 模糊查询，针对错别字的情形 fuzziness（最大2）：错误字数、prefix_length：前缀匹配长度</li>
+<li>highlight 高亮查询，让符合条件的关键字高亮 可自定义样式</li>
+<li>相关性及算分 排序  算法ES5之前使用TF-IDF（同一个词反复出现，分数会很高），之后使用BM25</li>
+<li>explain true 查看算分公式</li>
+<li>bool 组合查询 must（算分）、should（算分）、must_not（不算分）、filter（不算分） 分数汇总</li>
+</ul>
+<h2 id="Mapping"><a href="#Mapping" class="headerlink" title="Mapping"></a>Mapping</h2><ul>
+<li>dynamic mapping text类型会自动增加子keyword属性</li>
+<li>静态映射、动态映射、strict映射 新增字段不同实现</li>
+<li>_reindex 重建索引、别名  建新索引 -&gt; reindex -&gt; 删旧索引 -&gt; 使用别名  （文档会怎样？）</li>
+<li>index template 只在索引被创建的时候有用</li>
+</ul>
 ]]></content>
       <categories>
-        <category>JS</category>
+        <category>Elastic</category>
       </categories>
   </entry>
   <entry>
-    <title>vue</title>
-    <url>/2021/07/29/JS/vue/</url>
-    <content><![CDATA[<ul>
-<li>ES6在语言的层面上实现了模块化。浏览器厂商和 Node.js 都宣布要原生支持该规范。它将逐渐取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决方案。</li>
+    <title>ElasticSearch安装</title>
+    <url>/2023/09/10/Elastic/%EF%BC%882%EF%BC%89ElasticSearch%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h2 id="Linux下安装"><a href="#Linux下安装" class="headerlink" title="Linux下安装"></a>Linux下安装</h2><ul>
+<li>下载</li>
+<li>解压</li>
+<li>运行</li>
 </ul>
-<p>VUE项目打包后通过nginx代理找不到js/css文件</p>
+<h2 id="Windows下安装"><a href="#Windows下安装" class="headerlink" title="Windows下安装"></a>Windows下安装</h2><ul>
+<li>下载</li>
+<li>解压</li>
+<li>运行</li>
+</ul>
+<h2 id="Java（JVM）版本"><a href="#Java（JVM）版本" class="headerlink" title="Java（JVM）版本"></a>Java（JVM）版本</h2><ul>
+<li>ElasticSearch中内置了OPENJDK，推荐使用内置JVM。</li>
+<li>使用ES_JAVA_HOME环境变量替换内置Java。</li>
+<li>替换内置Java需注意Java版本。</li>
+<li>内置JVM是ElasticSearch的一部分，会随着ES一起更新，并负责解决安全事项及bugs。</li>
+<li>内置JVM在jdk目录下，如果使用自定义JVM需要移除。</li>
+</ul>
+<h2 id="重要配置"><a href="#重要配置" class="headerlink" title="重要配置"></a>重要配置</h2><h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><ul>
+<li>data目录，存储数据。</li>
+<li>log目录，存储日志。</li>
+<li>默认在$ES_HOME目录下。</li>
+<li>$ES_HOME目录下的文件在升级过程中存在删除风险。</li>
+<li>强烈推荐在yml中配置path.data与path.logs，不要放在$ES_HOME目录下。</li>
+</ul>
+<h3 id="多路径配置"><a href="#多路径配置" class="headerlink" title="-多路径配置-"></a>-多路径配置-</h3><ul>
+<li><del>在7.13.0中弃用。</del></li>
+<li>在多个配置路径中都保存。</li>
+<li>如果有一个路径磁盘使用率过高，则所有路径都不能添加分片。</li>
+<li>推荐添加多个节点，而不是多个路径。</li>
+</ul>
+<h3 id="多路径配置迁移"><a href="#多路径配置迁移" class="headerlink" title="多路径配置迁移"></a>多路径配置迁移</h3><ul>
+<li>使用硬件/软件虚拟化。</li>
+<li>迁移，滚动升级。<ul>
+<li>关闭节点</li>
+<li>修改配置</li>
+<li>启动节点</li>
+<li>下个节点…</li>
+</ul>
+</li>
+</ul>
+<h3 id="集群名称配置"><a href="#集群名称配置" class="headerlink" title="集群名称配置"></a>集群名称配置</h3><ul>
+<li>cluster.name</li>
+<li>只有节点配置集群名称时才能加入到集群中。</li>
+<li>集群名称默认为elasticsearch。</li>
+<li><strong>不要在不同的环境中使用相同的集群名称，避免节点加入到错误的集群。</strong></li>
+</ul>
+<h3 id="节点名称"><a href="#节点名称" class="headerlink" title="节点名称"></a>节点名称</h3><ul>
+<li>node.name</li>
+<li>节点名称在许多API中会返回。</li>
+<li>节点名称默认为主机名。</li>
+</ul>
+<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><ul>
+<li>network.host</li>
+<li>默认使用127.0.0.1。</li>
+<li><strong>配置后表示在使用生产模式，而不是开发模式。</strong></li>
+</ul>
+<h3 id="发现和集群信息配置"><a href="#发现和集群信息配置" class="headerlink" title="发现和集群信息配置"></a>发现和集群信息配置</h3><ul>
+<li>discovery.seed_hosts</li>
+<li>生产模式按需配置。</li>
+<li>开箱急用，默认扫描同服务下9300~9305端口。</li>
+<li>发现其他服务下的节点，需要配置。</li>
+<li>列表。</li>
+<li>可配置IP/IPV6地址，域名及端口。</li>
+<li>默认端口9300，可配置。</li>
+</ul>
+<hr>
 <ul>
-<li><p>nginx代理后路径为 root 路径 + location 路径</p>
-</li>
-<li><p>需要修改VUE static 打包路径为 location 路径 + static (相对路径)</p>
-</li>
-<li><p>需要修改VUE index.html 打包路径为 location 路径下的index.html  或者 修改 nginx 配置 try_files 为 location 路径/index.html</p>
-<p>  __dirname ： js文件当前绝对路径（仅在js文件中有效）<br>  path： node 内置模块<br>  index: 打包后 index.html 文件路径 （绝对路径）<br>  assetRoot: 指向包含应用程序的所有静态资源的根目录<br>  assetsSubDirectory: 静态资源要存放的路径， 相对于 assetRoot 的路径<br>  assetsPublicPath: 代表打包后，index.html里面引用资源的的地址 （相对路径/绝对路径）</p>
-</li>
+<li>cluster.initial_master-nodes</li>
+<li>如果master-eligible节点没有固定的名称或者地址，可以使用配置动态发现。</li>
+<li>自动引导本质上不安全。</li>
+<li>通过配置的节点可以被优先选举为master节点。</li>
+<li><strong>启动成功之后移除每个节点中的配置。</strong></li>
+<li><strong>不要在重启集群或添加新节点时使用该配置。</strong></li>
+<li>配置必须与节点名称保持一致。</li>
 </ul>
-<p>eslint 文件/设置中 区别，关系<br>-文件：运行项目后，通过控制台才发现语法错误。<br>-设置：在开发过程中，就根据ESlint规则修改代码。（不必支持项目）<br>IDEA中配置：Setting -&gt;Preferences -&gt; Languages &amp; Frameworks -&gt; JavaScript -&gt; Code Quality Tools -&gt; Eslint ，然后勾选Enable单选框。</p>
-<pre><code>    IDEA webpack配置
-- 当在“设置/首选项”|语言和框架|JavaScript|Webpack中打开项目或编辑指定的webpack.config.js时，IntelliJ IDEA在后台分析配置，并根据收到的信息，正确理解项目解析根和解析别名。由于对项目配置的理解，IntelliJ IDEA为JavaScript文件中的导入和导出符号提供了更精确的代码完成。
-</code></pre>
+<h3 id="堆大小配置"><a href="#堆大小配置" class="headerlink" title="堆大小配置"></a>堆大小配置</h3><ul>
+<li>ES根据节点角色及内存大小，自动设置堆内存大小。（要求Java14）</li>
+<li>推荐使用自动计算。</li>
+</ul>
+<h3 id="堆转存路径设置"><a href="#堆转存路径设置" class="headerlink" title="堆转存路径设置"></a>堆转存路径设置</h3><ul>
+<li>内存溢出时转存到数据目录。</li>
+<li>Linux、Windows、MacOS默认在安装目录下的root目录。</li>
+<li>jvm.options</li>
+</ul>
+<h3 id="GC日志设置"><a href="#GC日志设置" class="headerlink" title="GC日志设置"></a>GC日志设置</h3><ul>
+<li>jvm.options</li>
+</ul>
+<h3 id="临时目录"><a href="#临时目录" class="headerlink" title="临时目录"></a>临时目录</h3><ul>
+<li>/temp</li>
+</ul>
+<h3 id="JVM错误级别日志"><a href="#JVM错误级别日志" class="headerlink" title="JVM错误级别日志"></a>JVM错误级别日志</h3><ul>
+<li>Linux、Windows、MacOS默认在安装目录下的logs目录。</li>
+<li>jvm.options</li>
+</ul>
+<h3 id="集群备份"><a href="#集群备份" class="headerlink" title="集群备份"></a>集群备份</h3><ul>
+<li>快照。</li>
+</ul>
+<h2 id="安全配置"><a href="#安全配置" class="headerlink" title="安全配置"></a>安全配置</h2><h2 id="安全审计配置"><a href="#安全审计配置" class="headerlink" title="安全审计配置"></a>安全审计配置</h2><p>…</p>
 ]]></content>
       <categories>
-        <category>JS</category>
+        <category>Elastic</category>
       </categories>
   </entry>
   <entry>
@@ -472,112 +638,6 @@
       </categories>
   </entry>
   <entry>
-    <title>ElasticSearch安装</title>
-    <url>/2023/09/11/Elastic/%EF%BC%882%EF%BC%89ElasticSearch%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<h2 id="Linux下安装"><a href="#Linux下安装" class="headerlink" title="Linux下安装"></a>Linux下安装</h2><ul>
-<li>下载</li>
-<li>解压</li>
-<li>运行</li>
-</ul>
-<h2 id="Windows下安装"><a href="#Windows下安装" class="headerlink" title="Windows下安装"></a>Windows下安装</h2><ul>
-<li>下载</li>
-<li>解压</li>
-<li>运行</li>
-</ul>
-<h2 id="Java（JVM）版本"><a href="#Java（JVM）版本" class="headerlink" title="Java（JVM）版本"></a>Java（JVM）版本</h2><ul>
-<li>ElasticSearch中内置了OPENJDK，推荐使用内置JVM。</li>
-<li>使用ES_JAVA_HOME环境变量替换内置Java。</li>
-<li>替换内置Java需注意Java版本。</li>
-<li>内置JVM是ElasticSearch的一部分，会随着ES一起更新，并负责解决安全事项及bugs。</li>
-<li>内置JVM在jdk目录下，如果使用自定义JVM需要移除。</li>
-</ul>
-<h2 id="重要配置"><a href="#重要配置" class="headerlink" title="重要配置"></a>重要配置</h2><h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><ul>
-<li>data目录，存储数据。</li>
-<li>log目录，存储日志。</li>
-<li>默认在$ES_HOME目录下。</li>
-<li>$ES_HOME目录下的文件在升级过程中存在删除风险。</li>
-<li>强烈推荐在yml中配置path.data与path.logs，不要放在$ES_HOME目录下。</li>
-</ul>
-<h3 id="多路径配置"><a href="#多路径配置" class="headerlink" title="-多路径配置-"></a>-多路径配置-</h3><ul>
-<li>在7.13.0中弃用。</li>
-<li>在多个配置路径中都保存。</li>
-<li>如果有一个路径磁盘使用率过高，则所有路径都不能添加分片。</li>
-<li>推荐添加多个节点，而不是多个路径。</li>
-</ul>
-<h3 id="多路径配置迁移"><a href="#多路径配置迁移" class="headerlink" title="多路径配置迁移"></a>多路径配置迁移</h3><ul>
-<li>使用硬件/软件虚拟化。</li>
-<li>迁移，滚动升级。<ul>
-<li>关闭节点</li>
-<li>修改配置</li>
-<li>启动节点</li>
-<li>下个节点…</li>
-</ul>
-</li>
-</ul>
-<h3 id="集群名称配置"><a href="#集群名称配置" class="headerlink" title="集群名称配置"></a>集群名称配置</h3><ul>
-<li>cluster.name</li>
-<li>只有节点配置集群名称时才能加入到集群中。</li>
-<li>集群名称默认为elasticsearch。</li>
-<li><strong>不要在不同的环境中使用相同的集群名称，避免节点加入到错误的集群。</strong></li>
-</ul>
-<h3 id="节点名称"><a href="#节点名称" class="headerlink" title="节点名称"></a>节点名称</h3><ul>
-<li>node.name</li>
-<li>节点名称在许多API中会返回。</li>
-<li>节点名称默认为主机名。</li>
-</ul>
-<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><ul>
-<li>network.host</li>
-<li>默认使用127.0.0.1。</li>
-<li><em><strong>配置后表示在使用生产模式，而不是开发模式。</strong></em></li>
-</ul>
-<h3 id="发现和集群信息配置"><a href="#发现和集群信息配置" class="headerlink" title="发现和集群信息配置"></a>发现和集群信息配置</h3><ul>
-<li>discovery.seed_hosts</li>
-<li>生产模式按需配置。</li>
-<li>开箱急用，默认扫描同服务下9300~9305端口。</li>
-<li>发现其他服务下的节点，需要配置。</li>
-<li>列表。</li>
-<li>可配置IP/IPV6地址，域名及端口。</li>
-<li>默认端口9300，可配置。</li>
-</ul>
-<hr>
-<ul>
-<li>cluster.initial_master-nodes</li>
-<li>如果master-eligible节点没有固定的名称或者地址，可以使用配置动态发现。</li>
-<li>自动引导本质上不安全。</li>
-<li>通过配置的节点可以被优先选举为master节点。</li>
-<li><em><strong>启动成功之后移除每个节点中的配置。</strong></em></li>
-<li><em><strong>不要在重启集群或添加新节点时使用该配置。</strong></em></li>
-<li>配置必须与节点名称保持一致。</li>
-</ul>
-<h3 id="堆大小配置"><a href="#堆大小配置" class="headerlink" title="堆大小配置"></a>堆大小配置</h3><ul>
-<li>ES根据节点角色及内存大小，自动设置堆内存大小。（要求Java14）</li>
-<li>推荐使用自动计算。</li>
-</ul>
-<h3 id="堆转存路径设置"><a href="#堆转存路径设置" class="headerlink" title="堆转存路径设置"></a>堆转存路径设置</h3><ul>
-<li>内存溢出时转存到数据目录。</li>
-<li>Linux、Windows、MacOS默认在安装目录下的root目录。</li>
-<li>jvm.options</li>
-</ul>
-<h3 id="GC日志设置"><a href="#GC日志设置" class="headerlink" title="GC日志设置"></a>GC日志设置</h3><ul>
-<li>jvm.options</li>
-</ul>
-<h3 id="临时目录"><a href="#临时目录" class="headerlink" title="临时目录"></a>临时目录</h3><ul>
-<li>/temp</li>
-</ul>
-<h3 id="JVM错误级别日志"><a href="#JVM错误级别日志" class="headerlink" title="JVM错误级别日志"></a>JVM错误级别日志</h3><ul>
-<li>Linux、Windows、MacOS默认在安装目录下的logs目录。</li>
-<li>jvm.options</li>
-</ul>
-<h3 id="集群备份"><a href="#集群备份" class="headerlink" title="集群备份"></a>集群备份</h3><ul>
-<li>快照。</li>
-</ul>
-<h2 id="安全配置"><a href="#安全配置" class="headerlink" title="安全配置"></a>安全配置</h2><h2 id="安全审计配置"><a href="#安全审计配置" class="headerlink" title="安全审计配置"></a>安全审计配置</h2><p>…</p>
-]]></content>
-      <categories>
-        <category>Elastic</category>
-      </categories>
-  </entry>
-  <entry>
     <title>IDEA 配置</title>
     <url>/2021/11/16/IDE/IDEA-%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<blockquote>
@@ -613,6 +673,75 @@
 ]]></content>
       <categories>
         <category>IDE</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>js prototye</title>
+    <url>/2021/07/29/JS/js-prototye/</url>
+    <content><![CDATA[<ol>
+<li><strong>proto</strong> 和 contructor 是对象属性，prototype是函数属性（函数也是对象）。</li>
+<li><strong>proto</strong> 由一个对象指向它的原型对象。</li>
+<li>prototype 从一个函数指向所创建实例的原型对象。</li>
+<li>contructor 从一个对象指向给对象的构造函数。</li>
+</ol>
+<h2 id="prototype-的目的"><a href="#prototype-的目的" class="headerlink" title="prototype 的目的"></a>prototype 的目的</h2><p>共享方法、共享属性、面向对象</p>
+<ol>
+<li>函数内部定义的变量及函数，只能在内部调用，是私有的，外部无法访问。</li>
+<li>函数添加静态变量及函数，通过函数对象本身可以访问，但是通过实例访问不到。</li>
+<li>函数内部通过this添加变量及函数，创建实例时详单与做了拷贝，无法共享。（函数本身拷贝没有意义，且浪费资源）</li>
+</ol>
+<p>故，只要创建一个函数，就为该函数创建一个prototype属性，prototype本身是个对象，其contructor属性指向该函数本身，其__proto__属性指向Function.prototype。</p>
+<h2 id="对象创建方式及区别"><a href="#对象创建方式及区别" class="headerlink" title="对象创建方式及区别"></a>对象创建方式及区别</h2><ol>
+<li>字面量创建<br> <strong>proto</strong> 指向Object.prototype。</li>
+<li>函数对象<br> <strong>proto</strong> 指向Function.prototype。<br> prototype 指向 该对象的prototype。</li>
+<li>new创建<ol>
+<li>生成一个新对象</li>
+<li>设置对象__proto__指向函数的prototype属性。</li>
+<li>绑定this</li>
+<li>返回</li>
+</ol>
+</li>
+</ol>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><pre><code>内部使用this变量，使用new调用创建。
+构造函数生成的实例对象都有__proto__属性，指向构造函数的prototype。
+利用构造函数继承属性，利用原型对象继承方法。（组合继承）
+</code></pre>
+<h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><pre><code>构造函数的另一种写法。
+语法糖。
+</code></pre>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><pre><code>1. 原型链继承
+2. 构造函数继承
+3. 组合继承
+其它。。。
+</code></pre>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>vue</title>
+    <url>/2021/07/29/JS/vue/</url>
+    <content><![CDATA[<ul>
+<li>ES6在语言的层面上实现了模块化。浏览器厂商和 Node.js 都宣布要原生支持该规范。它将逐渐取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决方案。</li>
+</ul>
+<p>VUE项目打包后通过nginx代理找不到js/css文件</p>
+<ul>
+<li><p>nginx代理后路径为 root 路径 + location 路径</p>
+</li>
+<li><p>需要修改VUE static 打包路径为 location 路径 + static (相对路径)</p>
+</li>
+<li><p>需要修改VUE index.html 打包路径为 location 路径下的index.html  或者 修改 nginx 配置 try_files 为 location 路径/index.html</p>
+<p>  __dirname ： js文件当前绝对路径（仅在js文件中有效）<br>  path： node 内置模块<br>  index: 打包后 index.html 文件路径 （绝对路径）<br>  assetRoot: 指向包含应用程序的所有静态资源的根目录<br>  assetsSubDirectory: 静态资源要存放的路径， 相对于 assetRoot 的路径<br>  assetsPublicPath: 代表打包后，index.html里面引用资源的的地址 （相对路径/绝对路径）</p>
+</li>
+</ul>
+<p>eslint 文件/设置中 区别，关系<br>-文件：运行项目后，通过控制台才发现语法错误。<br>-设置：在开发过程中，就根据ESlint规则修改代码。（不必支持项目）<br>IDEA中配置：Setting -&gt;Preferences -&gt; Languages &amp; Frameworks -&gt; JavaScript -&gt; Code Quality Tools -&gt; Eslint ，然后勾选Enable单选框。</p>
+<pre><code>    IDEA webpack配置
+- 当在“设置/首选项”|语言和框架|JavaScript|Webpack中打开项目或编辑指定的webpack.config.js时，IntelliJ IDEA在后台分析配置，并根据收到的信息，正确理解项目解析根和解析别名。由于对项目配置的理解，IntelliJ IDEA为JavaScript文件中的导入和导出符号提供了更精确的代码完成。
+</code></pre>
+]]></content>
+      <categories>
+        <category>JS</category>
       </categories>
   </entry>
   <entry>
@@ -824,6 +953,44 @@ String[]    [Ljava.lang.String;
 <p>字面量初始化<br>int          直接定义, int i = 1;<br>short         2个字节以内的int，short s = (short)1;<br>long        l/L 结尾<br>byte        1个字节以内的byte，byte b = (byte)1;<br>float        f/F 结尾<br>double        整数+d/D结尾或小数<br>char        单引号<br>boolean     true/false<br>string        双引号<br>[]            大括号{} （简化了new）</p>
 <p>null        null</p>
 <p>null：<br>    null是一种数据类型，但可以忽略。<br>    null是关键字，是所有对象类型的默认值。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>log</title>
+    <url>/2021/09/03/Java/log/</url>
+    <content><![CDATA[<ol>
+<li><p>log path的配置，一般只输出指定路径的日志，那mybatis的日志和启动时打印的日志为什么不在此列</p>
+</li>
+<li><p>判断当前日志是否可用？？？</p>
+</li>
+<li><p>日志Facade<br> jcl commons-logging (已停止更新)</p>
+<pre><code> 默认使用log4j的实现，找不到则使用jul的实现。
+</code></pre>
+<p> slf4j (simple log facade for java)</p>
+</li>
+<li><p>日志实现<br> jul (java.util.logging jdk1.4 开始提供)<br> log4j<br> logback</p>
+<pre><code> logback-core
+ logback-classic
+ logback-access
+</code></pre>
+<p> log4j2</p>
+<pre><code> log4j-api
+ log4j-core
+</code></pre>
+</li>
+<li><p>集成使用<br> 部分集成使用需要添加额外适配包</p>
+<ol>
+<li>jcl+log4j2<br> log4j-jcl</li>
+<li>jcl+logback<br> jcl-over-slf4j</li>
+<li>slf4j+jul<br> slf4j-jdk14</li>
+<li>slf4j+log4j<br> slf4j-log4j12</li>
+<li>slf4j+log4j2<br> log4j-slf4j-impl</li>
+</ol>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -1382,6 +1549,18 @@ String[]    [Ljava.lang.String;
       </categories>
   </entry>
   <entry>
+    <title>ssh</title>
+    <url>/2020/02/05/Linux/ssh/</url>
+    <content><![CDATA[<p>SSH （ Secure Shell ），建立在应用层基础上的安全协议</p>
+<p>SCP（Secure Copy）、SFTP（SSH File Transfer Protocol）是基于ssh的协议，使用了ssh的加密功能</p>
+<p>使用ssh-copy-id命令将公钥复制到远程主机。ssh-copy-id会将公钥写到远程主机的 ~/ .ssh/authorized_key 文件中</p>
+<p>SSH之所以能够保证安全，原因在于它采用了非对称加密技术(RSA)加密了所有传输的数据。<br>从客户端来看，SSH提供两种级别的安全验证。<br>第一种级别（基于口令的安全验证）<br>第二种级别（基于密匙的安全验证）</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>命令</title>
     <url>/2020/02/05/Linux/%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>x86泛指一系列基于Intel 8086且向后兼容的中央处理器指令集架构<br>x86_64 = x64</p>
@@ -1395,95 +1574,6 @@ String[]    [Ljava.lang.String;
 ]]></content>
       <categories>
         <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ssh</title>
-    <url>/2020/02/05/Linux/ssh/</url>
-    <content><![CDATA[<p>SSH （ Secure Shell ），建立在应用层基础上的安全协议</p>
-<p>SCP（Secure Copy）、SFTP（SSH File Transfer Protocol）是基于ssh的协议，使用了ssh的加密功能</p>
-<p>使用ssh-copy-id命令将公钥复制到远程主机。ssh-copy-id会将公钥写到远程主机的 ~/ .ssh/authorized_key 文件中</p>
-<p>SSH之所以能够保证安全，原因在于它采用了非对称加密技术(RSA)加密了所有传输的数据。<br>从客户端来看，SSH提供两种级别的安全验证。<br>第一种级别（基于口令的安全验证）<br>第二种级别（基于密匙的安全验证）</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>maven</title>
-    <url>/2020/07/14/Maven/maven/</url>
-    <content><![CDATA[<h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><p>版本管理工具。</p>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>maven有三套相互独立的声明周期。<br>不论要执行生命周期的哪一个阶段，都是从这个生命周期的开始执行。</p>
-<h3 id="Clean-Lifecycle"><a href="#Clean-Lifecycle" class="headerlink" title="Clean Lifecycle"></a>Clean Lifecycle</h3><ul>
-<li>pre-clean</li>
-<li>clean</li>
-<li>post-clean</li>
-</ul>
-<h3 id="Default-Lifecycle"><a href="#Default-Lifecycle" class="headerlink" title="Default Lifecycle"></a>Default Lifecycle</h3><ul>
-<li>validate</li>
-<li>generate-sources</li>
-<li>process-sources</li>
-<li>generate-resources</li>
-<li>process-resources</li>
-<li>compile</li>
-<li>process-classed</li>
-<li>generate-test-sources</li>
-<li>process-test-sources</li>
-<li>generate-test-resources</li>
-<li>process-test-resources</li>
-<li>test-compile</li>
-<li>process-test-classed</li>
-<li>test</li>
-<li>prepare-package</li>
-<li>package</li>
-<li>pre-integration-test</li>
-<li>integration-test</li>
-<li>verify</li>
-<li>install</li>
-<li>deploy</li>
-</ul>
-<h3 id="Site-Lifecycle"><a href="#Site-Lifecycle" class="headerlink" title="Site Lifecycle"></a>Site Lifecycle</h3><ul>
-<li>pre-site</li>
-<li>site</li>
-<li>post-site</li>
-<li>site-deploy</li>
-</ul>
-<h2 id="pom配置"><a href="#pom配置" class="headerlink" title="pom配置"></a>pom配置</h2><p>pom（project object model）文件是maven的配置文件。设置所有构建的配置。<br>project标签是根标签。<br>modelVersion标签声明pom文件project描述的版本。</p>
-<h2 id="pom配置：描述"><a href="#pom配置：描述" class="headerlink" title="pom配置：描述"></a>pom配置：描述</h2><p>name、url、description 用于生成maven文档（mvn site）。</p>
-<h2 id="pom配置：常用property"><a href="#pom配置：常用property" class="headerlink" title="pom配置：常用property"></a>pom配置：常用property</h2><h3 id="maven-compile-source-target-release"><a href="#maven-compile-source-target-release" class="headerlink" title="maven.compile.source/target/release"></a>maven.compile.source/target/release</h3><p>对应javac指令的-source、-target参数。</p>
-<h3 id="project-build-sourceEncoding-project-reporting-outputEncoding"><a href="#project-build-sourceEncoding-project-reporting-outputEncoding" class="headerlink" title="project.build.sourceEncoding/project.reporting.outputEncoding"></a>project.build.sourceEncoding/project.reporting.outputEncoding</h3><h2 id="pom配置：坐标"><a href="#pom配置：坐标" class="headerlink" title="pom配置：坐标"></a>pom配置：坐标</h2><p>groupId、artifactId、version。<br>仓库jar包路径：[groupId]/[artifactId]/[version]/[artifactId]-[version].jar。</p>
-<h2 id="pom配置：继承与子模块"><a href="#pom配置：继承与子模块" class="headerlink" title="pom配置：继承与子模块"></a>pom配置：继承与子模块</h2><h3 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h3><p>在父模块打包时可将所有子模块进行打包，如果没有子模块，只打包当前目录。</p>
-<h3 id="parent"><a href="#parent" class="headerlink" title="parent"></a>parent</h3><p>实现继承，可以继承父模块properties、dependencies、dependencyManagement、…</p>
-<h4 id="relativePath"><a href="#relativePath" class="headerlink" title="relativePath"></a>relativePath</h4><p>指定查找父模块的路径。<br>默认情况下，从当前pom.xml的上级目录查找， 为空值时从仓库查找。</p>
-<h3 id="modules-与-parent"><a href="#modules-与-parent" class="headerlink" title="modules 与 parent"></a>modules 与 parent</h3><p>modules的功能是打包，parent的功能是继承。两者没有关系。即modules的子模块的parent可以是任意模块。</p>
-<h2 id="pom配置：依赖与依赖声明"><a href="#pom配置：依赖与依赖声明" class="headerlink" title="pom配置：依赖与依赖声明"></a>pom配置：依赖与依赖声明</h2><h3 id="dependencyManagement与dependency"><a href="#dependencyManagement与dependency" class="headerlink" title="dependencyManagement与dependency"></a>dependencyManagement与dependency</h3><p>dependencyManagement 只是管理版本，并不下载依赖。<br>dependency 添加依赖。</p>
-<h4 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h4><ul>
-<li>compile 默认值</li>
-<li>provided 只在编译器提供，打包的时候过滤，</li>
-<li>runtime 强制面向接口编程，不能引入该包的类。</li>
-<li>test 编译器与测试阶段，打包的时候过滤。</li>
-<li>import 只在dependencyManagement标签且type=pom时有用，会用目标pom的dependencyManagement里的内容替换该依赖。</li>
-<li>system 类似provided，但需要显式提供jar路径（systemPath标签），不会在repository中查找。</li>
-</ul>
-<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>pom，表示全部引入其它packing类型为pom的内容。与scope=import配合使用。</p>
-<h2 id="pom配置：依赖传递"><a href="#pom配置：依赖传递" class="headerlink" title="pom配置：依赖传递"></a>pom配置：依赖传递</h2><ul>
-<li>非compile范围的依赖不能传递。</li>
-<li>路径最短者优先原则。</li>
-<li>路径相同声明优先原则。</li>
-<li>optional=true显式声明不传递依赖。</li>
-<li>exclusions显式声明过滤依赖。</li>
-</ul>
-<h2 id="pom配置：打包方式"><a href="#pom配置：打包方式" class="headerlink" title="pom配置：打包方式"></a>pom配置：打包方式</h2><p>packing 默认jar，可选jar、pom、war。</p>
-<ul>
-<li>jar 调用或者作为服务</li>
-<li>pom 一般为父子继承使用</li>
-<li>war web项目</li>
-</ul>
-<h2 id="pom配置：不同环境"><a href="#pom配置：不同环境" class="headerlink" title="pom配置：不同环境"></a>pom配置：不同环境</h2><p>profile标签。</p>
-<h2 id="pom配置：plugins"><a href="#pom配置：plugins" class="headerlink" title="pom配置：plugins"></a>pom配置：plugins</h2><p>maven是插件驱动的工具。插件是核心。</p>
-]]></content>
-      <categories>
-        <category>Maven</category>
       </categories>
   </entry>
   <entry>
@@ -1569,6 +1659,141 @@ String[]    [Ljava.lang.String;
       </categories>
   </entry>
   <entry>
+    <title>课程</title>
+    <url>/2021/11/05/Major/%E8%AF%BE%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="1上"><a href="#1上" class="headerlink" title="1上"></a>1上</h2><ul>
+<li>计算机科学与技术导论</li>
+<li>高数Ⅰ</li>
+<li>程序设计（C）</li>
+</ul>
+<h2 id="1下"><a href="#1下" class="headerlink" title="1下"></a>1下</h2><ul>
+<li>高数Ⅱ</li>
+<li>线性代数</li>
+<li>面向对象程序设计（C++）</li>
+</ul>
+<h2 id="2上"><a href="#2上" class="headerlink" title="2上"></a>2上</h2><ul>
+<li>概率统计</li>
+<li>离散数学</li>
+<li>电子技术基础</li>
+<li>数据结构（C）</li>
+<li>Java程序设计</li>
+<li>汇编语言程序设计</li>
+</ul>
+<h2 id="2下"><a href="#2下" class="headerlink" title="2下"></a>2下</h2><ul>
+<li>统一建模语言（UML）</li>
+<li>数据库系统</li>
+<li>C#程序设计</li>
+<li>计算机网络</li>
+<li>数字图像处理（Matlab）</li>
+<li>算法设计与分析</li>
+<li>智能信息处理（Fortran？）</li>
+</ul>
+<h2 id="3上"><a href="#3上" class="headerlink" title="3上"></a>3上</h2><ul>
+<li>J2EE架构与开发</li>
+<li>Unix系统原理与应用</li>
+<li>Web技术与应用</li>
+<li>操作系统</li>
+<li>计算机组成原理</li>
+<li>软件工程</li>
+<li>信息安全概论</li>
+</ul>
+<h2 id="3下"><a href="#3下" class="headerlink" title="3下"></a>3下</h2><ul>
+<li>编译原理</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Major</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>maven</title>
+    <url>/2020/07/14/Maven/maven/</url>
+    <content><![CDATA[<h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><p>版本管理工具。</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>maven有三套相互独立的声明周期。<br>不论要执行生命周期的哪一个阶段，都是从这个生命周期的开始执行。</p>
+<h3 id="Clean-Lifecycle"><a href="#Clean-Lifecycle" class="headerlink" title="Clean Lifecycle"></a>Clean Lifecycle</h3><ul>
+<li>pre-clean</li>
+<li>clean</li>
+<li>post-clean</li>
+</ul>
+<h3 id="Default-Lifecycle"><a href="#Default-Lifecycle" class="headerlink" title="Default Lifecycle"></a>Default Lifecycle</h3><ul>
+<li>validate</li>
+<li>generate-sources</li>
+<li>process-sources</li>
+<li>generate-resources</li>
+<li>process-resources</li>
+<li>compile</li>
+<li>process-classed</li>
+<li>generate-test-sources</li>
+<li>process-test-sources</li>
+<li>generate-test-resources</li>
+<li>process-test-resources</li>
+<li>test-compile</li>
+<li>process-test-classed</li>
+<li>test</li>
+<li>prepare-package</li>
+<li>package</li>
+<li>pre-integration-test</li>
+<li>integration-test</li>
+<li>verify</li>
+<li>install</li>
+<li>deploy</li>
+</ul>
+<h3 id="Site-Lifecycle"><a href="#Site-Lifecycle" class="headerlink" title="Site Lifecycle"></a>Site Lifecycle</h3><ul>
+<li>pre-site</li>
+<li>site</li>
+<li>post-site</li>
+<li>site-deploy</li>
+</ul>
+<h2 id="pom配置"><a href="#pom配置" class="headerlink" title="pom配置"></a>pom配置</h2><p>pom（project object model）文件是maven的配置文件。设置所有构建的配置。<br>project标签是根标签。<br>modelVersion标签声明pom文件project描述的版本。</p>
+<h2 id="pom配置：描述"><a href="#pom配置：描述" class="headerlink" title="pom配置：描述"></a>pom配置：描述</h2><p>name、url、description 用于生成maven文档（mvn site）。</p>
+<h2 id="pom配置：常用property"><a href="#pom配置：常用property" class="headerlink" title="pom配置：常用property"></a>pom配置：常用property</h2><h3 id="maven-compile-source-target-release"><a href="#maven-compile-source-target-release" class="headerlink" title="maven.compile.source/target/release"></a>maven.compile.source/target/release</h3><p>对应javac指令的-source、-target参数。</p>
+<h3 id="project-build-sourceEncoding-project-reporting-outputEncoding"><a href="#project-build-sourceEncoding-project-reporting-outputEncoding" class="headerlink" title="project.build.sourceEncoding/project.reporting.outputEncoding"></a>project.build.sourceEncoding/project.reporting.outputEncoding</h3><h2 id="pom配置：坐标"><a href="#pom配置：坐标" class="headerlink" title="pom配置：坐标"></a>pom配置：坐标</h2><p>groupId、artifactId、version。<br>仓库jar包路径：[groupId]/[artifactId]/[version]/[artifactId]-[version].jar。</p>
+<h2 id="pom配置：继承与子模块"><a href="#pom配置：继承与子模块" class="headerlink" title="pom配置：继承与子模块"></a>pom配置：继承与子模块</h2><h3 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h3><p>在父模块打包时可将所有子模块进行打包，如果没有子模块，只打包当前目录。</p>
+<h3 id="parent"><a href="#parent" class="headerlink" title="parent"></a>parent</h3><p>实现继承，可以继承父模块properties、dependencies、dependencyManagement、…</p>
+<h4 id="relativePath"><a href="#relativePath" class="headerlink" title="relativePath"></a>relativePath</h4><p>指定查找父模块的路径。<br>默认情况下，从当前pom.xml的上级目录查找， 为空值时从仓库查找。</p>
+<h3 id="modules-与-parent"><a href="#modules-与-parent" class="headerlink" title="modules 与 parent"></a>modules 与 parent</h3><p>modules的功能是打包，parent的功能是继承。两者没有关系。即modules的子模块的parent可以是任意模块。</p>
+<h2 id="pom配置：依赖与依赖声明"><a href="#pom配置：依赖与依赖声明" class="headerlink" title="pom配置：依赖与依赖声明"></a>pom配置：依赖与依赖声明</h2><h3 id="dependencyManagement与dependency"><a href="#dependencyManagement与dependency" class="headerlink" title="dependencyManagement与dependency"></a>dependencyManagement与dependency</h3><p>dependencyManagement 只是管理版本，并不下载依赖。<br>dependency 添加依赖。</p>
+<h4 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h4><ul>
+<li>compile 默认值</li>
+<li>provided 只在编译器提供，打包的时候过滤，</li>
+<li>runtime 强制面向接口编程，不能引入该包的类。</li>
+<li>test 编译器与测试阶段，打包的时候过滤。</li>
+<li>import 只在dependencyManagement标签且type=pom时有用，会用目标pom的dependencyManagement里的内容替换该依赖。</li>
+<li>system 类似provided，但需要显式提供jar路径（systemPath标签），不会在repository中查找。</li>
+</ul>
+<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>pom，表示全部引入其它packing类型为pom的内容。与scope=import配合使用。</p>
+<h2 id="pom配置：依赖传递"><a href="#pom配置：依赖传递" class="headerlink" title="pom配置：依赖传递"></a>pom配置：依赖传递</h2><ul>
+<li>非compile范围的依赖不能传递。</li>
+<li>路径最短者优先原则。</li>
+<li>路径相同声明优先原则。</li>
+<li>optional=true显式声明不传递依赖。</li>
+<li>exclusions显式声明过滤依赖。</li>
+</ul>
+<h2 id="pom配置：打包方式"><a href="#pom配置：打包方式" class="headerlink" title="pom配置：打包方式"></a>pom配置：打包方式</h2><p>packing 默认jar，可选jar、pom、war。</p>
+<ul>
+<li>jar 调用或者作为服务</li>
+<li>pom 一般为父子继承使用</li>
+<li>war web项目</li>
+</ul>
+<h2 id="pom配置：不同环境"><a href="#pom配置：不同环境" class="headerlink" title="pom配置：不同环境"></a>pom配置：不同环境</h2><p>profile标签。</p>
+<h2 id="pom配置：plugins"><a href="#pom配置：plugins" class="headerlink" title="pom配置：plugins"></a>pom配置：plugins</h2><p>maven是插件驱动的工具。插件是核心。</p>
+]]></content>
+      <categories>
+        <category>Maven</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Mysql 填坑</title>
+    <url>/2021/06/24/Mysql/Mysql-%E5%A1%AB%E5%9D%91/</url>
+    <content><![CDATA[<h2 id="mysql-left-on-where"><a href="#mysql-left-on-where" class="headerlink" title="mysql left on where"></a>mysql left on where</h2><p>过程： from + left 生成中间表 -&gt; 对中间表进行where过滤<br>on 是在生成中间表的时候的条件， 不管on后的条件是否满足，都会返回主表的所有数据<br>where 是对中间表过滤的条件</p>
+<h2 id="count-1-VS-count-VS-count-列"><a href="#count-1-VS-count-VS-count-列" class="headerlink" title="count(1) VS count(*) VS count(列)"></a>count(1) VS count(*) VS count(列)</h2><p>基于InnoDB。<br>执行结果： count(列)会过滤掉null<br>执行效率： 如果只有一列，在count(<em>)效率最高<br>         如果表有主键，且查询结果包含主键，则count(主键列) &gt; count(1) &gt; count(</em>) &gt; count(其它列)<br>执行效果： count(1)，1是固定值，临时列名称，相当于每行都有一个固定的1。 （select 1 ）<br>         count(*)，执行时会翻译为具体的列名，多了一个翻译的过程。</p>
+<p>count(列)会把列的值取出来，而count(1)、count(*)不取值，所以count(主键列)不快？？？</p>
+]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+  </entry>
+  <entry>
     <title>RPC</title>
     <url>/2023/07/12/RPC/RPC/</url>
     <content><![CDATA[<p>RPC<br>Remote Procedure Call<br>调用远程服务上的方法<br>RMI -&gt;  WebService(Http+XML) -&gt; Http+JSON -&gt; RPC<br>Doubbo:<br>Consumer + Provider + 注册中心 + 监控</p>
@@ -1576,16 +1801,6 @@ String[]    [Ljava.lang.String;
 ]]></content>
       <categories>
         <category>RPC</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Mysql 填坑</title>
-    <url>/2021/06/24/Mysql/Mysql-%E5%A1%AB%E5%9D%91/</url>
-    <content><![CDATA[<h2 id="mysql-left-on-where"><a href="#mysql-left-on-where" class="headerlink" title="mysql left on where"></a>mysql left on where</h2><p>过程： from + left 生成中间表 -&gt; 对中间表进行where过滤<br>on 是在生成中间表的时候的条件， 不管on后的条件是否满足，都会返回主表的所有数据<br>where 是对中间表过滤的条件</p>
-<h2 id="count-1-VS-count-VS-count-列"><a href="#count-1-VS-count-VS-count-列" class="headerlink" title="count(1) VS count(*) VS count(列)"></a>count(1) VS count(*) VS count(列)</h2><p>执行结果： count(列)会过滤掉null<br>执行效率： 如果只有一列，在count(<em>)效率最高<br>         如果表有逐渐，且包含逐渐，则count(1) &gt; count(</em>) &gt; count(列)<br>执行方式： count()</p>
-]]></content>
-      <categories>
-        <category>Mysql</category>
       </categories>
   </entry>
   <entry>
@@ -1904,16 +2119,6 @@ xsi:schemaLocation
       </categories>
   </entry>
   <entry>
-    <title>Hexo 缺点</title>
-    <url>/2021/06/24/%E5%85%83/Hexo-%E7%BC%BA%E7%82%B9/</url>
-    <content><![CDATA[<h2 id="分类-标签"><a href="#分类-标签" class="headerlink" title="分类/标签"></a>分类/标签</h2><p>每篇文章的分类、标签都是输入的，而不是选择的，导致后面会忘记前期添加过哪些数据。</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>用markdown的表格做数据很别扭，没有直接用表单，来生成表格来的舒服。</p>
-]]></content>
-      <categories>
-        <category>元</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Heox文章规范</title>
     <url>/2020/07/15/%E5%85%83/Heox%E6%96%87%E7%AB%A0%E8%A7%84%E8%8C%83/</url>
     <content><![CDATA[<blockquote>
@@ -1927,6 +2132,16 @@ xsi:schemaLocation
 <ul>
 <li>缩进，还没有找到好的缩进方式。</li>
 </ul>
+]]></content>
+      <categories>
+        <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo 缺点</title>
+    <url>/2021/06/24/%E5%85%83/Hexo-%E7%BC%BA%E7%82%B9/</url>
+    <content><![CDATA[<h2 id="分类-标签"><a href="#分类-标签" class="headerlink" title="分类/标签"></a>分类/标签</h2><p>每篇文章的分类、标签都是输入的，而不是选择的，导致后面会忘记前期添加过哪些数据。</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>用markdown的表格做数据很别扭，没有直接用表单，来生成表格来的舒服。</p>
 ]]></content>
       <categories>
         <category>元</category>
@@ -2046,6 +2261,89 @@ layout为scaffolds中定义的模板，默认为post</li>
 ]]></content>
       <categories>
         <category>元</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>区块链简介</title>
+    <url>/2023/07/08/%E5%8C%BA%E5%9D%97%E9%93%BE/String/</url>
+    <content><![CDATA[<pre><code>账号：
+    账号密码：没有信任的第三方系统，无法存储账号密码
+    账号 -&gt; 公钥
+    密码 -&gt;  私钥
+    通过私钥计算出公钥。外界无法通过公钥计算出私钥
+    椭圆加密曲线函数： 无法反算，但有初始条件很容易验证。
+交易过程： 
+    上一个区块的hash + 交易记录 + 随机数，取哈希，结果要满足一个很难达到的限制条件。
+    需要计算随机数。竞争记账。
+    记账验证。
+区块：
+    块头：
+        头哈希：这页账单的hash值
+        父哈希：上页账单的hash值
+    块体： 交易记录
+    时间戳
+UTXO模型：
+    UTXO： Unspent Transaction Output 未花费的交易输出
+    只记录交易过程，不记录余额
+分叉、最长链原则：（双花）
+    少数服从多数，少数的结果是不被承认的
+    等待6个区块，确认是否有效
+读写权限：
+    交易者与记账者
+    类型：
+        公有链：任何人可读取、可发送交易且交易能获得有效确认，任何人都能参与共识过程   可获得奖励
+        联盟链：共识过程（数据写入）受到预选节点控制，或许允许每个人都可读取   不需要、没有奖励
+        私有链：唯一组织
+骨骼：加密算法
+    非对称加密算法
+        RSA
+        ECC（椭圆曲线加密）
+    哈希函数：梅克尔树、区块指针、比特币挖矿
+        任务长度消息压缩成固定长度的二进制串
+        MD4、MD5、Sha-1、Sha-256、...
+    使用：
+        私钥：用于生成签名
+        公钥：用于验证签名
+        地址：公钥hash得出，公钥太长，地址较短
+        签名：用于验证是公钥持有者发出
+    梅克尔书：
+        将大量的交易数据通过层次化的哈希，递归生产根哈希值，记录在区块头中
+        快速归纳和校验区块数据的存在性和完整性
+灵魂：共识机制
+    拜占庭将军问题（分布式系统中的共识问题）
+        延时、消息丢失、服务器宕机、攻击者
+        三种安全模型：非拜占庭容错模型、拜占庭容错模型、经济模型
+    ELP定理、CAP定理
+    分布式系统的共识机制
+        非拜占庭容错（适用于分布式数据库）：Paxos、Raft
+        拜占庭容错（适用于分布式账本、区块链）：PoW、PoS、DPoS、PBFT
+    比特币共识机制的特点：随机性、抗女巫攻击、激励机制
+    PoW： 工作量证明        --- 比特币、莱特币、以太坊
+    PoS: 权益证明        ---公链量子链、以太坊（2020后）
+    DPoS: 授权权益证明    ---EOS、Bitshares
+    PBFT算法（拜占庭容错算法）：强一致性，不会产生分叉
+术语：
+    不可篡改：难以篡改
+    创造信任：去信任化
+    去中介化
+    溯源
+    安全
+    透明
+    匿名
+以太坊：
+    1.0 比特币  点对点电子现金系统
+    2.0  以太坊  金融领域、泛金融领域
+    以太坊： 建议在区块链技术上的去中心化应用平台。图灵完备。支持智能合约。应用平台。
+    图灵完备：一切可计算的问题都能计算。
+    智能合约：预置触发条件、预置响应规则。区块链提供可信任执行环境。
+    DApp： 去中心化App。
+    发币：基于以太坊发行代币。首次代币发行（ICO）。
+3.0 
+    
+</code></pre>
+]]></content>
+      <categories>
+        <category>区块链</category>
       </categories>
   </entry>
   <entry>
@@ -3234,89 +3532,6 @@ layout为scaffolds中定义的模板，默认为post</li>
       </categories>
   </entry>
   <entry>
-    <title>区块链简介</title>
-    <url>/2023/07/08/%E5%8C%BA%E5%9D%97%E9%93%BE/String/</url>
-    <content><![CDATA[<pre><code>账号：
-    账号密码：没有信任的第三方系统，无法存储账号密码
-    账号 -&gt; 公钥
-    密码 -&gt;  私钥
-    通过私钥计算出公钥。外界无法通过公钥计算出私钥
-    椭圆加密曲线函数： 无法反算，但有初始条件很容易验证。
-交易过程： 
-    上一个区块的hash + 交易记录 + 随机数，取哈希，结果要满足一个很难达到的限制条件。
-    需要计算随机数。竞争记账。
-    记账验证。
-区块：
-    块头：
-        头哈希：这页账单的hash值
-        父哈希：上页账单的hash值
-    块体： 交易记录
-    时间戳
-UTXO模型：
-    UTXO： Unspent Transaction Output 未花费的交易输出
-    只记录交易过程，不记录余额
-分叉、最长链原则：（双花）
-    少数服从多数，少数的结果是不被承认的
-    等待6个区块，确认是否有效
-读写权限：
-    交易者与记账者
-    类型：
-        公有链：任何人可读取、可发送交易且交易能获得有效确认，任何人都能参与共识过程   可获得奖励
-        联盟链：共识过程（数据写入）受到预选节点控制，或许允许每个人都可读取   不需要、没有奖励
-        私有链：唯一组织
-骨骼：加密算法
-    非对称加密算法
-        RSA
-        ECC（椭圆曲线加密）
-    哈希函数：梅克尔树、区块指针、比特币挖矿
-        任务长度消息压缩成固定长度的二进制串
-        MD4、MD5、Sha-1、Sha-256、...
-    使用：
-        私钥：用于生成签名
-        公钥：用于验证签名
-        地址：公钥hash得出，公钥太长，地址较短
-        签名：用于验证是公钥持有者发出
-    梅克尔书：
-        将大量的交易数据通过层次化的哈希，递归生产根哈希值，记录在区块头中
-        快速归纳和校验区块数据的存在性和完整性
-灵魂：共识机制
-    拜占庭将军问题（分布式系统中的共识问题）
-        延时、消息丢失、服务器宕机、攻击者
-        三种安全模型：非拜占庭容错模型、拜占庭容错模型、经济模型
-    ELP定理、CAP定理
-    分布式系统的共识机制
-        非拜占庭容错（适用于分布式数据库）：Paxos、Raft
-        拜占庭容错（适用于分布式账本、区块链）：PoW、PoS、DPoS、PBFT
-    比特币共识机制的特点：随机性、抗女巫攻击、激励机制
-    PoW： 工作量证明        --- 比特币、莱特币、以太坊
-    PoS: 权益证明        ---公链量子链、以太坊（2020后）
-    DPoS: 授权权益证明    ---EOS、Bitshares
-    PBFT算法（拜占庭容错算法）：强一致性，不会产生分叉
-术语：
-    不可篡改：难以篡改
-    创造信任：去信任化
-    去中介化
-    溯源
-    安全
-    透明
-    匿名
-以太坊：
-    1.0 比特币  点对点电子现金系统
-    2.0  以太坊  金融领域、泛金融领域
-    以太坊： 建议在区块链技术上的去中心化应用平台。图灵完备。支持智能合约。应用平台。
-    图灵完备：一切可计算的问题都能计算。
-    智能合约：预置触发条件、预置响应规则。区块链提供可信任执行环境。
-    DApp： 去中心化App。
-    发币：基于以太坊发行代币。首次代币发行（ICO）。
-3.0 
-    
-</code></pre>
-]]></content>
-      <categories>
-        <category>区块链</category>
-      </categories>
-  </entry>
-  <entry>
     <title>VPN</title>
     <url>/2022/03/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/VPN/</url>
     <content><![CDATA[<h2 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h2><p>Virtual Private Network，虚拟专用网络。<br>远程访问技术，利用公用网络架设专用网络。</p>
@@ -3753,49 +3968,6 @@ UTXO模型：
       </categories>
   </entry>
   <entry>
-    <title>设计模式-比较与组合</title>
-    <url>/2021/12/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%AF%94%E8%BE%83%E4%B8%8E%E7%BB%84%E5%90%88/</url>
-    <content><![CDATA[<h2 id="工厂方法-VS-抽象工厂"><a href="#工厂方法-VS-抽象工厂" class="headerlink" title="工厂方法 VS 抽象工厂"></a>工厂方法 VS 抽象工厂</h2><ul>
-<li>抽象工厂创建的是一系列相关或相互依赖的产品，工厂方法创建的是单个产品。</li>
-</ul>
-<h2 id="工厂方法-VS-建造者"><a href="#工厂方法-VS-建造者" class="headerlink" title="工厂方法 VS 建造者"></a>工厂方法 VS 建造者</h2><ul>
-<li>工厂方法更关注对象整体，建造者更关注创建的细节和顺序。</li>
-</ul>
-<h2 id="抽象工厂-VS-建造者"><a href="#抽象工厂-VS-建造者" class="headerlink" title="抽象工厂 VS 建造者"></a>抽象工厂 VS 建造者</h2><ul>
-<li>都是创建复杂对象，都有整体和部分的概念。</li>
-<li>非常类似，差别细微。在反复使用中体会。</li>
-</ul>
-<h2 id="适配器-VS-装饰器"><a href="#适配器-VS-装饰器" class="headerlink" title="适配器 VS 装饰器"></a>适配器 VS 装饰器</h2><ul>
-<li>都是包装对象。</li>
-<li>适配器改变接口，而装饰器不改变接口。</li>
-<li>装饰器扩展功能，而适配器负责转发。</li>
-</ul>
-<h2 id="代理-VS-装饰器"><a href="#代理-VS-装饰器" class="headerlink" title="代理 VS 装饰器"></a>代理 VS 装饰器</h2><ul>
-<li>装饰器增加对象的行为。</li>
-<li>代理控制对象的访问。</li>
-</ul>
-<h2 id="代理-VS-适配器"><a href="#代理-VS-适配器" class="headerlink" title="代理 VS 适配器"></a>代理 VS 适配器</h2><ul>
-<li>适配器会改变适配对象的接口。</li>
-<li>代理实现相同的接口。</li>
-</ul>
-<h2 id="模板方法-VS-策略"><a href="#模板方法-VS-策略" class="headerlink" title="模板方法 VS 策略"></a>模板方法 VS 策略</h2><ul>
-<li>策略使用组合，模仿方法使用继承。</li>
-<li>策略针对的是整个算法，模仿方法实现的只是算法的一部分。</li>
-</ul>
-<h2 id="策略-VS-状态"><a href="#策略-VS-状态" class="headerlink" title="策略 VS 状态"></a>策略 VS 状态</h2><ul>
-<li>类图一样，意图不同。</li>
-<li>状态改变内部的状态，客户端不需要知道具体是哪个。</li>
-<li>策略客户端必须指定使用哪种策略。</li>
-</ul>
-<h2 id="单例-工厂"><a href="#单例-工厂" class="headerlink" title="单例 + 工厂"></a>单例 + 工厂</h2><ul>
-<li>使用单例来创建工厂，由工厂创建产品。</li>
-</ul>
-<h2 id="装饰器-工厂"><a href="#装饰器-工厂" class="headerlink" title="装饰器 + 工厂"></a>装饰器 + 工厂</h2><h2 id="装饰器-建造者"><a href="#装饰器-建造者" class="headerlink" title="装饰器 + 建造者"></a>装饰器 + 建造者</h2><h2 id="工厂-策略"><a href="#工厂-策略" class="headerlink" title="工厂 + 策略"></a>工厂 + 策略</h2>]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-  </entry>
-  <entry>
     <title>设计模式-结构型-享元（Flyweight）</title>
     <url>/2022/01/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BA%AB%E5%85%83/</url>
     <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>运用共享技术有效地支持大量细粒度对象的复用。</p>
@@ -3870,6 +4042,40 @@ UTXO模型：
       </categories>
   </entry>
   <entry>
+    <title>设计模式-结构型-桥接（Bridge）</title>
+    <url>/2022/01/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B-%E6%A1%A5%E6%8E%A5/</url>
+    <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>将抽象和行为划分开来，各自独立，但能动态的结合。</p>
+<h2 id="模式实现"><a href="#模式实现" class="headerlink" title="模式实现"></a>模式实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><ul>
+<li>抽象类</li>
+<li>扩充抽象类</li>
+<li>行为类接口</li>
+<li>具体行为类</li>
+</ul>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
+<li>优点<ul>
+<li>抽象和行为分离。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>增加系统的理解与设计难度。</li>
+</ul>
+</li>
+</ul>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>存在两个变化维度，抽象部分与行为部分。<br>  当只有要给变化维度时，抽象部分不变，行为部分实现抽象。<br>  当有两个维度变化时，将行为部分再抽象出一个接口，原抽象部分依赖新抽象的行为部分的接口。</li>
+<li>抽象类依赖行为类。</li>
+</ul>
+<h2 id="源码中的使用"><a href="#源码中的使用" class="headerlink" title="源码中的使用"></a>源码中的使用</h2><ul>
+<li>JDK</li>
+</ul>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+  </entry>
+  <entry>
     <title>设计模式-结构型-外观（Facade）</title>
     <url>/2021/12/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B-%E5%A4%96%E8%A7%82/</url>
     <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>提供了一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用。</p>
@@ -3901,40 +4107,6 @@ UTXO模型：
 <h2 id="源码中的使用"><a href="#源码中的使用" class="headerlink" title="源码中的使用"></a>源码中的使用</h2><ul>
 <li>JDK</li>
 <li>Slf4j</li>
-</ul>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>设计模式-结构型-桥接（Bridge）</title>
-    <url>/2022/01/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%BB%93%E6%9E%84%E5%9E%8B-%E6%A1%A5%E6%8E%A5/</url>
-    <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>将抽象和行为划分开来，各自独立，但能动态的结合。</p>
-<h2 id="模式实现"><a href="#模式实现" class="headerlink" title="模式实现"></a>模式实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><ul>
-<li>抽象类</li>
-<li>扩充抽象类</li>
-<li>行为类接口</li>
-<li>具体行为类</li>
-</ul>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
-<li>优点<ul>
-<li>抽象和行为分离。</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>增加系统的理解与设计难度。</li>
-</ul>
-</li>
-</ul>
-<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>存在两个变化维度，抽象部分与行为部分。<br>  当只有要给变化维度时，抽象部分不变，行为部分实现抽象。<br>  当有两个维度变化时，将行为部分再抽象出一个接口，原抽象部分依赖新抽象的行为部分的接口。</li>
-<li>抽象类依赖行为类。</li>
-</ul>
-<h2 id="源码中的使用"><a href="#源码中的使用" class="headerlink" title="源码中的使用"></a>源码中的使用</h2><ul>
-<li>JDK</li>
 </ul>
 ]]></content>
       <categories>
@@ -4225,6 +4397,49 @@ UTXO模型：
       </categories>
   </entry>
   <entry>
+    <title>设计模式-比较与组合</title>
+    <url>/2021/12/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%AF%94%E8%BE%83%E4%B8%8E%E7%BB%84%E5%90%88/</url>
+    <content><![CDATA[<h2 id="工厂方法-VS-抽象工厂"><a href="#工厂方法-VS-抽象工厂" class="headerlink" title="工厂方法 VS 抽象工厂"></a>工厂方法 VS 抽象工厂</h2><ul>
+<li>抽象工厂创建的是一系列相关或相互依赖的产品，工厂方法创建的是单个产品。</li>
+</ul>
+<h2 id="工厂方法-VS-建造者"><a href="#工厂方法-VS-建造者" class="headerlink" title="工厂方法 VS 建造者"></a>工厂方法 VS 建造者</h2><ul>
+<li>工厂方法更关注对象整体，建造者更关注创建的细节和顺序。</li>
+</ul>
+<h2 id="抽象工厂-VS-建造者"><a href="#抽象工厂-VS-建造者" class="headerlink" title="抽象工厂 VS 建造者"></a>抽象工厂 VS 建造者</h2><ul>
+<li>都是创建复杂对象，都有整体和部分的概念。</li>
+<li>非常类似，差别细微。在反复使用中体会。</li>
+</ul>
+<h2 id="适配器-VS-装饰器"><a href="#适配器-VS-装饰器" class="headerlink" title="适配器 VS 装饰器"></a>适配器 VS 装饰器</h2><ul>
+<li>都是包装对象。</li>
+<li>适配器改变接口，而装饰器不改变接口。</li>
+<li>装饰器扩展功能，而适配器负责转发。</li>
+</ul>
+<h2 id="代理-VS-装饰器"><a href="#代理-VS-装饰器" class="headerlink" title="代理 VS 装饰器"></a>代理 VS 装饰器</h2><ul>
+<li>装饰器增加对象的行为。</li>
+<li>代理控制对象的访问。</li>
+</ul>
+<h2 id="代理-VS-适配器"><a href="#代理-VS-适配器" class="headerlink" title="代理 VS 适配器"></a>代理 VS 适配器</h2><ul>
+<li>适配器会改变适配对象的接口。</li>
+<li>代理实现相同的接口。</li>
+</ul>
+<h2 id="模板方法-VS-策略"><a href="#模板方法-VS-策略" class="headerlink" title="模板方法 VS 策略"></a>模板方法 VS 策略</h2><ul>
+<li>策略使用组合，模仿方法使用继承。</li>
+<li>策略针对的是整个算法，模仿方法实现的只是算法的一部分。</li>
+</ul>
+<h2 id="策略-VS-状态"><a href="#策略-VS-状态" class="headerlink" title="策略 VS 状态"></a>策略 VS 状态</h2><ul>
+<li>类图一样，意图不同。</li>
+<li>状态改变内部的状态，客户端不需要知道具体是哪个。</li>
+<li>策略客户端必须指定使用哪种策略。</li>
+</ul>
+<h2 id="单例-工厂"><a href="#单例-工厂" class="headerlink" title="单例 + 工厂"></a>单例 + 工厂</h2><ul>
+<li>使用单例来创建工厂，由工厂创建产品。</li>
+</ul>
+<h2 id="装饰器-工厂"><a href="#装饰器-工厂" class="headerlink" title="装饰器 + 工厂"></a>装饰器 + 工厂</h2><h2 id="装饰器-建造者"><a href="#装饰器-建造者" class="headerlink" title="装饰器 + 建造者"></a>装饰器 + 建造者</h2><h2 id="工厂-策略"><a href="#工厂-策略" class="headerlink" title="工厂 + 策略"></a>工厂 + 策略</h2>]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+  </entry>
+  <entry>
     <title>设计模式-行为型-状态（State）</title>
     <url>/2022/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E7%8A%B6%E6%80%81/</url>
     <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。</p>
@@ -4472,6 +4687,46 @@ UTXO模型：
       </categories>
   </entry>
   <entry>
+    <title>设计模式-行为型-迭代器（Iterator）</title>
+    <url>/2022/01/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%BF%AD%E4%BB%A3%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>提供一种方法顺序访问一个聚合对象中的各个元素，而不暴露其内部的表示。</p>
+<h2 id="模式实现"><a href="#模式实现" class="headerlink" title="模式实现"></a>模式实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><ul>
+<li>抽象聚合</li>
+<li>具体聚合</li>
+<li>抽象迭代器</li>
+<li>具体迭代器</li>
+</ul>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
+<li>优点<ul>
+<li>访问一个聚合对象的内容而无需暴露它的内部表示。</li>
+<li>遍历任务交由迭代器完成，简化了聚合类。</li>
+<li>支持以不同方式遍历一个聚合。</li>
+<li>扩展性良好。增加新的聚合类和迭代器都无须修改原有代码。</li>
+<li>封装性良好。为遍历不同的聚合提供一个统一的接口。</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>增加了类的个数，一定程度上增加了复杂性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
+<li>已经被整合入Java的Collection。在大多数场合下无需自己制造一个Iterator，只要将对象装入Collection中，直接使用Iterator进行对象遍历。</li>
+</ul>
+<h2 id="源码中的使用"><a href="#源码中的使用" class="headerlink" title="源码中的使用"></a>源码中的使用</h2><ul>
+<li>JDK<ul>
+<li>Iterator接口。</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+  </entry>
+  <entry>
     <title>设计模式</title>
     <url>/2021/12/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p>设计面向对象的软件比较困难，而设计可复用的面向对象软件就更加困难。</p>
@@ -4619,131 +4874,6 @@ UTXO模型：
       </categories>
   </entry>
   <entry>
-    <title>设计模式-行为型-迭代器（Iterator）</title>
-    <url>/2022/01/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%BF%AD%E4%BB%A3%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>提供一种方法顺序访问一个聚合对象中的各个元素，而不暴露其内部的表示。</p>
-<h2 id="模式实现"><a href="#模式实现" class="headerlink" title="模式实现"></a>模式实现</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><ul>
-<li>抽象聚合</li>
-<li>具体聚合</li>
-<li>抽象迭代器</li>
-<li>具体迭代器</li>
-</ul>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><ul>
-<li>优点<ul>
-<li>访问一个聚合对象的内容而无需暴露它的内部表示。</li>
-<li>遍历任务交由迭代器完成，简化了聚合类。</li>
-<li>支持以不同方式遍历一个聚合。</li>
-<li>扩展性良好。增加新的聚合类和迭代器都无须修改原有代码。</li>
-<li>封装性良好。为遍历不同的聚合提供一个统一的接口。</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>增加了类的个数，一定程度上增加了复杂性。</li>
-</ul>
-</li>
-</ul>
-<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><ul>
-<li>已经被整合入Java的Collection。在大多数场合下无需自己制造一个Iterator，只要将对象装入Collection中，直接使用Iterator进行对象遍历。</li>
-</ul>
-<h2 id="源码中的使用"><a href="#源码中的使用" class="headerlink" title="源码中的使用"></a>源码中的使用</h2><ul>
-<li>JDK<ul>
-<li>Iterator接口。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>log</title>
-    <url>/2021/09/03/%E9%A1%B9%E7%9B%AE/log/</url>
-    <content><![CDATA[<ol>
-<li><p>log path的配置，一般只输出指定路径的日志，那mybatis的日志和启动时打印的日志为什么不在此列</p>
-</li>
-<li><p>判断当前日志是否可用？？？</p>
-</li>
-<li><p>日志Facade<br> jcl commons-logging (已停止更新)</p>
-<pre><code> 默认使用log4j的实现，找不到则使用jul的实现。
-</code></pre>
-<p> slf4j (simple log facade for java)</p>
-</li>
-<li><p>日志实现<br> jul (java.util.logging jdk1.4 开始提供)<br> log4j<br> logback</p>
-<pre><code> logback-core
- logback-classic
- logback-access
-</code></pre>
-<p> log4j2</p>
-<pre><code> log4j-api
- log4j-core
-</code></pre>
-</li>
-<li><p>集成使用<br> 部分集成使用需要添加额外适配包</p>
-<ol>
-<li>jcl+log4j2<br> log4j-jcl</li>
-<li>jcl+logback<br> jcl-over-slf4j</li>
-<li>slf4j+jul<br> slf4j-jdk14</li>
-<li>slf4j+log4j<br> slf4j-log4j12</li>
-<li>slf4j+log4j2<br> log4j-slf4j-impl</li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>课程</title>
-    <url>/2021/11/05/%E9%A1%B9%E7%9B%AE/%E8%AF%BE%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="1上"><a href="#1上" class="headerlink" title="1上"></a>1上</h2><ul>
-<li>计算机科学与技术导论</li>
-<li>高数Ⅰ</li>
-<li>程序设计（C）</li>
-</ul>
-<h2 id="1下"><a href="#1下" class="headerlink" title="1下"></a>1下</h2><ul>
-<li>高数Ⅱ</li>
-<li>线性代数</li>
-<li>面向对象程序设计（C++）</li>
-</ul>
-<h2 id="2上"><a href="#2上" class="headerlink" title="2上"></a>2上</h2><ul>
-<li>概率统计</li>
-<li>离散数学</li>
-<li>电子技术基础</li>
-<li>数据结构（C）</li>
-<li>Java程序设计</li>
-<li>汇编语言程序设计</li>
-</ul>
-<h2 id="2下"><a href="#2下" class="headerlink" title="2下"></a>2下</h2><ul>
-<li>统一建模语言（UML）</li>
-<li>数据库系统</li>
-<li>C#程序设计</li>
-<li>计算机网络</li>
-<li>数字图像处理（Matlab）</li>
-<li>算法设计与分析</li>
-<li>智能信息处理（Fortran？）</li>
-</ul>
-<h2 id="3上"><a href="#3上" class="headerlink" title="3上"></a>3上</h2><ul>
-<li>J2EE架构与开发</li>
-<li>Unix系统原理与应用</li>
-<li>Web技术与应用</li>
-<li>操作系统</li>
-<li>计算机组成原理</li>
-<li>软件工程</li>
-<li>信息安全概论</li>
-</ul>
-<h2 id="3下"><a href="#3下" class="headerlink" title="3下"></a>3下</h2><ul>
-<li>编译原理</li>
-</ul>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-  </entry>
-  <entry>
     <title>面试题</title>
     <url>/2022/02/22/%E9%A1%B9%E7%9B%AE/%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><ul>
@@ -4878,12 +5008,17 @@ UTXO模型：
       </categories>
   </entry>
   <entry>
-    <title>项目管理相关名称</title>
+    <title>分布式</title>
     <url>/2023/07/10/%E9%AB%98%E7%BA%A7/%E5%88%86%E5%B8%83%E5%BC%8F/</url>
-    <content><![CDATA[<p>项目名<br>  对内<br>  对外<br>产品名<br>团队名</p>
+    <content><![CDATA[<ul>
+<li>分布式锁</li>
+<li>分布式数据库</li>
+<li>分布式集群</li>
+<li>分布式服务</li>
+</ul>
 ]]></content>
       <categories>
-        <category>项目管理</category>
+        <category>分布式</category>
       </categories>
   </entry>
   <entry>
@@ -5128,6 +5263,34 @@ UTXO模型：
       </categories>
   </entry>
   <entry>
+    <title>Java SE API</title>
+    <url>/2022/01/19/Java/Java%E5%B9%B3%E5%8F%B0/Java%20SE%20API/</url>
+    <content><![CDATA[<h3 id="lang-and-util-Base-Libraries"><a href="#lang-and-util-Base-Libraries" class="headerlink" title="lang and util Base Libraries"></a>lang and util Base Libraries</h3><p>java.lang.<em>、java.util.</em> 包提供了基础功能。</p>
+<ul>
+<li>java.lang 提供java基础类。</li>
+<li>java.lang.annotation 注解。</li>
+<li>java.lang.instrument 允许Java代理检测运行在JVM上的服务。</li>
+<li>java.lang.management 提供监控和管理JVM和底层操作系统的接口。</li>
+<li>java.lang.ref 引用对象。</li>
+<li>java.lang.reflect 反射。</li>
+<li>java.util 集合框架，格式化输入输出，数组工具，事件模型，时间日期，国际化及各种工具类。</li>
+<li>java.util.concurrent 并发编程。</li>
+<li>java.util.concurrent.atomic 原子类。</li>
+<li>java.util.concurrent.locks 锁。</li>
+<li>java.util.jar 压缩。</li>
+<li>java.util.zip 压缩。</li>
+<li>java.util.logging 日志。</li>
+<li>java.util.regex 正则表达式</li>
+<li>java.util.prefs 存储和检索用户配置和系统配置。</li>
+<li>java.util.spi 服务调用接口。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Java平台</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java SE 9 ~ 11新特性</title>
     <url>/2020/07/21/Java/Java%E5%B9%B3%E5%8F%B0/Java%20SE%209%20~%2011%E6%96%B0%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h2 id="Java-SE-9-2017-09"><a href="#Java-SE-9-2017-09" class="headerlink" title="Java SE 9 (2017-09)"></a>Java SE 9 (2017-09)</h2><h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><ul>
@@ -5165,34 +5328,6 @@ UTXO模型：
 <li>Optional API isEmpty…</li>
 <li>HttpClient</li>
 <li>垃圾回收ZGC</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Java平台</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java SE API</title>
-    <url>/2022/01/19/Java/Java%E5%B9%B3%E5%8F%B0/Java%20SE%20API/</url>
-    <content><![CDATA[<h3 id="lang-and-util-Base-Libraries"><a href="#lang-and-util-Base-Libraries" class="headerlink" title="lang and util Base Libraries"></a>lang and util Base Libraries</h3><p>java.lang.<em>、java.util.</em> 包提供了基础功能。</p>
-<ul>
-<li>java.lang 提供java基础类。</li>
-<li>java.lang.annotation 注解。</li>
-<li>java.lang.instrument 允许Java代理检测运行在JVM上的服务。</li>
-<li>java.lang.management 提供监控和管理JVM和底层操作系统的接口。</li>
-<li>java.lang.ref 引用对象。</li>
-<li>java.lang.reflect 反射。</li>
-<li>java.util 集合框架，格式化输入输出，数组工具，事件模型，时间日期，国际化及各种工具类。</li>
-<li>java.util.concurrent 并发编程。</li>
-<li>java.util.concurrent.atomic 原子类。</li>
-<li>java.util.concurrent.locks 锁。</li>
-<li>java.util.jar 压缩。</li>
-<li>java.util.zip 压缩。</li>
-<li>java.util.logging 日志。</li>
-<li>java.util.regex 正则表达式</li>
-<li>java.util.prefs 存储和检索用户配置和系统配置。</li>
-<li>java.util.spi 服务调用接口。</li>
 </ul>
 ]]></content>
       <categories>
@@ -5453,6 +5588,64 @@ UTXO模型：
   </entry>
   <entry>
     <title>spring</title>
+    <url>/2020/07/14/Java/Spring/springboot/</url>
+    <content><![CDATA[<h2 id="spring-boot-maven-plugin"><a href="#spring-boot-maven-plugin" class="headerlink" title="spring-boot-maven-plugin"></a>spring-boot-maven-plugin</h2><p>java并没有提供加载嵌套jar文件的标准方式。 通过该插件，将程序打包为一个可执行的jar文件，该文件可在生产环境中运行。 如果不添加该插件，则打包后无法执行，只能供其它项目引用。</p>
+<h2 id="spring-boot-starter-parent"><a href="#spring-boot-starter-parent" class="headerlink" title="spring-boot-starter-parent"></a>spring-boot-starter-parent</h2><p>作为springboot的父级项目，提供以下功能：</p>
+<ul>
+<li>使用JDK1.8做为默认的编译器级别。</li>
+<li>UTF-8源码编码。</li>
+<li>dependencyManagement，管理公共依赖的版本。</li>
+<li>资源过滤。</li>
+<li>插件配置。</li>
+</ul>
+<p>PS:</p>
+<ul>
+<li>可以通过在项目中设置属性来覆盖各个依赖项。 ex: 修改spring-data的版本</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;<span class="name">spring-data-releasetrain.version</span>&gt;</span>Fowler-SR2<span class="tag">&lt;/<span class="name">spring-data-releasetrain.version</span>&gt;</span></span><br><span class="line">&lt;/ properties&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>由于properties和yml文件接受spring样式占位符“${…}”，Maven过滤器被更改为使用”@...@”作为占位符，可通过配置resource.delimiter自定义。</li>
+<li>可以不使用默认parent配置，自定义父级依赖。但仍然可以使用scope=import的方式来引入依赖。</li>
+</ul>
+<h2 id="starter"><a href="#starter" class="headerlink" title="starter"></a>starter</h2><p>是一套方便的依赖描述符，可以获取spring及相关技术的一站式商店，无需查看代码示例并复制粘贴依赖描述符。</p>
+<h2 id="EnableAutoConfiguration"><a href="#EnableAutoConfiguration" class="headerlink" title="@EnableAutoConfiguration"></a>@EnableAutoConfiguration</h2><ul>
+<li>通常建议将主类放在其他类上方的根包中，并使用@EnableAutoConfiguration注解该类。  </li>
+<li>当主类在其他类上方的根包中时，使用@ComponentScan可以不指定basePackage。</li>
+</ul>
+<h2 id="spring-boot-devtools"><a href="#spring-boot-devtools" class="headerlink" title="spring-boot-devtools"></a>spring-boot-devtools</h2><ul>
+<li>默认禁用缓存，某些库可使用缓存来提供性能，例如 thymeleaf。  </li>
+<li>通过类加载器来实现自动重启，只丢弃有修改的类并创建一个新类，提高启动速度。  </li>
+<li>devtools监控资源类路径，触发重启的唯一方法时更新类路径，更新方式取决于IDE。  </li>
+<li>默认情况下，静态资源和模板改变不回触发自动重启。  </li>
+<li>可以使用触发文件，可定时/手动更新触发文件以自动重启。</li>
+</ul>
+<h2 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h2><ol>
+<li>所有的监听器都需继承ApplicationListener<ApplicationEvent>。</li>
+<li>所有的事件都需继承ApplicationEvent。</li>
+<li>可以自定义事件，自定义监听器，监听器只会监听配置的事件及其子类。</li>
+</ol>
+<h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><ol>
+<li>定义。实现HandleInterceptor接口，根据情况实现其对应的方法。</li>
+<li>注册。继承WebMvcConfigurationSupport 或 实现WebMvcConfigurer接口，重写addInterceptors方法。<br>PS: 使用拦截器拦截全部请求路径会导致静态资源也不能访问，可以根据情况进行配置。</li>
+</ol>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><ol>
+<li>使用@WebFilfer注解配置。</li>
+<li>实现Filter接口。</li>
+</ol>
+<h2 id="CommandLineRunner-amp-ApplicationRunner"><a href="#CommandLineRunner-amp-ApplicationRunner" class="headerlink" title="CommandLineRunner &amp; ApplicationRunner"></a>CommandLineRunner &amp; ApplicationRunner</h2><p>在SpringApplication.run(…)完成之前调用。</p>
+<h2 id="Profiles"><a href="#Profiles" class="headerlink" title="Profiles"></a>Profiles</h2><ul>
+<li>编程方式  </li>
+<li>配置文件</li>
+</ul>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2>]]></content>
+      <categories>
+        <category>Java</category>
+        <category>Spring</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>spring</title>
     <url>/2020/07/14/Java/Spring/spring/</url>
     <content><![CDATA[<ul>
 <li>MATE-INF<br>  spring.factories</li>
@@ -5535,64 +5728,6 @@ UTXO模型：
       </categories>
   </entry>
   <entry>
-    <title>spring</title>
-    <url>/2020/07/14/Java/Spring/springboot/</url>
-    <content><![CDATA[<h2 id="spring-boot-maven-plugin"><a href="#spring-boot-maven-plugin" class="headerlink" title="spring-boot-maven-plugin"></a>spring-boot-maven-plugin</h2><p>java并没有提供加载嵌套jar文件的标准方式。 通过该插件，将程序打包为一个可执行的jar文件，该文件可在生产环境中运行。 如果不添加该插件，则打包后无法执行，只能供其它项目引用。</p>
-<h2 id="spring-boot-starter-parent"><a href="#spring-boot-starter-parent" class="headerlink" title="spring-boot-starter-parent"></a>spring-boot-starter-parent</h2><p>作为springboot的父级项目，提供以下功能：</p>
-<ul>
-<li>使用JDK1.8做为默认的编译器级别。</li>
-<li>UTF-8源码编码。</li>
-<li>dependencyManagement，管理公共依赖的版本。</li>
-<li>资源过滤。</li>
-<li>插件配置。</li>
-</ul>
-<p>PS:</p>
-<ul>
-<li>可以通过在项目中设置属性来覆盖各个依赖项。 ex: 修改spring-data的版本</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;<span class="name">spring-data-releasetrain.version</span>&gt;</span>Fowler-SR2<span class="tag">&lt;/<span class="name">spring-data-releasetrain.version</span>&gt;</span></span><br><span class="line">&lt;/ properties&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>由于properties和yml文件接受spring样式占位符“${…}”，Maven过滤器被更改为使用”@...@”作为占位符，可通过配置resource.delimiter自定义。</li>
-<li>可以不使用默认parent配置，自定义父级依赖。但仍然可以使用scope=import的方式来引入依赖。</li>
-</ul>
-<h2 id="starter"><a href="#starter" class="headerlink" title="starter"></a>starter</h2><p>是一套方便的依赖描述符，可以获取spring及相关技术的一站式商店，无需查看代码示例并复制粘贴依赖描述符。</p>
-<h2 id="EnableAutoConfiguration"><a href="#EnableAutoConfiguration" class="headerlink" title="@EnableAutoConfiguration"></a>@EnableAutoConfiguration</h2><ul>
-<li>通常建议将主类放在其他类上方的根包中，并使用@EnableAutoConfiguration注解该类。  </li>
-<li>当主类在其他类上方的根包中时，使用@ComponentScan可以不指定basePackage。</li>
-</ul>
-<h2 id="spring-boot-devtools"><a href="#spring-boot-devtools" class="headerlink" title="spring-boot-devtools"></a>spring-boot-devtools</h2><ul>
-<li>默认禁用缓存，某些库可使用缓存来提供性能，例如 thymeleaf。  </li>
-<li>通过类加载器来实现自动重启，只丢弃有修改的类并创建一个新类，提高启动速度。  </li>
-<li>devtools监控资源类路径，触发重启的唯一方法时更新类路径，更新方式取决于IDE。  </li>
-<li>默认情况下，静态资源和模板改变不回触发自动重启。  </li>
-<li>可以使用触发文件，可定时/手动更新触发文件以自动重启。</li>
-</ul>
-<h2 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h2><ol>
-<li>所有的监听器都需继承ApplicationListener<ApplicationEvent>。</li>
-<li>所有的事件都需继承ApplicationEvent。</li>
-<li>可以自定义事件，自定义监听器，监听器只会监听配置的事件及其子类。</li>
-</ol>
-<h2 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h2><ol>
-<li>定义。实现HandleInterceptor接口，根据情况实现其对应的方法。</li>
-<li>注册。继承WebMvcConfigurationSupport 或 实现WebMvcConfigurer接口，重写addInterceptors方法。<br>PS: 使用拦截器拦截全部请求路径会导致静态资源也不能访问，可以根据情况进行配置。</li>
-</ol>
-<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><ol>
-<li>使用@WebFilfer注解配置。</li>
-<li>实现Filter接口。</li>
-</ol>
-<h2 id="CommandLineRunner-amp-ApplicationRunner"><a href="#CommandLineRunner-amp-ApplicationRunner" class="headerlink" title="CommandLineRunner &amp; ApplicationRunner"></a>CommandLineRunner &amp; ApplicationRunner</h2><p>在SpringApplication.run(…)完成之前调用。</p>
-<h2 id="Profiles"><a href="#Profiles" class="headerlink" title="Profiles"></a>Profiles</h2><ul>
-<li>编程方式  </li>
-<li>配置文件</li>
-</ul>
-<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2>]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Spring</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Mockito</title>
     <url>/2022/07/01/Java/UT/Mockito/</url>
     <content><![CDATA[<h2 id="Mockito"><a href="#Mockito" class="headerlink" title="Mockito"></a>Mockito</h2><ul>
@@ -5634,136 +5769,6 @@ UTXO模型：
       <categories>
         <category>Java</category>
         <category>UT</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ElasticSearch</title>
-    <url>/2022/06/12/Java/%E5%88%86%E5%B8%83%E5%BC%8F/ElasticSearch/</url>
-    <content><![CDATA[<p>V7.17.3</p>
-<h2 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h2><h3 id="数据分类"><a href="#数据分类" class="headerlink" title="数据分类"></a>数据分类</h3><ul>
-<li>结构化数据 固定格式、有限长度</li>
-<li>非结构化数据 不定长，无固定格式</li>
-<li>半结构化数据 结合</li>
-</ul>
-<h2 id="搜索分类"><a href="#搜索分类" class="headerlink" title="搜索分类"></a>搜索分类</h2><ul>
-<li>结构化数据： 关系型数据库</li>
-<li>非结构化数据： 顺序扫描/全文检索</li>
-</ul>
-<h2 id="全文检索-1"><a href="#全文检索-1" class="headerlink" title="全文检索"></a>全文检索</h2><ul>
-<li>分词</li>
-<li>索引</li>
-</ul>
-<h2 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h2><ul>
-<li>正排 id -&gt; 内容</li>
-<li>倒排 关键词 -&gt; id</li>
-<li>倒排索引 数据 -&gt; 分词 -&gt; 去重 -&gt; 排序</li>
-</ul>
-<h2 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h2><ul>
-<li><p>分布式、RestFul风格的搜索和数据分析引擎，用Java开发。</p>
-</li>
-<li><p>Lucene，单机版的搜索引擎，不支持水平扩展，只针对Java语言。</p>
-</li>
-<li><p>2004年，基于Lucene开发了Comparse。</p>
-</li>
-<li><p>2010年，重命名为ElasticSearch。</p>
-</li>
-</ul>
-<h2 id="版本新特性"><a href="#版本新特性" class="headerlink" title="版本新特性"></a>版本新特性</h2><h2 id="选型"><a href="#选型" class="headerlink" title="选型"></a>选型</h2><ul>
-<li>Solr</li>
-<li>ElasticSearch</li>
-</ul>
-<h2 id="Elastic-Stack"><a href="#Elastic-Stack" class="headerlink" title="Elastic Stack"></a>Elastic Stack</h2><p>解决方案，搜索、日志分析、指标分析、安全分析。</p>
-<ul>
-<li>ElasticSearch</li>
-<li>Logstash</li>
-<li>Kibana</li>
-<li>Beats</li>
-</ul>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>ES5 - JDK 8.0</li>
-<li>ES6 - JDK 11</li>
-<li>ES7 内置JDK，配置优先级： ES_JAVA_HOME &gt; JAVA_HOME &gt; ES_HOME</li>
-</ul>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="elasticsearch-yml"><a href="#elasticsearch-yml" class="headerlink" title="elasticsearch.yml"></a>elasticsearch.yml</h3><ul>
-<li>cluster</li>
-<li>node</li>
-<li>path</li>
-<li>Host</li>
-<li>Network<h3 id="JVM-配置"><a href="#JVM-配置" class="headerlink" title="JVM 配置"></a>JVM 配置</h3>占用内存较大。</li>
-<li>-Xms</li>
-<li>-Xmx</li>
-</ul>
-<h2 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h2><p>索引命名必须小写，不能以_开头</p>
-<ul>
-<li>创建索引 [PUT /index] {}</li>
-<li>删除索引 [DELETE /index]</li>
-<li>修改索引 [PUT /index/_setting]</li>
-<li>查询索引 [GET /index/..]</li>
-<li>是否存在 [HEAD /index]</li>
-</ul>
-<h2 id="索引属性"><a href="#索引属性" class="headerlink" title="索引属性"></a>索引属性</h2><ul>
-<li>aliases</li>
-<li>mapping</li>
-<li>settings</li>
-</ul>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ul>
-<li>索引</li>
-<li>文档</li>
-</ul>
-<h3 id="文档元数据"><a href="#文档元数据" class="headerlink" title="文档元数据"></a>文档元数据</h3><ul>
-<li>_index</li>
-<li>_type</li>
-<li>_source</li>
-<li>version</li>
-<li>seq_no 解决并发写数据的问题</li>
-<li>primary_term  解决并发写数据的问题</li>
-</ul>
-<h2 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h2><ul>
-<li>添加文档 [PUT/POST /index/[_doc/_create]/id]<br>有id时创建新文档，删除旧文档。全局更新。</li>
-<li>修改文档 [POST /index/[_update/_updateByQuery]/id]</li>
-<li>批量操作 [POST _bulk] 偶数行参数 可以操作不同的index</li>
-<li>批量读取 [GET [_mget/_msearch]]</li>
-</ul>
-<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><h4 id="检索原理"><a href="#检索原理" class="headerlink" title="检索原理"></a>检索原理</h4><ul>
-<li>索引</li>
-<li>磁盘IO与预读  局部预读性原理</li>
-<li>倒排索引 单词词典、倒排列表、倒排索引项</li>
-</ul>
-<h4 id="Query-DSL"><a href="#Query-DSL" class="headerlink" title="Query DSL"></a>Query DSL</h4><ul>
-<li>GET /index/_doc/_search _doc省略后kibana有提示</li>
-<li>默认只返回10条数据，默认from+size&lt;10000</li>
-<li>只有text类型分词</li>
-<li>from、size 分页</li>
-<li>分页查询scroll</li>
-<li>sort 排序 （_score 为null）</li>
-<li>_source 指定返回某些字段</li>
-<li>match_all 查询所有数据</li>
-<li>match 对关键字进行分词，然后进行匹配（默认or，可改为and）(其它参数)</li>
-<li>match_phrase  短语匹配，要求分词是连续的（slop指定间隔个数）</li>
-<li>multi_match 多字段匹配，一个查询条件多个字段</li>
-<li>query_string </li>
-<li>simple_query_string + | - 替代 AND OR NOT</li>
-<li>term filed.keyword 关键词查询，不分词，精确匹配 (term必须使用keyword)  使用filter避免算分</li>
-<li>prefix 前缀搜索，匹配分词的前缀，而不是文本的前缀</li>
-<li>wildcard 通配符查询，匹配分词</li>
-<li>range 范围查询 （当前时间now的用法）</li>
-<li>ids 多id查询</li>
-<li>fuzzy 模糊查询，针对错别字的情形 fuzziness（最大2）：错误字数、prefix_length：前缀匹配长度</li>
-<li>highlight 高亮查询，让符合条件的关键字高亮 可自定义样式</li>
-<li>相关性及算分 排序  算法ES5之前使用TF-IDF（同一个词反复出现，分数会很高），之后使用BM25</li>
-<li>explain true 查看算分公式</li>
-<li>bool 组合查询 must（算分）、should（算分）、must_not（不算分）、filter（不算分） 分数汇总</li>
-</ul>
-<h2 id="Mapping"><a href="#Mapping" class="headerlink" title="Mapping"></a>Mapping</h2><ul>
-<li>dynamic mapping text类型会自动增加子keyword属性</li>
-<li>静态映射、动态映射、strict映射 新增字段不同实现</li>
-<li>_reindex 重建索引、别名  建新索引 -&gt; reindex -&gt; 删旧索引 -&gt; 使用别名  （文档会怎样？）</li>
-<li>index template 只在索引被创建的时候有用</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>分布式</category>
       </categories>
   </entry>
   <entry>
