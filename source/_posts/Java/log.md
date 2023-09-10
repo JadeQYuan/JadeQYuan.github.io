@@ -5,6 +5,8 @@ description: log
 author: Jade
 date: 2021-09-03 15:09:00
 ---
+
+
 1. log path的配置，一般只输出指定路径的日志，那mybatis的日志和启动时打印的日志为什么不在此列
 2. 判断当前日志是否可用？？？
 

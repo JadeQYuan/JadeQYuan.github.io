@@ -1,7 +1,6 @@
 title: ElasticSearch
 categories:
-  - Java
-  - 分布式
+  - Elastic
 description: ElasticSearch
 author: Jade
 date: 2022-06-12 08:29:00
