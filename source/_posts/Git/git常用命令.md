@@ -1,6 +1,6 @@
 title: git常用命令
 categories:
-  - default
+  - Git
 description: git常用命令
 author: Jade
 date: 2020-04-05 09:28:00

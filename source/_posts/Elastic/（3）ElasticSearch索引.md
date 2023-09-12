@@ -95,12 +95,107 @@ date: 2023-09-10 21:15:00
 ### 索引分片分配
 控制分片分配到节点的方式。
 #### 分配过滤
+- 可以使用分配过滤器控制将索引分配在哪个分片上。
+- cluster.routing.allocation
+  - 动态配置，支持存活的索引从一个节点迁移到另一个节点。
+  - 分片只有在不破坏其他路由时才会重新分配。
+- node.attr.size
+  - small、medium、big。
+- index.routing.allocation.include.{attribute}
+- index.routing.allocation.require.{attribute}
+- index.routing.allocation.exclude.{attribute}
+  - _name
+  - _host_ip
+  - _publish_ip
+  - _ip
+  - _host
+  - _tier
 
 #### 延迟分配
+- 当一个节点离开集群时：
+  - 将副本分配提升为主分片
+  - 分配副本分配代替消失的分片
+  - 在剩余的节点中重新平衡分配分配
+- 保证集群数据不会丢失，每个分片都是全复制。
+- index.unassigned.node_left.delayed_timeout
+  - 动态配置。
+  - 默认1m。
+  - 可在存活的索引上更新。
+
+#### 恢复优先级
+- 优先级
+  - index.priority（设置且越大越优先）
+  - 索引创建日期（越近创建越优先）
+  - 索引名称
+
 #### 分片总数
+- index.routing.allocation.total_shards_per_node
+  - 在一个节点上可分配的最大分片数量。
+- cluster.routing.allocation.total_shards_per_node
+  - 在每个节点上可分配的最大分片数量。
+
 #### 数据层分配
+- index.routing.allocation.include._tier
+- index.routing.allocation.require._tier
+- index.routing.allocation.exclude._tier
+- index.routing.allocation.include._tier_preference
 
-## 
+### 索引块
+索引块限制在索引上的操作是否可用。
+#### 设置 
+- index.blocks.read_only true: 只读数据及元数据
+- index.blocks.read_only_allow_delete
+- index.blocks.read true:无法读取索引
+- index.blocks.write true:无法写入索引
+- index.blocks.metedata true:无法读取/写入索引元数据
+#### API
+- PUT /<index>/_block/<block>
 
+### 映射
+- 参考Mapping。
+
+### 合并
+- ES中的每个分片都是Lucene中的索引。
+- index.merge.scheduler.max_thread_count
+
+### 相似模块
+
+### 日志查看
+- index.search.slowlog.threshold.query.warn: 10s
+- index.search.slowlog.threshold.query.info: 5s
+- index.search.slowlog.threshold.query.debug: 2s
+- index.search.slowlog.threshold.query.trace: 500ms
+- index.search.slowlog.threshold.fetch.warn: 1s
+- index.search.slowlog.threshold.fetch.info: 800ms
+- index.search.slowlog.threshold.fetch.debug: 500ms
+- index.search.slowlog.threshold.fetch.trace: 200ms
+
+### 存储
+- index.store.type: hybridfs
+  - fs、simplefs、niofs、mmapfs、hybridfs。
+- index.store.preload
+
+### Translog
+
+### 保留历史
+- index.soft_deletes.enabled
+- index.soft_deletes.retention_lease.period
+
+### 索引排序
+- index.sort.*
+  - index.sort.field
+  - index.sort.order
+  - index.sort.mode
+  - index.sort.missing
+
+### 索引压力
+- indexing_pressure.memory.limit
+
+## Q
+- index-level shard 
+- index-level data tier
+- node level
+  - primary
+  - replica
 
 
