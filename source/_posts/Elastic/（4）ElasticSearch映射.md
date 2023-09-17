@@ -100,7 +100,6 @@ date: 2023-09-16 10:15:00
   - _tier
 
 ### 映射参数
-
 - analyzer
 - boost
 - coerce
@@ -135,3 +134,6 @@ date: 2023-09-16 10:15:00
 - index.mapping.depth.limit: 20
 - index.mapping.nested_fields.limit: 50
 - index.mapping.nested_objects.limit: 10000
+
+### 移除映射类型
+- ES7.0废弃了type。
