@@ -1,5 +1,5 @@
-title: ElasticSearch索引模板
-description: ElasticSearch索引模板
+title: ElasticSearch索引模板(7.17)
+description: ElasticSearch索引模板(7.17)
 categories:
   - Elastic
 author: Jade

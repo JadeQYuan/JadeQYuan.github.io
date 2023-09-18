@@ -1,5 +1,5 @@
-title: ElasticSearch安装
-description: ElasticSearch安装
+title: ElasticSearch安装(7.17)
+description: ElasticSearch安装(7.17)
 categories:
   - Elastic
 author: Jade

@@ -1,5 +1,5 @@
-title: ElasticSearch数据流
-description: ElasticSearch数据流
+title: ElasticSearch数据流(7.17)
+description: ElasticSearch数据流(7.17)
 categories:
   - Elastic
 author: Jade
@@ -36,6 +36,18 @@ date: 2023-09-17 21:30:00
 - 安全数据流。
 
 ## 使用数据量
-
+- 添加
+- 检索
+- 统计
+- 手动滚动
+- 打开已关闭的备份索引
+- 重索引数据流
+- 更新查询结果
+- 删除查询结果
+- 更新或删除备份索引中的数据
 
 ## 更改数据流上的配置
+- 添加新字段映射到数据流
+- 更新已存在的字段映射
+- 修改数据流中的动态索引设置
+- 修改数据流中的静态索引设置

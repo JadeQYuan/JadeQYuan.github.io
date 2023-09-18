@@ -1,5 +1,5 @@
-title: ElasticSearch分词
-description: ElasticSearch分词
+title: ElasticSearch分词(7.17)
+description: ElasticSearch分词(7.17)
 categories:
   - Elastic
 author: Jade

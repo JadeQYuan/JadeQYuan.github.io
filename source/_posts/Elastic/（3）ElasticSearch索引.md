@@ -1,5 +1,5 @@
-title: ElasticSearch索引
-description: ElasticSearch索引
+title: ElasticSearch索引(7.17)
+description: ElasticSearch索引(7.17)
 categories:
   - Elastic
 author: Jade

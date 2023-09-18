@@ -1,5 +1,5 @@
-title: ElasticSearch映射
-description: ElasticSearch映射
+title: ElasticSearch映射(7.17)
+description: ElasticSearch映射(7.17)
 categories:
   - Elastic
 author: Jade
